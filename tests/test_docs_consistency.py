@@ -61,3 +61,24 @@ def test_the_demo_files_exist_and_are_labelled_synthetic():
     for f in os.listdir(os.path.join(HERE, "examples")):
         if f.endswith(".json"):
             assert json.loads(read("examples", f)).get("synthetic") is True, f
+
+
+def test_the_readme_file_table_lists_every_module_and_the_repo_has_its_standard_files():
+    readme = read('README.md')
+    for f in os.listdir(HERE):
+        if f.endswith('.py'):
+            assert f in readme, f
+    for f in ('LICENSE', 'CITATION.cff', 'CONTRIBUTING.md', 'SECURITY.md', 'requirements.txt', 'Dockerfile', '.gitignore'):
+        assert os.path.exists(os.path.join(HERE, f)), f
+    assert not os.path.exists(os.path.join(HERE, 'BUILD_CHECKLIST.md'))
+
+
+def test_nothing_private_is_in_the_repo_folder():
+    banned = ('BEGIN PRIVATE KEY', 'senpai', 'D:\\\\ZA Research')
+    for d, dirs, files in os.walk(HERE):
+        dirs[:] = [x for x in dirs if x not in ('__pycache__', '.pytest_cache', 'tests')]
+        for f in files:
+            if f.endswith(('.py', '.js', '.html', '.css', '.json', '.md', '.yml', '.cff', '.bat', '.sh', '.csv', '.svg')):
+                text = open(os.path.join(d, f), encoding='utf-8').read()
+                for b in banned:
+                    assert b not in text, (f, b)

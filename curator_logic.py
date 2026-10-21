@@ -1,7 +1,7 @@
 """
-Pure review logic for TrigPoint: no HTTP, no Earth Engine, no pipeline
-import. server.py passes the numbers it reads from pipeline.CFG, so these
-functions are cheap to unit test and cannot drift from the pipeline limits.
+Pure review logic for TrigPoint: no HTTP and no Earth Engine. server.py passes
+the numbers it reads from core.CFG, so these functions are cheap to unit test
+and cannot drift from the real limits.
 
 Covers: screening flags written into notes by build_incubator.py, neighbours
 within the split radius (pilot roster and other candidates), quality warnings,
@@ -226,7 +226,7 @@ def quality_flags(site, sites, reference, groups, cfg, pools=None):
     if box is None or not (cfg["min_box_km"] <= box <= cfg["max_box_km"]):
         add("box_range", "critical",
             f"Box size {box} km is outside {cfg['min_box_km']:g} to {cfg['max_box_km']:g} km; "
-            "the pipeline will refuse this file.")
+            "the file check will refuse this file.")
 
     if site.get("rejected"):
         return flags     # rejected sites are out of the final file; skip the rest

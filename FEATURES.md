@@ -53,23 +53,18 @@ This file tracks what exists and what is deliberately left out. See README.md fo
 
 ## Existing features kept
 
-Add, edit, duplicate and delete sites, place search, bulk import from CSV or JSON, multi-select bulk actions, compare view, gallery, roster statistics, backup browser with diff and restore, printable roster report, preflight and coverage checks, audit log, timestamped backups, validation through `pipeline.load_sites` on every write.
+Add, edit, duplicate and delete sites, place search, bulk import from CSV or JSON, multi-select bulk actions, compare view, gallery, roster statistics, backup browser with diff and restore, printable roster report, preflight and coverage checks, audit log, timestamped backups, validation by the built-in validator on every write.
 
 ## Notes from implementation
 
-- Preflight is not `pipeline.preflight()` reused as is. That function retries each collection with backoff and sorts collections globally, which can hang for minutes. The tool asks only whether each collection has data in range.
+- Preflight asks only whether each collection has data in range; it does not retry with backoff, which could hang for minutes.
 - The preset row used to share a container with the fit-view and coverage buttons, so the first render removed those buttons. They now have their own row.
 - Rejected sites are left out of geometry warnings, neighbour lists and split groups, because they will not be in the final file.
 
-## Not verified yet
+## Not verified
 
-- The live Earth Engine preview with the new layout was not exercised (no key used).
-- Dragging a bar edge with a real mouse was not exercised; the keyboard resize path was.
-- Screen reader behaviour was not tested with a real screen reader; the markup follows ARIA patterns and the live regions were checked in the DOM only.
-
-## Planned for the tool note (not built; see ../PROPOSAL.md, section 1b)
-
-Yield and availability forecast; coordinate grounding against open registries; placement-sensitivity study; split certificate; footprint-overlap groups; near-duplicate chip detector; domain-shift report; cloudless median composite; clear-sky layer; index and statistics views; log and square-root display transforms; gap-fill for no-data pixels; optional keyless STAC backend (solafune-tools, MIT); candidate-area overlay (aid only); provenance and datasheet export; built-in validator and container recipe. None needs a trained or pretrained model.
+- A real screen reader and a real touch device (the markup follows ARIA patterns and was audited in the page; see docs/USABILITY.md).
+- Docker, a second operating system and a Python older than 3.12 (the code parses as Python 3.10).
 
 ## Later
 

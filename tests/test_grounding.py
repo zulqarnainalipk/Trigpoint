@@ -1,4 +1,4 @@
-import json
+﻿import json
 
 import pytest
 
@@ -130,7 +130,7 @@ def test_wikidata_query_checks_its_inputs_and_fetch_uses_the_http_object():
             return R()
     h = H()
     assert G.fetch_wikidata("SELECT 1", http=h).startswith("{")
-    assert h.seen[0] == G.WIKIDATA_ENDPOINT and "SiteCurator" in h.seen[2]
+    assert h.seen[0] == G.WIKIDATA_ENDPOINT and "TrigPoint" in h.seen[2]
 
 
 def test_query_text_rejects_injection_in_country_code():

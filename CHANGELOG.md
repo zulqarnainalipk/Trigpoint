@@ -19,7 +19,7 @@ Studies (new, Tools menu)
 ## 1.4.0
 
 Standalone
-- Runs without the competition pipeline: a new validator replaces the pipeline site loader, and the tool opens a demo roster by default.
+- Runs on its own, without the collection pipeline it was first written for: a new validator replaces that pipeline's site loader, and the tool opens a demo roster by default.
 
 Imagery (new)
 - Backends: demo (synthetic, always labelled), Planetary Computer (no account), Earth Engine (your account). All give the same 14-layer chip.

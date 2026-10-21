@@ -181,7 +181,7 @@
    "how": [
     "Switch it on with B or in Map layers."
    ],
-   "works": "The curator only draws it. The data pipeline decides what to exclude.",
+   "works": "TrigPoint only draws it. Whatever collects your data decides what to exclude.",
    "limits": "It does not know about land and sea. Over a coast, part of the ring is water."
   },
   "split_radius": {

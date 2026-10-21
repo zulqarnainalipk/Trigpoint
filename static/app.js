@@ -3,10 +3,10 @@
 // NOTE on the rectangle math: the interactive box (drag pin to move, drag a
 // corner to resize) uses a simple equirectangular offset (good to well
 // under 1% error at the <8km box sizes we use). The "exact pixel grid"
-// overlay instead calls the backend, which reuses pipeline.py's own UTM
+// overlay instead calls the backend, which reuses core.py's UTM
 // math — so what you see there is byte-for-byte what a real build will
 // export. This tool only decides WHERE (center) and HOW BIG (box_km); the
-// authoritative pixel geometry always comes from pipeline.py.
+// authoritative pixel geometry always comes from core.py.
 
 const BOX_PRESETS = [1, 1.5, 2, 3, 4, 5, 6, 8];
 let sitesDoc = null;
@@ -610,8 +610,8 @@ function renderWarningsPanel(warnings) {
     const summary = document.createElement("div");
     summary.className = "warn-item";
     summary.innerHTML = `<span class="sev info">info</span>` +
-      `${info.length} site pair(s) share a background annulus — already ` +
-      `auto-mitigated by the pipeline, no action needed. ` +
+      `${info.length} site pair(s) share part of a background ring. ` +
+      `This is only worth knowing, not a problem to fix. ` +
       `<a class="warn-expand">show details ▾</a>`;
     const detail = document.createElement("div");
     detail.style.display = "none";
@@ -1328,7 +1328,7 @@ function renderStatsCharts() {
   const distCard = `<div class="stat-card"><h3>Pairwise site distances (km)</h3>
     ${distKeys.map((k) => statBar(`${k}-${k + bucketSize}`, distBuckets[k], distMax, "#3987e5")).join("")}
     <div class="hint-small" style="margin-top:10px">Pairs under ${statusInfo ? statusInfo.bg_outer_km : 150} km trigger a
-      geometry warning (see the ⚠ panel) — the pipeline auto-mitigates most of these.</div>
+      geometry warning (see the ⚠ panel); it only means their background rings share ground.</div>
   </div>`;
 
   grid.innerHTML = roleCard + vCard + boxCard + distCard;

@@ -240,7 +240,7 @@ Every feature of TrigPoint, in plain words. The same text opens in the tool when
 
 1. Switch it on with B or in Map layers.
 
-**How it works.** The curator only draws it. The data pipeline decides what to exclude.
+**How it works.** TrigPoint only draws it. Whatever collects your data decides what to exclude.
 
 **What it cannot do.** It does not know about land and sea. Over a coast, part of the ring is water.
 

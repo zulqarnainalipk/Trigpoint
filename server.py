@@ -86,7 +86,7 @@ def try_init_ee():
 
 # ---------------------------------------------------------------------------
 # geometry helpers that do NOT require Earth Engine (pure rasterio/math) —
-# mirrors pipeline.chip_grid's non-EE math exactly, so the "exact grid"
+# mirrors core.chip_grid_math exactly, so the "exact grid"
 # overlay works even without EE credentials.
 # ---------------------------------------------------------------------------
 
@@ -464,11 +464,9 @@ class SiteStore:
                         "severity": "info",
                         "message": f"{a['id']} ↔ {b['id']} are {d:.1f} km apart "
                                    f"— each sits inside the other's {bg_outer:.0f} km "
-                                   f"background annulus. The pipeline auto-excludes a "
-                                   f"small zone around each neighbor from the background "
-                                   f"estimate, so this is handled automatically — no "
-                                   f"action needed unless the annulus starts running low "
-                                   f"on valid pixels (check ch4_bg_count in the manifest).",
+                                   f"background ring. This is only worth knowing: a facility inside "
+                                   f"the ring can raise the background level, so check that "
+                                   f"the ring still has enough valid pixels.",
                     })
         stats = {
             "total": len(sites),
@@ -536,7 +534,7 @@ class SiteStore:
             return CL.export_csv(doc, scope, comments), "text/csv", "csv"
         if fmt != "json":
             raise ValidationError("format must be json or csv")
-        self._validate(sub)         # an exported file must also load in the pipeline
+        self._validate(sub)         # an exported file must also pass the validator
         return json.dumps(sub, indent=2, ensure_ascii=False), "application/json", "json"
 
     def import_sites(self, incoming, policy="skip", apply=False):

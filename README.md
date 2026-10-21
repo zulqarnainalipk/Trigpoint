@@ -114,13 +114,20 @@ Fields the tool adds to a site: `rejected` (only present when true), `original_c
 
 ## Files
 
-| File | Role |
+| File or folder | Role |
 |---|---|
-| `server.py` | stdlib-only HTTP backend: `SiteStore` and `Handler`. |
-| `curator_logic.py` | Pure review logic: screening parser, neighbours and split groups, quality flags, export and import planning. |
-| `static/index.html`, `app.js`, `review.js`, `style.css` | Frontend in vanilla JS with Leaflet. `app.js` has the layout (bars, resizers), the map, box editor and site CRUD; `review.js` has preferences, review flow, filters, information sections, quick edit, focus mode, map aids, dialogs and shortcuts. |
-| `tests/` | pytest unit and HTTP integration tests that use temporary files only. |
-| `cache/`, `backups/`, `audit.log.jsonl` | Preview cache, whole-file backups and the mutation log. |
+| `server.py` | HTTP backend (Python standard library): the sites store, the request handler, `--check` |
+| `validator.py`, `core.py` | The file check; settings, map grid and Earth Engine helpers |
+| `curator_logic.py` | Review logic: screening numbers, neighbours and split groups, quality flags, export and import |
+| `imagery_tools.py`, `imagery_service.py`, `backends.py`, `demo_scene.py` | Indices, composites, gap fill and candidate outlines; fetching and caching; the demo, Earth Engine and Planetary Computer backends; synthetic scenes |
+| `provenance.py` | Provenance record and datasheet |
+| `splitsafety.py`, `forecast.py`, `grounding.py`, `sensitivity.py`, `studies.py` | Overlap groups, duplicates, shift and certificate; forecast; coordinate grounding; placement study; the glue that runs them on a roster |
+| `static/` | The page (vanilla JavaScript with Leaflet): `index.html`, `app.js`, `review.js`, `imagery.js`, `studies.js`, `help.js`, `style.css`, `logo.svg` |
+| `help_content.json` | The one source of every help popup and of `docs/FEATURE_GUIDE.md` |
+| `demo/`, `examples/` | Demo roster, table and registry (synthetic); the output of every study on them |
+| `docs/` | Methods, backends, API, workflow, usability notes, troubleshooting, feature guide, certificate schema |
+| `tests/`, `tools/` | The test suite (temporary files only); the guide generator, accessibility audit and example builder |
+| `cache/`, `backups/`, `studies/`, `audit.log.jsonl` | Created when you run it: picture cache, whole-file backups, uploaded tables and registries, the change log (all ignored by git) |
 
 Run the tests with `python -m pytest tests -q` from this folder.
 
@@ -164,6 +171,10 @@ Run the tests with `python -m pytest tests -q` from this folder.
 TrigPoint is licensed under the Creative Commons Attribution-NonCommercial 4.0 International licence (CC BY-NC 4.0; see `LICENSE`). You may use and adapt it for research and other non-commercial purposes if you give credit. Commercial use is not allowed without the author's permission. If you use it in research, cite it as in `CITATION.cff` (Zulqarnain Ali, ORCID 0009-0009-0281-882X).
 
 Creative Commons licences are written for creative and data works, and the Creative Commons organisation does not recommend them for software; this licence also does not meet the Open Source Definition because it forbids commercial use. The Planetary Computer backend follows the approach of `solafune-tools` (MIT licence, Solafune Inc.); no code from it is included.
+
+## Contributing and security
+
+See `CONTRIBUTING.md` and `SECURITY.md`.
 
 ## Names you will still see
 
