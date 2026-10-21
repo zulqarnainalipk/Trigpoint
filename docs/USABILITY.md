@@ -26,6 +26,13 @@ The number of deliberate actions (a click, a key press, a choice or typing a val
 * Results regions are announced politely; errors are announced as alerts.
 * Reduced motion is respected; text size can go to 160 per cent without horizontal scrolling.
 
+## Where it was tested
+
+* Windows 10 (build 19045), Python 3.12.10, numpy 2.5, scipy 1.18, rasterio 1.5, matplotlib 3.11.
+* A Chromium-based browser (the one built into the Claude desktop app). Layout was checked at a desktop width, a 768 px tablet width and a 375 px phone width, at 100 and 160 per cent text size, in the dark, light and high-contrast themes.
+* Earth Engine with a service account and Planetary Computer, live (see `docs/BACKENDS.md`).
+* The GitHub Actions file (Ubuntu, Python 3.10 and 3.12) is written but has not run; other browsers and operating systems are untested.
+
 ## Not tested
 
 * A real screen reader (NVDA, JAWS, VoiceOver) and a real touch device.

@@ -50,7 +50,7 @@ Other settings: `SITE_CURATOR_PORT`, `SITE_CURATOR_BACKUP_DIR`, `SITE_CURATOR_CA
 | Backends | demo (offline), Google Earth Engine (your account), Planetary Computer (no account) |
 | Help | ? buttons on 63 controls, searchable guide, generated written guide |
 
-Open **Studies** in the Tools menu for the split-safety, forecast, coordinate and placement tools; each tab has a "try the demo" path that needs no files. A suggested order for using all the parts is in [docs/WORKFLOW.md](docs/WORKFLOW.md). Method details and limits are in [docs/METHODS.md](docs/METHODS.md). The split certificate has a published schema (`docs/split_certificate.schema.json`), and `examples/` holds the output of every study on the demo roster. What was and was not checked for ease of use is in [docs/USABILITY.md](docs/USABILITY.md). Problems are in [docs/TROUBLESHOOTING.md](docs/TROUBLESHOOTING.md). The HTTP interface is in [docs/API.md](docs/API.md).
+Open **Studies** in the Tools menu for the split-safety, forecast, coordinate and placement tools; each tab has a "try the demo" path that needs no files. A suggested order for using all the parts is in [docs/WORKFLOW.md](docs/WORKFLOW.md). Method details and limits are in [docs/METHODS.md](docs/METHODS.md). The split certificate has a published schema (`docs/split_certificate.schema.json`), and `examples/` holds the output of every study on the demo roster. How to repeat the reported results is in [docs/REPRODUCE.md](docs/REPRODUCE.md) and `analysis/README.md`. How it differs from a spatial cross-validation package is in [docs/COMPARISON.md](docs/COMPARISON.md). What was and was not checked for ease of use is in [docs/USABILITY.md](docs/USABILITY.md). Problems are in [docs/TROUBLESHOOTING.md](docs/TROUBLESHOOTING.md). The HTTP interface is in [docs/API.md](docs/API.md).
 
 ## Layout
 
@@ -90,6 +90,10 @@ The Map layers box toggles: the fixed 10 km label window around the site, the 30
 
 Paste `lat, lon` into the box above the map and press Enter. It also reads `27.05N 49.56E`, degrees-minutes-seconds, and Google Maps or OpenStreetMap links; pasting anywhere outside a text field works too. "Move box here" then moves the selected site's centre. The scale bar is always on. Drag handle size, snapping the box to 0.25 km, and the zoom used when a site opens are in Settings. `H` toggles the exact pixel grid.
 
+## Where it was tested
+
+Windows 10 with Python 3.12 and a Chromium-based browser; see `docs/USABILITY.md`. Linux, macOS, Firefox, Safari, Docker and Python 3.10 are untested.
+
 ## Accessibility
 
 The page has a skip link, landmarks, labelled controls, visible focus and live-region announcements for review actions, saves and toasts. Dialogs are native modal dialogs with focus trapping. The site list is a keyboard list: arrow keys, Home and End move through it, Enter opens a site and Shift+Space ticks it for bulk actions. Themes are dark, light, high contrast, or follow the system. Text size runs from 80 to 160 percent, motion can be reduced, and the layout works at 200 percent zoom and on a narrow window, where the site list becomes a slide-over. Press `?` for the full shortcut list: `J` `K` `N` move, `V` `X` `S` `U` decide, `E` quick edit, `[` `]` fold the bars, `F` focus on the map, `Z` zoom to the box, `-` `+` box size, `L` `B` `R` `P` `O` `H` layers.
@@ -125,6 +129,7 @@ Fields the tool adds to a site: `rejected` (only present when true), `original_c
 | `static/` | The page (vanilla JavaScript with Leaflet): `index.html`, `app.js`, `review.js`, `imagery.js`, `studies.js`, `help.js`, `style.css`, `logo.svg` |
 | `help_content.json` | The one source of every help popup and of `docs/FEATURE_GUIDE.md` |
 | `demo/`, `examples/` | Demo roster, table and registry (synthetic); the output of every study on them |
+| `analysis/` | The scripts and aggregate results behind the TrigPoint note (public-data studies can be repeated; the private-collection scripts are for audit) |
 | `docs/` | Methods, backends, API, workflow, usability notes, troubleshooting, feature guide, certificate schema |
 | `tests/`, `tools/` | The test suite (temporary files only); the guide generator, accessibility audit and example builder |
 | `cache/`, `backups/`, `studies/`, `audit.log.jsonl` | Created when you run it: picture cache, whole-file backups, uploaded tables and registries, the change log (all ignored by git) |

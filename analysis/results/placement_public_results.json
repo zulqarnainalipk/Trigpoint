@@ -1,0 +1,7198 @@
+{
+ "distances": [
+  1.0,
+  2.0,
+  5.0,
+  10.0
+ ],
+ "targets": [
+  "no2",
+  "co",
+  "ch4",
+  "aai"
+ ],
+ "sites": {
+  "fadhili_gas_plant": {
+   "box_km": 3.0,
+   "context_km": 23.0,
+   "kind": "built_up",
+   "natural_change": {
+    "n_px": 2500,
+    "nrmse": 0.1239,
+    "ncc": 0.997,
+    "index_change": {
+     "ndvi": 0.005,
+     "bsi": 0.0039,
+     "hsfi": 0.008
+    }
+   },
+   "by_distance": [
+    {
+     "distance_km": 1.0,
+     "n_directions": 8,
+     "n_inside": 8,
+     "median_nrmse": 1.5127,
+     "median_ncc": -0.0383,
+     "median_box_overlap": 0.6255,
+     "median_retained": 0.5238,
+     "share_missing_facility": 0.5
+    },
+    {
+     "distance_km": 2.0,
+     "n_directions": 8,
+     "n_inside": 8,
+     "median_nrmse": 1.3603,
+     "median_ncc": -0.0083,
+     "median_box_overlap": 0.3064,
+     "median_retained": 0.2143,
+     "share_missing_facility": 0.625
+    },
+    {
+     "distance_km": 5.0,
+     "n_directions": 8,
+     "n_inside": 8,
+     "median_nrmse": 1.3513,
+     "median_ncc": 0.0077,
+     "median_box_overlap": 0.0,
+     "median_retained": 0.0,
+     "share_missing_facility": 1.0
+    },
+    {
+     "distance_km": 10.0,
+     "n_directions": 8,
+     "n_inside": 8,
+     "median_nrmse": 1.3443,
+     "median_ncc": 0.0177,
+     "median_box_overlap": 0.0,
+     "median_retained": 0.0,
+     "share_missing_facility": 1.0
+    }
+   ],
+   "note": "Compared at the resolution of the context chip. A shift that leaves the picture is skipped.",
+   "meta": {
+    "backend": "ee",
+    "source": "single",
+    "synthetic": false,
+    "fetched_at": "2026-10-21T06:10:29.583095+00:00",
+    "date": "2026-09-13",
+    "cloud_frac": 7.817754949251997e-05,
+    "n_scenes": 1,
+    "gsd_m": 59.9,
+    "box_km": 23.0,
+    "site_id": "fadhili_gas_plant",
+    "lat": 27.11155,
+    "lon": 49.073954,
+    "key": "fadhili_gas_plant-23c23f_27.11155_49.07395_23.00_ee_single_120_q0"
+   },
+   "synthetic": false,
+   "site_id": "fadhili_gas_plant",
+   "tolerance_sweep": {
+    "keeps_facility": {
+     "0.25": 1.0,
+     "0.5": 1.0,
+     "0.75": 0.0
+    },
+    "picture_correlation": {
+     "0.5": 0.0,
+     "0.8": 0.0,
+     "0.9": 0.0
+    }
+   },
+   "tolerance_km": {
+    "keeps_facility": 1.0,
+    "picture_correlation_0_8": 0.0
+   },
+   "targets": {
+    "no2": {
+     "mean": 20.158479811694235,
+     "sd": 35.597040545639416,
+     "n_days": 355,
+     "se": 1.889295,
+     "rows": [
+      {
+       "distance_km": 1.0,
+       "n_shifts": 8,
+       "median_abs_change": 1.15482,
+       "change_over_spread": 0.0324,
+       "change_over_se": 0.611,
+       "share_above_2se": 0.0
+      },
+      {
+       "distance_km": 2.0,
+       "n_shifts": 8,
+       "median_abs_change": 2.22257,
+       "change_over_spread": 0.0624,
+       "change_over_se": 1.176,
+       "share_above_2se": 0.0
+      },
+      {
+       "distance_km": 5.0,
+       "n_shifts": 8,
+       "median_abs_change": 5.19488,
+       "change_over_spread": 0.1459,
+       "change_over_se": 2.75,
+       "share_above_2se": 0.75
+      },
+      {
+       "distance_km": 10.0,
+       "n_shifts": 8,
+       "median_abs_change": 8.92779,
+       "change_over_spread": 0.2508,
+       "change_over_se": 4.725,
+       "share_above_2se": 0.75
+      }
+     ],
+     "tolerance_km": 5.0,
+     "tol_ratio": 0.25,
+     "tolerance_sweep": {
+      "0.1": 2.0,
+      "0.25": 5.0,
+      "0.5": 10.0
+     }
+    },
+    "co": {
+     "mean": 0.3762402687423061,
+     "sd": 3.32079959199476,
+     "n_days": 335,
+     "se": 0.181435,
+     "rows": [
+      {
+       "distance_km": 1.0,
+       "n_shifts": 8,
+       "median_abs_change": 0.02114,
+       "change_over_spread": 0.0064,
+       "change_over_se": 0.117,
+       "share_above_2se": 0.0
+      },
+      {
+       "distance_km": 2.0,
+       "n_shifts": 8,
+       "median_abs_change": 0.03933,
+       "change_over_spread": 0.0118,
+       "change_over_se": 0.217,
+       "share_above_2se": 0.0
+      },
+      {
+       "distance_km": 5.0,
+       "n_shifts": 8,
+       "median_abs_change": 0.07553,
+       "change_over_spread": 0.0227,
+       "change_over_se": 0.416,
+       "share_above_2se": 0.0
+      },
+      {
+       "distance_km": 10.0,
+       "n_shifts": 8,
+       "median_abs_change": 0.14938,
+       "change_over_spread": 0.045,
+       "change_over_se": 0.823,
+       "share_above_2se": 0.25
+      }
+     ],
+     "tolerance_km": 10.0,
+     "tol_ratio": 0.25,
+     "tolerance_sweep": {
+      "0.1": 10.0,
+      "0.25": 10.0,
+      "0.5": 10.0
+     }
+    },
+    "ch4": {
+     "mean": 5.686034431533471,
+     "sd": 18.141132195255587,
+     "n_days": 202,
+     "se": 1.276406,
+     "rows": [
+      {
+       "distance_km": 1.0,
+       "n_shifts": 8,
+       "median_abs_change": 0.26693,
+       "change_over_spread": 0.0147,
+       "change_over_se": 0.209,
+       "share_above_2se": 0.0
+      },
+      {
+       "distance_km": 2.0,
+       "n_shifts": 8,
+       "median_abs_change": 0.53359,
+       "change_over_spread": 0.0294,
+       "change_over_se": 0.418,
+       "share_above_2se": 0.0
+      },
+      {
+       "distance_km": 5.0,
+       "n_shifts": 8,
+       "median_abs_change": 1.25698,
+       "change_over_spread": 0.0693,
+       "change_over_se": 0.985,
+       "share_above_2se": 0.0
+      },
+      {
+       "distance_km": 10.0,
+       "n_shifts": 8,
+       "median_abs_change": 2.27889,
+       "change_over_spread": 0.1256,
+       "change_over_se": 1.785,
+       "share_above_2se": 0.25
+      }
+     ],
+     "tolerance_km": 10.0,
+     "tol_ratio": 0.25,
+     "tolerance_sweep": {
+      "0.1": 5.0,
+      "0.25": 10.0,
+      "0.5": 10.0
+     }
+    },
+    "aai": {
+     "mean": 0.2634279667300523,
+     "sd": 0.75216348508368,
+     "n_days": 408,
+     "se": 0.037238,
+     "rows": [
+      {
+       "distance_km": 1.0,
+       "n_shifts": 8,
+       "median_abs_change": 0.0067,
+       "change_over_spread": 0.0089,
+       "change_over_se": 0.18,
+       "share_above_2se": 0.0
+      },
+      {
+       "distance_km": 2.0,
+       "n_shifts": 8,
+       "median_abs_change": 0.0139,
+       "change_over_spread": 0.0185,
+       "change_over_se": 0.373,
+       "share_above_2se": 0.0
+      },
+      {
+       "distance_km": 5.0,
+       "n_shifts": 8,
+       "median_abs_change": 0.02952,
+       "change_over_spread": 0.0392,
+       "change_over_se": 0.793,
+       "share_above_2se": 0.0
+      },
+      {
+       "distance_km": 10.0,
+       "n_shifts": 8,
+       "median_abs_change": 0.03123,
+       "change_over_spread": 0.0415,
+       "change_over_se": 0.839,
+       "share_above_2se": 0.25
+      }
+     ],
+     "tolerance_km": 10.0,
+     "tol_ratio": 0.25,
+     "tolerance_sweep": {
+      "0.1": 10.0,
+      "0.25": 10.0,
+      "0.5": 10.0
+     }
+    }
+   },
+   "targets_synthetic": false,
+   "roster": {
+    "box_km": 3.0,
+    "facility_type": "gas_plant",
+    "region": "middle_east",
+    "name": "Fadhili gas plant, Saudi Arabia"
+   }
+  },
+  "gabes_chemical_tunisia": {
+   "box_km": 3.25,
+   "context_km": 23.25,
+   "kind": "built_up",
+   "natural_change": {
+    "n_px": 2916,
+    "nrmse": 0.2193,
+    "ncc": 0.9807,
+    "index_change": {
+     "ndvi": 0.0703,
+     "bsi": 0.0343,
+     "hsfi": 1.3416
+    }
+   },
+   "by_distance": [
+    {
+     "distance_km": 1.0,
+     "n_directions": 8,
+     "n_inside": 8,
+     "median_nrmse": 1.1724,
+     "median_ncc": 0.3495,
+     "median_box_overlap": 0.6522,
+     "median_retained": 0.8333,
+     "share_missing_facility": 0.125
+    },
+    {
+     "distance_km": 2.0,
+     "n_directions": 8,
+     "n_inside": 8,
+     "median_nrmse": 1.3044,
+     "median_ncc": 0.2005,
+     "median_box_overlap": 0.3518,
+     "median_retained": 0.1667,
+     "share_missing_facility": 0.625
+    },
+    {
+     "distance_km": 5.0,
+     "n_directions": 8,
+     "n_inside": 8,
+     "median_nrmse": 1.3686,
+     "median_ncc": -0.1524,
+     "median_box_overlap": 0.0,
+     "median_retained": 0.0,
+     "share_missing_facility": 1.0
+    },
+    {
+     "distance_km": 10.0,
+     "n_directions": 8,
+     "n_inside": 8,
+     "median_nrmse": 1.558,
+     "median_ncc": 0.1113,
+     "median_box_overlap": 0.0,
+     "median_retained": 0.0,
+     "share_missing_facility": 1.0
+    }
+   ],
+   "note": "Compared at the resolution of the context chip. A shift that leaves the picture is skipped.",
+   "meta": {
+    "backend": "ee",
+    "source": "single",
+    "synthetic": false,
+    "fetched_at": "2026-10-21T06:14:44.436422+00:00",
+    "date": "2026-08-17",
+    "cloud_frac": 0.003049323619989978,
+    "n_scenes": 1,
+    "gsd_m": 60.55,
+    "box_km": 23.25,
+    "site_id": "gabes_chemical_tunisia",
+    "lat": 33.918327,
+    "lon": 10.088882,
+    "key": "gabes_chemical_tunisia-a97a5b_33.91833_10.08888_23.25_ee_single_120_q0"
+   },
+   "synthetic": false,
+   "site_id": "gabes_chemical_tunisia",
+   "tolerance_sweep": {
+    "keeps_facility": {
+     "0.25": 1.0,
+     "0.5": 1.0,
+     "0.75": 1.0
+    },
+    "picture_correlation": {
+     "0.5": 0.0,
+     "0.8": 0.0,
+     "0.9": 0.0
+    }
+   },
+   "tolerance_km": {
+    "keeps_facility": 1.0,
+    "picture_correlation_0_8": 0.0
+   },
+   "targets": {
+    "no2": {
+     "mean": 7.331309032022328,
+     "sd": 9.65322646356697,
+     "n_days": 373,
+     "se": 0.499825,
+     "rows": [
+      {
+       "distance_km": 1.0,
+       "n_shifts": 8,
+       "median_abs_change": 0.51932,
+       "change_over_spread": 0.0538,
+       "change_over_se": 1.039,
+       "share_above_2se": 0.0
+      },
+      {
+       "distance_km": 2.0,
+       "n_shifts": 8,
+       "median_abs_change": 1.08775,
+       "change_over_spread": 0.1127,
+       "change_over_se": 2.176,
+       "share_above_2se": 0.625
+      },
+      {
+       "distance_km": 5.0,
+       "n_shifts": 8,
+       "median_abs_change": 2.10685,
+       "change_over_spread": 0.2183,
+       "change_over_se": 4.215,
+       "share_above_2se": 0.75
+      },
+      {
+       "distance_km": 10.0,
+       "n_shifts": 8,
+       "median_abs_change": 3.75423,
+       "change_over_spread": 0.3889,
+       "change_over_se": 7.511,
+       "share_above_2se": 0.875
+      }
+     ],
+     "tolerance_km": 5.0,
+     "tol_ratio": 0.25,
+     "tolerance_sweep": {
+      "0.1": 1.0,
+      "0.25": 5.0,
+      "0.5": 10.0
+     }
+    },
+    "co": {
+     "mean": -0.050506363942211946,
+     "sd": 3.481385599836449,
+     "n_days": 338,
+     "se": 0.189362,
+     "rows": [
+      {
+       "distance_km": 1.0,
+       "n_shifts": 8,
+       "median_abs_change": 0.1038,
+       "change_over_spread": 0.0298,
+       "change_over_se": 0.548,
+       "share_above_2se": 0.0
+      },
+      {
+       "distance_km": 2.0,
+       "n_shifts": 8,
+       "median_abs_change": 0.20172,
+       "change_over_spread": 0.0579,
+       "change_over_se": 1.065,
+       "share_above_2se": 0.0
+      },
+      {
+       "distance_km": 5.0,
+       "n_shifts": 8,
+       "median_abs_change": 0.44759,
+       "change_over_spread": 0.1286,
+       "change_over_se": 2.364,
+       "share_above_2se": 0.625
+      },
+      {
+       "distance_km": 10.0,
+       "n_shifts": 8,
+       "median_abs_change": 0.66091,
+       "change_over_spread": 0.1898,
+       "change_over_se": 3.49,
+       "share_above_2se": 0.75
+      }
+     ],
+     "tolerance_km": 10.0,
+     "tol_ratio": 0.25,
+     "tolerance_sweep": {
+      "0.1": 2.0,
+      "0.25": 10.0,
+      "0.5": 10.0
+     }
+    },
+    "ch4": {
+     "mean": -14.230481322465039,
+     "sd": 28.66727136448469,
+     "n_days": 181,
+     "se": 2.130821,
+     "rows": [
+      {
+       "distance_km": 1.0,
+       "n_shifts": 8,
+       "median_abs_change": 2.73067,
+       "change_over_spread": 0.0953,
+       "change_over_se": 1.282,
+       "share_above_2se": 0.0
+      },
+      {
+       "distance_km": 2.0,
+       "n_shifts": 8,
+       "median_abs_change": 5.44917,
+       "change_over_spread": 0.1901,
+       "change_over_se": 2.557,
+       "share_above_2se": 0.5
+      },
+      {
+       "distance_km": 5.0,
+       "n_shifts": 8,
+       "median_abs_change": 12.5947,
+       "change_over_spread": 0.4393,
+       "change_over_se": 5.911,
+       "share_above_2se": 0.875
+      },
+      {
+       "distance_km": 10.0,
+       "n_shifts": 8,
+       "median_abs_change": 19.14111,
+       "change_over_spread": 0.6677,
+       "change_over_se": 8.983,
+       "share_above_2se": 0.875
+      }
+     ],
+     "tolerance_km": 2.0,
+     "tol_ratio": 0.25,
+     "tolerance_sweep": {
+      "0.1": 1.0,
+      "0.25": 2.0,
+      "0.5": 5.0
+     }
+    },
+    "aai": {
+     "mean": -0.09394689719777688,
+     "sd": 0.6734721210847834,
+     "n_days": 448,
+     "se": 0.031819,
+     "rows": [
+      {
+       "distance_km": 1.0,
+       "n_shifts": 8,
+       "median_abs_change": 0.04227,
+       "change_over_spread": 0.0628,
+       "change_over_se": 1.328,
+       "share_above_2se": 0.0
+      },
+      {
+       "distance_km": 2.0,
+       "n_shifts": 8,
+       "median_abs_change": 0.08325,
+       "change_over_spread": 0.1236,
+       "change_over_se": 2.616,
+       "share_above_2se": 0.75
+      },
+      {
+       "distance_km": 5.0,
+       "n_shifts": 8,
+       "median_abs_change": 0.18851,
+       "change_over_spread": 0.2799,
+       "change_over_se": 5.924,
+       "share_above_2se": 0.875
+      },
+      {
+       "distance_km": 10.0,
+       "n_shifts": 8,
+       "median_abs_change": 0.28837,
+       "change_over_spread": 0.4282,
+       "change_over_se": 9.063,
+       "share_above_2se": 1.0
+      }
+     ],
+     "tolerance_km": 2.0,
+     "tol_ratio": 0.25,
+     "tolerance_sweep": {
+      "0.1": 1.0,
+      "0.25": 2.0,
+      "0.5": 10.0
+     }
+    }
+   },
+   "targets_synthetic": false,
+   "roster": {
+    "box_km": 3.25,
+    "facility_type": "chemical",
+    "region": "africa",
+    "name": "Gabes chemical complex, Tunisia"
+   }
+  },
+  "hassi_rmel_gas_processing": {
+   "box_km": 1.75,
+   "context_km": 21.75,
+   "kind": "built_up",
+   "natural_change": {
+    "n_px": 961,
+    "nrmse": 0.1948,
+    "ncc": 0.9966,
+    "index_change": {
+     "ndvi": 0.0021,
+     "bsi": 0.0067,
+     "hsfi": 0.0231
+    }
+   },
+   "by_distance": [
+    {
+     "distance_km": 1.0,
+     "n_directions": 8,
+     "n_inside": 8,
+     "median_nrmse": 1.389,
+     "median_ncc": -0.0513,
+     "median_box_overlap": 0.3919,
+     "median_retained": 0.3333,
+     "share_missing_facility": 0.625
+    },
+    {
+     "distance_km": 2.0,
+     "n_directions": 8,
+     "n_inside": 8,
+     "median_nrmse": 1.3197,
+     "median_ncc": 0.0637,
+     "median_box_overlap": 0.0184,
+     "median_retained": 0.0,
+     "share_missing_facility": 1.0
+    },
+    {
+     "distance_km": 5.0,
+     "n_directions": 8,
+     "n_inside": 8,
+     "median_nrmse": 1.4059,
+     "median_ncc": -0.0619,
+     "median_box_overlap": 0.0,
+     "median_retained": 0.0,
+     "share_missing_facility": 1.0
+    },
+    {
+     "distance_km": 10.0,
+     "n_directions": 8,
+     "n_inside": 8,
+     "median_nrmse": 1.4867,
+     "median_ncc": 0.0255,
+     "median_box_overlap": 0.0,
+     "median_retained": 0.0,
+     "share_missing_facility": 1.0
+    }
+   ],
+   "note": "Compared at the resolution of the context chip. A shift that leaves the picture is skipped.",
+   "meta": {
+    "backend": "ee",
+    "source": "single",
+    "synthetic": false,
+    "fetched_at": "2026-10-21T06:17:49.843472+00:00",
+    "date": "2026-07-27",
+    "cloud_frac": 0,
+    "n_scenes": 1,
+    "gsd_m": 56.64,
+    "box_km": 21.75,
+    "site_id": "hassi_rmel_gas_processing",
+    "lat": 32.945625,
+    "lon": 3.24028,
+    "key": "hassi_rmel_gas_processing-d8a472_32.94562_3.24028_21.75_ee_single_120_q0"
+   },
+   "synthetic": false,
+   "site_id": "hassi_rmel_gas_processing",
+   "tolerance_sweep": {
+    "keeps_facility": {
+     "0.25": 1.0,
+     "0.5": 0.0,
+     "0.75": 0.0
+    },
+    "picture_correlation": {
+     "0.5": 0.0,
+     "0.8": 0.0,
+     "0.9": 0.0
+    }
+   },
+   "tolerance_km": {
+    "keeps_facility": 0.0,
+    "picture_correlation_0_8": 0.0
+   },
+   "targets": {
+    "no2": {
+     "mean": 17.757636350704065,
+     "sd": 19.24799441357331,
+     "n_days": 349,
+     "se": 1.030322,
+     "rows": [
+      {
+       "distance_km": 1.0,
+       "n_shifts": 8,
+       "median_abs_change": 0.22944,
+       "change_over_spread": 0.0119,
+       "change_over_se": 0.223,
+       "share_above_2se": 0.0
+      },
+      {
+       "distance_km": 2.0,
+       "n_shifts": 8,
+       "median_abs_change": 0.61524,
+       "change_over_spread": 0.032,
+       "change_over_se": 0.597,
+       "share_above_2se": 0.0
+      },
+      {
+       "distance_km": 5.0,
+       "n_shifts": 8,
+       "median_abs_change": 3.33166,
+       "change_over_spread": 0.1731,
+       "change_over_se": 3.234,
+       "share_above_2se": 0.875
+      },
+      {
+       "distance_km": 10.0,
+       "n_shifts": 8,
+       "median_abs_change": 8.6199,
+       "change_over_spread": 0.4478,
+       "change_over_se": 8.366,
+       "share_above_2se": 1.0
+      }
+     ],
+     "tolerance_km": 5.0,
+     "tol_ratio": 0.25,
+     "tolerance_sweep": {
+      "0.1": 2.0,
+      "0.25": 5.0,
+      "0.5": 10.0
+     }
+    },
+    "co": {
+     "mean": -0.396822688704241,
+     "sd": 2.4236650420801786,
+     "n_days": 333,
+     "se": 0.132816,
+     "rows": [
+      {
+       "distance_km": 1.0,
+       "n_shifts": 8,
+       "median_abs_change": 0.01322,
+       "change_over_spread": 0.0055,
+       "change_over_se": 0.1,
+       "share_above_2se": 0.0
+      },
+      {
+       "distance_km": 2.0,
+       "n_shifts": 8,
+       "median_abs_change": 0.02559,
+       "change_over_spread": 0.0106,
+       "change_over_se": 0.193,
+       "share_above_2se": 0.0
+      },
+      {
+       "distance_km": 5.0,
+       "n_shifts": 8,
+       "median_abs_change": 0.04062,
+       "change_over_spread": 0.0168,
+       "change_over_se": 0.306,
+       "share_above_2se": 0.0
+      },
+      {
+       "distance_km": 10.0,
+       "n_shifts": 8,
+       "median_abs_change": 0.06808,
+       "change_over_spread": 0.0281,
+       "change_over_se": 0.513,
+       "share_above_2se": 0.0
+      }
+     ],
+     "tolerance_km": 10.0,
+     "tol_ratio": 0.25,
+     "tolerance_sweep": {
+      "0.1": 10.0,
+      "0.25": 10.0,
+      "0.5": 10.0
+     }
+    },
+    "ch4": {
+     "mean": -5.9428651517894195,
+     "sd": 19.56425024704134,
+     "n_days": 122,
+     "se": 1.771264,
+     "rows": [
+      {
+       "distance_km": 1.0,
+       "n_shifts": 8,
+       "median_abs_change": 0.07221,
+       "change_over_spread": 0.0037,
+       "change_over_se": 0.041,
+       "share_above_2se": 0.0
+      },
+      {
+       "distance_km": 2.0,
+       "n_shifts": 8,
+       "median_abs_change": 0.28245,
+       "change_over_spread": 0.0144,
+       "change_over_se": 0.159,
+       "share_above_2se": 0.0
+      },
+      {
+       "distance_km": 5.0,
+       "n_shifts": 8,
+       "median_abs_change": 1.86658,
+       "change_over_spread": 0.0954,
+       "change_over_se": 1.054,
+       "share_above_2se": 0.0
+      },
+      {
+       "distance_km": 10.0,
+       "n_shifts": 8,
+       "median_abs_change": 4.45327,
+       "change_over_spread": 0.2276,
+       "change_over_se": 2.514,
+       "share_above_2se": 0.875
+      }
+     ],
+     "tolerance_km": 10.0,
+     "tol_ratio": 0.25,
+     "tolerance_sweep": {
+      "0.1": 5.0,
+      "0.25": 10.0,
+      "0.5": 10.0
+     }
+    },
+    "aai": {
+     "mean": 0.017088592866685515,
+     "sd": 0.6828408016229982,
+     "n_days": 426,
+     "se": 0.033084,
+     "rows": [
+      {
+       "distance_km": 1.0,
+       "n_shifts": 8,
+       "median_abs_change": 0.00345,
+       "change_over_spread": 0.0051,
+       "change_over_se": 0.104,
+       "share_above_2se": 0.0
+      },
+      {
+       "distance_km": 2.0,
+       "n_shifts": 8,
+       "median_abs_change": 0.00612,
+       "change_over_spread": 0.009,
+       "change_over_se": 0.185,
+       "share_above_2se": 0.0
+      },
+      {
+       "distance_km": 5.0,
+       "n_shifts": 8,
+       "median_abs_change": 0.02436,
+       "change_over_spread": 0.0357,
+       "change_over_se": 0.736,
+       "share_above_2se": 0.0
+      },
+      {
+       "distance_km": 10.0,
+       "n_shifts": 8,
+       "median_abs_change": 0.05442,
+       "change_over_spread": 0.0797,
+       "change_over_se": 1.645,
+       "share_above_2se": 0.0
+      }
+     ],
+     "tolerance_km": 10.0,
+     "tol_ratio": 0.25,
+     "tolerance_sweep": {
+      "0.1": 10.0,
+      "0.25": 10.0,
+      "0.5": 10.0
+     }
+    }
+   },
+   "targets_synthetic": false,
+   "roster": {
+    "box_km": 1.75,
+    "facility_type": "gas_processing",
+    "region": "africa",
+    "name": "Hassi R'Mel gas hub, Algeria"
+   }
+  },
+  "jorf_lasfar_morocco": {
+   "box_km": 5.0,
+   "context_km": 25.0,
+   "kind": "built_up",
+   "natural_change": {
+    "n_px": 5929,
+    "nrmse": 0.1819,
+    "ncc": 0.9842,
+    "index_change": {
+     "ndvi": 0.0037,
+     "bsi": 0.0136,
+     "hsfi": 0.0944
+    }
+   },
+   "by_distance": [
+    {
+     "distance_km": 1.0,
+     "n_directions": 8,
+     "n_inside": 8,
+     "median_nrmse": 1.185,
+     "median_ncc": 0.2495,
+     "median_box_overlap": 0.7686,
+     "median_retained": 0.5247,
+     "share_missing_facility": 0.375
+    },
+    {
+     "distance_km": 2.0,
+     "n_directions": 8,
+     "n_inside": 8,
+     "median_nrmse": 1.2474,
+     "median_ncc": 0.1089,
+     "median_box_overlap": 0.5572,
+     "median_retained": 0.3381,
+     "share_missing_facility": 0.625
+    },
+    {
+     "distance_km": 5.0,
+     "n_directions": 8,
+     "n_inside": 8,
+     "median_nrmse": 1.2317,
+     "median_ncc": -0.0005,
+     "median_box_overlap": 0.0429,
+     "median_retained": 0.0106,
+     "share_missing_facility": 0.875
+    },
+    {
+     "distance_km": 10.0,
+     "n_directions": 8,
+     "n_inside": 8,
+     "median_nrmse": 1.2544,
+     "median_ncc": 0.0543,
+     "median_box_overlap": 0.0,
+     "median_retained": 0.0,
+     "share_missing_facility": 1.0
+    }
+   ],
+   "note": "Compared at the resolution of the context chip. A shift that leaves the picture is skipped.",
+   "meta": {
+    "backend": "ee",
+    "source": "single",
+    "synthetic": false,
+    "fetched_at": "2026-10-21T06:20:49.859004+00:00",
+    "date": "2026-09-30",
+    "cloud_frac": 0.00019009968090814155,
+    "n_scenes": 1,
+    "gsd_m": 65.1,
+    "box_km": 25.0,
+    "site_id": "jorf_lasfar_morocco",
+    "lat": 33.102904,
+    "lon": -8.606758,
+    "key": "jorf_lasfar_morocco-d63441_33.10290_-8.60676_25.00_ee_single_120_q0"
+   },
+   "synthetic": false,
+   "site_id": "jorf_lasfar_morocco",
+   "tolerance_sweep": {
+    "keeps_facility": {
+     "0.25": 2.0,
+     "0.5": 1.0,
+     "0.75": 0.0
+    },
+    "picture_correlation": {
+     "0.5": 0.0,
+     "0.8": 0.0,
+     "0.9": 0.0
+    }
+   },
+   "tolerance_km": {
+    "keeps_facility": 1.0,
+    "picture_correlation_0_8": 0.0
+   },
+   "targets": {
+    "no2": {
+     "mean": 17.25570493367278,
+     "sd": 21.414633111889845,
+     "n_days": 333,
+     "se": 1.173515,
+     "rows": [
+      {
+       "distance_km": 1.0,
+       "n_shifts": 8,
+       "median_abs_change": 1.10415,
+       "change_over_spread": 0.0516,
+       "change_over_se": 0.941,
+       "share_above_2se": 0.0
+      },
+      {
+       "distance_km": 2.0,
+       "n_shifts": 8,
+       "median_abs_change": 2.21233,
+       "change_over_spread": 0.1033,
+       "change_over_se": 1.885,
+       "share_above_2se": 0.5
+      },
+      {
+       "distance_km": 5.0,
+       "n_shifts": 8,
+       "median_abs_change": 4.61328,
+       "change_over_spread": 0.2154,
+       "change_over_se": 3.931,
+       "share_above_2se": 0.75
+      },
+      {
+       "distance_km": 10.0,
+       "n_shifts": 8,
+       "median_abs_change": 7.79697,
+       "change_over_spread": 0.3641,
+       "change_over_se": 6.644,
+       "share_above_2se": 1.0
+      }
+     ],
+     "tolerance_km": 5.0,
+     "tol_ratio": 0.25,
+     "tolerance_sweep": {
+      "0.1": 1.0,
+      "0.25": 5.0,
+      "0.5": 10.0
+     }
+    },
+    "co": {
+     "mean": 0.39112010960338367,
+     "sd": 2.70310310267124,
+     "n_days": 350,
+     "se": 0.144487,
+     "rows": [
+      {
+       "distance_km": 1.0,
+       "n_shifts": 8,
+       "median_abs_change": 0.02408,
+       "change_over_spread": 0.0089,
+       "change_over_se": 0.167,
+       "share_above_2se": 0.0
+      },
+      {
+       "distance_km": 2.0,
+       "n_shifts": 8,
+       "median_abs_change": 0.05035,
+       "change_over_spread": 0.0186,
+       "change_over_se": 0.348,
+       "share_above_2se": 0.0
+      },
+      {
+       "distance_km": 5.0,
+       "n_shifts": 8,
+       "median_abs_change": 0.09858,
+       "change_over_spread": 0.0365,
+       "change_over_se": 0.682,
+       "share_above_2se": 0.0
+      },
+      {
+       "distance_km": 10.0,
+       "n_shifts": 8,
+       "median_abs_change": 0.10954,
+       "change_over_spread": 0.0405,
+       "change_over_se": 0.758,
+       "share_above_2se": 0.25
+      }
+     ],
+     "tolerance_km": 10.0,
+     "tol_ratio": 0.25,
+     "tolerance_sweep": {
+      "0.1": 10.0,
+      "0.25": 10.0,
+      "0.5": 10.0
+     }
+    },
+    "ch4": {
+     "mean": 10.21303053037309,
+     "sd": 21.27481838845644,
+     "n_days": 150,
+     "se": 1.737082,
+     "rows": [
+      {
+       "distance_km": 1.0,
+       "n_shifts": 8,
+       "median_abs_change": 0.19577,
+       "change_over_spread": 0.0092,
+       "change_over_se": 0.113,
+       "share_above_2se": 0.0
+      },
+      {
+       "distance_km": 2.0,
+       "n_shifts": 8,
+       "median_abs_change": 0.26635,
+       "change_over_spread": 0.0125,
+       "change_over_se": 0.153,
+       "share_above_2se": 0.0
+      },
+      {
+       "distance_km": 5.0,
+       "n_shifts": 8,
+       "median_abs_change": 0.86152,
+       "change_over_spread": 0.0405,
+       "change_over_se": 0.496,
+       "share_above_2se": 0.0
+      },
+      {
+       "distance_km": 10.0,
+       "n_shifts": 8,
+       "median_abs_change": 3.35537,
+       "change_over_spread": 0.1577,
+       "change_over_se": 1.932,
+       "share_above_2se": 0.5
+      }
+     ],
+     "tolerance_km": 10.0,
+     "tol_ratio": 0.25,
+     "tolerance_sweep": {
+      "0.1": 5.0,
+      "0.25": 10.0,
+      "0.5": 10.0
+     }
+    },
+    "aai": {
+     "mean": 0.15207127791320835,
+     "sd": 0.7599743837652061,
+     "n_days": 426,
+     "se": 0.036821,
+     "rows": [
+      {
+       "distance_km": 1.0,
+       "n_shifts": 8,
+       "median_abs_change": 0.00455,
+       "change_over_spread": 0.006,
+       "change_over_se": 0.124,
+       "share_above_2se": 0.0
+      },
+      {
+       "distance_km": 2.0,
+       "n_shifts": 8,
+       "median_abs_change": 0.00908,
+       "change_over_spread": 0.012,
+       "change_over_se": 0.247,
+       "share_above_2se": 0.0
+      },
+      {
+       "distance_km": 5.0,
+       "n_shifts": 8,
+       "median_abs_change": 0.03904,
+       "change_over_spread": 0.0514,
+       "change_over_se": 1.06,
+       "share_above_2se": 0.25
+      },
+      {
+       "distance_km": 10.0,
+       "n_shifts": 8,
+       "median_abs_change": 0.07311,
+       "change_over_spread": 0.0962,
+       "change_over_se": 1.986,
+       "share_above_2se": 0.375
+      }
+     ],
+     "tolerance_km": 10.0,
+     "tol_ratio": 0.25,
+     "tolerance_sweep": {
+      "0.1": 10.0,
+      "0.25": 10.0,
+      "0.5": 10.0
+     }
+    }
+   },
+   "targets_synthetic": false,
+   "roster": {
+    "box_km": 5.0,
+    "facility_type": "power_chemical",
+    "region": "africa",
+    "name": "Jorf Lasfar power and chemical complex, Morocco"
+   }
+  },
+  "karamay_oilfield": {
+   "box_km": 7.75,
+   "context_km": 27.75,
+   "kind": "built_up",
+   "natural_change": {
+    "n_px": 11449,
+    "nrmse": 0.1367,
+    "ncc": 0.9929,
+    "index_change": {
+     "ndvi": 0.0071,
+     "bsi": 0.002,
+     "hsfi": 0.0066
+    }
+   },
+   "by_distance": [
+    {
+     "distance_km": 1.0,
+     "n_directions": 8,
+     "n_inside": 8,
+     "median_nrmse": 1.3188,
+     "median_ncc": 0.1228,
+     "median_box_overlap": 0.8484,
+     "median_retained": 0.8274,
+     "share_missing_facility": 0.0
+    },
+    {
+     "distance_km": 2.0,
+     "n_directions": 8,
+     "n_inside": 8,
+     "median_nrmse": 1.368,
+     "median_ncc": 0.0585,
+     "median_box_overlap": 0.7051,
+     "median_retained": 0.7262,
+     "share_missing_facility": 0.125
+    },
+    {
+     "distance_km": 5.0,
+     "n_directions": 8,
+     "n_inside": 8,
+     "median_nrmse": 1.4654,
+     "median_ncc": 0.0378,
+     "median_box_overlap": 0.3253,
+     "median_retained": 0.3095,
+     "share_missing_facility": 0.875
+    },
+    {
+     "distance_km": 10.0,
+     "n_directions": 8,
+     "n_inside": 8,
+     "median_nrmse": 1.5098,
+     "median_ncc": 0.019,
+     "median_box_overlap": 0.0039,
+     "median_retained": 0.0,
+     "share_missing_facility": 1.0
+    }
+   ],
+   "note": "Compared at the resolution of the context chip. A shift that leaves the picture is skipped.",
+   "meta": {
+    "backend": "ee",
+    "source": "single",
+    "synthetic": false,
+    "fetched_at": "2026-10-21T06:23:43.157461+00:00",
+    "date": "2026-08-28",
+    "cloud_frac": 0.0021647696658510405,
+    "n_scenes": 1,
+    "gsd_m": 72.27,
+    "box_km": 27.75,
+    "site_id": "karamay_oilfield",
+    "lat": 45.578243,
+    "lon": 85.035553,
+    "key": "karamay_oilfield-223b7a_45.57824_85.03555_27.75_ee_single_120_q0"
+   },
+   "synthetic": false,
+   "site_id": "karamay_oilfield",
+   "tolerance_sweep": {
+    "keeps_facility": {
+     "0.25": 5.0,
+     "0.5": 2.0,
+     "0.75": 1.0
+    },
+    "picture_correlation": {
+     "0.5": 0.0,
+     "0.8": 0.0,
+     "0.9": 0.0
+    }
+   },
+   "tolerance_km": {
+    "keeps_facility": 2.0,
+    "picture_correlation_0_8": 0.0
+   },
+   "targets": {
+    "no2": {
+     "mean": 11.928044823756737,
+     "sd": 14.577444278705382,
+     "n_days": 364,
+     "se": 0.764066,
+     "rows": [
+      {
+       "distance_km": 1.0,
+       "n_shifts": 8,
+       "median_abs_change": 0.556,
+       "change_over_spread": 0.0381,
+       "change_over_se": 0.728,
+       "share_above_2se": 0.0
+      },
+      {
+       "distance_km": 2.0,
+       "n_shifts": 8,
+       "median_abs_change": 1.10466,
+       "change_over_spread": 0.0758,
+       "change_over_se": 1.446,
+       "share_above_2se": 0.125
+      },
+      {
+       "distance_km": 5.0,
+       "n_shifts": 8,
+       "median_abs_change": 2.09971,
+       "change_over_spread": 0.144,
+       "change_over_se": 2.748,
+       "share_above_2se": 0.75
+      },
+      {
+       "distance_km": 10.0,
+       "n_shifts": 8,
+       "median_abs_change": 2.7605,
+       "change_over_spread": 0.1894,
+       "change_over_se": 3.613,
+       "share_above_2se": 0.625
+      }
+     ],
+     "tolerance_km": 10.0,
+     "tol_ratio": 0.25,
+     "tolerance_sweep": {
+      "0.1": 2.0,
+      "0.25": 10.0,
+      "0.5": 10.0
+     }
+    },
+    "co": {
+     "mean": 1.620339660889227,
+     "sd": 4.900356995624739,
+     "n_days": 387,
+     "se": 0.249099,
+     "rows": [
+      {
+       "distance_km": 1.0,
+       "n_shifts": 8,
+       "median_abs_change": 0.02649,
+       "change_over_spread": 0.0054,
+       "change_over_se": 0.106,
+       "share_above_2se": 0.0
+      },
+      {
+       "distance_km": 2.0,
+       "n_shifts": 8,
+       "median_abs_change": 0.04933,
+       "change_over_spread": 0.0101,
+       "change_over_se": 0.198,
+       "share_above_2se": 0.0
+      },
+      {
+       "distance_km": 5.0,
+       "n_shifts": 8,
+       "median_abs_change": 0.07383,
+       "change_over_spread": 0.0151,
+       "change_over_se": 0.296,
+       "share_above_2se": 0.0
+      },
+      {
+       "distance_km": 10.0,
+       "n_shifts": 8,
+       "median_abs_change": 0.29034,
+       "change_over_spread": 0.0592,
+       "change_over_se": 1.166,
+       "share_above_2se": 0.25
+      }
+     ],
+     "tolerance_km": 10.0,
+     "tol_ratio": 0.25,
+     "tolerance_sweep": {
+      "0.1": 10.0,
+      "0.25": 10.0,
+      "0.5": 10.0
+     }
+    },
+    "ch4": {
+     "mean": 10.699970286815415,
+     "sd": 20.24926633633192,
+     "n_days": 110,
+     "se": 1.930692,
+     "rows": [
+      {
+       "distance_km": 1.0,
+       "n_shifts": 8,
+       "median_abs_change": 0.49597,
+       "change_over_spread": 0.0245,
+       "change_over_se": 0.257,
+       "share_above_2se": 0.0
+      },
+      {
+       "distance_km": 2.0,
+       "n_shifts": 8,
+       "median_abs_change": 0.97735,
+       "change_over_spread": 0.0483,
+       "change_over_se": 0.506,
+       "share_above_2se": 0.0
+      },
+      {
+       "distance_km": 5.0,
+       "n_shifts": 8,
+       "median_abs_change": 2.15082,
+       "change_over_spread": 0.1062,
+       "change_over_se": 1.114,
+       "share_above_2se": 0.125
+      },
+      {
+       "distance_km": 10.0,
+       "n_shifts": 8,
+       "median_abs_change": 3.45671,
+       "change_over_spread": 0.1707,
+       "change_over_se": 1.79,
+       "share_above_2se": 0.375
+      }
+     ],
+     "tolerance_km": 10.0,
+     "tol_ratio": 0.25,
+     "tolerance_sweep": {
+      "0.1": 2.0,
+      "0.25": 10.0,
+      "0.5": 10.0
+     }
+    },
+    "aai": {
+     "mean": 0.2893319788327471,
+     "sd": 0.7186068014191364,
+     "n_days": 533,
+     "se": 0.031126,
+     "rows": [
+      {
+       "distance_km": 1.0,
+       "n_shifts": 8,
+       "median_abs_change": 0.01836,
+       "change_over_spread": 0.0256,
+       "change_over_se": 0.59,
+       "share_above_2se": 0.0
+      },
+      {
+       "distance_km": 2.0,
+       "n_shifts": 8,
+       "median_abs_change": 0.03683,
+       "change_over_spread": 0.0513,
+       "change_over_se": 1.183,
+       "share_above_2se": 0.0
+      },
+      {
+       "distance_km": 5.0,
+       "n_shifts": 8,
+       "median_abs_change": 0.08862,
+       "change_over_spread": 0.1233,
+       "change_over_se": 2.847,
+       "share_above_2se": 0.625
+      },
+      {
+       "distance_km": 10.0,
+       "n_shifts": 8,
+       "median_abs_change": 0.14674,
+       "change_over_spread": 0.2042,
+       "change_over_se": 4.714,
+       "share_above_2se": 0.875
+      }
+     ],
+     "tolerance_km": 10.0,
+     "tol_ratio": 0.25,
+     "tolerance_sweep": {
+      "0.1": 2.0,
+      "0.25": 10.0,
+      "0.5": 10.0
+     }
+    }
+   },
+   "targets_synthetic": false,
+   "roster": {
+    "box_km": 7.75,
+    "facility_type": "oilfield",
+    "region": "east_asia",
+    "name": "Karamay oilfield, China"
+   }
+  },
+  "karratha_burrup_lng": {
+   "box_km": 4.0,
+   "context_km": 24.0,
+   "kind": "built_up",
+   "natural_change": {
+    "n_px": 4096,
+    "nrmse": 0.3164,
+    "ncc": 0.9709,
+    "index_change": {
+     "ndvi": 0.0325,
+     "bsi": 0.0054,
+     "hsfi": 0.1232
+    }
+   },
+   "by_distance": [
+    {
+     "distance_km": 1.0,
+     "n_directions": 8,
+     "n_inside": 8,
+     "median_nrmse": 1.2142,
+     "median_ncc": 0.1179,
+     "median_box_overlap": 0.7138,
+     "median_retained": 0.601,
+     "share_missing_facility": 0.125
+    },
+    {
+     "distance_km": 2.0,
+     "n_directions": 8,
+     "n_inside": 8,
+     "median_nrmse": 1.3582,
+     "median_ncc": -0.0386,
+     "median_box_overlap": 0.4589,
+     "median_retained": 0.372,
+     "share_missing_facility": 0.625
+    },
+    {
+     "distance_km": 5.0,
+     "n_directions": 8,
+     "n_inside": 8,
+     "median_nrmse": 1.7022,
+     "median_ncc": -0.0047,
+     "median_box_overlap": 0.0067,
+     "median_retained": 0.0,
+     "share_missing_facility": 1.0
+    },
+    {
+     "distance_km": 10.0,
+     "n_directions": 8,
+     "n_inside": 8,
+     "median_nrmse": 1.6819,
+     "median_ncc": 0.0506,
+     "median_box_overlap": 0.0,
+     "median_retained": 0.0,
+     "share_missing_facility": 1.0
+    }
+   ],
+   "note": "Compared at the resolution of the context chip. A shift that leaves the picture is skipped.",
+   "meta": {
+    "backend": "ee",
+    "source": "single",
+    "synthetic": false,
+    "fetched_at": "2026-10-21T06:26:52.698795+00:00",
+    "date": "2026-08-11",
+    "cloud_frac": 1.875036765426768e-05,
+    "n_scenes": 1,
+    "gsd_m": 62.5,
+    "box_km": 24.0,
+    "site_id": "karratha_burrup_lng",
+    "lat": -20.600972,
+    "lon": 116.775484,
+    "key": "karratha_burrup_lng-289ebf_-20.60097_116.77548_24.00_ee_single_120_q0"
+   },
+   "synthetic": false,
+   "site_id": "karratha_burrup_lng",
+   "tolerance_sweep": {
+    "keeps_facility": {
+     "0.25": 2.0,
+     "0.5": 1.0,
+     "0.75": 0.0
+    },
+    "picture_correlation": {
+     "0.5": 0.0,
+     "0.8": 0.0,
+     "0.9": 0.0
+    }
+   },
+   "tolerance_km": {
+    "keeps_facility": 1.0,
+    "picture_correlation_0_8": 0.0
+   },
+   "targets": {
+    "no2": {
+     "mean": 7.961885168746588,
+     "sd": 8.013175793132321,
+     "n_days": 342,
+     "se": 0.433303,
+     "rows": [
+      {
+       "distance_km": 1.0,
+       "n_shifts": 8,
+       "median_abs_change": 0.35222,
+       "change_over_spread": 0.044,
+       "change_over_se": 0.813,
+       "share_above_2se": 0.0
+      },
+      {
+       "distance_km": 2.0,
+       "n_shifts": 8,
+       "median_abs_change": 0.6557,
+       "change_over_spread": 0.0818,
+       "change_over_se": 1.513,
+       "share_above_2se": 0.25
+      },
+      {
+       "distance_km": 5.0,
+       "n_shifts": 8,
+       "median_abs_change": 1.19282,
+       "change_over_spread": 0.1489,
+       "change_over_se": 2.753,
+       "share_above_2se": 0.5
+      },
+      {
+       "distance_km": 10.0,
+       "n_shifts": 8,
+       "median_abs_change": 3.35392,
+       "change_over_spread": 0.4186,
+       "change_over_se": 7.74,
+       "share_above_2se": 1.0
+      }
+     ],
+     "tolerance_km": 5.0,
+     "tol_ratio": 0.25,
+     "tolerance_sweep": {
+      "0.1": 2.0,
+      "0.25": 5.0,
+      "0.5": 10.0
+     }
+    },
+    "co": {
+     "mean": 0.96640608841864,
+     "sd": 6.144801801796859,
+     "n_days": 334,
+     "se": 0.336229,
+     "rows": [
+      {
+       "distance_km": 1.0,
+       "n_shifts": 8,
+       "median_abs_change": 0.0399,
+       "change_over_spread": 0.0065,
+       "change_over_se": 0.119,
+       "share_above_2se": 0.0
+      },
+      {
+       "distance_km": 2.0,
+       "n_shifts": 8,
+       "median_abs_change": 0.07677,
+       "change_over_spread": 0.0125,
+       "change_over_se": 0.228,
+       "share_above_2se": 0.0
+      },
+      {
+       "distance_km": 5.0,
+       "n_shifts": 8,
+       "median_abs_change": 0.10646,
+       "change_over_spread": 0.0173,
+       "change_over_se": 0.317,
+       "share_above_2se": 0.0
+      },
+      {
+       "distance_km": 10.0,
+       "n_shifts": 8,
+       "median_abs_change": 0.16368,
+       "change_over_spread": 0.0266,
+       "change_over_se": 0.487,
+       "share_above_2se": 0.0
+      }
+     ],
+     "tolerance_km": 10.0,
+     "tol_ratio": 0.25,
+     "tolerance_sweep": {
+      "0.1": 10.0,
+      "0.25": 10.0,
+      "0.5": 10.0
+     }
+    },
+    "ch4": {
+     "mean": 2.7189566477884455,
+     "sd": 23.97116085110525,
+     "n_days": 226,
+     "se": 1.594538,
+     "rows": [
+      {
+       "distance_km": 1.0,
+       "n_shifts": 8,
+       "median_abs_change": 0.48573,
+       "change_over_spread": 0.0203,
+       "change_over_se": 0.305,
+       "share_above_2se": 0.0
+      },
+      {
+       "distance_km": 2.0,
+       "n_shifts": 8,
+       "median_abs_change": 0.9459,
+       "change_over_spread": 0.0395,
+       "change_over_se": 0.593,
+       "share_above_2se": 0.0
+      },
+      {
+       "distance_km": 5.0,
+       "n_shifts": 8,
+       "median_abs_change": 3.17071,
+       "change_over_spread": 0.1323,
+       "change_over_se": 1.988,
+       "share_above_2se": 0.5
+      },
+      {
+       "distance_km": 10.0,
+       "n_shifts": 8,
+       "median_abs_change": 4.54571,
+       "change_over_spread": 0.1896,
+       "change_over_se": 2.851,
+       "share_above_2se": 0.5
+      }
+     ],
+     "tolerance_km": 10.0,
+     "tol_ratio": 0.25,
+     "tolerance_sweep": {
+      "0.1": 2.0,
+      "0.25": 10.0,
+      "0.5": 10.0
+     }
+    },
+    "aai": {
+     "mean": 0.150003755068496,
+     "sd": 0.37187033250224655,
+     "n_days": 384,
+     "se": 0.018977,
+     "rows": [
+      {
+       "distance_km": 1.0,
+       "n_shifts": 8,
+       "median_abs_change": 0.00618,
+       "change_over_spread": 0.0166,
+       "change_over_se": 0.326,
+       "share_above_2se": 0.0
+      },
+      {
+       "distance_km": 2.0,
+       "n_shifts": 8,
+       "median_abs_change": 0.0123,
+       "change_over_spread": 0.0331,
+       "change_over_se": 0.648,
+       "share_above_2se": 0.0
+      },
+      {
+       "distance_km": 5.0,
+       "n_shifts": 8,
+       "median_abs_change": 0.02009,
+       "change_over_spread": 0.054,
+       "change_over_se": 1.059,
+       "share_above_2se": 0.25
+      },
+      {
+       "distance_km": 10.0,
+       "n_shifts": 8,
+       "median_abs_change": 0.03553,
+       "change_over_spread": 0.0955,
+       "change_over_se": 1.872,
+       "share_above_2se": 0.375
+      }
+     ],
+     "tolerance_km": 10.0,
+     "tol_ratio": 0.25,
+     "tolerance_sweep": {
+      "0.1": 10.0,
+      "0.25": 10.0,
+      "0.5": 10.0
+     }
+    }
+   },
+   "targets_synthetic": false,
+   "roster": {
+    "box_km": 4.0,
+    "facility_type": "lng",
+    "region": "oceania",
+    "name": "Karratha and Burrup LNG, Australia"
+   }
+  },
+  "kolwezi_copper_cobalt_drc": {
+   "box_km": 5.5,
+   "context_km": 25.5,
+   "kind": "built_up",
+   "natural_change": {
+    "n_px": 6889,
+    "nrmse": 0.2356,
+    "ncc": 0.9798,
+    "index_change": {
+     "ndvi": 0.0083,
+     "bsi": 0.0017,
+     "hsfi": 0.0353
+    }
+   },
+   "by_distance": [
+    {
+     "distance_km": 1.0,
+     "n_directions": 8,
+     "n_inside": 8,
+     "median_nrmse": 1.319,
+     "median_ncc": 0.2102,
+     "median_box_overlap": 0.7888,
+     "median_retained": 0.7625,
+     "share_missing_facility": 0.0
+    },
+    {
+     "distance_km": 2.0,
+     "n_directions": 8,
+     "n_inside": 8,
+     "median_nrmse": 1.3737,
+     "median_ncc": 0.1085,
+     "median_box_overlap": 0.5941,
+     "median_retained": 0.5363,
+     "share_missing_facility": 0.375
+    },
+    {
+     "distance_km": 5.0,
+     "n_directions": 8,
+     "n_inside": 8,
+     "median_nrmse": 1.5033,
+     "median_ncc": 0.0046,
+     "median_box_overlap": 0.1092,
+     "median_retained": 0.1162,
+     "share_missing_facility": 1.0
+    },
+    {
+     "distance_km": 10.0,
+     "n_directions": 8,
+     "n_inside": 8,
+     "median_nrmse": 1.5673,
+     "median_ncc": 0.119,
+     "median_box_overlap": 0.0,
+     "median_retained": 0.0,
+     "share_missing_facility": 1.0
+    }
+   ],
+   "note": "Compared at the resolution of the context chip. A shift that leaves the picture is skipped.",
+   "meta": {
+    "backend": "ee",
+    "source": "single",
+    "synthetic": false,
+    "fetched_at": "2026-10-21T06:29:42.920049+00:00",
+    "date": "2026-06-23",
+    "cloud_frac": 0,
+    "n_scenes": 1,
+    "gsd_m": 66.41,
+    "box_km": 25.5,
+    "site_id": "kolwezi_copper_cobalt_drc",
+    "lat": -10.718127,
+    "lon": 25.381165,
+    "key": "kolwezi_copper_cobalt_drc-3b28f8_-10.71813_25.38116_25.50_ee_single_120_q0"
+   },
+   "synthetic": false,
+   "site_id": "kolwezi_copper_cobalt_drc",
+   "tolerance_sweep": {
+    "keeps_facility": {
+     "0.25": 2.0,
+     "0.5": 2.0,
+     "0.75": 1.0
+    },
+    "picture_correlation": {
+     "0.5": 0.0,
+     "0.8": 0.0,
+     "0.9": 0.0
+    }
+   },
+   "tolerance_km": {
+    "keeps_facility": 2.0,
+    "picture_correlation_0_8": 0.0
+   },
+   "targets": {
+    "no2": {
+     "mean": 27.914228783959913,
+     "sd": 37.016165254312384,
+     "n_days": 219,
+     "se": 2.501321,
+     "rows": [
+      {
+       "distance_km": 1.0,
+       "n_shifts": 8,
+       "median_abs_change": 0.71098,
+       "change_over_spread": 0.0192,
+       "change_over_se": 0.284,
+       "share_above_2se": 0.0
+      },
+      {
+       "distance_km": 2.0,
+       "n_shifts": 8,
+       "median_abs_change": 1.64934,
+       "change_over_spread": 0.0446,
+       "change_over_se": 0.659,
+       "share_above_2se": 0.0
+      },
+      {
+       "distance_km": 5.0,
+       "n_shifts": 8,
+       "median_abs_change": 6.85298,
+       "change_over_spread": 0.1851,
+       "change_over_se": 2.74,
+       "share_above_2se": 0.625
+      },
+      {
+       "distance_km": 10.0,
+       "n_shifts": 8,
+       "median_abs_change": 17.16753,
+       "change_over_spread": 0.4638,
+       "change_over_se": 6.863,
+       "share_above_2se": 1.0
+      }
+     ],
+     "tolerance_km": 5.0,
+     "tol_ratio": 0.25,
+     "tolerance_sweep": {
+      "0.1": 2.0,
+      "0.25": 5.0,
+      "0.5": 10.0
+     }
+    },
+    "co": {
+     "mean": 0.45782886845194964,
+     "sd": 13.039472777588431,
+     "n_days": 275,
+     "se": 0.78631,
+     "rows": [
+      {
+       "distance_km": 1.0,
+       "n_shifts": 8,
+       "median_abs_change": 0.0329,
+       "change_over_spread": 0.0025,
+       "change_over_se": 0.042,
+       "share_above_2se": 0.0
+      },
+      {
+       "distance_km": 2.0,
+       "n_shifts": 8,
+       "median_abs_change": 0.07391,
+       "change_over_spread": 0.0057,
+       "change_over_se": 0.094,
+       "share_above_2se": 0.0
+      },
+      {
+       "distance_km": 5.0,
+       "n_shifts": 8,
+       "median_abs_change": 0.28368,
+       "change_over_spread": 0.0218,
+       "change_over_se": 0.361,
+       "share_above_2se": 0.0
+      },
+      {
+       "distance_km": 10.0,
+       "n_shifts": 8,
+       "median_abs_change": 0.58351,
+       "change_over_spread": 0.0447,
+       "change_over_se": 0.742,
+       "share_above_2se": 0.0
+      }
+     ],
+     "tolerance_km": 10.0,
+     "tol_ratio": 0.25,
+     "tolerance_sweep": {
+      "0.1": 10.0,
+      "0.25": 10.0,
+      "0.5": 10.0
+     }
+    },
+    "ch4": {
+     "mean": 22.94605879558162,
+     "sd": 12.455025983830346,
+     "n_days": 47,
+     "se": 1.816752,
+     "rows": [
+      {
+       "distance_km": 1.0,
+       "n_shifts": 8,
+       "median_abs_change": 0.25519,
+       "change_over_spread": 0.0205,
+       "change_over_se": 0.14,
+       "share_above_2se": 0.0
+      },
+      {
+       "distance_km": 2.0,
+       "n_shifts": 8,
+       "median_abs_change": 0.54642,
+       "change_over_spread": 0.0439,
+       "change_over_se": 0.301,
+       "share_above_2se": 0.0
+      },
+      {
+       "distance_km": 5.0,
+       "n_shifts": 8,
+       "median_abs_change": 3.64745,
+       "change_over_spread": 0.2928,
+       "change_over_se": 2.008,
+       "share_above_2se": 0.625
+      },
+      {
+       "distance_km": 10.0,
+       "n_shifts": 8,
+       "median_abs_change": 10.45709,
+       "change_over_spread": 0.8396,
+       "change_over_se": 5.756,
+       "share_above_2se": 0.875
+      }
+     ],
+     "tolerance_km": 2.0,
+     "tol_ratio": 0.25,
+     "tolerance_sweep": {
+      "0.1": 2.0,
+      "0.25": 2.0,
+      "0.5": 5.0
+     }
+    },
+    "aai": {
+     "mean": 0.1292061098058334,
+     "sd": 0.7984383156543717,
+     "n_days": 366,
+     "se": 0.041735,
+     "rows": [
+      {
+       "distance_km": 1.0,
+       "n_shifts": 8,
+       "median_abs_change": 0.00117,
+       "change_over_spread": 0.0015,
+       "change_over_se": 0.028,
+       "share_above_2se": 0.0
+      },
+      {
+       "distance_km": 2.0,
+       "n_shifts": 8,
+       "median_abs_change": 0.00425,
+       "change_over_spread": 0.0053,
+       "change_over_se": 0.102,
+       "share_above_2se": 0.0
+      },
+      {
+       "distance_km": 5.0,
+       "n_shifts": 8,
+       "median_abs_change": 0.03845,
+       "change_over_spread": 0.0482,
+       "change_over_se": 0.921,
+       "share_above_2se": 0.0
+      },
+      {
+       "distance_km": 10.0,
+       "n_shifts": 8,
+       "median_abs_change": 0.09976,
+       "change_over_spread": 0.1249,
+       "change_over_se": 2.39,
+       "share_above_2se": 0.625
+      }
+     ],
+     "tolerance_km": 10.0,
+     "tol_ratio": 0.25,
+     "tolerance_sweep": {
+      "0.1": 5.0,
+      "0.25": 10.0,
+      "0.5": 10.0
+     }
+    }
+   },
+   "targets_synthetic": false,
+   "roster": {
+    "box_km": 5.5,
+    "facility_type": "mining",
+    "region": "africa",
+    "name": "Kolwezi copper and cobalt mines, DR Congo"
+   }
+  },
+  "la_plata_refinery_argentina": {
+   "box_km": 3.0,
+   "context_km": 23.0,
+   "kind": "built_up",
+   "natural_change": {
+    "n_px": 2500,
+    "nrmse": 0.4033,
+    "ncc": 0.9777,
+    "index_change": {
+     "ndvi": 0.0439,
+     "bsi": 0.0368,
+     "hsfi": 0.1012
+    }
+   },
+   "by_distance": [
+    {
+     "distance_km": 1.0,
+     "n_directions": 8,
+     "n_inside": 8,
+     "median_nrmse": 1.3972,
+     "median_ncc": 0.0335,
+     "median_box_overlap": 0.6255,
+     "median_retained": 0.6227,
+     "share_missing_facility": 0.25
+    },
+    {
+     "distance_km": 2.0,
+     "n_directions": 8,
+     "n_inside": 8,
+     "median_nrmse": 1.4146,
+     "median_ncc": 0.01,
+     "median_box_overlap": 0.3064,
+     "median_retained": 0.3405,
+     "share_missing_facility": 0.875
+    },
+    {
+     "distance_km": 5.0,
+     "n_directions": 8,
+     "n_inside": 8,
+     "median_nrmse": 1.4149,
+     "median_ncc": -0.0138,
+     "median_box_overlap": 0.0,
+     "median_retained": 0.0,
+     "share_missing_facility": 1.0
+    },
+    {
+     "distance_km": 10.0,
+     "n_directions": 8,
+     "n_inside": 8,
+     "median_nrmse": 1.3313,
+     "median_ncc": 0.0126,
+     "median_box_overlap": 0.0,
+     "median_retained": 0.0,
+     "share_missing_facility": 1.0
+    }
+   ],
+   "note": "Compared at the resolution of the context chip. A shift that leaves the picture is skipped.",
+   "meta": {
+    "backend": "ee",
+    "source": "single",
+    "synthetic": false,
+    "fetched_at": "2026-10-21T06:32:40.493635+00:00",
+    "date": "2026-08-30",
+    "cloud_frac": 0.00015655537390268137,
+    "n_scenes": 1,
+    "gsd_m": 59.9,
+    "box_km": 23.0,
+    "site_id": "la_plata_refinery_argentina",
+    "lat": -34.888954,
+    "lon": -57.91254,
+    "key": "la_plata_refinery_argentina-162ac9_-34.88895_-57.91254_23.00_ee_single_120_q0"
+   },
+   "synthetic": false,
+   "site_id": "la_plata_refinery_argentina",
+   "tolerance_sweep": {
+    "keeps_facility": {
+     "0.25": 2.0,
+     "0.5": 1.0,
+     "0.75": 0.0
+    },
+    "picture_correlation": {
+     "0.5": 0.0,
+     "0.8": 0.0,
+     "0.9": 0.0
+    }
+   },
+   "tolerance_km": {
+    "keeps_facility": 1.0,
+    "picture_correlation_0_8": 0.0
+   },
+   "targets": {
+    "no2": {
+     "mean": 14.992894881580522,
+     "sd": 41.155513554977446,
+     "n_days": 278,
+     "se": 2.468344,
+     "rows": [
+      {
+       "distance_km": 1.0,
+       "n_shifts": 8,
+       "median_abs_change": 0.95652,
+       "change_over_spread": 0.0232,
+       "change_over_se": 0.388,
+       "share_above_2se": 0.0
+      },
+      {
+       "distance_km": 2.0,
+       "n_shifts": 8,
+       "median_abs_change": 1.96763,
+       "change_over_spread": 0.0478,
+       "change_over_se": 0.797,
+       "share_above_2se": 0.0
+      },
+      {
+       "distance_km": 5.0,
+       "n_shifts": 8,
+       "median_abs_change": 3.69212,
+       "change_over_spread": 0.0897,
+       "change_over_se": 1.496,
+       "share_above_2se": 0.375
+      },
+      {
+       "distance_km": 10.0,
+       "n_shifts": 8,
+       "median_abs_change": 8.22859,
+       "change_over_spread": 0.1999,
+       "change_over_se": 3.334,
+       "share_above_2se": 0.75
+      }
+     ],
+     "tolerance_km": 10.0,
+     "tol_ratio": 0.25,
+     "tolerance_sweep": {
+      "0.1": 5.0,
+      "0.25": 10.0,
+      "0.5": 10.0
+     }
+    },
+    "co": {
+     "mean": 0.023808727633856108,
+     "sd": 3.113067521387948,
+     "n_days": 287,
+     "se": 0.183759,
+     "rows": [
+      {
+       "distance_km": 1.0,
+       "n_shifts": 8,
+       "median_abs_change": 0.0187,
+       "change_over_spread": 0.006,
+       "change_over_se": 0.102,
+       "share_above_2se": 0.0
+      },
+      {
+       "distance_km": 2.0,
+       "n_shifts": 8,
+       "median_abs_change": 0.03997,
+       "change_over_spread": 0.0128,
+       "change_over_se": 0.218,
+       "share_above_2se": 0.0
+      },
+      {
+       "distance_km": 5.0,
+       "n_shifts": 8,
+       "median_abs_change": 0.06673,
+       "change_over_spread": 0.0214,
+       "change_over_se": 0.363,
+       "share_above_2se": 0.0
+      },
+      {
+       "distance_km": 10.0,
+       "n_shifts": 8,
+       "median_abs_change": 0.09456,
+       "change_over_spread": 0.0304,
+       "change_over_se": 0.515,
+       "share_above_2se": 0.0
+      }
+     ],
+     "tolerance_km": 10.0,
+     "tol_ratio": 0.25,
+     "tolerance_sweep": {
+      "0.1": 10.0,
+      "0.25": 10.0,
+      "0.5": 10.0
+     }
+    },
+    "ch4": {
+     "mean": 10.715010471450796,
+     "sd": 28.889141650815414,
+     "n_days": 101,
+     "se": 2.874577,
+     "rows": [
+      {
+       "distance_km": 1.0,
+       "n_shifts": 8,
+       "median_abs_change": 0.8362,
+       "change_over_spread": 0.0289,
+       "change_over_se": 0.291,
+       "share_above_2se": 0.0
+      },
+      {
+       "distance_km": 2.0,
+       "n_shifts": 8,
+       "median_abs_change": 1.53532,
+       "change_over_spread": 0.0531,
+       "change_over_se": 0.534,
+       "share_above_2se": 0.0
+      },
+      {
+       "distance_km": 5.0,
+       "n_shifts": 8,
+       "median_abs_change": 3.62946,
+       "change_over_spread": 0.1256,
+       "change_over_se": 1.263,
+       "share_above_2se": 0.25
+      },
+      {
+       "distance_km": 10.0,
+       "n_shifts": 8,
+       "median_abs_change": 5.48796,
+       "change_over_spread": 0.19,
+       "change_over_se": 1.909,
+       "share_above_2se": 0.5
+      }
+     ],
+     "tolerance_km": 10.0,
+     "tol_ratio": 0.25,
+     "tolerance_sweep": {
+      "0.1": 2.0,
+      "0.25": 10.0,
+      "0.5": 10.0
+     }
+    },
+    "aai": {
+     "mean": 0.11120914116170533,
+     "sd": 0.6062400878102314,
+     "n_days": 448,
+     "se": 0.028642,
+     "rows": [
+      {
+       "distance_km": 1.0,
+       "n_shifts": 8,
+       "median_abs_change": 0.00953,
+       "change_over_spread": 0.0157,
+       "change_over_se": 0.333,
+       "share_above_2se": 0.0
+      },
+      {
+       "distance_km": 2.0,
+       "n_shifts": 8,
+       "median_abs_change": 0.01843,
+       "change_over_spread": 0.0304,
+       "change_over_se": 0.643,
+       "share_above_2se": 0.0
+      },
+      {
+       "distance_km": 5.0,
+       "n_shifts": 8,
+       "median_abs_change": 0.04838,
+       "change_over_spread": 0.0798,
+       "change_over_se": 1.689,
+       "share_above_2se": 0.25
+      },
+      {
+       "distance_km": 10.0,
+       "n_shifts": 8,
+       "median_abs_change": 0.0728,
+       "change_over_spread": 0.1201,
+       "change_over_se": 2.542,
+       "share_above_2se": 0.75
+      }
+     ],
+     "tolerance_km": 10.0,
+     "tol_ratio": 0.25,
+     "tolerance_sweep": {
+      "0.1": 5.0,
+      "0.25": 10.0,
+      "0.5": 10.0
+     }
+    }
+   },
+   "targets_synthetic": false,
+   "roster": {
+    "box_km": 3.0,
+    "facility_type": "refinery",
+    "region": "south_america",
+    "name": "La Plata refinery, Argentina"
+   }
+  },
+  "marsa_el_brega_lng": {
+   "box_km": 7.25,
+   "context_km": 27.25,
+   "kind": "built_up",
+   "natural_change": {
+    "n_px": 10404,
+    "nrmse": 0.173,
+    "ncc": 0.9803,
+    "index_change": {
+     "ndvi": 0.0244,
+     "bsi": 0.0045,
+     "hsfi": 0.5566
+    }
+   },
+   "by_distance": [
+    {
+     "distance_km": 1.0,
+     "n_directions": 8,
+     "n_inside": 8,
+     "median_nrmse": 0.8927,
+     "median_ncc": 0.5777,
+     "median_box_overlap": 0.8382,
+     "median_retained": 0.8272,
+     "share_missing_facility": 0.0
+    },
+    {
+     "distance_km": 2.0,
+     "n_directions": 8,
+     "n_inside": 8,
+     "median_nrmse": 1.0999,
+     "median_ncc": 0.4681,
+     "median_box_overlap": 0.686,
+     "median_retained": 0.7059,
+     "share_missing_facility": 0.0
+    },
+    {
+     "distance_km": 5.0,
+     "n_directions": 8,
+     "n_inside": 8,
+     "median_nrmse": 1.293,
+     "median_ncc": 0.1707,
+     "median_box_overlap": 0.2864,
+     "median_retained": 0.3051,
+     "share_missing_facility": 1.0
+    },
+    {
+     "distance_km": 10.0,
+     "n_directions": 8,
+     "n_inside": 8,
+     "median_nrmse": 1.4135,
+     "median_ncc": 0.0191,
+     "median_box_overlap": 0.0003,
+     "median_retained": 0.0,
+     "share_missing_facility": 1.0
+    }
+   ],
+   "note": "Compared at the resolution of the context chip. A shift that leaves the picture is skipped.",
+   "meta": {
+    "backend": "ee",
+    "source": "single",
+    "synthetic": false,
+    "fetched_at": "2026-10-21T06:36:09.288670+00:00",
+    "date": "2026-10-09",
+    "cloud_frac": 0.030711471392450694,
+    "n_scenes": 1,
+    "gsd_m": 70.96,
+    "box_km": 27.25,
+    "site_id": "marsa_el_brega_lng",
+    "lat": 30.397455,
+    "lon": 19.602013,
+    "key": "marsa_el_brega_lng-7f1630_30.39746_19.60201_27.25_ee_single_120_q0"
+   },
+   "synthetic": false,
+   "site_id": "marsa_el_brega_lng",
+   "tolerance_sweep": {
+    "keeps_facility": {
+     "0.25": 5.0,
+     "0.5": 2.0,
+     "0.75": 1.0
+    },
+    "picture_correlation": {
+     "0.5": 1.0,
+     "0.8": 0.0,
+     "0.9": 0.0
+    }
+   },
+   "tolerance_km": {
+    "keeps_facility": 2.0,
+    "picture_correlation_0_8": 0.0
+   },
+   "targets": {
+    "no2": {
+     "mean": 9.087814095776366,
+     "sd": 8.087879813027598,
+     "n_days": 356,
+     "se": 0.428657,
+     "rows": [
+      {
+       "distance_km": 1.0,
+       "n_shifts": 8,
+       "median_abs_change": 0.11161,
+       "change_over_spread": 0.0138,
+       "change_over_se": 0.26,
+       "share_above_2se": 0.0
+      },
+      {
+       "distance_km": 2.0,
+       "n_shifts": 8,
+       "median_abs_change": 0.31584,
+       "change_over_spread": 0.0391,
+       "change_over_se": 0.737,
+       "share_above_2se": 0.0
+      },
+      {
+       "distance_km": 5.0,
+       "n_shifts": 8,
+       "median_abs_change": 1.91559,
+       "change_over_spread": 0.2368,
+       "change_over_se": 4.469,
+       "share_above_2se": 0.75
+      },
+      {
+       "distance_km": 10.0,
+       "n_shifts": 8,
+       "median_abs_change": 5.1006,
+       "change_over_spread": 0.6306,
+       "change_over_se": 11.899,
+       "share_above_2se": 1.0
+      }
+     ],
+     "tolerance_km": 5.0,
+     "tol_ratio": 0.25,
+     "tolerance_sweep": {
+      "0.1": 2.0,
+      "0.25": 5.0,
+      "0.5": 5.0
+     }
+    },
+    "co": {
+     "mean": 0.6652143029034947,
+     "sd": 3.2043285757419633,
+     "n_days": 368,
+     "se": 0.167037,
+     "rows": [
+      {
+       "distance_km": 1.0,
+       "n_shifts": 8,
+       "median_abs_change": 0.00445,
+       "change_over_spread": 0.0014,
+       "change_over_se": 0.027,
+       "share_above_2se": 0.0
+      },
+      {
+       "distance_km": 2.0,
+       "n_shifts": 8,
+       "median_abs_change": 0.01195,
+       "change_over_spread": 0.0037,
+       "change_over_se": 0.072,
+       "share_above_2se": 0.0
+      },
+      {
+       "distance_km": 5.0,
+       "n_shifts": 8,
+       "median_abs_change": 0.04898,
+       "change_over_spread": 0.0153,
+       "change_over_se": 0.293,
+       "share_above_2se": 0.25
+      },
+      {
+       "distance_km": 10.0,
+       "n_shifts": 8,
+       "median_abs_change": 0.10233,
+       "change_over_spread": 0.0319,
+       "change_over_se": 0.613,
+       "share_above_2se": 0.25
+      }
+     ],
+     "tolerance_km": 10.0,
+     "tol_ratio": 0.25,
+     "tolerance_sweep": {
+      "0.1": 10.0,
+      "0.25": 10.0,
+      "0.5": 10.0
+     }
+    },
+    "ch4": {
+     "mean": 4.77820935597947,
+     "sd": 22.507178444784532,
+     "n_days": 200,
+     "se": 1.591498,
+     "rows": [
+      {
+       "distance_km": 1.0,
+       "n_shifts": 8,
+       "median_abs_change": 0.38615,
+       "change_over_spread": 0.0172,
+       "change_over_se": 0.243,
+       "share_above_2se": 0.0
+      },
+      {
+       "distance_km": 2.0,
+       "n_shifts": 8,
+       "median_abs_change": 0.74241,
+       "change_over_spread": 0.033,
+       "change_over_se": 0.466,
+       "share_above_2se": 0.0
+      },
+      {
+       "distance_km": 5.0,
+       "n_shifts": 8,
+       "median_abs_change": 1.93159,
+       "change_over_spread": 0.0858,
+       "change_over_se": 1.214,
+       "share_above_2se": 0.25
+      },
+      {
+       "distance_km": 10.0,
+       "n_shifts": 8,
+       "median_abs_change": 3.37705,
+       "change_over_spread": 0.15,
+       "change_over_se": 2.122,
+       "share_above_2se": 0.5
+      }
+     ],
+     "tolerance_km": 10.0,
+     "tol_ratio": 0.25,
+     "tolerance_sweep": {
+      "0.1": 5.0,
+      "0.25": 10.0,
+      "0.5": 10.0
+     }
+    },
+    "aai": {
+     "mean": 0.1215084994570843,
+     "sd": 0.6482536844532273,
+     "n_days": 421,
+     "se": 0.031594,
+     "rows": [
+      {
+       "distance_km": 1.0,
+       "n_shifts": 8,
+       "median_abs_change": 0.02822,
+       "change_over_spread": 0.0435,
+       "change_over_se": 0.893,
+       "share_above_2se": 0.0
+      },
+      {
+       "distance_km": 2.0,
+       "n_shifts": 8,
+       "median_abs_change": 0.05255,
+       "change_over_spread": 0.0811,
+       "change_over_se": 1.663,
+       "share_above_2se": 0.375
+      },
+      {
+       "distance_km": 5.0,
+       "n_shifts": 8,
+       "median_abs_change": 0.10343,
+       "change_over_spread": 0.1595,
+       "change_over_se": 3.274,
+       "share_above_2se": 0.875
+      },
+      {
+       "distance_km": 10.0,
+       "n_shifts": 8,
+       "median_abs_change": 0.16872,
+       "change_over_spread": 0.2603,
+       "change_over_se": 5.34,
+       "share_above_2se": 0.875
+      }
+     ],
+     "tolerance_km": 5.0,
+     "tol_ratio": 0.25,
+     "tolerance_sweep": {
+      "0.1": 2.0,
+      "0.25": 5.0,
+      "0.5": 10.0
+     }
+    }
+   },
+   "targets_synthetic": false,
+   "roster": {
+    "box_km": 7.25,
+    "facility_type": "lng",
+    "region": "africa",
+    "name": "Marsa el Brega LNG, Libya"
+   }
+  },
+  "mohammedia_refinery_morocco": {
+   "box_km": 3.0,
+   "context_km": 23.0,
+   "kind": "built_up",
+   "natural_change": {
+    "n_px": 2500,
+    "nrmse": 0.2497,
+    "ncc": 0.9667,
+    "index_change": {
+     "ndvi": 0.0045,
+     "bsi": 0.0602,
+     "hsfi": 0.2609
+    }
+   },
+   "by_distance": [
+    {
+     "distance_km": 1.0,
+     "n_directions": 8,
+     "n_inside": 8,
+     "median_nrmse": 1.2811,
+     "median_ncc": 0.1563,
+     "median_box_overlap": 0.6255,
+     "median_retained": 0.5378,
+     "share_missing_facility": 0.375
+    },
+    {
+     "distance_km": 2.0,
+     "n_directions": 8,
+     "n_inside": 8,
+     "median_nrmse": 1.3492,
+     "median_ncc": 0.1198,
+     "median_box_overlap": 0.3064,
+     "median_retained": 0.311,
+     "share_missing_facility": 0.75
+    },
+    {
+     "distance_km": 5.0,
+     "n_directions": 8,
+     "n_inside": 8,
+     "median_nrmse": 1.498,
+     "median_ncc": 0.0838,
+     "median_box_overlap": 0.0,
+     "median_retained": 0.0,
+     "share_missing_facility": 1.0
+    },
+    {
+     "distance_km": 10.0,
+     "n_directions": 8,
+     "n_inside": 8,
+     "median_nrmse": 1.6055,
+     "median_ncc": 0.034,
+     "median_box_overlap": 0.0,
+     "median_retained": 0.0,
+     "share_missing_facility": 1.0
+    }
+   ],
+   "note": "Compared at the resolution of the context chip. A shift that leaves the picture is skipped.",
+   "meta": {
+    "backend": "ee",
+    "source": "single",
+    "synthetic": false,
+    "fetched_at": "2026-10-21T06:38:53.697539+00:00",
+    "date": "2026-09-12",
+    "cloud_frac": 8.846066278411114e-05,
+    "n_scenes": 1,
+    "gsd_m": 59.9,
+    "box_km": 23.0,
+    "site_id": "mohammedia_refinery_morocco",
+    "lat": 33.683704,
+    "lon": -7.424698,
+    "key": "mohammedia_refinery_morocco-085072_33.68370_-7.42470_23.00_ee_single_120_q0"
+   },
+   "synthetic": false,
+   "site_id": "mohammedia_refinery_morocco",
+   "tolerance_sweep": {
+    "keeps_facility": {
+     "0.25": 2.0,
+     "0.5": 1.0,
+     "0.75": 0.0
+    },
+    "picture_correlation": {
+     "0.5": 0.0,
+     "0.8": 0.0,
+     "0.9": 0.0
+    }
+   },
+   "tolerance_km": {
+    "keeps_facility": 1.0,
+    "picture_correlation_0_8": 0.0
+   },
+   "targets": {
+    "no2": {
+     "mean": 21.129571059966175,
+     "sd": 42.213345402965885,
+     "n_days": 321,
+     "se": 2.356119,
+     "rows": [
+      {
+       "distance_km": 1.0,
+       "n_shifts": 8,
+       "median_abs_change": 1.52108,
+       "change_over_spread": 0.036,
+       "change_over_se": 0.646,
+       "share_above_2se": 0.0
+      },
+      {
+       "distance_km": 2.0,
+       "n_shifts": 8,
+       "median_abs_change": 2.8652,
+       "change_over_spread": 0.0679,
+       "change_over_se": 1.216,
+       "share_above_2se": 0.0
+      },
+      {
+       "distance_km": 5.0,
+       "n_shifts": 8,
+       "median_abs_change": 6.93671,
+       "change_over_spread": 0.1643,
+       "change_over_se": 2.944,
+       "share_above_2se": 0.625
+      },
+      {
+       "distance_km": 10.0,
+       "n_shifts": 8,
+       "median_abs_change": 13.09607,
+       "change_over_spread": 0.3102,
+       "change_over_se": 5.558,
+       "share_above_2se": 0.875
+      }
+     ],
+     "tolerance_km": 5.0,
+     "tol_ratio": 0.25,
+     "tolerance_sweep": {
+      "0.1": 2.0,
+      "0.25": 5.0,
+      "0.5": 10.0
+     }
+    },
+    "co": {
+     "mean": 1.2276776261652758,
+     "sd": 2.7278128048354833,
+     "n_days": 362,
+     "se": 0.143371,
+     "rows": [
+      {
+       "distance_km": 1.0,
+       "n_shifts": 8,
+       "median_abs_change": 0.02568,
+       "change_over_spread": 0.0094,
+       "change_over_se": 0.179,
+       "share_above_2se": 0.0
+      },
+      {
+       "distance_km": 2.0,
+       "n_shifts": 8,
+       "median_abs_change": 0.06439,
+       "change_over_spread": 0.0236,
+       "change_over_se": 0.449,
+       "share_above_2se": 0.0
+      },
+      {
+       "distance_km": 5.0,
+       "n_shifts": 8,
+       "median_abs_change": 0.22043,
+       "change_over_spread": 0.0808,
+       "change_over_se": 1.537,
+       "share_above_2se": 0.25
+      },
+      {
+       "distance_km": 10.0,
+       "n_shifts": 8,
+       "median_abs_change": 0.49495,
+       "change_over_spread": 0.1814,
+       "change_over_se": 3.452,
+       "share_above_2se": 0.75
+      }
+     ],
+     "tolerance_km": 10.0,
+     "tol_ratio": 0.25,
+     "tolerance_sweep": {
+      "0.1": 5.0,
+      "0.25": 10.0,
+      "0.5": 10.0
+     }
+    },
+    "ch4": {
+     "mean": 16.638210794862516,
+     "sd": 26.45562795129229,
+     "n_days": 151,
+     "se": 2.152928,
+     "rows": [
+      {
+       "distance_km": 1.0,
+       "n_shifts": 8,
+       "median_abs_change": 0.23215,
+       "change_over_spread": 0.0088,
+       "change_over_se": 0.108,
+       "share_above_2se": 0.0
+      },
+      {
+       "distance_km": 2.0,
+       "n_shifts": 8,
+       "median_abs_change": 0.6755,
+       "change_over_spread": 0.0255,
+       "change_over_se": 0.314,
+       "share_above_2se": 0.0
+      },
+      {
+       "distance_km": 5.0,
+       "n_shifts": 8,
+       "median_abs_change": 3.25741,
+       "change_over_spread": 0.1231,
+       "change_over_se": 1.513,
+       "share_above_2se": 0.25
+      },
+      {
+       "distance_km": 10.0,
+       "n_shifts": 8,
+       "median_abs_change": 7.87943,
+       "change_over_spread": 0.2978,
+       "change_over_se": 3.66,
+       "share_above_2se": 0.625
+      }
+     ],
+     "tolerance_km": 5.0,
+     "tol_ratio": 0.25,
+     "tolerance_sweep": {
+      "0.1": 2.0,
+      "0.25": 5.0,
+      "0.5": 10.0
+     }
+    },
+    "aai": {
+     "mean": 0.0888926898209107,
+     "sd": 0.7345777400401373,
+     "n_days": 433,
+     "se": 0.035302,
+     "rows": [
+      {
+       "distance_km": 1.0,
+       "n_shifts": 8,
+       "median_abs_change": 0.01704,
+       "change_over_spread": 0.0232,
+       "change_over_se": 0.483,
+       "share_above_2se": 0.0
+      },
+      {
+       "distance_km": 2.0,
+       "n_shifts": 8,
+       "median_abs_change": 0.03293,
+       "change_over_spread": 0.0448,
+       "change_over_se": 0.933,
+       "share_above_2se": 0.0
+      },
+      {
+       "distance_km": 5.0,
+       "n_shifts": 8,
+       "median_abs_change": 0.05555,
+       "change_over_spread": 0.0756,
+       "change_over_se": 1.574,
+       "share_above_2se": 0.375
+      },
+      {
+       "distance_km": 10.0,
+       "n_shifts": 8,
+       "median_abs_change": 0.09116,
+       "change_over_spread": 0.1241,
+       "change_over_se": 2.582,
+       "share_above_2se": 0.625
+      }
+     ],
+     "tolerance_km": 10.0,
+     "tol_ratio": 0.25,
+     "tolerance_sweep": {
+      "0.1": 5.0,
+      "0.25": 10.0,
+      "0.5": 10.0
+     }
+    }
+   },
+   "targets_synthetic": false,
+   "roster": {
+    "box_km": 3.0,
+    "facility_type": "refinery",
+    "region": "africa",
+    "name": "Mohammedia (Samir) refinery, Morocco"
+   }
+  },
+  "moomba_gas_plant": {
+   "box_km": 2.0,
+   "context_km": 22.0,
+   "kind": "built_up",
+   "natural_change": {
+    "n_px": 1225,
+    "nrmse": 0.7978,
+    "ncc": 0.9648,
+    "index_change": {
+     "ndvi": 0.0159,
+     "bsi": 0.0056,
+     "hsfi": 0.1525
+    }
+   },
+   "by_distance": [
+    {
+     "distance_km": 1.0,
+     "n_directions": 8,
+     "n_inside": 8,
+     "median_nrmse": 1.3517,
+     "median_ncc": 0.0076,
+     "median_box_overlap": 0.4589,
+     "median_retained": 0.2941,
+     "share_missing_facility": 0.625
+    },
+    {
+     "distance_km": 2.0,
+     "n_directions": 8,
+     "n_inside": 8,
+     "median_nrmse": 1.3144,
+     "median_ncc": 0.0379,
+     "median_box_overlap": 0.0429,
+     "median_retained": 0.0,
+     "share_missing_facility": 1.0
+    },
+    {
+     "distance_km": 5.0,
+     "n_directions": 8,
+     "n_inside": 8,
+     "median_nrmse": 1.2001,
+     "median_ncc": -0.0324,
+     "median_box_overlap": 0.0,
+     "median_retained": 0.0,
+     "share_missing_facility": 1.0
+    },
+    {
+     "distance_km": 10.0,
+     "n_directions": 8,
+     "n_inside": 8,
+     "median_nrmse": 1.2148,
+     "median_ncc": -0.0272,
+     "median_box_overlap": 0.0,
+     "median_retained": 0.0,
+     "share_missing_facility": 1.0
+    }
+   ],
+   "note": "Compared at the resolution of the context chip. A shift that leaves the picture is skipped.",
+   "meta": {
+    "backend": "ee",
+    "source": "single",
+    "synthetic": false,
+    "fetched_at": "2026-10-21T06:41:45.185673+00:00",
+    "date": "2026-07-02",
+    "cloud_frac": 0,
+    "n_scenes": 1,
+    "gsd_m": 57.29,
+    "box_km": 22.0,
+    "site_id": "moomba_gas_plant",
+    "lat": -28.106813,
+    "lon": 140.200653,
+    "key": "moomba_gas_plant-4dcd89_-28.10681_140.20065_22.00_ee_single_120_q0"
+   },
+   "synthetic": false,
+   "site_id": "moomba_gas_plant",
+   "tolerance_sweep": {
+    "keeps_facility": {
+     "0.25": 1.0,
+     "0.5": 0.0,
+     "0.75": 0.0
+    },
+    "picture_correlation": {
+     "0.5": 0.0,
+     "0.8": 0.0,
+     "0.9": 0.0
+    }
+   },
+   "tolerance_km": {
+    "keeps_facility": 0.0,
+    "picture_correlation_0_8": 0.0
+   },
+   "targets": {
+    "no2": {
+     "mean": 3.764682124673916,
+     "sd": 6.491626791460115,
+     "n_days": 336,
+     "se": 0.354147,
+     "rows": [
+      {
+       "distance_km": 1.0,
+       "n_shifts": 8,
+       "median_abs_change": 0.05156,
+       "change_over_spread": 0.0079,
+       "change_over_se": 0.146,
+       "share_above_2se": 0.0
+      },
+      {
+       "distance_km": 2.0,
+       "n_shifts": 8,
+       "median_abs_change": 0.17601,
+       "change_over_spread": 0.0271,
+       "change_over_se": 0.497,
+       "share_above_2se": 0.0
+      },
+      {
+       "distance_km": 5.0,
+       "n_shifts": 8,
+       "median_abs_change": 0.93883,
+       "change_over_spread": 0.1446,
+       "change_over_se": 2.651,
+       "share_above_2se": 1.0
+      },
+      {
+       "distance_km": 10.0,
+       "n_shifts": 8,
+       "median_abs_change": 1.96691,
+       "change_over_spread": 0.303,
+       "change_over_se": 5.554,
+       "share_above_2se": 1.0
+      }
+     ],
+     "tolerance_km": 5.0,
+     "tol_ratio": 0.25,
+     "tolerance_sweep": {
+      "0.1": 2.0,
+      "0.25": 5.0,
+      "0.5": 10.0
+     }
+    },
+    "co": {
+     "mean": 0.20758846031643588,
+     "sd": 3.7302998881606793,
+     "n_days": 336,
+     "se": 0.203505,
+     "rows": [
+      {
+       "distance_km": 1.0,
+       "n_shifts": 8,
+       "median_abs_change": 0.01828,
+       "change_over_spread": 0.0049,
+       "change_over_se": 0.09,
+       "share_above_2se": 0.0
+      },
+      {
+       "distance_km": 2.0,
+       "n_shifts": 8,
+       "median_abs_change": 0.03195,
+       "change_over_spread": 0.0086,
+       "change_over_se": 0.157,
+       "share_above_2se": 0.0
+      },
+      {
+       "distance_km": 5.0,
+       "n_shifts": 8,
+       "median_abs_change": 0.0637,
+       "change_over_spread": 0.0171,
+       "change_over_se": 0.313,
+       "share_above_2se": 0.0
+      },
+      {
+       "distance_km": 10.0,
+       "n_shifts": 8,
+       "median_abs_change": 0.12871,
+       "change_over_spread": 0.0345,
+       "change_over_se": 0.632,
+       "share_above_2se": 0.0
+      }
+     ],
+     "tolerance_km": 10.0,
+     "tol_ratio": 0.25,
+     "tolerance_sweep": {
+      "0.1": 10.0,
+      "0.25": 10.0,
+      "0.5": 10.0
+     }
+    },
+    "ch4": {
+     "mean": 0.0560223360891996,
+     "sd": 13.32724601193692,
+     "n_days": 95,
+     "se": 1.367347,
+     "rows": [
+      {
+       "distance_km": 1.0,
+       "n_shifts": 8,
+       "median_abs_change": 0.12525,
+       "change_over_spread": 0.0094,
+       "change_over_se": 0.092,
+       "share_above_2se": 0.0
+      },
+      {
+       "distance_km": 2.0,
+       "n_shifts": 8,
+       "median_abs_change": 0.21232,
+       "change_over_spread": 0.0159,
+       "change_over_se": 0.155,
+       "share_above_2se": 0.0
+      },
+      {
+       "distance_km": 5.0,
+       "n_shifts": 8,
+       "median_abs_change": 0.54631,
+       "change_over_spread": 0.041,
+       "change_over_se": 0.4,
+       "share_above_2se": 0.0
+      },
+      {
+       "distance_km": 10.0,
+       "n_shifts": 8,
+       "median_abs_change": 1.03242,
+       "change_over_spread": 0.0775,
+       "change_over_se": 0.755,
+       "share_above_2se": 0.125
+      }
+     ],
+     "tolerance_km": 10.0,
+     "tol_ratio": 0.25,
+     "tolerance_sweep": {
+      "0.1": 10.0,
+      "0.25": 10.0,
+      "0.5": 10.0
+     }
+    },
+    "aai": {
+     "mean": 0.34493086668369477,
+     "sd": 0.7447831046950912,
+     "n_days": 406,
+     "se": 0.036963,
+     "rows": [
+      {
+       "distance_km": 1.0,
+       "n_shifts": 8,
+       "median_abs_change": 0.00665,
+       "change_over_spread": 0.0089,
+       "change_over_se": 0.18,
+       "share_above_2se": 0.0
+      },
+      {
+       "distance_km": 2.0,
+       "n_shifts": 8,
+       "median_abs_change": 0.01534,
+       "change_over_spread": 0.0206,
+       "change_over_se": 0.415,
+       "share_above_2se": 0.0
+      },
+      {
+       "distance_km": 5.0,
+       "n_shifts": 8,
+       "median_abs_change": 0.05384,
+       "change_over_spread": 0.0723,
+       "change_over_se": 1.457,
+       "share_above_2se": 0.125
+      },
+      {
+       "distance_km": 10.0,
+       "n_shifts": 8,
+       "median_abs_change": 0.12594,
+       "change_over_spread": 0.1691,
+       "change_over_se": 3.407,
+       "share_above_2se": 1.0
+      }
+     ],
+     "tolerance_km": 10.0,
+     "tol_ratio": 0.25,
+     "tolerance_sweep": {
+      "0.1": 5.0,
+      "0.25": 10.0,
+      "0.5": 10.0
+     }
+    }
+   },
+   "targets_synthetic": false,
+   "roster": {
+    "box_km": 2.0,
+    "facility_type": "gas_plant",
+    "region": "oceania",
+    "name": "Moomba gas plant, South Australia"
+   }
+  },
+  "olympic_dam_mine": {
+   "box_km": 5.0,
+   "context_km": 25.0,
+   "kind": "built_up",
+   "natural_change": null,
+   "by_distance": [
+    {
+     "distance_km": 1.0,
+     "n_directions": 8,
+     "n_inside": 0,
+     "median_nrmse": null,
+     "median_ncc": null,
+     "median_box_overlap": null,
+     "median_retained": null,
+     "share_missing_facility": null
+    },
+    {
+     "distance_km": 2.0,
+     "n_directions": 8,
+     "n_inside": 0,
+     "median_nrmse": null,
+     "median_ncc": null,
+     "median_box_overlap": null,
+     "median_retained": null,
+     "share_missing_facility": null
+    },
+    {
+     "distance_km": 5.0,
+     "n_directions": 8,
+     "n_inside": 0,
+     "median_nrmse": null,
+     "median_ncc": null,
+     "median_box_overlap": null,
+     "median_retained": null,
+     "share_missing_facility": null
+    },
+    {
+     "distance_km": 10.0,
+     "n_directions": 8,
+     "n_inside": 0,
+     "median_nrmse": null,
+     "median_ncc": null,
+     "median_box_overlap": null,
+     "median_retained": null,
+     "share_missing_facility": null
+    }
+   ],
+   "note": "Compared at the resolution of the context chip. A shift that leaves the picture is skipped.",
+   "meta": {
+    "backend": "ee",
+    "source": "single",
+    "synthetic": false,
+    "fetched_at": "2026-10-21T06:44:55.322459+00:00",
+    "date": "2026-06-27",
+    "cloud_frac": 0,
+    "n_scenes": 1,
+    "gsd_m": 65.1,
+    "box_km": 25.0,
+    "site_id": "olympic_dam_mine",
+    "lat": -30.444532,
+    "lon": 136.879435,
+    "key": "olympic_dam_mine-7535b7_-30.44453_136.87944_25.00_ee_single_120_q0"
+   },
+   "synthetic": false,
+   "site_id": "olympic_dam_mine",
+   "tolerance_sweep": {
+    "keeps_facility": {
+     "0.25": 0.0,
+     "0.5": 0.0,
+     "0.75": 0.0
+    },
+    "picture_correlation": {
+     "0.5": 0.0,
+     "0.8": 0.0,
+     "0.9": 0.0
+    }
+   },
+   "tolerance_km": {
+    "keeps_facility": 0.0,
+    "picture_correlation_0_8": 0.0
+   },
+   "targets": {
+    "no2": {
+     "mean": 2.2725820120583866,
+     "sd": 6.445349392882261,
+     "n_days": 314,
+     "se": 0.363732,
+     "rows": [
+      {
+       "distance_km": 1.0,
+       "n_shifts": 8,
+       "median_abs_change": 0.20571,
+       "change_over_spread": 0.0319,
+       "change_over_se": 0.566,
+       "share_above_2se": 0.0
+      },
+      {
+       "distance_km": 2.0,
+       "n_shifts": 8,
+       "median_abs_change": 0.37971,
+       "change_over_spread": 0.0589,
+       "change_over_se": 1.044,
+       "share_above_2se": 0.0
+      },
+      {
+       "distance_km": 5.0,
+       "n_shifts": 8,
+       "median_abs_change": 0.691,
+       "change_over_spread": 0.1072,
+       "change_over_se": 1.9,
+       "share_above_2se": 0.5
+      },
+      {
+       "distance_km": 10.0,
+       "n_shifts": 8,
+       "median_abs_change": 1.59117,
+       "change_over_spread": 0.2469,
+       "change_over_se": 4.375,
+       "share_above_2se": 0.75
+      }
+     ],
+     "tolerance_km": 10.0,
+     "tol_ratio": 0.25,
+     "tolerance_sweep": {
+      "0.1": 2.0,
+      "0.25": 10.0,
+      "0.5": 10.0
+     }
+    },
+    "co": {
+     "mean": -0.06776559156934647,
+     "sd": 3.7449383460995156,
+     "n_days": 330,
+     "se": 0.206152,
+     "rows": [
+      {
+       "distance_km": 1.0,
+       "n_shifts": 8,
+       "median_abs_change": 0.0131,
+       "change_over_spread": 0.0035,
+       "change_over_se": 0.064,
+       "share_above_2se": 0.0
+      },
+      {
+       "distance_km": 2.0,
+       "n_shifts": 8,
+       "median_abs_change": 0.02205,
+       "change_over_spread": 0.0059,
+       "change_over_se": 0.107,
+       "share_above_2se": 0.0
+      },
+      {
+       "distance_km": 5.0,
+       "n_shifts": 8,
+       "median_abs_change": 0.03232,
+       "change_over_spread": 0.0086,
+       "change_over_se": 0.157,
+       "share_above_2se": 0.0
+      },
+      {
+       "distance_km": 10.0,
+       "n_shifts": 8,
+       "median_abs_change": 0.05364,
+       "change_over_spread": 0.0143,
+       "change_over_se": 0.26,
+       "share_above_2se": 0.0
+      }
+     ],
+     "tolerance_km": 10.0,
+     "tol_ratio": 0.25,
+     "tolerance_sweep": {
+      "0.1": 10.0,
+      "0.25": 10.0,
+      "0.5": 10.0
+     }
+    },
+    "ch4": {
+     "mean": -0.5760608562034122,
+     "sd": 15.67281257388319,
+     "n_days": 152,
+     "se": 1.271233,
+     "rows": [
+      {
+       "distance_km": 1.0,
+       "n_shifts": 8,
+       "median_abs_change": 0.12167,
+       "change_over_spread": 0.0078,
+       "change_over_se": 0.096,
+       "share_above_2se": 0.0
+      },
+      {
+       "distance_km": 2.0,
+       "n_shifts": 8,
+       "median_abs_change": 0.21169,
+       "change_over_spread": 0.0135,
+       "change_over_se": 0.167,
+       "share_above_2se": 0.0
+      },
+      {
+       "distance_km": 5.0,
+       "n_shifts": 8,
+       "median_abs_change": 0.36573,
+       "change_over_spread": 0.0233,
+       "change_over_se": 0.288,
+       "share_above_2se": 0.0
+      },
+      {
+       "distance_km": 10.0,
+       "n_shifts": 8,
+       "median_abs_change": 0.44748,
+       "change_over_spread": 0.0286,
+       "change_over_se": 0.352,
+       "share_above_2se": 0.0
+      }
+     ],
+     "tolerance_km": 10.0,
+     "tol_ratio": 0.25,
+     "tolerance_sweep": {
+      "0.1": 10.0,
+      "0.25": 10.0,
+      "0.5": 10.0
+     }
+    },
+    "aai": {
+     "mean": 0.0648940130956792,
+     "sd": 0.5539706153935094,
+     "n_days": 428,
+     "se": 0.026777,
+     "rows": [
+      {
+       "distance_km": 1.0,
+       "n_shifts": 8,
+       "median_abs_change": 0.00814,
+       "change_over_spread": 0.0147,
+       "change_over_se": 0.304,
+       "share_above_2se": 0.0
+      },
+      {
+       "distance_km": 2.0,
+       "n_shifts": 8,
+       "median_abs_change": 0.0134,
+       "change_over_spread": 0.0242,
+       "change_over_se": 0.501,
+       "share_above_2se": 0.0
+      },
+      {
+       "distance_km": 5.0,
+       "n_shifts": 8,
+       "median_abs_change": 0.03694,
+       "change_over_spread": 0.0667,
+       "change_over_se": 1.38,
+       "share_above_2se": 0.375
+      },
+      {
+       "distance_km": 10.0,
+       "n_shifts": 8,
+       "median_abs_change": 0.07816,
+       "change_over_spread": 0.1411,
+       "change_over_se": 2.919,
+       "share_above_2se": 0.625
+      }
+     ],
+     "tolerance_km": 10.0,
+     "tol_ratio": 0.25,
+     "tolerance_sweep": {
+      "0.1": 5.0,
+      "0.25": 10.0,
+      "0.5": 10.0
+     }
+    }
+   },
+   "targets_synthetic": false,
+   "roster": {
+    "box_km": 5.0,
+    "facility_type": "copper_smelter",
+    "region": "oceania",
+    "name": "Olympic Dam mine and smelter, Australia"
+   }
+  },
+  "powder_river_basin_coal": {
+   "box_km": 6.5,
+   "context_km": 26.5,
+   "kind": "built_up",
+   "natural_change": null,
+   "by_distance": [
+    {
+     "distance_km": 1.0,
+     "n_directions": 8,
+     "n_inside": 0,
+     "median_nrmse": null,
+     "median_ncc": null,
+     "median_box_overlap": null,
+     "median_retained": null,
+     "share_missing_facility": null
+    },
+    {
+     "distance_km": 2.0,
+     "n_directions": 8,
+     "n_inside": 0,
+     "median_nrmse": null,
+     "median_ncc": null,
+     "median_box_overlap": null,
+     "median_retained": null,
+     "share_missing_facility": null
+    },
+    {
+     "distance_km": 5.0,
+     "n_directions": 8,
+     "n_inside": 0,
+     "median_nrmse": null,
+     "median_ncc": null,
+     "median_box_overlap": null,
+     "median_retained": null,
+     "share_missing_facility": null
+    },
+    {
+     "distance_km": 10.0,
+     "n_directions": 8,
+     "n_inside": 0,
+     "median_nrmse": null,
+     "median_ncc": null,
+     "median_box_overlap": null,
+     "median_retained": null,
+     "share_missing_facility": null
+    }
+   ],
+   "note": "Compared at the resolution of the context chip. A shift that leaves the picture is skipped.",
+   "meta": {
+    "backend": "ee",
+    "source": "single",
+    "synthetic": false,
+    "fetched_at": "2026-10-21T06:48:20.215834+00:00",
+    "date": "2026-07-02",
+    "cloud_frac": 0,
+    "n_scenes": 1,
+    "gsd_m": 69.01,
+    "box_km": 26.5,
+    "site_id": "powder_river_basin_coal",
+    "lat": 43.7,
+    "lon": -105.3,
+    "key": "powder_river_basin_coal-b59fa9_43.70000_-105.30000_26.50_ee_single_120_q0"
+   },
+   "synthetic": false,
+   "site_id": "powder_river_basin_coal",
+   "tolerance_sweep": {
+    "keeps_facility": {
+     "0.25": 0.0,
+     "0.5": 0.0,
+     "0.75": 0.0
+    },
+    "picture_correlation": {
+     "0.5": 0.0,
+     "0.8": 0.0,
+     "0.9": 0.0
+    }
+   },
+   "tolerance_km": {
+    "keeps_facility": 0.0,
+    "picture_correlation_0_8": 0.0
+   },
+   "targets": {
+    "no2": {
+     "mean": 10.221149026979928,
+     "sd": 17.348702145779413,
+     "n_days": 327,
+     "se": 0.959385,
+     "rows": [
+      {
+       "distance_km": 1.0,
+       "n_shifts": 8,
+       "median_abs_change": 0.2439,
+       "change_over_spread": 0.0141,
+       "change_over_se": 0.254,
+       "share_above_2se": 0.0
+      },
+      {
+       "distance_km": 2.0,
+       "n_shifts": 8,
+       "median_abs_change": 0.45752,
+       "change_over_spread": 0.0264,
+       "change_over_se": 0.477,
+       "share_above_2se": 0.0
+      },
+      {
+       "distance_km": 5.0,
+       "n_shifts": 8,
+       "median_abs_change": 1.4244,
+       "change_over_spread": 0.0821,
+       "change_over_se": 1.485,
+       "share_above_2se": 0.25
+      },
+      {
+       "distance_km": 10.0,
+       "n_shifts": 8,
+       "median_abs_change": 4.25834,
+       "change_over_spread": 0.2455,
+       "change_over_se": 4.439,
+       "share_above_2se": 0.875
+      }
+     ],
+     "tolerance_km": 10.0,
+     "tol_ratio": 0.25,
+     "tolerance_sweep": {
+      "0.1": 5.0,
+      "0.25": 10.0,
+      "0.5": 10.0
+     }
+    },
+    "co": {
+     "mean": 0.07089128156177044,
+     "sd": 3.3959466006819854,
+     "n_days": 367,
+     "se": 0.177267,
+     "rows": [
+      {
+       "distance_km": 1.0,
+       "n_shifts": 8,
+       "median_abs_change": 0.02486,
+       "change_over_spread": 0.0073,
+       "change_over_se": 0.14,
+       "share_above_2se": 0.0
+      },
+      {
+       "distance_km": 2.0,
+       "n_shifts": 8,
+       "median_abs_change": 0.04858,
+       "change_over_spread": 0.0143,
+       "change_over_se": 0.274,
+       "share_above_2se": 0.0
+      },
+      {
+       "distance_km": 5.0,
+       "n_shifts": 8,
+       "median_abs_change": 0.11408,
+       "change_over_spread": 0.0336,
+       "change_over_se": 0.644,
+       "share_above_2se": 0.0
+      },
+      {
+       "distance_km": 10.0,
+       "n_shifts": 8,
+       "median_abs_change": 0.19395,
+       "change_over_spread": 0.0571,
+       "change_over_se": 1.094,
+       "share_above_2se": 0.0
+      }
+     ],
+     "tolerance_km": 10.0,
+     "tol_ratio": 0.25,
+     "tolerance_sweep": {
+      "0.1": 10.0,
+      "0.25": 10.0,
+      "0.5": 10.0
+     }
+    },
+    "ch4": {
+     "mean": 0.9007912787660644,
+     "sd": 18.110953037951273,
+     "n_days": 96,
+     "se": 1.848441,
+     "rows": [
+      {
+       "distance_km": 1.0,
+       "n_shifts": 8,
+       "median_abs_change": 0.0288,
+       "change_over_spread": 0.0016,
+       "change_over_se": 0.016,
+       "share_above_2se": 0.0
+      },
+      {
+       "distance_km": 2.0,
+       "n_shifts": 8,
+       "median_abs_change": 0.09023,
+       "change_over_spread": 0.005,
+       "change_over_se": 0.049,
+       "share_above_2se": 0.0
+      },
+      {
+       "distance_km": 5.0,
+       "n_shifts": 8,
+       "median_abs_change": 0.25211,
+       "change_over_spread": 0.0139,
+       "change_over_se": 0.136,
+       "share_above_2se": 0.0
+      },
+      {
+       "distance_km": 10.0,
+       "n_shifts": 8,
+       "median_abs_change": 0.61037,
+       "change_over_spread": 0.0337,
+       "change_over_se": 0.33,
+       "share_above_2se": 0.0
+      }
+     ],
+     "tolerance_km": 10.0,
+     "tol_ratio": 0.25,
+     "tolerance_sweep": {
+      "0.1": 10.0,
+      "0.25": 10.0,
+      "0.5": 10.0
+     }
+    },
+    "aai": {
+     "mean": 0.09729471310872088,
+     "sd": 0.6855569121915299,
+     "n_days": 509,
+     "se": 0.030387,
+     "rows": [
+      {
+       "distance_km": 1.0,
+       "n_shifts": 8,
+       "median_abs_change": 0.00612,
+       "change_over_spread": 0.0089,
+       "change_over_se": 0.202,
+       "share_above_2se": 0.0
+      },
+      {
+       "distance_km": 2.0,
+       "n_shifts": 8,
+       "median_abs_change": 0.00945,
+       "change_over_spread": 0.0138,
+       "change_over_se": 0.311,
+       "share_above_2se": 0.0
+      },
+      {
+       "distance_km": 5.0,
+       "n_shifts": 8,
+       "median_abs_change": 0.01585,
+       "change_over_spread": 0.0231,
+       "change_over_se": 0.522,
+       "share_above_2se": 0.125
+      },
+      {
+       "distance_km": 10.0,
+       "n_shifts": 8,
+       "median_abs_change": 0.0625,
+       "change_over_spread": 0.0912,
+       "change_over_se": 2.057,
+       "share_above_2se": 0.5
+      }
+     ],
+     "tolerance_km": 10.0,
+     "tol_ratio": 0.25,
+     "tolerance_sweep": {
+      "0.1": 10.0,
+      "0.25": 10.0,
+      "0.5": 10.0
+     }
+    }
+   },
+   "targets_synthetic": false,
+   "roster": {
+    "box_km": 6.5,
+    "facility_type": "coal_mining",
+    "region": "north_america",
+    "name": "Powder River Basin coal mines, USA"
+   }
+  },
+  "puertollano_refinery": {
+   "box_km": 3.0,
+   "context_km": 23.0,
+   "kind": "built_up",
+   "natural_change": {
+    "n_px": 2500,
+    "nrmse": 0.2135,
+    "ncc": 0.9971,
+    "index_change": {
+     "ndvi": 0.0,
+     "bsi": 0.0129,
+     "hsfi": 0.1018
+    }
+   },
+   "by_distance": [
+    {
+     "distance_km": 1.0,
+     "n_directions": 8,
+     "n_inside": 8,
+     "median_nrmse": 1.3107,
+     "median_ncc": 0.1206,
+     "median_box_overlap": 0.6255,
+     "median_retained": 0.7415,
+     "share_missing_facility": 0.0
+    },
+    {
+     "distance_km": 2.0,
+     "n_directions": 8,
+     "n_inside": 8,
+     "median_nrmse": 1.275,
+     "median_ncc": 0.0519,
+     "median_box_overlap": 0.3064,
+     "median_retained": 0.2755,
+     "share_missing_facility": 1.0
+    },
+    {
+     "distance_km": 5.0,
+     "n_directions": 8,
+     "n_inside": 8,
+     "median_nrmse": 1.3093,
+     "median_ncc": -0.1123,
+     "median_box_overlap": 0.0,
+     "median_retained": 0.0,
+     "share_missing_facility": 1.0
+    },
+    {
+     "distance_km": 10.0,
+     "n_directions": 8,
+     "n_inside": 6,
+     "median_nrmse": 1.1965,
+     "median_ncc": 0.2076,
+     "median_box_overlap": 0.0,
+     "median_retained": 0.0,
+     "share_missing_facility": 1.0
+    }
+   ],
+   "note": "Compared at the resolution of the context chip. A shift that leaves the picture is skipped.",
+   "meta": {
+    "backend": "ee",
+    "source": "single",
+    "synthetic": false,
+    "fetched_at": "2026-10-21T06:28:14.517932+00:00",
+    "date": "2026-06-24",
+    "cloud_frac": 0,
+    "n_scenes": 1,
+    "gsd_m": 59.9,
+    "box_km": 23.0,
+    "site_id": "puertollano_refinery",
+    "lat": 38.674388,
+    "lon": -4.048719,
+    "key": "puertollano_refinery-3e824f_38.67439_-4.04872_23.00_ee_single_120_q0"
+   },
+   "synthetic": false,
+   "site_id": "puertollano_refinery",
+   "tolerance_sweep": {
+    "keeps_facility": {
+     "0.25": 2.0,
+     "0.5": 1.0,
+     "0.75": 0.0
+    },
+    "picture_correlation": {
+     "0.5": 0.0,
+     "0.8": 0.0,
+     "0.9": 0.0
+    }
+   },
+   "tolerance_km": {
+    "keeps_facility": 1.0,
+    "picture_correlation_0_8": 0.0
+   },
+   "targets": {
+    "no2": {
+     "mean": 3.341981563649185,
+     "sd": 10.283625070362708,
+     "n_days": 311,
+     "se": 0.583131,
+     "rows": [
+      {
+       "distance_km": 1.0,
+       "n_shifts": 8,
+       "median_abs_change": 0.05339,
+       "change_over_spread": 0.0052,
+       "change_over_se": 0.092,
+       "share_above_2se": 0.0
+      },
+      {
+       "distance_km": 2.0,
+       "n_shifts": 8,
+       "median_abs_change": 0.15342,
+       "change_over_spread": 0.0149,
+       "change_over_se": 0.263,
+       "share_above_2se": 0.0
+      },
+      {
+       "distance_km": 5.0,
+       "n_shifts": 8,
+       "median_abs_change": 1.09976,
+       "change_over_spread": 0.1069,
+       "change_over_se": 1.886,
+       "share_above_2se": 0.375
+      },
+      {
+       "distance_km": 10.0,
+       "n_shifts": 8,
+       "median_abs_change": 2.9839,
+       "change_over_spread": 0.2902,
+       "change_over_se": 5.117,
+       "share_above_2se": 1.0
+      }
+     ],
+     "tolerance_km": 5.0,
+     "tol_ratio": 0.25,
+     "tolerance_sweep": {
+      "0.1": 2.0,
+      "0.25": 5.0,
+      "0.5": 10.0
+     }
+    },
+    "co": {
+     "mean": -0.35035040480120916,
+     "sd": 4.413569281798388,
+     "n_days": 369,
+     "se": 0.229761,
+     "rows": [
+      {
+       "distance_km": 1.0,
+       "n_shifts": 8,
+       "median_abs_change": 0.02304,
+       "change_over_spread": 0.0052,
+       "change_over_se": 0.1,
+       "share_above_2se": 0.0
+      },
+      {
+       "distance_km": 2.0,
+       "n_shifts": 8,
+       "median_abs_change": 0.03919,
+       "change_over_spread": 0.0089,
+       "change_over_se": 0.171,
+       "share_above_2se": 0.0
+      },
+      {
+       "distance_km": 5.0,
+       "n_shifts": 8,
+       "median_abs_change": 0.06564,
+       "change_over_spread": 0.0149,
+       "change_over_se": 0.286,
+       "share_above_2se": 0.0
+      },
+      {
+       "distance_km": 10.0,
+       "n_shifts": 8,
+       "median_abs_change": 0.16268,
+       "change_over_spread": 0.0369,
+       "change_over_se": 0.708,
+       "share_above_2se": 0.25
+      }
+     ],
+     "tolerance_km": 10.0,
+     "tol_ratio": 0.25,
+     "tolerance_sweep": {
+      "0.1": 10.0,
+      "0.25": 10.0,
+      "0.5": 10.0
+     }
+    },
+    "ch4": {
+     "mean": -2.359636406626123,
+     "sd": 14.968380541749665,
+     "n_days": 112,
+     "se": 1.414379,
+     "rows": [
+      {
+       "distance_km": 1.0,
+       "n_shifts": 8,
+       "median_abs_change": 0.5236,
+       "change_over_spread": 0.035,
+       "change_over_se": 0.37,
+       "share_above_2se": 0.0
+      },
+      {
+       "distance_km": 2.0,
+       "n_shifts": 8,
+       "median_abs_change": 1.0653,
+       "change_over_spread": 0.0712,
+       "change_over_se": 0.753,
+       "share_above_2se": 0.0
+      },
+      {
+       "distance_km": 5.0,
+       "n_shifts": 8,
+       "median_abs_change": 1.99259,
+       "change_over_spread": 0.1331,
+       "change_over_se": 1.409,
+       "share_above_2se": 0.125
+      },
+      {
+       "distance_km": 10.0,
+       "n_shifts": 8,
+       "median_abs_change": 2.68799,
+       "change_over_spread": 0.1796,
+       "change_over_se": 1.9,
+       "share_above_2se": 0.375
+      }
+     ],
+     "tolerance_km": 10.0,
+     "tol_ratio": 0.25,
+     "tolerance_sweep": {
+      "0.1": 2.0,
+      "0.25": 10.0,
+      "0.5": 10.0
+     }
+    },
+    "aai": {
+     "mean": 0.008851681214853822,
+     "sd": 0.6286010002880057,
+     "n_days": 449,
+     "se": 0.029666,
+     "rows": [
+      {
+       "distance_km": 1.0,
+       "n_shifts": 8,
+       "median_abs_change": 0.00553,
+       "change_over_spread": 0.0088,
+       "change_over_se": 0.186,
+       "share_above_2se": 0.0
+      },
+      {
+       "distance_km": 2.0,
+       "n_shifts": 8,
+       "median_abs_change": 0.01105,
+       "change_over_spread": 0.0176,
+       "change_over_se": 0.372,
+       "share_above_2se": 0.0
+      },
+      {
+       "distance_km": 5.0,
+       "n_shifts": 8,
+       "median_abs_change": 0.02688,
+       "change_over_spread": 0.0428,
+       "change_over_se": 0.906,
+       "share_above_2se": 0.0
+      },
+      {
+       "distance_km": 10.0,
+       "n_shifts": 8,
+       "median_abs_change": 0.05356,
+       "change_over_spread": 0.0852,
+       "change_over_se": 1.805,
+       "share_above_2se": 0.375
+      }
+     ],
+     "tolerance_km": 10.0,
+     "tol_ratio": 0.25,
+     "tolerance_sweep": {
+      "0.1": 10.0,
+      "0.25": 10.0,
+      "0.5": 10.0
+     }
+    }
+   },
+   "targets_synthetic": false,
+   "roster": {
+    "box_km": 3.0,
+    "facility_type": "refinery",
+    "region": "europe",
+    "name": "Puertollano refinery, Spain"
+   }
+  },
+  "ras_lanuf_refinery": {
+   "box_km": 4.0,
+   "context_km": 24.0,
+   "kind": "built_up",
+   "natural_change": {
+    "n_px": 3992,
+    "nrmse": 0.2651,
+    "ncc": 0.9766,
+    "index_change": {
+     "ndvi": 0.0186,
+     "bsi": 0.0322,
+     "hsfi": 1.0435
+    }
+   },
+   "by_distance": [
+    {
+     "distance_km": 1.0,
+     "n_directions": 8,
+     "n_inside": 8,
+     "median_nrmse": 1.0886,
+     "median_ncc": 0.4006,
+     "median_box_overlap": 0.7138,
+     "median_retained": 0.618,
+     "share_missing_facility": 0.375
+    },
+    {
+     "distance_km": 2.0,
+     "n_directions": 8,
+     "n_inside": 8,
+     "median_nrmse": 1.1508,
+     "median_ncc": 0.2179,
+     "median_box_overlap": 0.4589,
+     "median_retained": 0.2292,
+     "share_missing_facility": 0.625
+    },
+    {
+     "distance_km": 5.0,
+     "n_directions": 8,
+     "n_inside": 6,
+     "median_nrmse": 1.2228,
+     "median_ncc": 0.0543,
+     "median_box_overlap": 0.0067,
+     "median_retained": 0.0,
+     "share_missing_facility": 1.0
+    },
+    {
+     "distance_km": 10.0,
+     "n_directions": 8,
+     "n_inside": 5,
+     "median_nrmse": 1.3092,
+     "median_ncc": 0.1092,
+     "median_box_overlap": 0.0,
+     "median_retained": 0.0,
+     "share_missing_facility": 1.0
+    }
+   ],
+   "note": "Compared at the resolution of the context chip. A shift that leaves the picture is skipped.",
+   "meta": {
+    "backend": "ee",
+    "source": "single",
+    "synthetic": false,
+    "fetched_at": "2026-10-21T06:31:34.949732+00:00",
+    "date": "2026-10-04",
+    "cloud_frac": 0.0021407139871041877,
+    "n_scenes": 1,
+    "gsd_m": 62.5,
+    "box_km": 24.0,
+    "site_id": "ras_lanuf_refinery",
+    "lat": 30.479146,
+    "lon": 18.575392,
+    "key": "ras_lanuf_refinery-9257e2_30.47915_18.57539_24.00_ee_single_120_q0"
+   },
+   "synthetic": false,
+   "site_id": "ras_lanuf_refinery",
+   "tolerance_sweep": {
+    "keeps_facility": {
+     "0.25": 1.0,
+     "0.5": 1.0,
+     "0.75": 0.0
+    },
+    "picture_correlation": {
+     "0.5": 0.0,
+     "0.8": 0.0,
+     "0.9": 0.0
+    }
+   },
+   "tolerance_km": {
+    "keeps_facility": 1.0,
+    "picture_correlation_0_8": 0.0
+   },
+   "targets": {
+    "no2": {
+     "mean": 2.794044046734334,
+     "sd": 4.989035118556891,
+     "n_days": 367,
+     "se": 0.260426,
+     "rows": [
+      {
+       "distance_km": 1.0,
+       "n_shifts": 8,
+       "median_abs_change": 0.04605,
+       "change_over_spread": 0.0092,
+       "change_over_se": 0.177,
+       "share_above_2se": 0.0
+      },
+      {
+       "distance_km": 2.0,
+       "n_shifts": 8,
+       "median_abs_change": 0.0855,
+       "change_over_spread": 0.0171,
+       "change_over_se": 0.328,
+       "share_above_2se": 0.0
+      },
+      {
+       "distance_km": 5.0,
+       "n_shifts": 8,
+       "median_abs_change": 0.32433,
+       "change_over_spread": 0.065,
+       "change_over_se": 1.245,
+       "share_above_2se": 0.375
+      },
+      {
+       "distance_km": 10.0,
+       "n_shifts": 8,
+       "median_abs_change": 1.01279,
+       "change_over_spread": 0.203,
+       "change_over_se": 3.889,
+       "share_above_2se": 0.75
+      }
+     ],
+     "tolerance_km": 10.0,
+     "tol_ratio": 0.25,
+     "tolerance_sweep": {
+      "0.1": 5.0,
+      "0.25": 10.0,
+      "0.5": 10.0
+     }
+    },
+    "co": {
+     "mean": 0.06051872539769923,
+     "sd": 3.6779132573167734,
+     "n_days": 332,
+     "se": 0.201852,
+     "rows": [
+      {
+       "distance_km": 1.0,
+       "n_shifts": 8,
+       "median_abs_change": 0.12248,
+       "change_over_spread": 0.0333,
+       "change_over_se": 0.607,
+       "share_above_2se": 0.0
+      },
+      {
+       "distance_km": 2.0,
+       "n_shifts": 8,
+       "median_abs_change": 0.23868,
+       "change_over_spread": 0.0649,
+       "change_over_se": 1.182,
+       "share_above_2se": 0.0
+      },
+      {
+       "distance_km": 5.0,
+       "n_shifts": 8,
+       "median_abs_change": 0.52673,
+       "change_over_spread": 0.1432,
+       "change_over_se": 2.609,
+       "share_above_2se": 0.625
+      },
+      {
+       "distance_km": 10.0,
+       "n_shifts": 8,
+       "median_abs_change": 0.72808,
+       "change_over_spread": 0.198,
+       "change_over_se": 3.607,
+       "share_above_2se": 0.75
+      }
+     ],
+     "tolerance_km": 10.0,
+     "tol_ratio": 0.25,
+     "tolerance_sweep": {
+      "0.1": 2.0,
+      "0.25": 10.0,
+      "0.5": 10.0
+     }
+    },
+    "ch4": {
+     "mean": -4.957307437483678,
+     "sd": 30.226679030061202,
+     "n_days": 172,
+     "se": 2.304763,
+     "rows": [
+      {
+       "distance_km": 1.0,
+       "n_shifts": 8,
+       "median_abs_change": 3.20808,
+       "change_over_spread": 0.1061,
+       "change_over_se": 1.392,
+       "share_above_2se": 0.125
+      },
+      {
+       "distance_km": 2.0,
+       "n_shifts": 8,
+       "median_abs_change": 6.33808,
+       "change_over_spread": 0.2097,
+       "change_over_se": 2.75,
+       "share_above_2se": 0.75
+      },
+      {
+       "distance_km": 5.0,
+       "n_shifts": 8,
+       "median_abs_change": 14.67789,
+       "change_over_spread": 0.4856,
+       "change_over_se": 6.369,
+       "share_above_2se": 0.75
+      },
+      {
+       "distance_km": 10.0,
+       "n_shifts": 8,
+       "median_abs_change": 22.11955,
+       "change_over_spread": 0.7318,
+       "change_over_se": 9.597,
+       "share_above_2se": 0.75
+      }
+     ],
+     "tolerance_km": 2.0,
+     "tol_ratio": 0.25,
+     "tolerance_sweep": {
+      "0.1": 0.0,
+      "0.25": 2.0,
+      "0.5": 5.0
+     }
+    },
+    "aai": {
+     "mean": 0.05262668293731243,
+     "sd": 0.6550406204727888,
+     "n_days": 420,
+     "se": 0.031963,
+     "rows": [
+      {
+       "distance_km": 1.0,
+       "n_shifts": 8,
+       "median_abs_change": 0.02856,
+       "change_over_spread": 0.0436,
+       "change_over_se": 0.893,
+       "share_above_2se": 0.0
+      },
+      {
+       "distance_km": 2.0,
+       "n_shifts": 8,
+       "median_abs_change": 0.05699,
+       "change_over_spread": 0.087,
+       "change_over_se": 1.783,
+       "share_above_2se": 0.375
+      },
+      {
+       "distance_km": 5.0,
+       "n_shifts": 8,
+       "median_abs_change": 0.09999,
+       "change_over_spread": 0.1526,
+       "change_over_se": 3.128,
+       "share_above_2se": 0.75
+      },
+      {
+       "distance_km": 10.0,
+       "n_shifts": 8,
+       "median_abs_change": 0.11214,
+       "change_over_spread": 0.1712,
+       "change_over_se": 3.509,
+       "share_above_2se": 0.75
+      }
+     ],
+     "tolerance_km": 10.0,
+     "tol_ratio": 0.25,
+     "tolerance_sweep": {
+      "0.1": 2.0,
+      "0.25": 10.0,
+      "0.5": 10.0
+     }
+    }
+   },
+   "targets_synthetic": false,
+   "roster": {
+    "box_km": 4.0,
+    "facility_type": "refinery",
+    "region": "africa",
+    "name": "Ras Lanuf refinery, Libya"
+   }
+  },
+  "refap_canoas": {
+   "box_km": 3.0,
+   "context_km": 23.0,
+   "kind": "built_up",
+   "natural_change": {
+    "n_px": 2500,
+    "nrmse": 0.3729,
+    "ncc": 0.9655,
+    "index_change": {
+     "ndvi": 0.0244,
+     "bsi": 0.0187,
+     "hsfi": 0.0536
+    }
+   },
+   "by_distance": [
+    {
+     "distance_km": 1.0,
+     "n_directions": 8,
+     "n_inside": 8,
+     "median_nrmse": 1.4352,
+     "median_ncc": -0.0766,
+     "median_box_overlap": 0.6255,
+     "median_retained": 0.6147,
+     "share_missing_facility": 0.125
+    },
+    {
+     "distance_km": 2.0,
+     "n_directions": 8,
+     "n_inside": 8,
+     "median_nrmse": 1.3889,
+     "median_ncc": -0.0081,
+     "median_box_overlap": 0.3064,
+     "median_retained": 0.2976,
+     "share_missing_facility": 1.0
+    },
+    {
+     "distance_km": 5.0,
+     "n_directions": 8,
+     "n_inside": 8,
+     "median_nrmse": 1.3976,
+     "median_ncc": 0.0279,
+     "median_box_overlap": 0.0,
+     "median_retained": 0.0,
+     "share_missing_facility": 1.0
+    },
+    {
+     "distance_km": 10.0,
+     "n_directions": 8,
+     "n_inside": 8,
+     "median_nrmse": 1.4163,
+     "median_ncc": -0.0362,
+     "median_box_overlap": 0.0,
+     "median_retained": 0.0,
+     "share_missing_facility": 1.0
+    }
+   ],
+   "note": "Compared at the resolution of the context chip. A shift that leaves the picture is skipped.",
+   "meta": {
+    "backend": "ee",
+    "source": "single",
+    "synthetic": false,
+    "fetched_at": "2026-10-21T06:34:44.401274+00:00",
+    "date": "2026-08-09",
+    "cloud_frac": 0.00024497050248475146,
+    "n_scenes": 1,
+    "gsd_m": 59.9,
+    "box_km": 23.0,
+    "site_id": "refap_canoas",
+    "lat": -29.872575,
+    "lon": -51.158781,
+    "key": "refap_canoas-4b2761_-29.87258_-51.15878_23.00_ee_single_120_q0"
+   },
+   "synthetic": false,
+   "site_id": "refap_canoas",
+   "tolerance_sweep": {
+    "keeps_facility": {
+     "0.25": 2.0,
+     "0.5": 1.0,
+     "0.75": 0.0
+    },
+    "picture_correlation": {
+     "0.5": 0.0,
+     "0.8": 0.0,
+     "0.9": 0.0
+    }
+   },
+   "tolerance_km": {
+    "keeps_facility": 1.0,
+    "picture_correlation_0_8": 0.0
+   },
+   "targets": {
+    "no2": {
+     "mean": 24.44054492165171,
+     "sd": 25.319594302606724,
+     "n_days": 224,
+     "se": 1.691737,
+     "rows": [
+      {
+       "distance_km": 1.0,
+       "n_shifts": 8,
+       "median_abs_change": 0.40438,
+       "change_over_spread": 0.016,
+       "change_over_se": 0.239,
+       "share_above_2se": 0.0
+      },
+      {
+       "distance_km": 2.0,
+       "n_shifts": 8,
+       "median_abs_change": 0.57287,
+       "change_over_spread": 0.0226,
+       "change_over_se": 0.339,
+       "share_above_2se": 0.0
+      },
+      {
+       "distance_km": 5.0,
+       "n_shifts": 8,
+       "median_abs_change": 1.813,
+       "change_over_spread": 0.0716,
+       "change_over_se": 1.072,
+       "share_above_2se": 0.375
+      },
+      {
+       "distance_km": 10.0,
+       "n_shifts": 8,
+       "median_abs_change": 7.10648,
+       "change_over_spread": 0.2807,
+       "change_over_se": 4.201,
+       "share_above_2se": 0.875
+      }
+     ],
+     "tolerance_km": 5.0,
+     "tol_ratio": 0.25,
+     "tolerance_sweep": {
+      "0.1": 5.0,
+      "0.25": 5.0,
+      "0.5": 10.0
+     }
+    },
+    "co": {
+     "mean": 1.6078848133303445,
+     "sd": 3.7931282003689337,
+     "n_days": 275,
+     "se": 0.228734,
+     "rows": [
+      {
+       "distance_km": 1.0,
+       "n_shifts": 8,
+       "median_abs_change": 0.00429,
+       "change_over_spread": 0.0011,
+       "change_over_se": 0.019,
+       "share_above_2se": 0.0
+      },
+      {
+       "distance_km": 2.0,
+       "n_shifts": 8,
+       "median_abs_change": 0.01901,
+       "change_over_spread": 0.005,
+       "change_over_se": 0.083,
+       "share_above_2se": 0.0
+      },
+      {
+       "distance_km": 5.0,
+       "n_shifts": 8,
+       "median_abs_change": 0.09724,
+       "change_over_spread": 0.0256,
+       "change_over_se": 0.425,
+       "share_above_2se": 0.0
+      },
+      {
+       "distance_km": 10.0,
+       "n_shifts": 8,
+       "median_abs_change": 0.31562,
+       "change_over_spread": 0.0832,
+       "change_over_se": 1.38,
+       "share_above_2se": 0.125
+      }
+     ],
+     "tolerance_km": 10.0,
+     "tol_ratio": 0.25,
+     "tolerance_sweep": {
+      "0.1": 10.0,
+      "0.25": 10.0,
+      "0.5": 10.0
+     }
+    },
+    "ch4": {
+     "mean": 8.75884776290627,
+     "sd": 21.30957029815596,
+     "n_days": 68,
+     "se": 2.584165,
+     "rows": [
+      {
+       "distance_km": 1.0,
+       "n_shifts": 8,
+       "median_abs_change": 0.34112,
+       "change_over_spread": 0.016,
+       "change_over_se": 0.132,
+       "share_above_2se": 0.0
+      },
+      {
+       "distance_km": 2.0,
+       "n_shifts": 8,
+       "median_abs_change": 0.62265,
+       "change_over_spread": 0.0292,
+       "change_over_se": 0.241,
+       "share_above_2se": 0.0
+      },
+      {
+       "distance_km": 5.0,
+       "n_shifts": 8,
+       "median_abs_change": 0.72354,
+       "change_over_spread": 0.034,
+       "change_over_se": 0.28,
+       "share_above_2se": 0.0
+      },
+      {
+       "distance_km": 10.0,
+       "n_shifts": 8,
+       "median_abs_change": 3.33047,
+       "change_over_spread": 0.1563,
+       "change_over_se": 1.289,
+       "share_above_2se": 0.0
+      }
+     ],
+     "tolerance_km": 10.0,
+     "tol_ratio": 0.25,
+     "tolerance_sweep": {
+      "0.1": 5.0,
+      "0.25": 10.0,
+      "0.5": 10.0
+     }
+    },
+    "aai": {
+     "mean": 0.13340537636546945,
+     "sd": 0.6448561292727291,
+     "n_days": 412,
+     "se": 0.03177,
+     "rows": [
+      {
+       "distance_km": 1.0,
+       "n_shifts": 8,
+       "median_abs_change": 0.002,
+       "change_over_spread": 0.0031,
+       "change_over_se": 0.063,
+       "share_above_2se": 0.0
+      },
+      {
+       "distance_km": 2.0,
+       "n_shifts": 8,
+       "median_abs_change": 0.0047,
+       "change_over_spread": 0.0073,
+       "change_over_se": 0.148,
+       "share_above_2se": 0.0
+      },
+      {
+       "distance_km": 5.0,
+       "n_shifts": 8,
+       "median_abs_change": 0.02523,
+       "change_over_spread": 0.0391,
+       "change_over_se": 0.794,
+       "share_above_2se": 0.0
+      },
+      {
+       "distance_km": 10.0,
+       "n_shifts": 8,
+       "median_abs_change": 0.06498,
+       "change_over_spread": 0.1008,
+       "change_over_se": 2.045,
+       "share_above_2se": 0.625
+      }
+     ],
+     "tolerance_km": 10.0,
+     "tol_ratio": 0.25,
+     "tolerance_sweep": {
+      "0.1": 5.0,
+      "0.25": 10.0,
+      "0.5": 10.0
+     }
+    }
+   },
+   "targets_synthetic": false,
+   "roster": {
+    "box_km": 3.0,
+    "facility_type": "refinery",
+    "region": "south_america",
+    "name": "REFAP refinery, Canoas, Brazil"
+   }
+  },
+  "replan_paulinia": {
+   "box_km": 3.75,
+   "context_km": 23.75,
+   "kind": "built_up",
+   "natural_change": {
+    "n_px": 3721,
+    "nrmse": 0.247,
+    "ncc": 0.9866,
+    "index_change": {
+     "ndvi": 0.0061,
+     "bsi": 0.011,
+     "hsfi": 0.0119
+    }
+   },
+   "by_distance": [
+    {
+     "distance_km": 1.0,
+     "n_directions": 8,
+     "n_inside": 8,
+     "median_nrmse": 1.3748,
+     "median_ncc": 0.0319,
+     "median_box_overlap": 0.6958,
+     "median_retained": 0.8077,
+     "share_missing_facility": 0.0
+    },
+    {
+     "distance_km": 2.0,
+     "n_directions": 8,
+     "n_inside": 8,
+     "median_nrmse": 1.3401,
+     "median_ncc": -0.015,
+     "median_box_overlap": 0.4274,
+     "median_retained": 0.4091,
+     "share_missing_facility": 0.5
+    },
+    {
+     "distance_km": 5.0,
+     "n_directions": 8,
+     "n_inside": 8,
+     "median_nrmse": 1.3043,
+     "median_ncc": -0.0253,
+     "median_box_overlap": 0.0016,
+     "median_retained": 0.0,
+     "share_missing_facility": 1.0
+    },
+    {
+     "distance_km": 10.0,
+     "n_directions": 8,
+     "n_inside": 8,
+     "median_nrmse": 1.4095,
+     "median_ncc": -0.0285,
+     "median_box_overlap": 0.0,
+     "median_retained": 0.0,
+     "share_missing_facility": 1.0
+    }
+   ],
+   "note": "Compared at the resolution of the context chip. A shift that leaves the picture is skipped.",
+   "meta": {
+    "backend": "ee",
+    "source": "single",
+    "synthetic": false,
+    "fetched_at": "2026-10-21T06:37:18.180865+00:00",
+    "date": "2026-07-17",
+    "cloud_frac": 0.00013458972696846533,
+    "n_scenes": 1,
+    "gsd_m": 61.85,
+    "box_km": 23.75,
+    "site_id": "replan_paulinia",
+    "lat": -22.727502,
+    "lon": -47.129288,
+    "key": "replan_paulinia-52c157_-22.72750_-47.12929_23.75_ee_single_120_q0"
+   },
+   "synthetic": false,
+   "site_id": "replan_paulinia",
+   "tolerance_sweep": {
+    "keeps_facility": {
+     "0.25": 2.0,
+     "0.5": 1.0,
+     "0.75": 1.0
+    },
+    "picture_correlation": {
+     "0.5": 0.0,
+     "0.8": 0.0,
+     "0.9": 0.0
+    }
+   },
+   "tolerance_km": {
+    "keeps_facility": 1.0,
+    "picture_correlation_0_8": 0.0
+   },
+   "targets": {
+    "no2": {
+     "mean": 22.356055263616533,
+     "sd": 25.177461085857793,
+     "n_days": 240,
+     "se": 1.625198,
+     "rows": [
+      {
+       "distance_km": 1.0,
+       "n_shifts": 8,
+       "median_abs_change": 1.25548,
+       "change_over_spread": 0.0499,
+       "change_over_se": 0.773,
+       "share_above_2se": 0.0
+      },
+      {
+       "distance_km": 2.0,
+       "n_shifts": 8,
+       "median_abs_change": 2.43214,
+       "change_over_spread": 0.0966,
+       "change_over_se": 1.497,
+       "share_above_2se": 0.25
+      },
+      {
+       "distance_km": 5.0,
+       "n_shifts": 8,
+       "median_abs_change": 5.31565,
+       "change_over_spread": 0.2111,
+       "change_over_se": 3.271,
+       "share_above_2se": 0.75
+      },
+      {
+       "distance_km": 10.0,
+       "n_shifts": 8,
+       "median_abs_change": 9.25895,
+       "change_over_spread": 0.3677,
+       "change_over_se": 5.697,
+       "share_above_2se": 1.0
+      }
+     ],
+     "tolerance_km": 5.0,
+     "tol_ratio": 0.25,
+     "tolerance_sweep": {
+      "0.1": 2.0,
+      "0.25": 5.0,
+      "0.5": 10.0
+     }
+    },
+    "co": {
+     "mean": 0.8225649200385398,
+     "sd": 4.175068420425578,
+     "n_days": 277,
+     "se": 0.250856,
+     "rows": [
+      {
+       "distance_km": 1.0,
+       "n_shifts": 8,
+       "median_abs_change": 0.04254,
+       "change_over_spread": 0.0102,
+       "change_over_se": 0.17,
+       "share_above_2se": 0.0
+      },
+      {
+       "distance_km": 2.0,
+       "n_shifts": 8,
+       "median_abs_change": 0.08111,
+       "change_over_spread": 0.0194,
+       "change_over_se": 0.323,
+       "share_above_2se": 0.0
+      },
+      {
+       "distance_km": 5.0,
+       "n_shifts": 8,
+       "median_abs_change": 0.1529,
+       "change_over_spread": 0.0366,
+       "change_over_se": 0.61,
+       "share_above_2se": 0.0
+      },
+      {
+       "distance_km": 10.0,
+       "n_shifts": 8,
+       "median_abs_change": 0.19449,
+       "change_over_spread": 0.0466,
+       "change_over_se": 0.775,
+       "share_above_2se": 0.125
+      }
+     ],
+     "tolerance_km": 10.0,
+     "tol_ratio": 0.25,
+     "tolerance_sweep": {
+      "0.1": 10.0,
+      "0.25": 10.0,
+      "0.5": 10.0
+     }
+    },
+    "ch4": {
+     "mean": -3.8667551935977826,
+     "sd": 14.22426572489559,
+     "n_days": 57,
+     "se": 1.88405,
+     "rows": [
+      {
+       "distance_km": 1.0,
+       "n_shifts": 8,
+       "median_abs_change": 0.62837,
+       "change_over_spread": 0.0442,
+       "change_over_se": 0.334,
+       "share_above_2se": 0.0
+      },
+      {
+       "distance_km": 2.0,
+       "n_shifts": 8,
+       "median_abs_change": 1.24783,
+       "change_over_spread": 0.0877,
+       "change_over_se": 0.662,
+       "share_above_2se": 0.0
+      },
+      {
+       "distance_km": 5.0,
+       "n_shifts": 8,
+       "median_abs_change": 2.97253,
+       "change_over_spread": 0.209,
+       "change_over_se": 1.578,
+       "share_above_2se": 0.125
+      },
+      {
+       "distance_km": 10.0,
+       "n_shifts": 8,
+       "median_abs_change": 4.41975,
+       "change_over_spread": 0.3107,
+       "change_over_se": 2.346,
+       "share_above_2se": 0.75
+      }
+     ],
+     "tolerance_km": 5.0,
+     "tol_ratio": 0.25,
+     "tolerance_sweep": {
+      "0.1": 2.0,
+      "0.25": 5.0,
+      "0.5": 10.0
+     }
+    },
+    "aai": {
+     "mean": 0.06674030930007907,
+     "sd": 0.6510910334016411,
+     "n_days": 404,
+     "se": 0.032393,
+     "rows": [
+      {
+       "distance_km": 1.0,
+       "n_shifts": 8,
+       "median_abs_change": 0.00516,
+       "change_over_spread": 0.0079,
+       "change_over_se": 0.159,
+       "share_above_2se": 0.0
+      },
+      {
+       "distance_km": 2.0,
+       "n_shifts": 8,
+       "median_abs_change": 0.00987,
+       "change_over_spread": 0.0152,
+       "change_over_se": 0.305,
+       "share_above_2se": 0.0
+      },
+      {
+       "distance_km": 5.0,
+       "n_shifts": 8,
+       "median_abs_change": 0.01949,
+       "change_over_spread": 0.0299,
+       "change_over_se": 0.602,
+       "share_above_2se": 0.0
+      },
+      {
+       "distance_km": 10.0,
+       "n_shifts": 8,
+       "median_abs_change": 0.02672,
+       "change_over_spread": 0.041,
+       "change_over_se": 0.825,
+       "share_above_2se": 0.0
+      }
+     ],
+     "tolerance_km": 10.0,
+     "tol_ratio": 0.25,
+     "tolerance_sweep": {
+      "0.1": 10.0,
+      "0.25": 10.0,
+      "0.5": 10.0
+     }
+    }
+   },
+   "targets_synthetic": false,
+   "roster": {
+    "box_km": 3.75,
+    "facility_type": "refinery",
+    "region": "south_america",
+    "name": "REPLAN refinery, Paulinia, Brazil"
+   }
+  },
+  "rumaila_oilfield": {
+   "box_km": 2.75,
+   "context_km": 22.75,
+   "kind": "built_up",
+   "natural_change": {
+    "n_px": 2116,
+    "nrmse": 0.5935,
+    "ncc": 0.955,
+    "index_change": {
+     "ndvi": 0.0036,
+     "bsi": 0.0062,
+     "hsfi": 0.0113
+    }
+   },
+   "by_distance": [
+    {
+     "distance_km": 1.0,
+     "n_directions": 8,
+     "n_inside": 8,
+     "median_nrmse": 1.3576,
+     "median_ncc": 0.0018,
+     "median_box_overlap": 0.5941,
+     "median_retained": 0.6159,
+     "share_missing_facility": 0.125
+    },
+    {
+     "distance_km": 2.0,
+     "n_directions": 8,
+     "n_inside": 8,
+     "median_nrmse": 1.2469,
+     "median_ncc": -0.0098,
+     "median_box_overlap": 0.2543,
+     "median_retained": 0.2361,
+     "share_missing_facility": 1.0
+    },
+    {
+     "distance_km": 5.0,
+     "n_directions": 8,
+     "n_inside": 8,
+     "median_nrmse": 1.1573,
+     "median_ncc": 0.028,
+     "median_box_overlap": 0.0,
+     "median_retained": 0.0,
+     "share_missing_facility": 1.0
+    },
+    {
+     "distance_km": 10.0,
+     "n_directions": 8,
+     "n_inside": 8,
+     "median_nrmse": 1.1151,
+     "median_ncc": -0.0046,
+     "median_box_overlap": 0.0,
+     "median_retained": 0.0,
+     "share_missing_facility": 1.0
+    }
+   ],
+   "note": "Compared at the resolution of the context chip. A shift that leaves the picture is skipped.",
+   "meta": {
+    "backend": "ee",
+    "source": "single",
+    "synthetic": false,
+    "fetched_at": "2026-10-21T06:39:57.089756+00:00",
+    "date": "2026-07-03",
+    "cloud_frac": 6.954242881759677e-06,
+    "n_scenes": 1,
+    "gsd_m": 59.24,
+    "box_km": 22.75,
+    "site_id": "rumaila_oilfield",
+    "lat": 30.356583,
+    "lon": 47.344208,
+    "key": "rumaila_oilfield-decaa0_30.35658_47.34421_22.75_ee_single_120_q0"
+   },
+   "synthetic": false,
+   "site_id": "rumaila_oilfield",
+   "tolerance_sweep": {
+    "keeps_facility": {
+     "0.25": 1.0,
+     "0.5": 1.0,
+     "0.75": 0.0
+    },
+    "picture_correlation": {
+     "0.5": 0.0,
+     "0.8": 0.0,
+     "0.9": 0.0
+    }
+   },
+   "tolerance_km": {
+    "keeps_facility": 1.0,
+    "picture_correlation_0_8": 0.0
+   },
+   "targets": {
+    "no2": {
+     "mean": 9.486059700294076,
+     "sd": 71.97938551407422,
+     "n_days": 349,
+     "se": 3.852968,
+     "rows": [
+      {
+       "distance_km": 1.0,
+       "n_shifts": 8,
+       "median_abs_change": 1.96139,
+       "change_over_spread": 0.0272,
+       "change_over_se": 0.509,
+       "share_above_2se": 0.0
+      },
+      {
+       "distance_km": 2.0,
+       "n_shifts": 8,
+       "median_abs_change": 3.95904,
+       "change_over_spread": 0.055,
+       "change_over_se": 1.028,
+       "share_above_2se": 0.0
+      },
+      {
+       "distance_km": 5.0,
+       "n_shifts": 8,
+       "median_abs_change": 9.84244,
+       "change_over_spread": 0.1367,
+       "change_over_se": 2.555,
+       "share_above_2se": 0.625
+      },
+      {
+       "distance_km": 10.0,
+       "n_shifts": 8,
+       "median_abs_change": 18.855,
+       "change_over_spread": 0.262,
+       "change_over_se": 4.894,
+       "share_above_2se": 0.75
+      }
+     ],
+     "tolerance_km": 5.0,
+     "tol_ratio": 0.25,
+     "tolerance_sweep": {
+      "0.1": 2.0,
+      "0.25": 5.0,
+      "0.5": 10.0
+     }
+    },
+    "co": {
+     "mean": -0.6205451345075546,
+     "sd": 2.955364965216136,
+     "n_days": 341,
+     "se": 0.160042,
+     "rows": [
+      {
+       "distance_km": 1.0,
+       "n_shifts": 8,
+       "median_abs_change": 0.02492,
+       "change_over_spread": 0.0084,
+       "change_over_se": 0.156,
+       "share_above_2se": 0.0
+      },
+      {
+       "distance_km": 2.0,
+       "n_shifts": 8,
+       "median_abs_change": 0.03532,
+       "change_over_spread": 0.0119,
+       "change_over_se": 0.221,
+       "share_above_2se": 0.0
+      },
+      {
+       "distance_km": 5.0,
+       "n_shifts": 8,
+       "median_abs_change": 0.05706,
+       "change_over_spread": 0.0193,
+       "change_over_se": 0.357,
+       "share_above_2se": 0.0
+      },
+      {
+       "distance_km": 10.0,
+       "n_shifts": 8,
+       "median_abs_change": 0.16888,
+       "change_over_spread": 0.0571,
+       "change_over_se": 1.055,
+       "share_above_2se": 0.375
+      }
+     ],
+     "tolerance_km": 10.0,
+     "tol_ratio": 0.25,
+     "tolerance_sweep": {
+      "0.1": 10.0,
+      "0.25": 10.0,
+      "0.5": 10.0
+     }
+    },
+    "ch4": {
+     "mean": -6.359170863313693,
+     "sd": 18.066652036138752,
+     "n_days": 203,
+     "se": 1.26803,
+     "rows": [
+      {
+       "distance_km": 1.0,
+       "n_shifts": 8,
+       "median_abs_change": 0.09156,
+       "change_over_spread": 0.0051,
+       "change_over_se": 0.072,
+       "share_above_2se": 0.0
+      },
+      {
+       "distance_km": 2.0,
+       "n_shifts": 8,
+       "median_abs_change": 0.3432,
+       "change_over_spread": 0.019,
+       "change_over_se": 0.271,
+       "share_above_2se": 0.0
+      },
+      {
+       "distance_km": 5.0,
+       "n_shifts": 8,
+       "median_abs_change": 1.97923,
+       "change_over_spread": 0.1096,
+       "change_over_se": 1.561,
+       "share_above_2se": 0.125
+      },
+      {
+       "distance_km": 10.0,
+       "n_shifts": 8,
+       "median_abs_change": 5.46719,
+       "change_over_spread": 0.3026,
+       "change_over_se": 4.312,
+       "share_above_2se": 0.875
+      }
+     ],
+     "tolerance_km": 5.0,
+     "tol_ratio": 0.25,
+     "tolerance_sweep": {
+      "0.1": 2.0,
+      "0.25": 5.0,
+      "0.5": 10.0
+     }
+    },
+    "aai": {
+     "mean": 0.025535826190266953,
+     "sd": 0.7725397685306166,
+     "n_days": 410,
+     "se": 0.038153,
+     "rows": [
+      {
+       "distance_km": 1.0,
+       "n_shifts": 8,
+       "median_abs_change": 0.00463,
+       "change_over_spread": 0.006,
+       "change_over_se": 0.121,
+       "share_above_2se": 0.0
+      },
+      {
+       "distance_km": 2.0,
+       "n_shifts": 8,
+       "median_abs_change": 0.00897,
+       "change_over_spread": 0.0116,
+       "change_over_se": 0.235,
+       "share_above_2se": 0.0
+      },
+      {
+       "distance_km": 5.0,
+       "n_shifts": 8,
+       "median_abs_change": 0.01994,
+       "change_over_spread": 0.0258,
+       "change_over_se": 0.523,
+       "share_above_2se": 0.0
+      },
+      {
+       "distance_km": 10.0,
+       "n_shifts": 8,
+       "median_abs_change": 0.02968,
+       "change_over_spread": 0.0384,
+       "change_over_se": 0.778,
+       "share_above_2se": 0.0
+      }
+     ],
+     "tolerance_km": 10.0,
+     "tol_ratio": 0.25,
+     "tolerance_sweep": {
+      "0.1": 10.0,
+      "0.25": 10.0,
+      "0.5": 10.0
+     }
+    }
+   },
+   "targets_synthetic": false,
+   "roster": {
+    "box_km": 2.75,
+    "facility_type": "oilfield",
+    "region": "middle_east",
+    "name": "Rumaila oilfield, Iraq"
+   }
+  },
+  "shaybah_processing": {
+   "box_km": 1.5,
+   "context_km": 21.5,
+   "kind": "built_up",
+   "natural_change": {
+    "n_px": 729,
+    "nrmse": 0.459,
+    "ncc": 0.9559,
+    "index_change": {
+     "ndvi": 0.0097,
+     "bsi": 0.0114,
+     "hsfi": 0.1196
+    }
+   },
+   "by_distance": [
+    {
+     "distance_km": 1.0,
+     "n_directions": 8,
+     "n_inside": 8,
+     "median_nrmse": 1.5626,
+     "median_ncc": -0.1879,
+     "median_box_overlap": 0.3064,
+     "median_retained": 0.3,
+     "share_missing_facility": 0.625
+    },
+    {
+     "distance_km": 2.0,
+     "n_directions": 8,
+     "n_inside": 8,
+     "median_nrmse": 1.3858,
+     "median_ncc": -0.1416,
+     "median_box_overlap": 0.0016,
+     "median_retained": 0.0,
+     "share_missing_facility": 1.0
+    },
+    {
+     "distance_km": 5.0,
+     "n_directions": 8,
+     "n_inside": 8,
+     "median_nrmse": 1.4037,
+     "median_ncc": 0.0294,
+     "median_box_overlap": 0.0,
+     "median_retained": 0.0,
+     "share_missing_facility": 1.0
+    },
+    {
+     "distance_km": 10.0,
+     "n_directions": 8,
+     "n_inside": 8,
+     "median_nrmse": 1.2974,
+     "median_ncc": 0.1366,
+     "median_box_overlap": 0.0,
+     "median_retained": 0.0,
+     "share_missing_facility": 1.0
+    }
+   ],
+   "note": "Compared at the resolution of the context chip. A shift that leaves the picture is skipped.",
+   "meta": {
+    "backend": "ee",
+    "source": "single",
+    "synthetic": false,
+    "fetched_at": "2026-10-21T06:43:04.627644+00:00",
+    "date": "2026-06-24",
+    "cloud_frac": 0,
+    "n_scenes": 1,
+    "gsd_m": 55.99,
+    "box_km": 21.5,
+    "site_id": "shaybah_processing",
+    "lat": 22.535391,
+    "lon": 53.937206,
+    "key": "shaybah_processing-529353_22.53539_53.93721_21.50_ee_single_120_q0"
+   },
+   "synthetic": false,
+   "site_id": "shaybah_processing",
+   "tolerance_sweep": {
+    "keeps_facility": {
+     "0.25": 1.0,
+     "0.5": 0.0,
+     "0.75": 0.0
+    },
+    "picture_correlation": {
+     "0.5": 0.0,
+     "0.8": 0.0,
+     "0.9": 0.0
+    }
+   },
+   "tolerance_km": {
+    "keeps_facility": 0.0,
+    "picture_correlation_0_8": 0.0
+   },
+   "targets": {
+    "no2": {
+     "mean": 12.858825475657666,
+     "sd": 13.158282355881246,
+     "n_days": 353,
+     "se": 0.700345,
+     "rows": [
+      {
+       "distance_km": 1.0,
+       "n_shifts": 8,
+       "median_abs_change": 0.59768,
+       "change_over_spread": 0.0454,
+       "change_over_se": 0.853,
+       "share_above_2se": 0.0
+      },
+      {
+       "distance_km": 2.0,
+       "n_shifts": 8,
+       "median_abs_change": 1.18807,
+       "change_over_spread": 0.0903,
+       "change_over_se": 1.696,
+       "share_above_2se": 0.375
+      },
+      {
+       "distance_km": 5.0,
+       "n_shifts": 8,
+       "median_abs_change": 2.85046,
+       "change_over_spread": 0.2166,
+       "change_over_se": 4.07,
+       "share_above_2se": 0.875
+      },
+      {
+       "distance_km": 10.0,
+       "n_shifts": 8,
+       "median_abs_change": 5.75641,
+       "change_over_spread": 0.4375,
+       "change_over_se": 8.219,
+       "share_above_2se": 0.75
+      }
+     ],
+     "tolerance_km": 5.0,
+     "tol_ratio": 0.25,
+     "tolerance_sweep": {
+      "0.1": 2.0,
+      "0.25": 5.0,
+      "0.5": 10.0
+     }
+    },
+    "co": {
+     "mean": -0.12857297777202348,
+     "sd": 2.778028076085786,
+     "n_days": 345,
+     "se": 0.149564,
+     "rows": [
+      {
+       "distance_km": 1.0,
+       "n_shifts": 8,
+       "median_abs_change": 0.02497,
+       "change_over_spread": 0.009,
+       "change_over_se": 0.167,
+       "share_above_2se": 0.0
+      },
+      {
+       "distance_km": 2.0,
+       "n_shifts": 8,
+       "median_abs_change": 0.05137,
+       "change_over_spread": 0.0185,
+       "change_over_se": 0.343,
+       "share_above_2se": 0.0
+      },
+      {
+       "distance_km": 5.0,
+       "n_shifts": 8,
+       "median_abs_change": 0.1206,
+       "change_over_spread": 0.0434,
+       "change_over_se": 0.806,
+       "share_above_2se": 0.0
+      },
+      {
+       "distance_km": 10.0,
+       "n_shifts": 8,
+       "median_abs_change": 0.17982,
+       "change_over_spread": 0.0647,
+       "change_over_se": 1.202,
+       "share_above_2se": 0.25
+      }
+     ],
+     "tolerance_km": 10.0,
+     "tol_ratio": 0.25,
+     "tolerance_sweep": {
+      "0.1": 10.0,
+      "0.25": 10.0,
+      "0.5": 10.0
+     }
+    },
+    "ch4": {
+     "mean": -0.2360922031057271,
+     "sd": 16.29713044460403,
+     "n_days": 226,
+     "se": 1.084069,
+     "rows": [
+      {
+       "distance_km": 1.0,
+       "n_shifts": 8,
+       "median_abs_change": 0.16212,
+       "change_over_spread": 0.0099,
+       "change_over_se": 0.15,
+       "share_above_2se": 0.0
+      },
+      {
+       "distance_km": 2.0,
+       "n_shifts": 8,
+       "median_abs_change": 0.31316,
+       "change_over_spread": 0.0192,
+       "change_over_se": 0.289,
+       "share_above_2se": 0.0
+      },
+      {
+       "distance_km": 5.0,
+       "n_shifts": 8,
+       "median_abs_change": 0.68477,
+       "change_over_spread": 0.042,
+       "change_over_se": 0.632,
+       "share_above_2se": 0.0
+      },
+      {
+       "distance_km": 10.0,
+       "n_shifts": 8,
+       "median_abs_change": 0.81268,
+       "change_over_spread": 0.0499,
+       "change_over_se": 0.75,
+       "share_above_2se": 0.0
+      }
+     ],
+     "tolerance_km": 10.0,
+     "tol_ratio": 0.25,
+     "tolerance_sweep": {
+      "0.1": 10.0,
+      "0.25": 10.0,
+      "0.5": 10.0
+     }
+    },
+    "aai": {
+     "mean": -0.0514983305671568,
+     "sd": 0.5198158003224062,
+     "n_days": 385,
+     "se": 0.026492,
+     "rows": [
+      {
+       "distance_km": 1.0,
+       "n_shifts": 8,
+       "median_abs_change": 0.00303,
+       "change_over_spread": 0.0058,
+       "change_over_se": 0.114,
+       "share_above_2se": 0.0
+      },
+      {
+       "distance_km": 2.0,
+       "n_shifts": 8,
+       "median_abs_change": 0.00616,
+       "change_over_spread": 0.0119,
+       "change_over_se": 0.233,
+       "share_above_2se": 0.0
+      },
+      {
+       "distance_km": 5.0,
+       "n_shifts": 8,
+       "median_abs_change": 0.01556,
+       "change_over_spread": 0.0299,
+       "change_over_se": 0.587,
+       "share_above_2se": 0.0
+      },
+      {
+       "distance_km": 10.0,
+       "n_shifts": 8,
+       "median_abs_change": 0.02783,
+       "change_over_spread": 0.0535,
+       "change_over_se": 1.051,
+       "share_above_2se": 0.0
+      }
+     ],
+     "tolerance_km": 10.0,
+     "tol_ratio": 0.25,
+     "tolerance_sweep": {
+      "0.1": 10.0,
+      "0.25": 10.0,
+      "0.5": 10.0
+     }
+    }
+   },
+   "targets_synthetic": false,
+   "roster": {
+    "box_km": 1.5,
+    "facility_type": "oil_processing",
+    "region": "middle_east",
+    "name": "Shaybah oil/gas processing, Rub' al Khali, Saudi Arabia"
+   }
+  },
+  "shymkent_refinery": {
+   "box_km": 3.0,
+   "context_km": 23.0,
+   "kind": "built_up",
+   "natural_change": {
+    "n_px": 2500,
+    "nrmse": 0.3493,
+    "ncc": 0.9678,
+    "index_change": {
+     "ndvi": 0.0397,
+     "bsi": 0.0042,
+     "hsfi": 0.0
+    }
+   },
+   "by_distance": [
+    {
+     "distance_km": 1.0,
+     "n_directions": 8,
+     "n_inside": 8,
+     "median_nrmse": 1.4055,
+     "median_ncc": 0.0112,
+     "median_box_overlap": 0.6255,
+     "median_retained": 0.64,
+     "share_missing_facility": 0.0
+    },
+    {
+     "distance_km": 2.0,
+     "n_directions": 8,
+     "n_inside": 8,
+     "median_nrmse": 1.4064,
+     "median_ncc": -0.026,
+     "median_box_overlap": 0.3064,
+     "median_retained": 0.29,
+     "share_missing_facility": 1.0
+    },
+    {
+     "distance_km": 5.0,
+     "n_directions": 8,
+     "n_inside": 8,
+     "median_nrmse": 1.3007,
+     "median_ncc": 0.0223,
+     "median_box_overlap": 0.0,
+     "median_retained": 0.0,
+     "share_missing_facility": 1.0
+    },
+    {
+     "distance_km": 10.0,
+     "n_directions": 8,
+     "n_inside": 8,
+     "median_nrmse": 1.2626,
+     "median_ncc": 0.0691,
+     "median_box_overlap": 0.0,
+     "median_retained": 0.0,
+     "share_missing_facility": 1.0
+    }
+   ],
+   "note": "Compared at the resolution of the context chip. A shift that leaves the picture is skipped.",
+   "meta": {
+    "backend": "ee",
+    "source": "single",
+    "synthetic": false,
+    "fetched_at": "2026-10-21T06:47:16.181761+00:00",
+    "date": "2026-07-07",
+    "cloud_frac": 0,
+    "n_scenes": 1,
+    "gsd_m": 59.9,
+    "box_km": 23.0,
+    "site_id": "shymkent_refinery",
+    "lat": 42.259906,
+    "lon": 69.656839,
+    "key": "shymkent_refinery-f4494a_42.25991_69.65684_23.00_ee_single_120_q0"
+   },
+   "synthetic": false,
+   "site_id": "shymkent_refinery",
+   "tolerance_sweep": {
+    "keeps_facility": {
+     "0.25": 2.0,
+     "0.5": 1.0,
+     "0.75": 0.0
+    },
+    "picture_correlation": {
+     "0.5": 0.0,
+     "0.8": 0.0,
+     "0.9": 0.0
+    }
+   },
+   "tolerance_km": {
+    "keeps_facility": 1.0,
+    "picture_correlation_0_8": 0.0
+   },
+   "targets": {
+    "no2": {
+     "mean": 79.00531364439655,
+     "sd": 76.83131795529255,
+     "n_days": 311,
+     "se": 4.356704,
+     "rows": [
+      {
+       "distance_km": 1.0,
+       "n_shifts": 8,
+       "median_abs_change": 2.73243,
+       "change_over_spread": 0.0356,
+       "change_over_se": 0.627,
+       "share_above_2se": 0.0
+      },
+      {
+       "distance_km": 2.0,
+       "n_shifts": 8,
+       "median_abs_change": 5.3891,
+       "change_over_spread": 0.0701,
+       "change_over_se": 1.237,
+       "share_above_2se": 0.0
+      },
+      {
+       "distance_km": 5.0,
+       "n_shifts": 8,
+       "median_abs_change": 10.48816,
+       "change_over_spread": 0.1365,
+       "change_over_se": 2.407,
+       "share_above_2se": 0.625
+      },
+      {
+       "distance_km": 10.0,
+       "n_shifts": 8,
+       "median_abs_change": 24.90956,
+       "change_over_spread": 0.3242,
+       "change_over_se": 5.718,
+       "share_above_2se": 0.625
+      }
+     ],
+     "tolerance_km": 5.0,
+     "tol_ratio": 0.25,
+     "tolerance_sweep": {
+      "0.1": 2.0,
+      "0.25": 5.0,
+      "0.5": 10.0
+     }
+    },
+    "co": {
+     "mean": 2.634554211115008,
+     "sd": 2.848887542193337,
+     "n_days": 346,
+     "se": 0.153157,
+     "rows": [
+      {
+       "distance_km": 1.0,
+       "n_shifts": 8,
+       "median_abs_change": 0.05604,
+       "change_over_spread": 0.0197,
+       "change_over_se": 0.366,
+       "share_above_2se": 0.0
+      },
+      {
+       "distance_km": 2.0,
+       "n_shifts": 8,
+       "median_abs_change": 0.11335,
+       "change_over_spread": 0.0398,
+       "change_over_se": 0.74,
+       "share_above_2se": 0.0
+      },
+      {
+       "distance_km": 5.0,
+       "n_shifts": 8,
+       "median_abs_change": 0.24484,
+       "change_over_spread": 0.0859,
+       "change_over_se": 1.599,
+       "share_above_2se": 0.25
+      },
+      {
+       "distance_km": 10.0,
+       "n_shifts": 8,
+       "median_abs_change": 0.359,
+       "change_over_spread": 0.126,
+       "change_over_se": 2.344,
+       "share_above_2se": 0.5
+      }
+     ],
+     "tolerance_km": 10.0,
+     "tol_ratio": 0.25,
+     "tolerance_sweep": {
+      "0.1": 5.0,
+      "0.25": 10.0,
+      "0.5": 10.0
+     }
+    },
+    "ch4": {
+     "mean": 1.0002058418285742,
+     "sd": 17.026063144587358,
+     "n_days": 153,
+     "se": 1.376476,
+     "rows": [
+      {
+       "distance_km": 1.0,
+       "n_shifts": 8,
+       "median_abs_change": 0.11372,
+       "change_over_spread": 0.0067,
+       "change_over_se": 0.083,
+       "share_above_2se": 0.0
+      },
+      {
+       "distance_km": 2.0,
+       "n_shifts": 8,
+       "median_abs_change": 0.23732,
+       "change_over_spread": 0.0139,
+       "change_over_se": 0.172,
+       "share_above_2se": 0.0
+      },
+      {
+       "distance_km": 5.0,
+       "n_shifts": 8,
+       "median_abs_change": 0.4317,
+       "change_over_spread": 0.0254,
+       "change_over_se": 0.314,
+       "share_above_2se": 0.0
+      },
+      {
+       "distance_km": 10.0,
+       "n_shifts": 8,
+       "median_abs_change": 1.05198,
+       "change_over_spread": 0.0618,
+       "change_over_se": 0.764,
+       "share_above_2se": 0.375
+      }
+     ],
+     "tolerance_km": 10.0,
+     "tol_ratio": 0.25,
+     "tolerance_sweep": {
+      "0.1": 10.0,
+      "0.25": 10.0,
+      "0.5": 10.0
+     }
+    },
+    "aai": {
+     "mean": 0.1303840718062202,
+     "sd": 0.6160860761519382,
+     "n_days": 483,
+     "se": 0.028033,
+     "rows": [
+      {
+       "distance_km": 1.0,
+       "n_shifts": 8,
+       "median_abs_change": 0.00504,
+       "change_over_spread": 0.0082,
+       "change_over_se": 0.18,
+       "share_above_2se": 0.0
+      },
+      {
+       "distance_km": 2.0,
+       "n_shifts": 8,
+       "median_abs_change": 0.01029,
+       "change_over_spread": 0.0167,
+       "change_over_se": 0.367,
+       "share_above_2se": 0.0
+      },
+      {
+       "distance_km": 5.0,
+       "n_shifts": 8,
+       "median_abs_change": 0.02301,
+       "change_over_spread": 0.0373,
+       "change_over_se": 0.821,
+       "share_above_2se": 0.0
+      },
+      {
+       "distance_km": 10.0,
+       "n_shifts": 8,
+       "median_abs_change": 0.04465,
+       "change_over_spread": 0.0725,
+       "change_over_se": 1.593,
+       "share_above_2se": 0.375
+      }
+     ],
+     "tolerance_km": 10.0,
+     "tol_ratio": 0.25,
+     "tolerance_sweep": {
+      "0.1": 10.0,
+      "0.25": 10.0,
+      "0.5": 10.0
+     }
+    }
+   },
+   "targets_synthetic": false,
+   "roster": {
+    "box_km": 3.0,
+    "facility_type": "refinery",
+    "region": "central_asia",
+    "name": "Shymkent refinery, Kazakhstan"
+   }
+  },
+  "tarragona_petrochem": {
+   "box_km": 4.5,
+   "context_km": 24.5,
+   "kind": "built_up",
+   "natural_change": {
+    "n_px": 5041,
+    "nrmse": 0.4036,
+    "ncc": 0.9484,
+    "index_change": {
+     "ndvi": 0.0369,
+     "bsi": 0.0898,
+     "hsfi": 0.6768
+    }
+   },
+   "by_distance": [
+    {
+     "distance_km": 1.0,
+     "n_directions": 8,
+     "n_inside": 8,
+     "median_nrmse": 1.2624,
+     "median_ncc": 0.1115,
+     "median_box_overlap": 0.7441,
+     "median_retained": 0.7654,
+     "share_missing_facility": 0.0
+    },
+    {
+     "distance_km": 2.0,
+     "n_directions": 8,
+     "n_inside": 8,
+     "median_nrmse": 1.3382,
+     "median_ncc": 0.0581,
+     "median_box_overlap": 0.5129,
+     "median_retained": 0.5292,
+     "share_missing_facility": 0.375
+    },
+    {
+     "distance_km": 5.0,
+     "n_directions": 8,
+     "n_inside": 8,
+     "median_nrmse": 1.3176,
+     "median_ncc": 0.0234,
+     "median_box_overlap": 0.023,
+     "median_retained": 0.015,
+     "share_missing_facility": 1.0
+    },
+    {
+     "distance_km": 10.0,
+     "n_directions": 8,
+     "n_inside": 8,
+     "median_nrmse": 1.556,
+     "median_ncc": -0.0246,
+     "median_box_overlap": 0.0,
+     "median_retained": 0.0,
+     "share_missing_facility": 1.0
+    }
+   ],
+   "note": "Compared at the resolution of the context chip. A shift that leaves the picture is skipped.",
+   "meta": {
+    "backend": "ee",
+    "source": "single",
+    "synthetic": false,
+    "fetched_at": "2026-10-21T06:51:25.840940+00:00",
+    "date": "2026-09-11",
+    "cloud_frac": 9.597937685483707e-05,
+    "n_scenes": 1,
+    "gsd_m": 63.8,
+    "box_km": 24.5,
+    "site_id": "tarragona_petrochem",
+    "lat": 41.104774,
+    "lon": 1.200943,
+    "key": "tarragona_petrochem-affccf_41.10477_1.20094_24.50_ee_single_120_q0"
+   },
+   "synthetic": false,
+   "site_id": "tarragona_petrochem",
+   "tolerance_sweep": {
+    "keeps_facility": {
+     "0.25": 2.0,
+     "0.5": 2.0,
+     "0.75": 1.0
+    },
+    "picture_correlation": {
+     "0.5": 0.0,
+     "0.8": 0.0,
+     "0.9": 0.0
+    }
+   },
+   "tolerance_km": {
+    "keeps_facility": 2.0,
+    "picture_correlation_0_8": 0.0
+   },
+   "targets": {
+    "no2": {
+     "mean": 6.477074432212471,
+     "sd": 16.349075144811327,
+     "n_days": 363,
+     "se": 0.858104,
+     "rows": [
+      {
+       "distance_km": 1.0,
+       "n_shifts": 8,
+       "median_abs_change": 0.91145,
+       "change_over_spread": 0.0557,
+       "change_over_se": 1.062,
+       "share_above_2se": 0.0
+      },
+      {
+       "distance_km": 2.0,
+       "n_shifts": 8,
+       "median_abs_change": 1.7624,
+       "change_over_spread": 0.1078,
+       "change_over_se": 2.054,
+       "share_above_2se": 0.5
+      },
+      {
+       "distance_km": 5.0,
+       "n_shifts": 8,
+       "median_abs_change": 3.75826,
+       "change_over_spread": 0.2299,
+       "change_over_se": 4.38,
+       "share_above_2se": 0.75
+      },
+      {
+       "distance_km": 10.0,
+       "n_shifts": 8,
+       "median_abs_change": 5.37133,
+       "change_over_spread": 0.3285,
+       "change_over_se": 6.26,
+       "share_above_2se": 0.875
+      }
+     ],
+     "tolerance_km": 5.0,
+     "tol_ratio": 0.25,
+     "tolerance_sweep": {
+      "0.1": 1.0,
+      "0.25": 5.0,
+      "0.5": 10.0
+     }
+    },
+    "co": {
+     "mean": 1.6225918925997749,
+     "sd": 3.6371272326368898,
+     "n_days": 342,
+     "se": 0.196673,
+     "rows": [
+      {
+       "distance_km": 1.0,
+       "n_shifts": 8,
+       "median_abs_change": 0.06613,
+       "change_over_spread": 0.0182,
+       "change_over_se": 0.336,
+       "share_above_2se": 0.0
+      },
+      {
+       "distance_km": 2.0,
+       "n_shifts": 8,
+       "median_abs_change": 0.11203,
+       "change_over_spread": 0.0308,
+       "change_over_se": 0.57,
+       "share_above_2se": 0.0
+      },
+      {
+       "distance_km": 5.0,
+       "n_shifts": 8,
+       "median_abs_change": 0.1604,
+       "change_over_spread": 0.0441,
+       "change_over_se": 0.816,
+       "share_above_2se": 0.25
+      },
+      {
+       "distance_km": 10.0,
+       "n_shifts": 8,
+       "median_abs_change": 0.80017,
+       "change_over_spread": 0.22,
+       "change_over_se": 4.069,
+       "share_above_2se": 0.625
+      }
+     ],
+     "tolerance_km": 10.0,
+     "tol_ratio": 0.25,
+     "tolerance_sweep": {
+      "0.1": 5.0,
+      "0.25": 10.0,
+      "0.5": 10.0
+     }
+    },
+    "ch4": {
+     "mean": 7.4462355913531155,
+     "sd": 21.71867936519595,
+     "n_days": 144,
+     "se": 1.80989,
+     "rows": [
+      {
+       "distance_km": 1.0,
+       "n_shifts": 8,
+       "median_abs_change": 0.45429,
+       "change_over_spread": 0.0209,
+       "change_over_se": 0.251,
+       "share_above_2se": 0.0
+      },
+      {
+       "distance_km": 2.0,
+       "n_shifts": 8,
+       "median_abs_change": 1.11662,
+       "change_over_spread": 0.0514,
+       "change_over_se": 0.617,
+       "share_above_2se": 0.0
+      },
+      {
+       "distance_km": 5.0,
+       "n_shifts": 8,
+       "median_abs_change": 2.81433,
+       "change_over_spread": 0.1296,
+       "change_over_se": 1.555,
+       "share_above_2se": 0.375
+      },
+      {
+       "distance_km": 10.0,
+       "n_shifts": 8,
+       "median_abs_change": 6.24607,
+       "change_over_spread": 0.2876,
+       "change_over_se": 3.451,
+       "share_above_2se": 0.75
+      }
+     ],
+     "tolerance_km": 5.0,
+     "tol_ratio": 0.25,
+     "tolerance_sweep": {
+      "0.1": 2.0,
+      "0.25": 5.0,
+      "0.5": 10.0
+     }
+    },
+    "aai": {
+     "mean": 0.18204033241191803,
+     "sd": 0.6143647685466012,
+     "n_days": 492,
+     "se": 0.027698,
+     "rows": [
+      {
+       "distance_km": 1.0,
+       "n_shifts": 8,
+       "median_abs_change": 0.01152,
+       "change_over_spread": 0.0187,
+       "change_over_se": 0.416,
+       "share_above_2se": 0.0
+      },
+      {
+       "distance_km": 2.0,
+       "n_shifts": 8,
+       "median_abs_change": 0.02161,
+       "change_over_spread": 0.0352,
+       "change_over_se": 0.78,
+       "share_above_2se": 0.0
+      },
+      {
+       "distance_km": 5.0,
+       "n_shifts": 8,
+       "median_abs_change": 0.03971,
+       "change_over_spread": 0.0646,
+       "change_over_se": 1.434,
+       "share_above_2se": 0.375
+      },
+      {
+       "distance_km": 10.0,
+       "n_shifts": 8,
+       "median_abs_change": 0.09008,
+       "change_over_spread": 0.1466,
+       "change_over_se": 3.252,
+       "share_above_2se": 0.5
+      }
+     ],
+     "tolerance_km": 10.0,
+     "tol_ratio": 0.25,
+     "tolerance_sweep": {
+      "0.1": 5.0,
+      "0.25": 10.0,
+      "0.5": 10.0
+     }
+    }
+   },
+   "targets_synthetic": false,
+   "roster": {
+    "box_km": 4.5,
+    "facility_type": "petrochemical",
+    "region": "europe",
+    "name": "Tarragona petrochemical complex, Spain"
+   }
+  },
+  "tengiz_processing_plant": {
+   "box_km": 6.0,
+   "context_km": 26.0,
+   "kind": "built_up",
+   "natural_change": {
+    "n_px": 7921,
+    "nrmse": 0.2244,
+    "ncc": 0.9798,
+    "index_change": {
+     "ndvi": 0.0021,
+     "bsi": 0.0106,
+     "hsfi": 0.034
+    }
+   },
+   "by_distance": [
+    {
+     "distance_km": 1.0,
+     "n_directions": 8,
+     "n_inside": 8,
+     "median_nrmse": 1.3437,
+     "median_ncc": 0.0986,
+     "median_box_overlap": 0.8057,
+     "median_retained": 0.6474,
+     "share_missing_facility": 0.125
+    },
+    {
+     "distance_km": 2.0,
+     "n_directions": 8,
+     "n_inside": 8,
+     "median_nrmse": 1.3594,
+     "median_ncc": 0.0775,
+     "median_box_overlap": 0.6255,
+     "median_retained": 0.5081,
+     "share_missing_facility": 0.5
+    },
+    {
+     "distance_km": 5.0,
+     "n_directions": 8,
+     "n_inside": 8,
+     "median_nrmse": 1.3188,
+     "median_ncc": -0.0665,
+     "median_box_overlap": 0.1677,
+     "median_retained": 0.2772,
+     "share_missing_facility": 1.0
+    },
+    {
+     "distance_km": 10.0,
+     "n_directions": 8,
+     "n_inside": 8,
+     "median_nrmse": 1.2991,
+     "median_ncc": -0.0203,
+     "median_box_overlap": 0.0,
+     "median_retained": 0.0,
+     "share_missing_facility": 1.0
+    }
+   ],
+   "note": "Compared at the resolution of the context chip. A shift that leaves the picture is skipped.",
+   "meta": {
+    "backend": "ee",
+    "source": "single",
+    "synthetic": false,
+    "fetched_at": "2026-10-21T06:55:46.429073+00:00",
+    "date": "2026-10-01",
+    "cloud_frac": 0.020157967610239382,
+    "n_scenes": 1,
+    "gsd_m": 67.71,
+    "box_km": 26.0,
+    "site_id": "tengiz_processing_plant",
+    "lat": 46.166517,
+    "lon": 53.402481,
+    "key": "tengiz_processing_plant-235e81_46.16652_53.40248_26.00_ee_single_120_q0"
+   },
+   "synthetic": false,
+   "site_id": "tengiz_processing_plant",
+   "tolerance_sweep": {
+    "keeps_facility": {
+     "0.25": 5.0,
+     "0.5": 2.0,
+     "0.75": 0.0
+    },
+    "picture_correlation": {
+     "0.5": 0.0,
+     "0.8": 0.0,
+     "0.9": 0.0
+    }
+   },
+   "tolerance_km": {
+    "keeps_facility": 2.0,
+    "picture_correlation_0_8": 0.0
+   },
+   "targets": {
+    "no2": {
+     "mean": 9.131164885447625,
+     "sd": 11.404651324008,
+     "n_days": 359,
+     "se": 0.601914,
+     "rows": [
+      {
+       "distance_km": 1.0,
+       "n_shifts": 8,
+       "median_abs_change": 0.10361,
+       "change_over_spread": 0.0091,
+       "change_over_se": 0.172,
+       "share_above_2se": 0.0
+      },
+      {
+       "distance_km": 2.0,
+       "n_shifts": 8,
+       "median_abs_change": 0.36607,
+       "change_over_spread": 0.0321,
+       "change_over_se": 0.608,
+       "share_above_2se": 0.0
+      },
+      {
+       "distance_km": 5.0,
+       "n_shifts": 8,
+       "median_abs_change": 1.99466,
+       "change_over_spread": 0.1749,
+       "change_over_se": 3.314,
+       "share_above_2se": 1.0
+      },
+      {
+       "distance_km": 10.0,
+       "n_shifts": 8,
+       "median_abs_change": 5.0284,
+       "change_over_spread": 0.4409,
+       "change_over_se": 8.354,
+       "share_above_2se": 1.0
+      }
+     ],
+     "tolerance_km": 5.0,
+     "tol_ratio": 0.25,
+     "tolerance_sweep": {
+      "0.1": 2.0,
+      "0.25": 5.0,
+      "0.5": 10.0
+     }
+    },
+    "co": {
+     "mean": 0.13648622431228913,
+     "sd": 2.7683061532311877,
+     "n_days": 383,
+     "se": 0.141454,
+     "rows": [
+      {
+       "distance_km": 1.0,
+       "n_shifts": 8,
+       "median_abs_change": 0.01398,
+       "change_over_spread": 0.005,
+       "change_over_se": 0.099,
+       "share_above_2se": 0.0
+      },
+      {
+       "distance_km": 2.0,
+       "n_shifts": 8,
+       "median_abs_change": 0.02191,
+       "change_over_spread": 0.0079,
+       "change_over_se": 0.155,
+       "share_above_2se": 0.0
+      },
+      {
+       "distance_km": 5.0,
+       "n_shifts": 8,
+       "median_abs_change": 0.06826,
+       "change_over_spread": 0.0247,
+       "change_over_se": 0.483,
+       "share_above_2se": 0.0
+      },
+      {
+       "distance_km": 10.0,
+       "n_shifts": 8,
+       "median_abs_change": 0.161,
+       "change_over_spread": 0.0582,
+       "change_over_se": 1.138,
+       "share_above_2se": 0.0
+      }
+     ],
+     "tolerance_km": 10.0,
+     "tol_ratio": 0.25,
+     "tolerance_sweep": {
+      "0.1": 10.0,
+      "0.25": 10.0,
+      "0.5": 10.0
+     }
+    },
+    "ch4": {
+     "mean": -0.3728908558225612,
+     "sd": 17.000524925323106,
+     "n_days": 108,
+     "se": 1.635876,
+     "rows": [
+      {
+       "distance_km": 1.0,
+       "n_shifts": 8,
+       "median_abs_change": 0.028,
+       "change_over_spread": 0.0016,
+       "change_over_se": 0.017,
+       "share_above_2se": 0.0
+      },
+      {
+       "distance_km": 2.0,
+       "n_shifts": 8,
+       "median_abs_change": 0.24208,
+       "change_over_spread": 0.0142,
+       "change_over_se": 0.148,
+       "share_above_2se": 0.0
+      },
+      {
+       "distance_km": 5.0,
+       "n_shifts": 8,
+       "median_abs_change": 1.29604,
+       "change_over_spread": 0.0762,
+       "change_over_se": 0.792,
+       "share_above_2se": 0.0
+      },
+      {
+       "distance_km": 10.0,
+       "n_shifts": 8,
+       "median_abs_change": 2.8675,
+       "change_over_spread": 0.1687,
+       "change_over_se": 1.753,
+       "share_above_2se": 0.375
+      }
+     ],
+     "tolerance_km": 10.0,
+     "tol_ratio": 0.25,
+     "tolerance_sweep": {
+      "0.1": 5.0,
+      "0.25": 10.0,
+      "0.5": 10.0
+     }
+    },
+    "aai": {
+     "mean": 0.022957604641890672,
+     "sd": 0.7424255575627856,
+     "n_days": 537,
+     "se": 0.032038,
+     "rows": [
+      {
+       "distance_km": 1.0,
+       "n_shifts": 8,
+       "median_abs_change": 0.01229,
+       "change_over_spread": 0.0166,
+       "change_over_se": 0.384,
+       "share_above_2se": 0.0
+      },
+      {
+       "distance_km": 2.0,
+       "n_shifts": 8,
+       "median_abs_change": 0.02461,
+       "change_over_spread": 0.0331,
+       "change_over_se": 0.768,
+       "share_above_2se": 0.0
+      },
+      {
+       "distance_km": 5.0,
+       "n_shifts": 8,
+       "median_abs_change": 0.04829,
+       "change_over_spread": 0.065,
+       "change_over_se": 1.507,
+       "share_above_2se": 0.375
+      },
+      {
+       "distance_km": 10.0,
+       "n_shifts": 8,
+       "median_abs_change": 0.09124,
+       "change_over_spread": 0.1229,
+       "change_over_se": 2.848,
+       "share_above_2se": 0.625
+      }
+     ],
+     "tolerance_km": 10.0,
+     "tol_ratio": 0.25,
+     "tolerance_sweep": {
+      "0.1": 5.0,
+      "0.25": 10.0,
+      "0.5": 10.0
+     }
+    }
+   },
+   "targets_synthetic": false,
+   "roster": {
+    "box_km": 6.0,
+    "facility_type": "oil_processing",
+    "region": "central_asia",
+    "name": "Tengiz processing complex, Kazakhstan"
+   }
+  },
+  "tula_refinery_mexico": {
+   "box_km": 3.75,
+   "context_km": 23.75,
+   "kind": "built_up",
+   "natural_change": {
+    "n_px": 3721,
+    "nrmse": 1.6907,
+    "ncc": 0.3965,
+    "index_change": {
+     "ndvi": 0.0652,
+     "bsi": 0.005,
+     "hsfi": 0.0109
+    }
+   },
+   "by_distance": [
+    {
+     "distance_km": 1.0,
+     "n_directions": 8,
+     "n_inside": 8,
+     "median_nrmse": 1.3409,
+     "median_ncc": 0.0586,
+     "median_box_overlap": 0.6958,
+     "median_retained": 0.7774,
+     "share_missing_facility": 0.0
+    },
+    {
+     "distance_km": 2.0,
+     "n_directions": 8,
+     "n_inside": 8,
+     "median_nrmse": 1.3855,
+     "median_ncc": 0.0381,
+     "median_box_overlap": 0.4274,
+     "median_retained": 0.4417,
+     "share_missing_facility": 0.625
+    },
+    {
+     "distance_km": 5.0,
+     "n_directions": 8,
+     "n_inside": 8,
+     "median_nrmse": 1.3779,
+     "median_ncc": 0.0453,
+     "median_box_overlap": 0.0016,
+     "median_retained": 0.0,
+     "share_missing_facility": 1.0
+    },
+    {
+     "distance_km": 10.0,
+     "n_directions": 8,
+     "n_inside": 8,
+     "median_nrmse": 1.3571,
+     "median_ncc": 0.004,
+     "median_box_overlap": 0.0,
+     "median_retained": 0.0,
+     "share_missing_facility": 1.0
+    }
+   ],
+   "note": "Compared at the resolution of the context chip. A shift that leaves the picture is skipped.",
+   "meta": {
+    "backend": "ee",
+    "source": "single",
+    "synthetic": false,
+    "fetched_at": "2026-10-21T06:58:15.000790+00:00",
+    "date": "2026-07-14",
+    "cloud_frac": 0.0013953655175189146,
+    "n_scenes": 1,
+    "gsd_m": 61.85,
+    "box_km": 23.75,
+    "site_id": "tula_refinery_mexico",
+    "lat": 20.047143,
+    "lon": -99.27598,
+    "key": "tula_refinery_mexico-e53776_20.04714_-99.27598_23.75_ee_single_120_q0"
+   },
+   "synthetic": false,
+   "site_id": "tula_refinery_mexico",
+   "tolerance_sweep": {
+    "keeps_facility": {
+     "0.25": 2.0,
+     "0.5": 1.0,
+     "0.75": 1.0
+    },
+    "picture_correlation": {
+     "0.5": 0.0,
+     "0.8": 0.0,
+     "0.9": 0.0
+    }
+   },
+   "tolerance_km": {
+    "keeps_facility": 1.0,
+    "picture_correlation_0_8": 0.0
+   },
+   "targets": {
+    "no2": {
+     "mean": 41.70284631517456,
+     "sd": 52.14937919201298,
+     "n_days": 279,
+     "se": 3.122102,
+     "rows": [
+      {
+       "distance_km": 1.0,
+       "n_shifts": 8,
+       "median_abs_change": 2.83393,
+       "change_over_spread": 0.0543,
+       "change_over_se": 0.908,
+       "share_above_2se": 0.0
+      },
+      {
+       "distance_km": 2.0,
+       "n_shifts": 8,
+       "median_abs_change": 5.72027,
+       "change_over_spread": 0.1097,
+       "change_over_se": 1.832,
+       "share_above_2se": 0.375
+      },
+      {
+       "distance_km": 5.0,
+       "n_shifts": 8,
+       "median_abs_change": 10.66966,
+       "change_over_spread": 0.2046,
+       "change_over_se": 3.417,
+       "share_above_2se": 0.75
+      },
+      {
+       "distance_km": 10.0,
+       "n_shifts": 8,
+       "median_abs_change": 24.60581,
+       "change_over_spread": 0.4718,
+       "change_over_se": 7.881,
+       "share_above_2se": 0.625
+      }
+     ],
+     "tolerance_km": 5.0,
+     "tol_ratio": 0.25,
+     "tolerance_sweep": {
+      "0.1": 1.0,
+      "0.25": 5.0,
+      "0.5": 10.0
+     }
+    },
+    "co": {
+     "mean": 1.52467196501296,
+     "sd": 3.6751698063140075,
+     "n_days": 300,
+     "se": 0.212186,
+     "rows": [
+      {
+       "distance_km": 1.0,
+       "n_shifts": 8,
+       "median_abs_change": 0.06883,
+       "change_over_spread": 0.0187,
+       "change_over_se": 0.324,
+       "share_above_2se": 0.0
+      },
+      {
+       "distance_km": 2.0,
+       "n_shifts": 8,
+       "median_abs_change": 0.13802,
+       "change_over_spread": 0.0376,
+       "change_over_se": 0.65,
+       "share_above_2se": 0.0
+      },
+      {
+       "distance_km": 5.0,
+       "n_shifts": 8,
+       "median_abs_change": 0.32282,
+       "change_over_spread": 0.0878,
+       "change_over_se": 1.521,
+       "share_above_2se": 0.125
+      },
+      {
+       "distance_km": 10.0,
+       "n_shifts": 8,
+       "median_abs_change": 0.47633,
+       "change_over_spread": 0.1296,
+       "change_over_se": 2.245,
+       "share_above_2se": 0.75
+      }
+     ],
+     "tolerance_km": 10.0,
+     "tol_ratio": 0.25,
+     "tolerance_sweep": {
+      "0.1": 5.0,
+      "0.25": 10.0,
+      "0.5": 10.0
+     }
+    },
+    "ch4": {
+     "mean": -11.698156790410849,
+     "sd": 17.005269179247904,
+     "n_days": 50,
+     "se": 2.404908,
+     "rows": [
+      {
+       "distance_km": 1.0,
+       "n_shifts": 8,
+       "median_abs_change": 0.45124,
+       "change_over_spread": 0.0265,
+       "change_over_se": 0.188,
+       "share_above_2se": 0.0
+      },
+      {
+       "distance_km": 2.0,
+       "n_shifts": 8,
+       "median_abs_change": 0.92824,
+       "change_over_spread": 0.0546,
+       "change_over_se": 0.386,
+       "share_above_2se": 0.0
+      },
+      {
+       "distance_km": 5.0,
+       "n_shifts": 8,
+       "median_abs_change": 3.44589,
+       "change_over_spread": 0.2026,
+       "change_over_se": 1.433,
+       "share_above_2se": 0.375
+      },
+      {
+       "distance_km": 10.0,
+       "n_shifts": 8,
+       "median_abs_change": 10.05922,
+       "change_over_spread": 0.5915,
+       "change_over_se": 4.183,
+       "share_above_2se": 1.0
+      }
+     ],
+     "tolerance_km": 5.0,
+     "tol_ratio": 0.25,
+     "tolerance_sweep": {
+      "0.1": 2.0,
+      "0.25": 5.0,
+      "0.5": 5.0
+     }
+    },
+    "aai": {
+     "mean": 0.049849072785056014,
+     "sd": 0.6946220375589186,
+     "n_days": 381,
+     "se": 0.035587,
+     "rows": [
+      {
+       "distance_km": 1.0,
+       "n_shifts": 8,
+       "median_abs_change": 0.00329,
+       "change_over_spread": 0.0047,
+       "change_over_se": 0.092,
+       "share_above_2se": 0.0
+      },
+      {
+       "distance_km": 2.0,
+       "n_shifts": 8,
+       "median_abs_change": 0.00436,
+       "change_over_spread": 0.0063,
+       "change_over_se": 0.122,
+       "share_above_2se": 0.0
+      },
+      {
+       "distance_km": 5.0,
+       "n_shifts": 8,
+       "median_abs_change": 0.01873,
+       "change_over_spread": 0.027,
+       "change_over_se": 0.526,
+       "share_above_2se": 0.0
+      },
+      {
+       "distance_km": 10.0,
+       "n_shifts": 8,
+       "median_abs_change": 0.07662,
+       "change_over_spread": 0.1103,
+       "change_over_se": 2.153,
+       "share_above_2se": 0.625
+      }
+     ],
+     "tolerance_km": 10.0,
+     "tol_ratio": 0.25,
+     "tolerance_sweep": {
+      "0.1": 5.0,
+      "0.25": 10.0,
+      "0.5": 10.0
+     }
+    }
+   },
+   "targets_synthetic": false,
+   "roster": {
+    "box_km": 3.75,
+    "facility_type": "refinery",
+    "region": "north_america",
+    "name": "Tula refinery, Mexico"
+   }
+  },
+  "yanbu_refining_complex": {
+   "box_km": 6.0,
+   "context_km": 26.0,
+   "kind": "built_up",
+   "natural_change": {
+    "n_px": 7921,
+    "nrmse": 0.2042,
+    "ncc": 0.9898,
+    "index_change": {
+     "ndvi": 0.0126,
+     "bsi": 0.0179,
+     "hsfi": 0.0034
+    }
+   },
+   "by_distance": [
+    {
+     "distance_km": 1.0,
+     "n_directions": 8,
+     "n_inside": 8,
+     "median_nrmse": 1.3839,
+     "median_ncc": 0.0244,
+     "median_box_overlap": 0.8057,
+     "median_retained": 0.8721,
+     "share_missing_facility": 0.0
+    },
+    {
+     "distance_km": 2.0,
+     "n_directions": 8,
+     "n_inside": 8,
+     "median_nrmse": 1.4755,
+     "median_ncc": 0.0158,
+     "median_box_overlap": 0.6255,
+     "median_retained": 0.6744,
+     "share_missing_facility": 0.0
+    },
+    {
+     "distance_km": 5.0,
+     "n_directions": 8,
+     "n_inside": 8,
+     "median_nrmse": 1.7517,
+     "median_ncc": 0.0656,
+     "median_box_overlap": 0.1677,
+     "median_retained": 0.1267,
+     "share_missing_facility": 1.0
+    },
+    {
+     "distance_km": 10.0,
+     "n_directions": 8,
+     "n_inside": 8,
+     "median_nrmse": 1.8625,
+     "median_ncc": 0.0591,
+     "median_box_overlap": 0.0,
+     "median_retained": 0.0,
+     "share_missing_facility": 1.0
+    }
+   ],
+   "note": "Compared at the resolution of the context chip. A shift that leaves the picture is skipped.",
+   "meta": {
+    "backend": "ee",
+    "source": "single",
+    "synthetic": false,
+    "fetched_at": "2026-10-21T07:01:06.068658+00:00",
+    "date": "2026-10-15",
+    "cloud_frac": 0.0007135448733899416,
+    "n_scenes": 1,
+    "gsd_m": 67.71,
+    "box_km": 26.0,
+    "site_id": "yanbu_refining_complex",
+    "lat": 23.981548,
+    "lon": 38.241692,
+    "key": "yanbu_refining_complex-3fe9cc_23.98155_38.24169_26.00_ee_single_120_q0"
+   },
+   "synthetic": false,
+   "site_id": "yanbu_refining_complex",
+   "tolerance_sweep": {
+    "keeps_facility": {
+     "0.25": 2.0,
+     "0.5": 2.0,
+     "0.75": 1.0
+    },
+    "picture_correlation": {
+     "0.5": 0.0,
+     "0.8": 0.0,
+     "0.9": 0.0
+    }
+   },
+   "tolerance_km": {
+    "keeps_facility": 2.0,
+    "picture_correlation_0_8": 0.0
+   },
+   "targets": {
+    "no2": {
+     "mean": 71.35601793745221,
+     "sd": 56.09832329125684,
+     "n_days": 361,
+     "se": 2.952543,
+     "rows": [
+      {
+       "distance_km": 1.0,
+       "n_shifts": 8,
+       "median_abs_change": 3.87376,
+       "change_over_spread": 0.0691,
+       "change_over_se": 1.312,
+       "share_above_2se": 0.0
+      },
+      {
+       "distance_km": 2.0,
+       "n_shifts": 8,
+       "median_abs_change": 7.72894,
+       "change_over_spread": 0.1378,
+       "change_over_se": 2.618,
+       "share_above_2se": 0.75
+      },
+      {
+       "distance_km": 5.0,
+       "n_shifts": 8,
+       "median_abs_change": 18.7522,
+       "change_over_spread": 0.3343,
+       "change_over_se": 6.351,
+       "share_above_2se": 0.75
+      },
+      {
+       "distance_km": 10.0,
+       "n_shifts": 8,
+       "median_abs_change": 29.98327,
+       "change_over_spread": 0.5345,
+       "change_over_se": 10.155,
+       "share_above_2se": 0.875
+      }
+     ],
+     "tolerance_km": 2.0,
+     "tol_ratio": 0.25,
+     "tolerance_sweep": {
+      "0.1": 1.0,
+      "0.25": 2.0,
+      "0.5": 5.0
+     }
+    },
+    "co": {
+     "mean": 1.3773515220995605,
+     "sd": 3.2074069254102318,
+     "n_days": 332,
+     "se": 0.176029,
+     "rows": [
+      {
+       "distance_km": 1.0,
+       "n_shifts": 8,
+       "median_abs_change": 0.09834,
+       "change_over_spread": 0.0307,
+       "change_over_se": 0.559,
+       "share_above_2se": 0.0
+      },
+      {
+       "distance_km": 2.0,
+       "n_shifts": 8,
+       "median_abs_change": 0.19208,
+       "change_over_spread": 0.0599,
+       "change_over_se": 1.091,
+       "share_above_2se": 0.0
+      },
+      {
+       "distance_km": 5.0,
+       "n_shifts": 8,
+       "median_abs_change": 0.41199,
+       "change_over_spread": 0.1284,
+       "change_over_se": 2.34,
+       "share_above_2se": 0.625
+      },
+      {
+       "distance_km": 10.0,
+       "n_shifts": 8,
+       "median_abs_change": 0.62339,
+       "change_over_spread": 0.1944,
+       "change_over_se": 3.541,
+       "share_above_2se": 0.625
+      }
+     ],
+     "tolerance_km": 10.0,
+     "tol_ratio": 0.25,
+     "tolerance_sweep": {
+      "0.1": 2.0,
+      "0.25": 10.0,
+      "0.5": 10.0
+     }
+    },
+    "ch4": {
+     "mean": 10.244064141983017,
+     "sd": 20.753736568777825,
+     "n_days": 222,
+     "se": 1.3929,
+     "rows": [
+      {
+       "distance_km": 1.0,
+       "n_shifts": 8,
+       "median_abs_change": 0.72176,
+       "change_over_spread": 0.0348,
+       "change_over_se": 0.518,
+       "share_above_2se": 0.0
+      },
+      {
+       "distance_km": 2.0,
+       "n_shifts": 8,
+       "median_abs_change": 1.33233,
+       "change_over_spread": 0.0642,
+       "change_over_se": 0.957,
+       "share_above_2se": 0.125
+      },
+      {
+       "distance_km": 5.0,
+       "n_shifts": 8,
+       "median_abs_change": 1.99876,
+       "change_over_spread": 0.0963,
+       "change_over_se": 1.435,
+       "share_above_2se": 0.375
+      },
+      {
+       "distance_km": 10.0,
+       "n_shifts": 8,
+       "median_abs_change": 2.56918,
+       "change_over_spread": 0.1238,
+       "change_over_se": 1.844,
+       "share_above_2se": 0.375
+      }
+     ],
+     "tolerance_km": 10.0,
+     "tol_ratio": 0.25,
+     "tolerance_sweep": {
+      "0.1": 5.0,
+      "0.25": 10.0,
+      "0.5": 10.0
+     }
+    },
+    "aai": {
+     "mean": 0.31502515111862406,
+     "sd": 0.6143425843365274,
+     "n_days": 405,
+     "se": 0.030527,
+     "rows": [
+      {
+       "distance_km": 1.0,
+       "n_shifts": 8,
+       "median_abs_change": 0.02849,
+       "change_over_spread": 0.0464,
+       "change_over_se": 0.933,
+       "share_above_2se": 0.0
+      },
+      {
+       "distance_km": 2.0,
+       "n_shifts": 8,
+       "median_abs_change": 0.05502,
+       "change_over_spread": 0.0896,
+       "change_over_se": 1.802,
+       "share_above_2se": 0.375
+      },
+      {
+       "distance_km": 5.0,
+       "n_shifts": 8,
+       "median_abs_change": 0.11091,
+       "change_over_spread": 0.1805,
+       "change_over_se": 3.633,
+       "share_above_2se": 0.75
+      },
+      {
+       "distance_km": 10.0,
+       "n_shifts": 8,
+       "median_abs_change": 0.14869,
+       "change_over_spread": 0.242,
+       "change_over_se": 4.871,
+       "share_above_2se": 0.875
+      }
+     ],
+     "tolerance_km": 10.0,
+     "tol_ratio": 0.25,
+     "tolerance_sweep": {
+      "0.1": 2.0,
+      "0.25": 10.0,
+      "0.5": 10.0
+     }
+    }
+   },
+   "targets_synthetic": false,
+   "roster": {
+    "box_km": 6.0,
+    "facility_type": "refinery",
+    "region": "middle_east",
+    "name": "Yanbu refining/petrochemical complex, Red Sea, Saudi Arabia"
+   }
+  },
+  "zawiya_refinery_libya": {
+   "box_km": 2.0,
+   "context_km": 22.0,
+   "kind": "built_up",
+   "natural_change": {
+    "n_px": 1225,
+    "nrmse": 0.2476,
+    "ncc": 0.9841,
+    "index_change": {
+     "ndvi": 0.0478,
+     "bsi": 0.0096,
+     "hsfi": 0.2243
+    }
+   },
+   "by_distance": [
+    {
+     "distance_km": 1.0,
+     "n_directions": 8,
+     "n_inside": 8,
+     "median_nrmse": 1.2119,
+     "median_ncc": 0.0197,
+     "median_box_overlap": 0.4589,
+     "median_retained": 0.4219,
+     "share_missing_facility": 0.5
+    },
+    {
+     "distance_km": 2.0,
+     "n_directions": 8,
+     "n_inside": 8,
+     "median_nrmse": 1.199,
+     "median_ncc": -0.0267,
+     "median_box_overlap": 0.0429,
+     "median_retained": 0.0,
+     "share_missing_facility": 1.0
+    },
+    {
+     "distance_km": 5.0,
+     "n_directions": 8,
+     "n_inside": 8,
+     "median_nrmse": 1.1786,
+     "median_ncc": 0.0454,
+     "median_box_overlap": 0.0,
+     "median_retained": 0.0,
+     "share_missing_facility": 1.0
+    },
+    {
+     "distance_km": 10.0,
+     "n_directions": 8,
+     "n_inside": 8,
+     "median_nrmse": 1.2988,
+     "median_ncc": -0.0598,
+     "median_box_overlap": 0.0,
+     "median_retained": 0.0,
+     "share_missing_facility": 1.0
+    }
+   ],
+   "note": "Compared at the resolution of the context chip. A shift that leaves the picture is skipped.",
+   "meta": {
+    "backend": "ee",
+    "source": "single",
+    "synthetic": false,
+    "fetched_at": "2026-10-21T07:03:45.853043+00:00",
+    "date": "2026-09-23",
+    "cloud_frac": 0.0006705614679352775,
+    "n_scenes": 1,
+    "gsd_m": 57.29,
+    "box_km": 22.0,
+    "site_id": "zawiya_refinery_libya",
+    "lat": 32.78529,
+    "lon": 12.699165,
+    "key": "zawiya_refinery_libya-95ae14_32.78529_12.69917_22.00_ee_single_120_q0"
+   },
+   "synthetic": false,
+   "site_id": "zawiya_refinery_libya",
+   "tolerance_sweep": {
+    "keeps_facility": {
+     "0.25": 1.0,
+     "0.5": 0.0,
+     "0.75": 0.0
+    },
+    "picture_correlation": {
+     "0.5": 0.0,
+     "0.8": 0.0,
+     "0.9": 0.0
+    }
+   },
+   "tolerance_km": {
+    "keeps_facility": 0.0,
+    "picture_correlation_0_8": 0.0
+   },
+   "targets": {
+    "no2": {
+     "mean": 28.22349010022404,
+     "sd": 32.52416164628586,
+     "n_days": 362,
+     "se": 1.709432,
+     "rows": [
+      {
+       "distance_km": 1.0,
+       "n_shifts": 8,
+       "median_abs_change": 1.26188,
+       "change_over_spread": 0.0388,
+       "change_over_se": 0.738,
+       "share_above_2se": 0.0
+      },
+      {
+       "distance_km": 2.0,
+       "n_shifts": 8,
+       "median_abs_change": 2.44946,
+       "change_over_spread": 0.0753,
+       "change_over_se": 1.433,
+       "share_above_2se": 0.125
+      },
+      {
+       "distance_km": 5.0,
+       "n_shifts": 8,
+       "median_abs_change": 4.01235,
+       "change_over_spread": 0.1234,
+       "change_over_se": 2.347,
+       "share_above_2se": 0.625
+      },
+      {
+       "distance_km": 10.0,
+       "n_shifts": 8,
+       "median_abs_change": 7.02009,
+       "change_over_spread": 0.2158,
+       "change_over_se": 4.107,
+       "share_above_2se": 0.5
+      }
+     ],
+     "tolerance_km": 10.0,
+     "tol_ratio": 0.25,
+     "tolerance_sweep": {
+      "0.1": 2.0,
+      "0.25": 10.0,
+      "0.5": 10.0
+     }
+    },
+    "co": {
+     "mean": 1.258755763430406,
+     "sd": 3.3607612251553944,
+     "n_days": 367,
+     "se": 0.17543,
+     "rows": [
+      {
+       "distance_km": 1.0,
+       "n_shifts": 8,
+       "median_abs_change": 0.01789,
+       "change_over_spread": 0.0053,
+       "change_over_se": 0.102,
+       "share_above_2se": 0.0
+      },
+      {
+       "distance_km": 2.0,
+       "n_shifts": 8,
+       "median_abs_change": 0.03066,
+       "change_over_spread": 0.0091,
+       "change_over_se": 0.175,
+       "share_above_2se": 0.0
+      },
+      {
+       "distance_km": 5.0,
+       "n_shifts": 8,
+       "median_abs_change": 0.16777,
+       "change_over_spread": 0.0499,
+       "change_over_se": 0.956,
+       "share_above_2se": 0.125
+      },
+      {
+       "distance_km": 10.0,
+       "n_shifts": 8,
+       "median_abs_change": 0.33052,
+       "change_over_spread": 0.0983,
+       "change_over_se": 1.884,
+       "share_above_2se": 0.5
+      }
+     ],
+     "tolerance_km": 10.0,
+     "tol_ratio": 0.25,
+     "tolerance_sweep": {
+      "0.1": 10.0,
+      "0.25": 10.0,
+      "0.5": 10.0
+     }
+    },
+    "ch4": {
+     "mean": 10.691860816265262,
+     "sd": 21.149269522923646,
+     "n_days": 160,
+     "se": 1.671997,
+     "rows": [
+      {
+       "distance_km": 1.0,
+       "n_shifts": 8,
+       "median_abs_change": 0.19183,
+       "change_over_spread": 0.0091,
+       "change_over_se": 0.115,
+       "share_above_2se": 0.0
+      },
+      {
+       "distance_km": 2.0,
+       "n_shifts": 8,
+       "median_abs_change": 0.66022,
+       "change_over_spread": 0.0312,
+       "change_over_se": 0.395,
+       "share_above_2se": 0.0
+      },
+      {
+       "distance_km": 5.0,
+       "n_shifts": 8,
+       "median_abs_change": 2.96793,
+       "change_over_spread": 0.1403,
+       "change_over_se": 1.775,
+       "share_above_2se": 0.25
+      },
+      {
+       "distance_km": 10.0,
+       "n_shifts": 8,
+       "median_abs_change": 8.19448,
+       "change_over_spread": 0.3875,
+       "change_over_se": 4.901,
+       "share_above_2se": 0.75
+      }
+     ],
+     "tolerance_km": 5.0,
+     "tol_ratio": 0.25,
+     "tolerance_sweep": {
+      "0.1": 2.0,
+      "0.25": 5.0,
+      "0.5": 10.0
+     }
+    },
+    "aai": {
+     "mean": 0.02443547656764017,
+     "sd": 0.7303551636359474,
+     "n_days": 429,
+     "se": 0.035262,
+     "rows": [
+      {
+       "distance_km": 1.0,
+       "n_shifts": 8,
+       "median_abs_change": 0.02729,
+       "change_over_spread": 0.0374,
+       "change_over_se": 0.774,
+       "share_above_2se": 0.0
+      },
+      {
+       "distance_km": 2.0,
+       "n_shifts": 8,
+       "median_abs_change": 0.0537,
+       "change_over_spread": 0.0735,
+       "change_over_se": 1.523,
+       "share_above_2se": 0.125
+      },
+      {
+       "distance_km": 5.0,
+       "n_shifts": 8,
+       "median_abs_change": 0.12141,
+       "change_over_spread": 0.1662,
+       "change_over_se": 3.443,
+       "share_above_2se": 0.75
+      },
+      {
+       "distance_km": 10.0,
+       "n_shifts": 8,
+       "median_abs_change": 0.14683,
+       "change_over_spread": 0.201,
+       "change_over_se": 4.164,
+       "share_above_2se": 0.75
+      }
+     ],
+     "tolerance_km": 10.0,
+     "tol_ratio": 0.25,
+     "tolerance_sweep": {
+      "0.1": 2.0,
+      "0.25": 10.0,
+      "0.5": 10.0
+     }
+    }
+   },
+   "targets_synthetic": false,
+   "roster": {
+    "box_km": 2.0,
+    "facility_type": "refinery",
+    "region": "africa",
+    "name": "Zawiya refinery, Libya"
+   }
+  }
+ }
+}

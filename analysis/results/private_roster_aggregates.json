@@ -1,0 +1,1031 @@
+{
+ "_note": "Aggregates from a private collection of 136 industrial facilities (7976 collection windows). No site names or identifiers. The scripts that made them are in this folder (they need the private collection).",
+ "forecast": {
+  "n_sites": 120,
+  "yield": {
+   "clear_frac only | region correction off": {
+    "target": "yield",
+    "n_sites": 120,
+    "n_clusters": 105,
+    "cluster_km": 150.0,
+    "features": [
+     "clear_frac"
+    ],
+    "interval": 0.8,
+    "mae": 0.1132,
+    "mae_baseline": 0.1832,
+    "skill": 0.3821,
+    "r2": 0.6222,
+    "spearman": 0.7616,
+    "interval_coverage": 0.8,
+    "alpha_chosen": {
+     "0.01": 105
+    },
+    "region_correction": false
+   },
+   "clear_frac only | region correction on": {
+    "target": "yield",
+    "n_sites": 120,
+    "n_clusters": 105,
+    "cluster_km": 150.0,
+    "features": [
+     "clear_frac"
+    ],
+    "interval": 0.8,
+    "mae": 0.1081,
+    "mae_baseline": 0.1832,
+    "skill": 0.41,
+    "r2": 0.6522,
+    "spearman": 0.7878,
+    "interval_coverage": 0.758,
+    "alpha_chosen": {
+     "0.01": 105
+    },
+    "region_correction": true
+   },
+   "clear_frac + land_frac | region correction off": {
+    "target": "yield",
+    "n_sites": 120,
+    "n_clusters": 105,
+    "cluster_km": 150.0,
+    "features": [
+     "clear_frac",
+     "land_frac"
+    ],
+    "interval": 0.8,
+    "mae": 0.1138,
+    "mae_baseline": 0.1832,
+    "skill": 0.3785,
+    "r2": 0.6178,
+    "spearman": 0.7545,
+    "interval_coverage": 0.792,
+    "alpha_chosen": {
+     "0.01": 105
+    },
+    "region_correction": false
+   },
+   "clear_frac + land_frac | region correction on": {
+    "target": "yield",
+    "n_sites": 120,
+    "n_clusters": 105,
+    "cluster_km": 150.0,
+    "features": [
+     "clear_frac",
+     "land_frac"
+    ],
+    "interval": 0.8,
+    "mae": 0.1092,
+    "mae_baseline": 0.1832,
+    "skill": 0.4037,
+    "r2": 0.6466,
+    "spearman": 0.783,
+    "interval_coverage": 0.767,
+    "alpha_chosen": {
+     "0.01": 105
+    },
+    "region_correction": true
+   },
+   "all six screening numbers | region correction off": {
+    "target": "yield",
+    "n_sites": 120,
+    "n_clusters": 105,
+    "cluster_km": 150.0,
+    "features": [
+     "land_frac",
+     "clear_frac",
+     "fire_days",
+     "aai_site",
+     "no2_contrast",
+     "co_contrast"
+    ],
+    "interval": 0.8,
+    "mae": 0.1123,
+    "mae_baseline": 0.1832,
+    "skill": 0.3868,
+    "r2": 0.6295,
+    "spearman": 0.7683,
+    "interval_coverage": 0.792,
+    "alpha_chosen": {
+     "0.01": 105
+    },
+    "region_correction": false
+   },
+   "all six screening numbers | region correction on": {
+    "target": "yield",
+    "n_sites": 120,
+    "n_clusters": 105,
+    "cluster_km": 150.0,
+    "features": [
+     "land_frac",
+     "clear_frac",
+     "fire_days",
+     "aai_site",
+     "no2_contrast",
+     "co_contrast"
+    ],
+    "interval": 0.8,
+    "mae": 0.111,
+    "mae_baseline": 0.1832,
+    "skill": 0.3941,
+    "r2": 0.639,
+    "spearman": 0.777,
+    "interval_coverage": 0.767,
+    "alpha_chosen": {
+     "0.01": 105
+    },
+    "region_correction": true
+   }
+  },
+  "availability": {
+   "avail_ch4": {
+    "target": "avail_ch4",
+    "n_sites": 119,
+    "n_clusters": 104,
+    "cluster_km": 150.0,
+    "features": [
+     "land_frac",
+     "clear_frac",
+     "fire_days",
+     "aai_site",
+     "no2_contrast",
+     "co_contrast"
+    ],
+    "interval": 0.8,
+    "mae": 0.1708,
+    "mae_baseline": 0.2174,
+    "skill": 0.2145,
+    "r2": 0.289,
+    "spearman": 0.5726,
+    "interval_coverage": 0.79,
+    "alpha_chosen": {
+     "0.01": 104
+    },
+    "region_correction": false
+   },
+   "avail_no2": {
+    "target": "avail_no2",
+    "n_sites": 119,
+    "n_clusters": 104,
+    "cluster_km": 150.0,
+    "features": [
+     "land_frac",
+     "clear_frac",
+     "fire_days",
+     "aai_site",
+     "no2_contrast",
+     "co_contrast"
+    ],
+    "interval": 0.8,
+    "mae": 0.0389,
+    "mae_baseline": 0.0414,
+    "skill": 0.0616,
+    "r2": 0.0744,
+    "spearman": 0.2186,
+    "interval_coverage": 0.79,
+    "alpha_chosen": {
+     "1.0": 104
+    },
+    "region_correction": false
+   },
+   "avail_co": {
+    "target": "avail_co",
+    "n_sites": 119,
+    "n_clusters": 104,
+    "cluster_km": 150.0,
+    "features": [
+     "land_frac",
+     "clear_frac",
+     "fire_days",
+     "aai_site",
+     "no2_contrast",
+     "co_contrast"
+    ],
+    "interval": 0.8,
+    "mae": 0.0156,
+    "mae_baseline": 0.0163,
+    "skill": 0.0449,
+    "r2": 0.0472,
+    "spearman": 0.1662,
+    "interval_coverage": 0.798,
+    "alpha_chosen": {
+     "1.0": 104
+    },
+    "region_correction": false
+   },
+   "avail_aai": {
+    "target": "avail_aai",
+    "n_sites": 119,
+    "n_clusters": 104,
+    "cluster_km": 150.0,
+    "features": [
+     "land_frac",
+     "clear_frac",
+     "fire_days",
+     "aai_site",
+     "no2_contrast",
+     "co_contrast"
+    ],
+    "interval": 0.8,
+    "mae": 0.0,
+    "mae_baseline": 0.0,
+    "skill": null,
+    "r2": null,
+    "spearman": NaN,
+    "interval_coverage": 1.0,
+    "alpha_chosen": {
+     "0.1": 1,
+     "1.0": 7,
+     "3.0": 53,
+     "10.0": 42,
+     "30.0": 1
+    },
+    "region_correction": false
+   }
+  },
+  "effort_saved_retrospective": {
+   "n_sites": 120,
+   "total_windows": 7025,
+   "total_samples": 3728,
+   "rows": [
+    {
+     "drop_share_of_sites": 0.05,
+     "sites_dropped": 6,
+     "windows_saved_share": 0.0521,
+     "samples_lost_share": 0.0161,
+     "windows_saved": 366,
+     "samples_lost": 60
+    },
+    {
+     "drop_share_of_sites": 0.1,
+     "sites_dropped": 12,
+     "windows_saved_share": 0.1042,
+     "samples_lost_share": 0.0381,
+     "windows_saved": 732,
+     "samples_lost": 142
+    },
+    {
+     "drop_share_of_sites": 0.2,
+     "sites_dropped": 24,
+     "windows_saved_share": 0.1828,
+     "samples_lost_share": 0.0963,
+     "windows_saved": 1284,
+     "samples_lost": 359
+    },
+    {
+     "drop_share_of_sites": 0.3,
+     "sites_dropped": 36,
+     "windows_saved_share": 0.3075,
+     "samples_lost_share": 0.1891,
+     "windows_saved": 2160,
+     "samples_lost": 705
+    }
+   ],
+   "note": "Dropping at random saves and loses the same share. A useful forecast saves more than it loses."
+  },
+  "model_comparison": {
+   "yield": {
+    "target": "yield",
+    "n_sites": 120,
+    "models": [
+     {
+      "model": "Guess the training average",
+      "features": [],
+      "mae": 0.1832,
+      "skill": 0.0
+     },
+     {
+      "model": "clear_frac alone",
+      "features": [
+       "clear_frac"
+      ],
+      "mae": 0.1132,
+      "skill": 0.3821,
+      "spearman": 0.7616
+     },
+     {
+      "model": "land_frac alone",
+      "features": [
+       "land_frac"
+      ],
+      "mae": 0.1832,
+      "skill": -0.0003,
+      "spearman": -0.9134
+     },
+     {
+      "model": "fire_days alone",
+      "features": [
+       "fire_days"
+      ],
+      "mae": 0.181,
+      "skill": 0.0117,
+      "spearman": -0.0224
+     },
+     {
+      "model": "aai_site alone",
+      "features": [
+       "aai_site"
+      ],
+      "mae": 0.1468,
+      "skill": 0.1986,
+      "spearman": 0.5825
+     },
+     {
+      "model": "no2_contrast alone",
+      "features": [
+       "no2_contrast"
+      ],
+      "mae": 0.1832,
+      "skill": -0.0002,
+      "spearman": -0.964
+     },
+     {
+      "model": "co_contrast alone",
+      "features": [
+       "co_contrast"
+      ],
+      "mae": 0.1835,
+      "skill": -0.0019,
+      "spearman": -0.9439
+     },
+     {
+      "model": "All numbers together",
+      "features": [
+       "clear_frac",
+       "land_frac",
+       "fire_days",
+       "aai_site",
+       "no2_contrast",
+       "co_contrast"
+      ],
+      "mae": 0.1123,
+      "skill": 0.3868,
+      "spearman": 0.7683
+     }
+    ],
+    "best_single": "clear_frac alone",
+    "reading": "Using all the numbers helps only a little over the best single number"
+   },
+   "avail_ch4": {
+    "target": "avail_ch4",
+    "n_sites": 119,
+    "models": [
+     {
+      "model": "Guess the training average",
+      "features": [],
+      "mae": 0.2174,
+      "skill": 0.0
+     },
+     {
+      "model": "clear_frac alone",
+      "features": [
+       "clear_frac"
+      ],
+      "mae": 0.1855,
+      "skill": 0.1468,
+      "spearman": 0.5168
+     },
+     {
+      "model": "land_frac alone",
+      "features": [
+       "land_frac"
+      ],
+      "mae": 0.2045,
+      "skill": 0.0592,
+      "spearman": 0.2756
+     },
+     {
+      "model": "fire_days alone",
+      "features": [
+       "fire_days"
+      ],
+      "mae": 0.2167,
+      "skill": 0.0031,
+      "spearman": -0.079
+     },
+     {
+      "model": "aai_site alone",
+      "features": [
+       "aai_site"
+      ],
+      "mae": 0.2039,
+      "skill": 0.0622,
+      "spearman": 0.3736
+     },
+     {
+      "model": "no2_contrast alone",
+      "features": [
+       "no2_contrast"
+      ],
+      "mae": 0.2175,
+      "skill": -0.0003,
+      "spearman": -0.902
+     },
+     {
+      "model": "co_contrast alone",
+      "features": [
+       "co_contrast"
+      ],
+      "mae": 0.2175,
+      "skill": -0.0004,
+      "spearman": -0.933
+     },
+     {
+      "model": "All numbers together",
+      "features": [
+       "clear_frac",
+       "land_frac",
+       "fire_days",
+       "aai_site",
+       "no2_contrast",
+       "co_contrast"
+      ],
+      "mae": 0.1708,
+      "skill": 0.2145,
+      "spearman": 0.5726
+     }
+    ],
+    "best_single": "clear_frac alone",
+    "reading": "Using all the numbers beats the best single number"
+   }
+  },
+  "uncertainty": {
+   "sites": 120,
+   "clusters": 105,
+   "sites_per_cluster_max": 3,
+   "clusters_with_one_site": 93,
+   "mae_baseline": 0.1832,
+   "mae_full": 0.1123,
+   "mae_one_number": 0.1132,
+   "baseline_minus_full_ci95": [
+    0.043,
+    0.098
+   ],
+   "baseline_minus_one_ci95": [
+    0.042,
+    0.098
+   ],
+   "one_minus_full_ci95": [
+    -0.006,
+    0.008
+   ],
+   "interval_coverage_full": 0.792,
+   "windows_per_site_median": 73.0
+  }
+ },
+ "coordinates": {
+  "evaluation_at_100km": {
+   "n_verified_sites": 134,
+   "n_with_registry_match": 51,
+   "recalled": {
+    "n": 134,
+    "median_km": 2.39,
+    "mean_km": 2.86,
+    "within_1km": 0.321,
+    "within_2km": 0.47,
+    "within_5km": 0.836,
+    "max_km": 17.49
+   },
+   "recalled_on_matched_sites": {
+    "n": 51,
+    "median_km": 1.97,
+    "mean_km": 2.36,
+    "within_1km": 0.314,
+    "within_2km": 0.51,
+    "within_5km": 0.863,
+    "max_km": 6.47
+   },
+   "registry_on_matched_sites": {
+    "n": 51,
+    "median_km": 0.98,
+    "mean_km": 2.28,
+    "within_1km": 0.529,
+    "within_2km": 0.745,
+    "within_5km": 0.902,
+    "max_km": 25.16
+   },
+   "combined_policy": {
+    "n": 134,
+    "median_km": 1.65,
+    "mean_km": 2.83,
+    "within_1km": 0.403,
+    "within_2km": 0.56,
+    "within_5km": 0.851,
+    "max_km": 25.16
+   },
+   "status_counts": {
+    "agree": 21,
+    "differ": 17,
+    "disagree": 13,
+    "not_found": 83
+   },
+   "disagreement_predicts_big_error_auc": 0.922077922077922,
+   "big_error_km": 5.0,
+   "n_big_recalled_errors_among_matched": 7
+  },
+  "uncertainty": {
+   "matched": 51,
+   "positives_start_error_over_5km": 7,
+   "negatives": 44,
+   "auc": 0.922,
+   "auc_ci95": [
+    0.834,
+    0.987
+   ],
+   "median_start": 1.97,
+   "median_registry": 0.98,
+   "median_difference_ci95": [
+    0.076,
+    1.704
+   ],
+   "share_within_1km_difference_ci95": [
+    0.02,
+    0.392
+   ],
+   "registry_wrong_over_5km": 5,
+   "registry_within_5km": 46,
+   "unmatched": 83
+  },
+  "wikidata_classes": {
+   "oil refinery": {
+    "qid": "Q12353044",
+    "entries": 268,
+    "skipped": 0,
+    "bytes": 166165,
+    "secs": 5
+   },
+   "natural gas processing plant": {
+    "qid": "Q91396496",
+    "entries": 26,
+    "skipped": 0,
+    "bytes": 16521,
+    "secs": 6
+   },
+   "LNG terminal": {
+    "qid": "Q15709854",
+    "entries": 136,
+    "skipped": 0,
+    "bytes": 87136,
+    "secs": 6
+   },
+   "chemical plant": {
+    "qid": "Q905286",
+    "entries": 138,
+    "skipped": 0,
+    "bytes": 85116,
+    "secs": 4
+   },
+   "mine": {
+    "qid": "Q820477",
+    "entries": 19926,
+    "skipped": 74,
+    "bytes": 12159380,
+    "secs": 25
+   },
+   "steel mill": {
+    "qid": "Q2069494",
+    "entries": 101,
+    "skipped": 0,
+    "bytes": 60140,
+    "secs": 3
+   },
+   "landfill": {
+    "qid": "Q152810",
+    "entries": 321,
+    "skipped": 0,
+    "bytes": 196061,
+    "secs": 3
+   },
+   "power station": {
+    "qid": "Q159719",
+    "error": "StudyError: Could not read the registry: Expecting ',' delimiter: line 454661 column 313 (char 11852547)",
+    "secs": 63
+   }
+  },
+  "search_distance_comparison": {
+   "300": {
+    "n_with_registry_match": 51,
+    "recalled_on_matched_sites": {
+     "n": 51,
+     "median_km": 1.97,
+     "mean_km": 2.36,
+     "within_1km": 0.314,
+     "within_2km": 0.51,
+     "within_5km": 0.863,
+     "max_km": 6.47
+    },
+    "registry_on_matched_sites": {
+     "n": 51,
+     "median_km": 1.0,
+     "mean_km": 7.89,
+     "within_1km": 0.51,
+     "within_2km": 0.706,
+     "within_5km": 0.863,
+     "max_km": 172.92
+    },
+    "combined_policy": {
+     "n": 134,
+     "median_km": 1.7,
+     "mean_km": 4.96,
+     "within_1km": 0.396,
+     "within_2km": 0.545,
+     "within_5km": 0.836,
+     "max_km": 172.92
+    },
+    "disagreement_predicts_big_error_auc": 0.8766233766233766,
+    "n_big_recalled_errors_among_matched": 7,
+    "status_counts": {
+     "agree": 20,
+     "differ": 16,
+     "disagree": 15,
+     "not_found": 83
+    }
+   },
+   "100": {
+    "n_with_registry_match": 51,
+    "recalled_on_matched_sites": {
+     "n": 51,
+     "median_km": 1.97,
+     "mean_km": 2.36,
+     "within_1km": 0.314,
+     "within_2km": 0.51,
+     "within_5km": 0.863,
+     "max_km": 6.47
+    },
+    "registry_on_matched_sites": {
+     "n": 51,
+     "median_km": 0.98,
+     "mean_km": 2.28,
+     "within_1km": 0.529,
+     "within_2km": 0.745,
+     "within_5km": 0.902,
+     "max_km": 25.16
+    },
+    "combined_policy": {
+     "n": 134,
+     "median_km": 1.65,
+     "mean_km": 2.83,
+     "within_1km": 0.403,
+     "within_2km": 0.56,
+     "within_5km": 0.851,
+     "max_km": 25.16
+    },
+    "disagreement_predicts_big_error_auc": 0.922077922077922,
+    "n_big_recalled_errors_among_matched": 7,
+    "status_counts": {
+     "agree": 21,
+     "differ": 17,
+     "disagree": 13,
+     "not_found": 83
+    }
+   },
+   "50": {
+    "n_with_registry_match": 51,
+    "recalled_on_matched_sites": {
+     "n": 51,
+     "median_km": 1.97,
+     "mean_km": 2.36,
+     "within_1km": 0.314,
+     "within_2km": 0.51,
+     "within_5km": 0.863,
+     "max_km": 6.47
+    },
+    "registry_on_matched_sites": {
+     "n": 51,
+     "median_km": 0.98,
+     "mean_km": 2.28,
+     "within_1km": 0.529,
+     "within_2km": 0.745,
+     "within_5km": 0.902,
+     "max_km": 25.16
+    },
+    "combined_policy": {
+     "n": 134,
+     "median_km": 1.65,
+     "mean_km": 2.83,
+     "within_1km": 0.403,
+     "within_2km": 0.56,
+     "within_5km": 0.851,
+     "max_km": 25.16
+    },
+    "disagreement_predicts_big_error_auc": 0.922077922077922,
+    "n_big_recalled_errors_among_matched": 7,
+    "status_counts": {
+     "agree": 21,
+     "differ": 17,
+     "disagree": 13,
+     "not_found": 83
+    }
+   },
+   "30": {
+    "n_with_registry_match": 51,
+    "recalled_on_matched_sites": {
+     "n": 51,
+     "median_km": 1.97,
+     "mean_km": 2.36,
+     "within_1km": 0.314,
+     "within_2km": 0.51,
+     "within_5km": 0.863,
+     "max_km": 6.47
+    },
+    "registry_on_matched_sites": {
+     "n": 51,
+     "median_km": 0.98,
+     "mean_km": 2.28,
+     "within_1km": 0.529,
+     "within_2km": 0.745,
+     "within_5km": 0.902,
+     "max_km": 25.16
+    },
+    "combined_policy": {
+     "n": 134,
+     "median_km": 1.65,
+     "mean_km": 2.83,
+     "within_1km": 0.403,
+     "within_2km": 0.56,
+     "within_5km": 0.851,
+     "max_km": 25.16
+    },
+    "disagreement_predicts_big_error_auc": 0.922077922077922,
+    "n_big_recalled_errors_among_matched": 7,
+    "status_counts": {
+     "agree": 22,
+     "differ": 17,
+     "disagree": 12,
+     "not_found": 83
+    }
+   }
+  }
+ },
+ "split_safety": {
+  "overlap_pairs_by_level": {
+   "box": 0,
+   "label": 0,
+   "background": 6,
+   "ring_150km_rule": 21
+  },
+  "groups": {
+   "box": {
+    "meaning": "the chip boxes overlap",
+    "n_pairs": 0,
+    "n_groups": 136,
+    "n_multi_site_groups": 0,
+    "n_mixed_role_groups": 0
+   },
+   "label": {
+    "meaning": "the 10 km label windows overlap",
+    "n_pairs": 0,
+    "n_groups": 136,
+    "n_multi_site_groups": 0,
+    "n_mixed_role_groups": 0
+   },
+   "background": {
+    "meaning": "one site's label window lies in the other's background ring, or the label windows overlap",
+    "n_pairs": 6,
+    "n_groups": 130,
+    "n_multi_site_groups": 6,
+    "n_mixed_role_groups": 0
+   },
+   "ring": {
+    "meaning": "the background rings overlap (the same as the distance rule)",
+    "n_pairs": 21,
+    "n_groups": 117,
+    "n_multi_site_groups": 14,
+    "n_mixed_role_groups": 0
+   }
+  },
+  "pairs_crossing_roles": 0,
+  "closest_pair_across_roles_km": 158.3,
+  "spatial_dependence": {
+   "n_sites": 135,
+   "bins": [
+    {
+     "from_km": 0,
+     "to_km": 50,
+     "pairs": 4,
+     "semivariance": 1155.844663,
+     "reliable": false
+    },
+    {
+     "from_km": 50,
+     "to_km": 150,
+     "pairs": 17,
+     "semivariance": 452.53921,
+     "reliable": true
+    },
+    {
+     "from_km": 150,
+     "to_km": 300,
+     "pairs": 29,
+     "semivariance": 1617.255587,
+     "reliable": true
+    },
+    {
+     "from_km": 300,
+     "to_km": 600,
+     "pairs": 111,
+     "semivariance": 2419.370761,
+     "reliable": true
+    },
+    {
+     "from_km": 600,
+     "to_km": 1200,
+     "pairs": 227,
+     "semivariance": 1005.031741,
+     "reliable": true
+    },
+    {
+     "from_km": 1200,
+     "to_km": 2500,
+     "pairs": 658,
+     "semivariance": 1033.589395,
+     "reliable": true
+    },
+    {
+     "from_km": 2500,
+     "to_km": 6000,
+     "pairs": 2080,
+     "semivariance": 2196.416603,
+     "reliable": true
+    }
+   ],
+   "variance": 1726.719728,
+   "median_nearest_neighbour_km": 373.9,
+   "share_with_neighbour_within_150_km": 0.244,
+   "pairs_under_150_km": 21,
+   "note": "Indicative only: bins with fewer than 10 pairs are marked not reliable."
+  },
+  "shift_train_test": {
+   "role_a": "train",
+   "role_b": "test",
+   "n_a": 72,
+   "n_b": 48,
+   "median_psi": 0.0511,
+   "max_psi": 0.2222,
+   "n_large": 0,
+   "most_different": [
+    "clear_frac"
+   ]
+  },
+  "shift_train_test_features": [
+   {
+    "feature": "clear_frac",
+    "n_a": 72,
+    "n_b": 48,
+    "mean_a": 0.4263,
+    "mean_b": 0.4623,
+    "psi": 0.2222,
+    "psi_level": "moderate",
+    "ks": 0.2083,
+    "p_value": 0.14914
+   },
+   {
+    "feature": "co_contrast",
+    "n_a": 71,
+    "n_b": 48,
+    "mean_a": 0.8099,
+    "mean_b": 0.745,
+    "psi": 0.0615,
+    "psi_level": "small",
+    "ks": 0.1725,
+    "p_value": 0.31277
+   },
+   {
+    "feature": "land_frac",
+    "n_a": 72,
+    "n_b": 48,
+    "mean_a": 0.7317,
+    "mean_b": 0.7868,
+    "psi": 0.0589,
+    "psi_level": "small",
+    "ks": 0.1528,
+    "p_value": 0.48144
+   },
+   {
+    "feature": "aai_site",
+    "n_a": 71,
+    "n_b": 48,
+    "mean_a": -0.2231,
+    "mean_b": -0.1521,
+    "psi": 0.0433,
+    "psi_level": "small",
+    "ks": 0.1288,
+    "p_value": 0.66897
+   },
+   {
+    "feature": "fire_days",
+    "n_a": 55,
+    "n_b": 33,
+    "mean_a": 21.9636,
+    "mean_b": 29.5455,
+    "psi": 0.0227,
+    "psi_level": "small",
+    "ks": 0.1091,
+    "p_value": 0.9468
+   },
+   {
+    "feature": "no2_contrast",
+    "n_a": 71,
+    "n_b": 48,
+    "mean_a": 28.6857,
+    "mean_b": 32.8419,
+    "psi": 0.0048,
+    "psi_level": "small",
+    "ks": 0.1546,
+    "p_value": 0.44556
+   }
+  ],
+  "shift_vs_random": {
+   "observed_median_psi": 0.0511,
+   "random_split_median_psi_mean": 0.0592,
+   "random_split_median_psi_p95": 0.1206,
+   "n_permutations": 500,
+   "p_value": 0.5309
+  },
+  "region_split_vs_random": {
+   "regions": [
+    "europe",
+    "africa"
+   ],
+   "n": 45,
+   "vs_random": {
+    "observed_median_psi": 0.3229,
+    "random_split_median_psi_mean": 0.1605,
+    "random_split_median_psi_p95": 0.3335,
+    "n_permutations": 500,
+    "p_value": 0.0599
+   }
+  }
+ },
+ "near_duplicates": {
+  "chips": 4439,
+  "cross_site_pairs_examined_candidate_min_0.6": 62764,
+  "found": 0,
+  "positive_control": {
+   "flip left-right": {
+    "copies": 15,
+    "found": 15,
+    "false_alarms": 0
+   },
+   "flip up-down": {
+    "copies": 15,
+    "found": 15,
+    "false_alarms": 0
+   },
+   "rotate 90": {
+    "copies": 15,
+    "found": 15,
+    "false_alarms": 0
+   },
+   "rotate 180": {
+    "copies": 15,
+    "found": 15,
+    "false_alarms": 0
+   },
+   "rotate 270": {
+    "copies": 15,
+    "found": 15,
+    "false_alarms": 0
+   },
+   "transpose": {
+    "copies": 15,
+    "found": 15,
+    "false_alarms": 0
+   },
+   "anti-transpose": {
+    "copies": 15,
+    "found": 15,
+    "false_alarms": 0
+   },
+   "shift 1-4 px": {
+    "copies": 15,
+    "found": 15,
+    "false_alarms": 0
+   },
+   "brightness and contrast": {
+    "copies": 15,
+    "found": 15,
+    "false_alarms": 0
+   },
+   "gamma (monotone recolour)": {
+    "copies": 15,
+    "found": 15,
+    "false_alarms": 0
+   },
+   "noise": {
+    "copies": 15,
+    "found": 15,
+    "false_alarms": 0
+   },
+   "flip + brightness + noise": {
+    "copies": 15,
+    "found": 15,
+    "false_alarms": 0
+   }
+  },
+  "same_site_two_dates": {
+   "pairs": 100,
+   "would_be_flagged": 51,
+   "share": 0.51
+  }
+ }
+}

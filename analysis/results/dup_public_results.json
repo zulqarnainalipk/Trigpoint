@@ -1,0 +1,79 @@
+{
+ "n_chips": 1355,
+ "n_sites": 25,
+ "n_pairs_all": 917335,
+ "n_pairs_cross_site": null,
+ "candidate_min": 0.6,
+ "pairs_examined": 2288,
+ "found_cross_site": 0,
+ "found_top": [],
+ "secs": 43,
+ "positive_control": {
+  "copies": 120,
+  "found": 120,
+  "false_alarms": 0,
+  "unrelated_pairs": 5100,
+  "per_kind": {
+   "flip left-right": {
+    "copies": 10,
+    "found": 10,
+    "false_alarms": 0
+   },
+   "flip up-down": {
+    "copies": 10,
+    "found": 10,
+    "false_alarms": 0
+   },
+   "rotate 90": {
+    "copies": 10,
+    "found": 10,
+    "false_alarms": 0
+   },
+   "rotate 180": {
+    "copies": 10,
+    "found": 10,
+    "false_alarms": 0
+   },
+   "rotate 270": {
+    "copies": 10,
+    "found": 10,
+    "false_alarms": 0
+   },
+   "transpose": {
+    "copies": 10,
+    "found": 10,
+    "false_alarms": 0
+   },
+   "anti-transpose": {
+    "copies": 10,
+    "found": 10,
+    "false_alarms": 0
+   },
+   "shift 1-4 px": {
+    "copies": 10,
+    "found": 10,
+    "false_alarms": 0
+   },
+   "brightness and contrast": {
+    "copies": 10,
+    "found": 10,
+    "false_alarms": 0
+   },
+   "gamma (monotone recolour)": {
+    "copies": 10,
+    "found": 10,
+    "false_alarms": 0
+   },
+   "noise": {
+    "copies": 10,
+    "found": 10,
+    "false_alarms": 0
+   },
+   "flip + brightness + noise": {
+    "copies": 10,
+    "found": 10,
+    "false_alarms": 0
+   }
+  }
+ }
+}
