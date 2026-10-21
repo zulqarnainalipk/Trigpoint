@@ -1,0 +1,291 @@
+{
+ "n_sites": 25,
+ "screening": {
+  "year": "2021",
+  "note": "share of Sentinel-2 scenes under 30% cloud over the site point; land share of the 10 km window (MODIS water mask)"
+ },
+ "forecast": {
+  "sites": 25,
+  "clusters": 23,
+  "clusters_with_one_site": 21,
+  "largest_cluster": 2,
+  "mae_baseline": 0.1202,
+  "mae_two_numbers": 0.1032,
+  "mae_clear_scene_only": 0.0986,
+  "baseline_minus_two_ci95": [
+   -0.01,
+   0.0438
+  ],
+  "baseline_minus_clear_ci95": [
+   -0.0043,
+   0.047
+  ],
+  "clear_minus_two_ci95": [
+   -0.0076,
+   -0.0022
+  ],
+  "r2_two": 0.2127,
+  "spearman_two": 0.4265,
+  "interval_coverage_two": 0.8,
+  "yield_min": 0.466,
+  "yield_max": 0.986,
+  "sites_detail": [
+   {
+    "observed": 0.7671,
+    "forecast": 0.8549,
+    "low": 0.6867,
+    "high": 1.0
+   },
+   {
+    "observed": 0.5068,
+    "forecast": 0.7969,
+    "low": 0.6412,
+    "high": 0.9526
+   },
+   {
+    "observed": 0.7671,
+    "forecast": 0.8009,
+    "low": 0.6356,
+    "high": 0.9661
+   },
+   {
+    "observed": 0.7397,
+    "forecast": 0.7515,
+    "low": 0.5838,
+    "high": 0.9192
+   },
+   {
+    "observed": 0.4795,
+    "forecast": 0.6685,
+    "low": 0.5152,
+    "high": 0.8217
+   },
+   {
+    "observed": 0.8356,
+    "forecast": 0.7838,
+    "low": 0.6172,
+    "high": 0.9504
+   },
+   {
+    "observed": 0.4658,
+    "forecast": 0.687,
+    "low": 0.5347,
+    "high": 0.8392
+   },
+   {
+    "observed": 0.7808,
+    "forecast": 0.637,
+    "low": 0.4736,
+    "high": 0.8005
+   },
+   {
+    "observed": 0.7671,
+    "forecast": 0.7697,
+    "low": 0.6001,
+    "high": 0.9394
+   },
+   {
+    "observed": 0.6575,
+    "forecast": 0.758,
+    "low": 0.5903,
+    "high": 0.9257
+   },
+   {
+    "observed": 0.9041,
+    "forecast": 0.7888,
+    "low": 0.6227,
+    "high": 0.9549
+   },
+   {
+    "observed": 0.7671,
+    "forecast": 0.7726,
+    "low": 0.609,
+    "high": 0.9361
+   },
+   {
+    "observed": 0.5068,
+    "forecast": 0.6836,
+    "low": 0.5312,
+    "high": 0.8361
+   },
+   {
+    "observed": 0.8493,
+    "forecast": 0.698,
+    "low": 0.5377,
+    "high": 0.8583
+   },
+   {
+    "observed": 0.9452,
+    "forecast": 0.8033,
+    "low": 0.6337,
+    "high": 0.973
+   },
+   {
+    "observed": 0.6575,
+    "forecast": 0.6394,
+    "low": 0.4762,
+    "high": 0.8026
+   },
+   {
+    "observed": 0.8082,
+    "forecast": 0.6901,
+    "low": 0.5265,
+    "high": 0.8537
+   },
+   {
+    "observed": 0.8219,
+    "forecast": 0.8237,
+    "low": 0.6603,
+    "high": 0.9871
+   },
+   {
+    "observed": 0.9863,
+    "forecast": 0.8453,
+    "low": 0.6804,
+    "high": 1.0
+   },
+   {
+    "observed": 0.7808,
+    "forecast": 0.7196,
+    "low": 0.5566,
+    "high": 0.8826
+   },
+   {
+    "observed": 0.8356,
+    "forecast": 0.6043,
+    "low": 0.4437,
+    "high": 0.7649
+   },
+   {
+    "observed": 0.6164,
+    "forecast": 0.5948,
+    "low": 0.4311,
+    "high": 0.7585
+   },
+   {
+    "observed": 0.6164,
+    "forecast": 0.7696,
+    "low": 0.6097,
+    "high": 0.9295
+   },
+   {
+    "observed": 0.863,
+    "forecast": 0.8653,
+    "low": 0.7022,
+    "high": 1.0
+   },
+   {
+    "observed": 0.8356,
+    "forecast": 0.7266,
+    "low": 0.5611,
+    "high": 0.892
+   }
+  ]
+ },
+ "overlap": {
+  "pairs_by_level": {
+   "box": 0,
+   "label": 0,
+   "background": 0,
+   "ring": 2
+  },
+  "groups_by_level": {
+   "box": 25,
+   "label": 25,
+   "background": 25,
+   "ring": 23
+  },
+  "multi_site_groups_at_ring": 2,
+  "pairs": [
+   {
+    "a": "jorf_lasfar_morocco",
+    "b": "mohammedia_refinery_morocco",
+    "km": 127.33,
+    "levels": [
+     "ring"
+    ]
+   },
+   {
+    "a": "marsa_el_brega_lng",
+    "b": "ras_lanuf_refinery",
+    "km": 98.84,
+    "levels": [
+     "ring"
+    ]
+   }
+  ]
+ },
+ "registry": {
+  "classes": {
+   "oil refinery": {
+    "qid": "Q12353044",
+    "entries": 268
+   },
+   "natural gas processing plant": {
+    "qid": "Q91396496",
+    "entries": 26
+   },
+   "LNG terminal": {
+    "qid": "Q15709854",
+    "entries": 136
+   },
+   "chemical plant": {
+    "qid": "Q905286",
+    "entries": 138
+   },
+   "mine": {
+    "qid": "Q820477",
+    "entries": 19927
+   },
+   "steel mill": {
+    "qid": "Q2069494",
+    "entries": 101
+   },
+   "landfill": {
+    "qid": "Q152810",
+    "entries": 321
+   }
+  },
+  "entries_total": 20917,
+  "matched": 6,
+  "of": 25,
+  "median_error_km": 0.87,
+  "within_1km": 0.5,
+  "within_2km": 1.0,
+  "within_5km": 1.0,
+  "max_error_km": 1.56,
+  "detail": [
+   {
+    "registry_error_km": 1.3,
+    "name_score": 0.667,
+    "source": "wikidata-LNG-terminal"
+   },
+   {
+    "registry_error_km": 1.56,
+    "name_score": 0.833,
+    "source": "wikidata-LNG-terminal"
+   },
+   {
+    "registry_error_km": 1.19,
+    "name_score": 0.75,
+    "source": "wikidata-mine"
+   },
+   {
+    "registry_error_km": 0.55,
+    "name_score": 0.75,
+    "source": "wikidata-oil-refinery"
+   },
+   {
+    "registry_error_km": 0.52,
+    "name_score": 0.833,
+    "source": "wikidata-oil-refinery"
+   },
+   {
+    "registry_error_km": 0.46,
+    "name_score": 0.75,
+    "source": "wikidata-oil-refinery"
+   }
+  ],
+  "note": "error of the registry position against the verified centre; the starting coordinates of the public record are not published, so they are not compared"
+ }
+}

@@ -38,7 +38,7 @@ keys = list(prev)
 sites = sorted({site_of(k) for k in keys})
 pick = [next(k for k in keys if site_of(k) == s) for s in rng.choice(sites, size=min(20, len(sites)), replace=False)]
 base = {k: prev[k] for k in pick}
-tot = found = false = pairs = 0
+tot = found = false = pairs = examined = 0
 per = {}
 for kind in SS.AUGMENTATIONS:
     chosen = rng.choice(pick, size=10, replace=False)
@@ -47,11 +47,24 @@ for kind in SS.AUGMENTATIONS:
         cid = f"copy|{kind}|{k}"
         imgs[cid] = SS._augment(base[k], kind, rng) if kind != "shift 1-4 px" else np.roll(np.roll(base[k], int(rng.choice([-1, 1])), 0), int(rng.choice([-1, 1])), 1)
         truth.add(frozenset((k, cid)))
-    rr = SS.near_duplicates(imgs)
+    rr = SS.near_duplicates(imgs, candidate_min=0.6)
+    examined += rr["pairs_examined"]
     fl = {frozenset((p["a"], p["b"])) for p in rr["found"]}
     f_ = len(truth & fl); fa = len(fl - truth)
     per[kind] = {"copies": len(truth), "found": f_, "false_alarms": fa}
     tot += len(truth); found += f_; false += fa; pairs += rr["n_pairs"] - len(truth)
-res["positive_control"] = {"copies": tot, "found": found, "false_alarms": false, "unrelated_pairs": pairs, "per_kind": per}
+res["positive_control"] = {"copies": tot, "found": found, "false_alarms": false, "unrelated_pairs": pairs, "pairs_passed_screen": examined, "images_per_run": len(pick) + 10, "runs": len(SS.AUGMENTATIONS), "originals": len(pick), "rule": SS.DUP_RULE, "candidate_min": 0.6, "per_kind": per}
 print("control", found, "/", tot, "false alarms", false, "of", pairs, flush=True)
+# two dates of one site: would the finder call them duplicates?
+by_site = {}
+for k in sorted(prev):
+    by_site.setdefault(site_of(k), []).append(k)
+flag = n_same = 0
+for s_, ks in by_site.items():
+    if len(ks) >= 2:
+        n_same += 1
+        r_ = SS.compare_pair(prev[ks[0]], prev[ks[1]])
+        flag += int(r_["ncc"] >= SS.DUP_RULE["ncc_min"] and r_["ssim"] >= SS.DUP_RULE["ssim_min"])
+res["same_site_two_dates"] = {"sites": n_same, "flagged": flag, "share": round(flag / max(n_same, 1), 3)}
+print("same-site pairs flagged", flag, "of", n_same, flush=True)
 json.dump(res, open(os.path.join(HERE, "dup_public_results.json"), "w"), indent=1)

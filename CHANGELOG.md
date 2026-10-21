@@ -14,7 +14,8 @@ Studies (new, Tools menu)
 - Coordinate grounding against registries you supply (CSV, GeoJSON, Wikidata result), with an error evaluation on verified sites.
 - Placement study: how much the picture, the facility signal and the gas targets change when the box is shifted.
 - Provenance record now says what the studies found. Synthetic demo files for every study.
-- 16 new help entries (63 in all). Synthetic demo scenes now differ from site to site.
+- 16 new help entries (63 in all).
+- `analysis/` holds the scripts, results and figure behind the TrigPoint note; every analysis uses the public OBSCURA-Open-25 record. Docs for reproducing them, and a comparison with blockCV. Synthetic demo scenes now differ from site to site.
 
 ## 1.4.0
 

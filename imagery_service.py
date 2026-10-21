@@ -111,7 +111,12 @@ class ImageryService:
         if p["backend"] == "ee":
             meta = bk.fetch(dst=tif, **args)
             return meta
-        chip, meta = bk.fetch(**args)
+        try:
+            chip, meta = bk.fetch(**args)
+        except B.BackendError:
+            raise
+        except OSError as e:                      # a dropped connection, a timeout, a refused request
+            raise B.BackendError(f"The imagery service could not be reached ({type(e).__name__}). Check the internet connection and try again.") from e
         it.save_chip(chip, tif)
         return meta
 

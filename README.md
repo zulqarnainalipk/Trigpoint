@@ -129,7 +129,7 @@ Fields the tool adds to a site: `rejected` (only present when true), `original_c
 | `static/` | The page (vanilla JavaScript with Leaflet): `index.html`, `app.js`, `review.js`, `imagery.js`, `studies.js`, `help.js`, `style.css`, `logo.svg` |
 | `help_content.json` | The one source of every help popup and of `docs/FEATURE_GUIDE.md` |
 | `demo/`, `examples/` | Demo roster, table and registry (synthetic); the output of every study on them |
-| `analysis/` | The scripts and aggregate results behind the TrigPoint note (public-data studies can be repeated; the private-collection scripts are for audit) |
+| `analysis/` | The scripts and results behind the TrigPoint note; every analysis uses the public OBSCURA-Open-25 record and can be repeated |
 | `docs/` | Methods, backends, API, workflow, usability notes, troubleshooting, feature guide, certificate schema |
 | `tests/`, `tools/` | The test suite (temporary files only); the guide generator, accessibility audit and example builder |
 | `cache/`, `backups/`, `studies/`, `audit.log.jsonl` | Created when you run it: picture cache, whole-file backups, uploaded tables and registries, the change log (all ignored by git) |

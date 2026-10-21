@@ -7,12 +7,21 @@
  "pairs_examined": 2288,
  "found_cross_site": 0,
  "found_top": [],
- "secs": 43,
+ "secs": 42,
  "positive_control": {
   "copies": 120,
   "found": 120,
   "false_alarms": 0,
   "unrelated_pairs": 5100,
+  "pairs_passed_screen": 120,
+  "images_per_run": 30,
+  "runs": 12,
+  "originals": 20,
+  "rule": {
+   "ncc_min": 0.85,
+   "ssim_min": 0.75
+  },
+  "candidate_min": 0.6,
   "per_kind": {
    "flip left-right": {
     "copies": 10,
@@ -75,5 +84,10 @@
     "false_alarms": 0
    }
   }
+ },
+ "same_site_two_dates": {
+  "sites": 25,
+  "flagged": 12,
+  "share": 0.48
  }
 }

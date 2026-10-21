@@ -130,7 +130,7 @@ def test_sensitivity_route(http):
     assert code == 200 and r["synthetic"] and "no2" in r["targets"] and r["by_distance"]
     assert http("POST", "/api/studies/sensitivity", {"site_id": "nope", "backend": "demo"})[0] == 404
     assert http("POST", "/api/studies/sensitivity", {"site_id": "a_site", "backend": "demo", "distances": [-1]})[0] == 400
-    code, j, _ = http("POST", "/api/studies/sensitivity", {"site_id": "a_site", "backend": "pc", "targets": ["no2"], "distances": [1]})
+    code, j, _ = http("POST", "/api/studies/sensitivity", {"site_id": "a_site", "backend": "ee", "targets": ["no2"], "distances": [1]})   # not set up here, and no network is touched
     assert code in (400, 502)
 
 

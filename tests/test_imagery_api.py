@@ -204,3 +204,22 @@ def test_oversized_bodies_are_refused(srv):
 def test_broken_json_is_a_400_not_a_crash(srv):
     status, body = raw_request(srv, "POST", "/api/validate", {"Host": "127.0.0.1:{port}", "X-Site-Curator": "1", "Content-Length": "5"}, b"{nope")
     assert status == 400 and b"not valid JSON" in body
+
+
+def test_a_dropped_connection_becomes_a_plain_backend_error(tmp_path):
+    import backends as B
+    import imagery_service as IS
+
+    class Flaky:
+        name = 'flaky'
+        def available(self):
+            return True, 'ok'
+        def fetch(self, **kw):
+            raise ConnectionError('Remote end closed connection without response')
+
+    svc = IS.ImageryService(str(tmp_path), {'flaky': Flaky()})
+    p = svc.clean({'backend': 'flaky', 'box_km': 3.0})
+    import pytest
+    with pytest.raises(B.BackendError) as e:
+        svc.get_chip('x', 10.0, 10.0, p)
+    assert 'could not be reached' in str(e.value) and 'ConnectionError' in str(e.value)
