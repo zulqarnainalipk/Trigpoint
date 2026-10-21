@@ -1,0 +1,150 @@
+{
+ "synthetic": true,
+ "note": "Made from the demo roster, the demo table and the demo registry. Nothing here is evidence about a real place.",
+ "target": "yield",
+ "n_sites": 11,
+ "warning": "Only 11 sites: the numbers below are rough and will move when a site is added or removed.",
+ "n_clusters": 9,
+ "cluster_km": 150.0,
+ "features": [
+  "land_frac",
+  "clear_frac",
+  "fire_days",
+  "no2_contrast",
+  "co_contrast"
+ ],
+ "interval": 0.8,
+ "mae": 0.0581,
+ "mae_baseline": 0.163,
+ "skill": 0.6436,
+ "r2": 0.8531,
+ "spearman": 0.9542,
+ "interval_coverage": 0.727,
+ "alpha_chosen": {
+  "0.01": 3,
+  "0.1": 6
+ },
+ "region_correction": true,
+ "sites": [
+  {
+   "id": "ras_tanura_refinery",
+   "observed": 0.3571,
+   "forecast": 0.3981,
+   "low": 0.3045,
+   "high": 0.4918
+  },
+  {
+   "id": "jubail_industrial",
+   "observed": 0.7571,
+   "forecast": 0.7003,
+   "low": 0.6067,
+   "high": 0.7939
+  },
+  {
+   "id": "ruwais_refinery",
+   "observed": 0.2429,
+   "forecast": 0.2006,
+   "low": 0.1406,
+   "high": 0.2607
+  },
+  {
+   "id": "ras_laffan_lng",
+   "observed": 0.4,
+   "forecast": 0.4243,
+   "low": 0.3583,
+   "high": 0.4903
+  },
+  {
+   "id": "jamnagar_refinery",
+   "observed": 0.4,
+   "forecast": 0.4149,
+   "low": 0.3278,
+   "high": 0.5021
+  },
+  {
+   "id": "europoort_rotterdam",
+   "observed": 0.4143,
+   "forecast": 0.4629,
+   "low": 0.356,
+   "high": 0.5698
+  },
+  {
+   "id": "port_arthur_refinery",
+   "observed": 0.3857,
+   "forecast": 0.2753,
+   "low": 0.1922,
+   "high": 0.3585
+  },
+  {
+   "id": "baytown_complex",
+   "observed": 0.6571,
+   "forecast": 0.6581,
+   "low": 0.5749,
+   "high": 0.7412
+  },
+  {
+   "id": "secunda_coal_to_liquids",
+   "observed": 0.8,
+   "forecast": 0.6764,
+   "low": 0.6264,
+   "high": 0.7264
+  },
+  {
+   "id": "ulsan_petrochemical",
+   "observed": 0.6,
+   "forecast": 0.6556,
+   "low": 0.5964,
+   "high": 0.7148
+  },
+  {
+   "id": "burrup_lng",
+   "observed": 0.4,
+   "forecast": 0.5206,
+   "low": 0.4751,
+   "high": 0.566
+  }
+ ],
+ "effort_saved": {
+  "n_sites": 11,
+  "total_windows": 770,
+  "total_samples": 379,
+  "rows": [
+   {
+    "drop_share_of_sites": 0.05,
+    "sites_dropped": 1,
+    "windows_saved_share": 0.0909,
+    "samples_lost_share": 0.0449,
+    "windows_saved": 70,
+    "samples_lost": 17
+   },
+   {
+    "drop_share_of_sites": 0.1,
+    "sites_dropped": 1,
+    "windows_saved_share": 0.0909,
+    "samples_lost_share": 0.0449,
+    "windows_saved": 70,
+    "samples_lost": 17
+   },
+   {
+    "drop_share_of_sites": 0.2,
+    "sites_dropped": 2,
+    "windows_saved_share": 0.1818,
+    "samples_lost_share": 0.1161,
+    "windows_saved": 140,
+    "samples_lost": 44
+   },
+   {
+    "drop_share_of_sites": 0.3,
+    "sites_dropped": 3,
+    "windows_saved_share": 0.2727,
+    "samples_lost_share": 0.1821,
+    "windows_saved": 210,
+    "samples_lost": 69
+   }
+  ],
+  "note": "Dropping at random saves and loses the same share. A useful forecast saves more than it loses."
+ },
+ "dropped_features": [
+  "aai_site"
+ ]
+}

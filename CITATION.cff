@@ -1,0 +1,23 @@
+cff-version: 1.2.0
+message: "If you use TrigPoint in research, please cite it as below. The licence (CC BY-NC 4.0) requires credit."
+title: "TrigPoint"
+version: "1.5.0"
+date-released: "2026-10-21"
+license: CC-BY-NC-4.0
+type: software
+abstract: >-
+  A local tool for curating a list of sites on satellite imagery. It checks every save, shows
+  Sentinel-2 views from three backends, and adds split-safety checks (overlap groups, near-duplicate
+  chips, shift between roles, a split certificate), a yield forecast with held-out validation,
+  coordinate grounding against registries and a placement study.
+keywords:
+  - satellite imagery
+  - benchmark curation
+  - data leakage
+  - Sentinel-2
+  - Sentinel-5P
+authors:
+  - family-names: "Ali"
+    given-names: "Zulqarnain"
+    orcid: "https://orcid.org/0009-0009-0281-882X"
+    email: "zulqar445ali@gmail.com"

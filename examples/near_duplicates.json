@@ -1,0 +1,16 @@
+{
+ "synthetic": true,
+ "note": "Chips are compared as small grey previews. Sites without a cached picture were not compared.",
+ "n_images": 11,
+ "n_pairs": 55,
+ "pairs_examined": 38,
+ "rule": {
+  "ncc_min": 0.85,
+  "ssim_min": 0.75
+ },
+ "found": [],
+ "backend": "demo",
+ "source": "single",
+ "missing": [],
+ "fetched_now": 11
+}

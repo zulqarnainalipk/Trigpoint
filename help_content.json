@@ -1,0 +1,841 @@
+{
+ "version": 1,
+ "areas": [
+  "Start here",
+  "Sites and review",
+  "Map and geometry",
+  "Imagery",
+  "Studies",
+  "Checks and records",
+  "Settings and access"
+ ],
+ "features": {
+  "guide": {
+   "area": "Start here",
+   "title": "How help works in this tool",
+   "short": "Every control with a ? button explains itself.",
+   "what": "Next to most controls you will see a small ? button. Press it to open a short explanation of that control: what it is, why it matters, how to use it, and what it cannot do.",
+   "why": "You should never have to guess what a button does. The same text is in the written guide, so the tool and the documentation always agree.",
+   "how": [
+    "Press the ? next to a control, or press Tab to reach it and then Enter.",
+    "Press Esc to close the explanation. Focus returns to where you were.",
+    "Open Help, then Feature guide, to search every explanation."
+   ],
+   "works": "All explanations come from one file that the tool reads when it starts.",
+   "limits": "The explanations describe the tool. They are not instructions for choosing sites in your own project."
+  },
+  "feature_guide": {
+   "area": "Start here",
+   "title": "Feature guide",
+   "short": "A searchable list of every feature.",
+   "what": "A list of all features of the tool, grouped by area, with a search box. Choosing one opens its explanation.",
+   "why": "It is the quickest way to find out whether the tool can do something.",
+   "how": [
+    "Open it from the top bar (Guide) or from Help.",
+    "Type a word, for example flare, grid or export.",
+    "Press Enter on a result to read it."
+   ],
+   "works": "The search looks at the title, the short description and the text of each explanation.",
+   "limits": "It searches the explanations only, not your sites."
+  },
+  "demo_mode": {
+   "area": "Start here",
+   "title": "Demo mode (synthetic scenes)",
+   "short": "Try every imagery feature without an account.",
+   "what": "Demo mode makes pretend satellite scenes from simple rules: a sea, fields, a facility with a flare, clouds, haze and a strip with no data. They look like real scenes in the right layout.",
+   "why": "You can learn the imagery tools, or test a workflow, without an Earth Engine account or an internet connection to a satellite service.",
+   "how": [
+    "Choose Demo in the imagery source list.",
+    "Fetch an image and use every view and tool as usual.",
+    "Switch to Earth Engine or Planetary Computer when you want real imagery."
+   ],
+   "works": "The scenes are drawn from the site name and place, so the same site always gives the same pictures.",
+   "limits": "Demo scenes are NOT real. They say nothing about any real place and must never be used as evidence to keep or move a site. The tool labels them synthetic wherever they appear."
+  },
+  "site_list": {
+   "area": "Sites and review",
+   "title": "Site list",
+   "short": "All sites, with their review state.",
+   "what": "The left bar lists every site in the file with its name, role and whether you kept it, rejected it, skipped it or have not looked at it yet.",
+   "why": "It shows how much of the review is done and lets you jump to any site.",
+   "how": [
+    "Click a site, or use J and K to move down and up.",
+    "Press N to jump to the next site you have not reviewed.",
+    "Tick sites with Shift and Space to act on several at once."
+   ],
+   "works": "The list follows the filters and sort order you chose.",
+   "limits": "It shows only the file you opened."
+  },
+  "filters": {
+   "area": "Sites and review",
+   "title": "Filters and sort",
+   "short": "Narrow the list and change its order.",
+   "what": "Choose which sites the list shows (by review state, role, region, priority, facility type, setting, confidence or quality flags) and how they are sorted.",
+   "why": "Reviewing in groups, for example one region at a time or the least certain coordinates first, is faster and more consistent.",
+   "how": [
+    "Open Filters and sort.",
+    "Pick values in any menu; the list updates at once.",
+    "Press Clear filters to start again."
+   ],
+   "works": "Filters combine: a site must pass all of them. Your choices are remembered in this browser.",
+   "limits": "Filters hide sites from the list only. Nothing is changed or removed from the file."
+  },
+  "review_decide": {
+   "area": "Sites and review",
+   "title": "Keep, reject, skip",
+   "short": "Record your decision for each site.",
+   "what": "Keep means you checked the site and its centre and box are right. Reject removes it from the final list, but it stays in the file and you can bring it back. Skip means come back later.",
+   "why": "A clear decision for every site is what turns a list of candidates into a trustworthy roster.",
+   "how": [
+    "Check the imagery and the box.",
+    "Press V to keep, X to reject or S to skip.",
+    "Press U to mark a site as not reviewed again."
+   ],
+   "works": "Keep saves your edits, ticks verified and opens the next unreviewed site. Reject adds a flag. Both can be undone.",
+   "limits": "Reject is not delete. To remove a site for good, use Delete and confirm."
+  },
+  "quick_edit": {
+   "area": "Sites and review",
+   "title": "Quick edit strip",
+   "short": "The essentials in one small panel over the map.",
+   "what": "A small panel with name, role, centre, box size, a comment and the keep and reject buttons.",
+   "why": "When you only need to nudge a box and decide, it keeps the map large and your hands in one place.",
+   "how": [
+    "Press E to open it.",
+    "Change a field. Press Enter to save, Esc to close."
+   ],
+   "works": "It edits the same record as the details bar, so both always agree.",
+   "limits": "It has no screening numbers or flags. Open the details bar for those."
+  },
+  "undo_redo": {
+   "area": "Sites and review",
+   "title": "Undo and redo",
+   "short": "Take back the last change.",
+   "what": "Undo restores the whole record of the last site you changed, including keep, reject and bulk changes. Redo puts it back.",
+   "why": "You can work quickly because mistakes are cheap to fix.",
+   "how": [
+    "Press Ctrl and Z to undo, Ctrl, Shift and Z to redo, or use the top bar buttons."
+   ],
+   "works": "The tool keeps a list of changes made in this session.",
+   "limits": "The list is cleared when you close the tool. For older versions, use the backup browser."
+  },
+  "bulk_actions": {
+   "area": "Sites and review",
+   "title": "Bulk actions",
+   "short": "Act on many sites at once.",
+   "what": "Tick several sites in the list and keep, reject, unreview, change role or delete them together, or compare them side by side.",
+   "why": "It saves time when many sites need the same decision, for example a whole region that you rejected.",
+   "how": [
+    "Tick sites with Shift and Space, or the boxes in the list.",
+    "Choose an action in the bar that appears.",
+    "Undo if you change your mind."
+   ],
+   "works": "Each action is checked by the validator and written once.",
+   "limits": "Delete is permanent after the confirmation. Prefer reject."
+  },
+  "add_site": {
+   "area": "Sites and review",
+   "title": "Add a site",
+   "short": "Create a site by place name or by clicking the map.",
+   "what": "Search for a place, click the map or type coordinates, give the site a name and role, and create it. You can also paste many sites at once (bulk import).",
+   "why": "Rosters grow. New sites arrive with the same checks as old ones.",
+   "how": [
+    "Press Add site.",
+    "Search a place or enter latitude and longitude.",
+    "Set the box size and press Create."
+   ],
+   "works": "The place search uses OpenStreetMap Nominatim. The new site must pass the validator.",
+   "limits": "Place search needs internet and follows the provider's usage rules. Coordinates from a search can be several kilometres off a large facility: check them on the imagery."
+  },
+  "box_size": {
+   "area": "Map and geometry",
+   "title": "Box size",
+   "short": "The side length of the square image of a site.",
+   "what": "Each site has a square box, from 1 to 8 km on a side. Chips are cut to this box, always with the same number of pixels, so a bigger box means a larger pixel.",
+   "why": "A box that is too small cuts a facility off. A box that is too large fills with surroundings and makes each pixel coarser.",
+   "how": [
+    "Drag a corner square, or type a value, or press minus and plus to step through presets.",
+    "Press T for the typical size of this kind of facility."
+   ],
+   "works": "Pixel size is the box divided by the pixel count (shown next to the box). The typical size is the median of other sites of the same type.",
+   "limits": "The tool cannot know how big your facility really is. Look at the imagery."
+  },
+  "label_window": {
+   "area": "Map and geometry",
+   "title": "Label window (10 km)",
+   "short": "The fixed area that gas measurements are averaged over.",
+   "what": "A dashed square, 10 km on a side, around the site centre. Satellite gas values are averaged inside it.",
+   "why": "It shows which surroundings affect the measurement, and whether two sites share the same measurements.",
+   "how": [
+    "Switch it on with L or in Map layers."
+   ],
+   "works": "It is drawn in the local map projection around the centre, and does not change with the box size.",
+   "limits": "It is a guide. It does not mean the measurement is sharp to 10 km: satellite pixels are several kilometres wide."
+  },
+  "background_ring": {
+   "area": "Map and geometry",
+   "title": "Background ring (30 to 75 km)",
+   "short": "The ring used as the regional background.",
+   "what": "Two dashed circles at 30 and 75 km from the centre. The ring between them gives the background level that is subtracted from the gas value inside the label window.",
+   "why": "Another facility inside the ring would raise the background and spoil the measurement. Seeing the ring shows where that could happen.",
+   "how": [
+    "Switch it on with B or in Map layers."
+   ],
+   "works": "The curator only draws it. The data pipeline decides what to exclude.",
+   "limits": "It does not know about land and sea. Over a coast, part of the ring is water."
+  },
+  "split_radius": {
+   "area": "Map and geometry",
+   "title": "Split radius (150 km)",
+   "short": "Sites inside it must share the same train or test group.",
+   "what": "A dotted circle of 150 km. Sites inside it are too close to be split between training and testing.",
+   "why": "If a training site and a test site are close, their data are similar. A model could score well by recognising the area, not by learning the task. This is called leakage.",
+   "how": [
+    "Switch it on with R.",
+    "Read the neighbour list for what each nearby site forces."
+   ],
+   "works": "The radius is twice the outer background radius, so the background rings of sites in different groups never overlap.",
+   "limits": "It is a distance rule. It does not prove two areas are different in weather or industry."
+  },
+  "pilot_roster": {
+   "area": "Map and geometry",
+   "title": "Reference (pilot) sites",
+   "short": "A read-only second roster shown as triangles.",
+   "what": "Sites from another file, shown with their boxes, so you can see how new candidates relate to an existing roster.",
+   "why": "New sites must not sit too close to sites that are already fixed in a split.",
+   "how": [
+    "Switch on Pilot sites in Map layers or press P.",
+    "Set the file with the METHANE_REFERENCE_PATH variable."
+   ],
+   "works": "The file is only read. It is never changed.",
+   "limits": "If no reference file is set, the layer is empty."
+  },
+  "exact_grid": {
+   "area": "Map and geometry",
+   "title": "Exact pixel grid",
+   "short": "The real pixel layout of the chip.",
+   "what": "Draws the box exactly as it will be cut: snapped to whole pixels in the local UTM map projection.",
+   "why": "What you see is what the chip will contain, not an approximation.",
+   "how": [
+    "Tick Show exact pixel grid, or press H."
+   ],
+   "works": "The tool computes the projection and the snapping with the same rules as the chip export.",
+   "limits": "Real chips can carry a small random shift of the grid; the drawn grid is the unshifted one."
+  },
+  "jump_coords": {
+   "area": "Map and geometry",
+   "title": "Jump to coordinates",
+   "short": "Paste a position and go there.",
+   "what": "Accepts latitude and longitude in decimal degrees, with N, S, E, W letters, in degrees, minutes and seconds, or a Google Maps or OpenStreetMap link.",
+   "why": "Coordinates arrive in many forms. Typing them by hand invites mistakes.",
+   "how": [
+    "Press G or click the box above the map, paste, press Enter.",
+    "Press Move box here to set the centre of the open site."
+   ],
+   "works": "The text is read by a small parser and the map flies to the point.",
+   "limits": "If the text is ambiguous the tool asks you to correct it. It never guesses a hemisphere."
+  },
+  "measure_tool": {
+   "area": "Map and geometry",
+   "title": "Measure distance",
+   "short": "Click points on the map to measure a distance.",
+   "what": "Click two or more points to see the length of the path in kilometres.",
+   "why": "Useful for judging a facility size or the gap between two sites.",
+   "how": [
+    "Open Tools, then Measure distance.",
+    "Click points. Press Esc to stop."
+   ],
+   "works": "Distances use the great-circle formula on the sphere.",
+   "limits": "Accurate to well under 1 percent at the sizes used here, not for survey work."
+  },
+  "quality_flags": {
+   "area": "Checks and records",
+   "title": "Quality flags",
+   "short": "Warnings about a site.",
+   "what": "Flags for a box outside the allowed range, two sites very close, overlapping label windows, a split conflict, a role that differs from nearby sites, low coordinate confidence, and a site marked verified whose centre was never moved.",
+   "why": "They point you to the sites most likely to be wrong, so you spend time where it matters.",
+   "how": [
+    "Open Quality flags in the details bar.",
+    "Use the Quality filter to list only flagged sites."
+   ],
+   "works": "Flags are computed from the roster and the screening numbers, with fixed limits.",
+   "limits": "A flag is a reason to look, not a verdict. No flag does not mean a site is right."
+  },
+  "neighbours": {
+   "area": "Checks and records",
+   "title": "Neighbours within 150 km",
+   "short": "Nearby sites and what they force on the split.",
+   "what": "Lists every other site within the split radius, with its distance and role.",
+   "why": "It tells you whether a site can go to training, to testing, or neither.",
+   "how": [
+    "Open Neighbours in the details bar.",
+    "Use Set role to follow the rule in one click."
+   ],
+   "works": "Distances are great-circle distances between centres. Rejected sites are ignored.",
+   "limits": "It checks centres only. Large facilities can reach further."
+  },
+  "screening": {
+   "area": "Checks and records",
+   "title": "Screening numbers",
+   "short": "Quick facts about how well a site can be measured.",
+   "what": "Numbers copied from the notes: share of land in the 10 km window, how many clear satellite scenes there were, gas contrast, and fire days.",
+   "why": "A site over water, or hidden by cloud most of the year, will give few usable samples.",
+   "how": [
+    "Open Screening numbers. Each has a plain-word reading."
+   ],
+   "works": "The tool reads them from the notes field.",
+   "limits": "If the notes do not contain them, nothing is shown."
+  },
+  "preflight": {
+   "area": "Checks and records",
+   "title": "Data availability check (preflight)",
+   "short": "Does each data source have data for the period?",
+   "what": "Asks Earth Engine whether each satellite and weather collection has data in the date range.",
+   "why": "It finds missing data sources before a long collection run.",
+   "how": [
+    "Open Tools, then Check data availability."
+   ],
+   "works": "One small request per collection.",
+   "limits": "Needs Earth Engine. It checks that collections exist, not that every site is covered."
+  },
+  "coverage_estimate": {
+   "area": "Checks and records",
+   "title": "Estimate coverage",
+   "short": "A rough count of scenes for a box.",
+   "what": "Counts Sentinel-2 scenes with little cloud and Sentinel-5P granules for the box, and compares with the number of time windows.",
+   "why": "A site with very few clear scenes will yield few samples.",
+   "how": [
+    "Press Estimate coverage in Position and box."
+   ],
+   "works": "Counts are made in Earth Engine over the date range.",
+   "limits": "Rough only. It is not the real pass rate of a collection run."
+  },
+  "validator": {
+   "area": "Checks and records",
+   "title": "File check (validator)",
+   "short": "Check a roster file against the rules.",
+   "what": "Reads the file and lists errors (the file cannot be used) and warnings (advice). It checks required fields, roles, centres, box sizes, unique identifiers and more.",
+   "why": "A bad file stops a later step, often far from the cause. The check finds the problem now, in plain words.",
+   "how": [
+    "Open Tools, then Check this file.",
+    "Or run: python validator.py sites.json"
+   ],
+   "works": "The same checker runs before every save, so the file on disk is always valid. It needs no other software.",
+   "limits": "It checks structure and ranges. It cannot tell whether a centre is on the right facility."
+  },
+  "provenance": {
+   "area": "Checks and records",
+   "title": "Provenance record",
+   "short": "A file that says how the roster was made.",
+   "what": "A JSON file with counts, the review history summary, the tool and library versions, which imagery was used as evidence, and a fingerprint (hash) of the exact roster.",
+   "why": "Anyone can later check that the roster they hold is the one the record describes, and how it was produced.",
+   "how": [
+    "Open Export, then Provenance record.",
+    "Tick Include my comments only if you want them in the file."
+   ],
+   "works": "The hash is computed from the roster in a fixed form. Change one value and the hash changes.",
+   "limits": "It records what the tool knows. It cannot prove who was at the keyboard."
+  },
+  "datasheet": {
+   "area": "Checks and records",
+   "title": "Datasheet",
+   "short": "A document describing the roster, in seven standard sections.",
+   "what": "A Markdown document (Motivation, Composition, Collection process, Preprocessing, Uses, Distribution, Maintenance) filled in from the roster and review log. Questions only you can answer are marked [TO COMPLETE].",
+   "why": "A clear description helps others use the roster properly and is expected when you share data.",
+   "how": [
+    "Open Export, then Datasheet.",
+    "Fill the questions in the form, or edit the downloaded file."
+   ],
+   "works": "Numbers come from the file. The tool counts how many questions are still open.",
+   "limits": "It does not write your answers for you. A datasheet with blanks is shown as incomplete."
+  },
+  "audit_log": {
+   "area": "Checks and records",
+   "title": "Review log",
+   "short": "A record of every change.",
+   "what": "Every save, keep, reject, delete and import is written to a log with the time and the site.",
+   "why": "You can see what changed and when, and it feeds the provenance record.",
+   "how": [
+    "Open Tools, then Backup browser to see changes, or read audit.log.jsonl."
+   ],
+   "works": "One line per change, added to the end of the file.",
+   "limits": "The log is a local file. Anyone who can edit the folder can edit the log."
+  },
+  "backups": {
+   "area": "Checks and records",
+   "title": "Backups",
+   "short": "A copy of the file before every save.",
+   "what": "Before each write the tool copies the previous file into a backups folder with a time stamp. The backup browser shows differences and restores a copy.",
+   "why": "You can go back to any earlier state, even after closing the tool.",
+   "how": [
+    "Open Tools, then Backup browser.",
+    "Pick a backup, read the differences, press Restore."
+   ],
+   "works": "Restoring is itself saved as a change, so it can be undone.",
+   "limits": "Backups use disk space. Delete old ones in the folder when you no longer need them."
+  },
+  "export_sites": {
+   "area": "Checks and records",
+   "title": "Export",
+   "short": "Download kept, verified, rejected or all sites.",
+   "what": "Choose which sites and a format (JSON or CSV). Provenance and datasheet downloads are here too.",
+   "why": "The cleaned file is the result of your review.",
+   "how": [
+    "Press Export in the top bar.",
+    "Choose, then press Download."
+   ],
+   "works": "A JSON export is checked by the validator before it is offered.",
+   "limits": "Private comments are left out unless you tick the box."
+  },
+  "import_merge": {
+   "area": "Checks and records",
+   "title": "Import or merge a file",
+   "short": "Bring in sites from another file, with a preview.",
+   "what": "Reads another sites file and shows new sites, identifier clashes and sites very close to existing ones before anything changes.",
+   "why": "Merging by hand is a common source of duplicate sites.",
+   "how": [
+    "Open Tools, then Import or merge.",
+    "Pick the file and a rule for clashes.",
+    "Read the preview, then press Apply."
+   ],
+   "works": "Nothing is written until Apply. The result is validated.",
+   "limits": "It cannot decide which of two near-duplicate sites is right. You decide."
+  },
+  "roster_report": {
+   "area": "Checks and records",
+   "title": "Roster report",
+   "short": "A printable summary of all sites.",
+   "what": "A web page with a table of every site, small pictures if you fetched them, and the warnings. Print it to PDF.",
+   "why": "A page you can share with someone who does not use the tool.",
+   "how": [
+    "Open Tools, then Open roster report."
+   ],
+   "works": "It is built from the file and the picture cache.",
+   "limits": "Pictures appear only for sites where you fetched imagery."
+  },
+  "imagery_panel": {
+   "area": "Imagery",
+   "title": "Imagery panel",
+   "short": "Look at the site from space, in many ways.",
+   "what": "Fetches satellite imagery for the open site and shows it in different views. It also gives statistics, repairs missing pixels and suggests areas of interest.",
+   "why": "Imagery is the evidence for where the facility is and how big its box should be. Different views show different things: a flare, bare ground, haze, water.",
+   "how": [
+    "Pick an imagery source and what to show.",
+    "Press Fetch image.",
+    "Change the view, the stretch or the fill and the picture updates without a new download."
+   ],
+   "works": "The image is a 14-layer chip: 12 Sentinel-2 bands, a scene classification and a cloud probability. It is saved on your computer, so switching views is instant.",
+   "limits": "Imagery shows the surface on the day or days it was taken. It cannot tell you which company owns a facility."
+  },
+  "backend": {
+   "area": "Imagery",
+   "title": "Imagery backend",
+   "short": "Where the imagery comes from.",
+   "what": "Earth Engine (needs a Google account and a key), Planetary Computer (free, no account, needs internet) or Demo (synthetic, always works).",
+   "why": "You can use the tool with whatever access you have.",
+   "how": [
+    "Choose in the list. A badge says which ones are ready and why not.",
+    "See docs/BACKENDS.md to set up Earth Engine."
+   ],
+   "works": "All three give the same kind of chip, so every view and tool works with all of them.",
+   "limits": "Earth Engine and Planetary Computer can differ slightly for the same day because of how scenes are tiled and corrected."
+  },
+  "source_single": {
+   "area": "Imagery",
+   "title": "Single scene",
+   "short": "The clearest single day in the look-back period.",
+   "what": "Picks the satellite pass with the least cloud over your box.",
+   "why": "A real picture of one day, the way a user of the chips will see it.",
+   "how": [
+    "Choose Single scene, set the look-back days, press Fetch."
+   ],
+   "works": "Scenes are ranked by the share of cloud inside the box.",
+   "limits": "One day can still have haze, smoke or a gap. Try the cloudless median for a cleaner view."
+  },
+  "source_median": {
+   "area": "Imagery",
+   "title": "Cloudless median composite",
+   "short": "A clean image built from many days.",
+   "what": "At each pixel it takes the middle value of all the clear observations in the period. Clouds and shadows are ignored.",
+   "why": "It gives a stable, cloud-free picture of the ground, good for judging the footprint of a facility.",
+   "how": [
+    "Choose Cloudless median and a period (a few months is typical), press Fetch.",
+    "Read the scene count and the share of pixels observed."
+   ],
+   "works": "Cloud and cloud shadow are removed using the scene classification and the cloud probability. The median of what is left is taken for each band.",
+   "limits": "It blends different days, so short-lived things (a flare on one day, a moving ship) fade. It can hide changes during the period."
+  },
+  "source_clearsky": {
+   "area": "Imagery",
+   "title": "Clear-sky layer",
+   "short": "A low percentile of clear days: the surface under haze.",
+   "what": "At each pixel it takes a low percentile (20 by default) of the clear observations. Haze and thin cloud make values brighter, so low values are the clearest.",
+   "why": "It shows the surface beneath thin cloud and haze. Researchers use such a layer because it describes the place rather than the weather of one day.",
+   "how": [
+    "Choose Clear-sky layer, set the period, press Fetch."
+   ],
+   "works": "Same cloud removal as the median, then the chosen low percentile of each band.",
+   "limits": "Dark surfaces and shadows are favoured by a low percentile, so the layer looks slightly darker than a real day."
+  },
+  "period_days": {
+   "area": "Imagery",
+   "title": "Look-back period",
+   "short": "How many days back to search.",
+   "what": "The number of days before today that the tool searches for scenes.",
+   "why": "A longer period finds more clear scenes, but blends more of the year.",
+   "how": [
+    "Type a number of days, or use the presets."
+   ],
+   "works": "The period ends today.",
+   "limits": "Very long periods for composites take longer to fetch."
+  },
+  "view_composite": {
+   "area": "Imagery",
+   "title": "Colour views",
+   "short": "Three bands shown as red, green and blue.",
+   "what": "True colour looks like a photograph. False-colour IR shows plants in red. SWIR shows bare ground, industry and hot spots (flares glow orange) and makes water dark. Agriculture separates desert from fields. Aerosol (red, blue, coastal blue) makes haze and smoke look blue-white.",
+   "why": "A facility, a flare, a field and a lake look different in different views. Switching views helps you place the centre and box with confidence.",
+   "how": [
+    "Press a view button. The picture updates at once."
+   ],
+   "works": "Each view picks three of the 12 bands and stretches them for display.",
+   "limits": "The colours are display colours. They are not measurements."
+  },
+  "view_index": {
+   "area": "Imagery",
+   "title": "Index views",
+   "short": "One number per pixel, drawn as a blue scale.",
+   "what": "Spectral indices combine bands to bring out one thing: vegetation (NDVI), water (NDWI, MNDWI), bare or built-up ground (BSI), hot or dry ground (NBR2, hot-surface ratio), haze (coastal-blue contrast). Dark blue means high.",
+   "why": "An index can show a facility boundary or a flare that a colour picture hides.",
+   "how": [
+    "Choose an index. Press ? beside it to see its formula and meaning.",
+    "The scale is stretched between the 2nd and 98th percentile of the picture."
+   ],
+   "works": "Each index is a formula on the band values, limited to a fixed range so that division by a tiny number cannot blow up.",
+   "limits": "Index values differ between images and places, so the scale is relative to the picture, not an absolute reading."
+  },
+  "stretch": {
+   "area": "Imagery",
+   "title": "Display stretch",
+   "short": "How brightness is spread over the screen range.",
+   "what": "Percentile stretches each channel between its 2nd and 98th percentile. Log and square root open up dark areas of skewed images. Linear uses one fixed range so images can be compared.",
+   "why": "Satellite values are bunched near the dark end. A good stretch shows detail in shadows and bright ground at once.",
+   "how": [
+    "Choose a stretch. The picture updates at once."
+   ],
+   "works": "Transforms are applied to reflectance before the percentile stretch. They change only how the picture looks.",
+   "limits": "A stretch does not change the data or the statistics."
+  },
+  "statistics": {
+   "area": "Imagery",
+   "title": "Statistics",
+   "short": "Numbers that describe the picture.",
+   "what": "For each band and chosen indices: mean, spread (standard deviation), skew and the 5th, 25th, 50th, 75th and 95th percentiles, plus the share of valid, clear and cloudy pixels.",
+   "why": "A few numbers let you compare sites and spot odd images, such as one that is mostly cloud or mostly water.",
+   "how": [
+    "Open Statistics after fetching. Choose whether to use clear pixels only.",
+    "Each row has a plain-word reading."
+   ],
+   "works": "Statistics are computed on the pixels inside the box that have data (and, if chosen, are clear).",
+   "limits": "They describe this picture only. One image is not a climatology."
+  },
+  "gapfill": {
+   "area": "Imagery",
+   "title": "Gap fill",
+   "short": "Repair pixels that have no data.",
+   "what": "Fills empty pixels. Band mean uses the average of the valid pixels. Nearest scene copies the same pixels from another day and shifts each band to match brightness, then uses the mean for whatever is still empty.",
+   "why": "Empty strips and holes make pictures and statistics misleading. A repair is easier to read, and statistics do not shrink towards zero.",
+   "how": [
+    "Choose a fill method. The picture shows filled pixels exactly like the rest, so check the caption for how many were filled."
+   ],
+   "works": "The nearest scene method uses only clear donor pixels and matches the donor to the scene by the average difference of the two over pixels clear in both.",
+   "limits": "Filled pixels are estimates. Never use them as evidence of what is on the ground at that spot."
+  },
+  "gapfill_test": {
+   "area": "Imagery",
+   "title": "Test the gap fill",
+   "short": "Measure how good each fill method is on this picture.",
+   "what": "Hides about 10 percent of the clear pixels in small blocks, fills them with each method, and reports the average error against the hidden truth.",
+   "why": "It tells you how much to trust a fill on this kind of scene instead of taking it on faith.",
+   "how": [
+    "Press Test the gap fill after fetching.",
+    "A smaller error is better. Read it against the picture's own spread."
+   ],
+   "works": "The hidden blocks are chosen at random with a fixed seed, so the same picture gives the same answer.",
+   "limits": "It measures error on pixels that were hidden on purpose. Real gaps (for example under a cloud) can be harder."
+  },
+  "candidates": {
+   "area": "Imagery",
+   "title": "Candidate areas",
+   "short": "Outlines of regions that look like built-up, hot, bare or bright ground.",
+   "what": "Marks connected regions where a simple index is above a threshold and lists their size, distance from the centre, compactness and elongation.",
+   "why": "It can help you see where the facility is, or whether your centre sits on an obvious feature.",
+   "how": [
+    "Choose a kind and a strictness, press Find candidates.",
+    "Press a region to show it on the map."
+   ],
+   "works": "A threshold on an index gives a mask. Neighbouring masked pixels are joined into regions, small ones are dropped, and outlines are drawn on the map.",
+   "limits": "It is only an aid for your eyes. It never moves a site. A simple score can pick the wrong part of a large industrial area, so always check the imagery."
+  },
+  "themes_access": {
+   "area": "Settings and access",
+   "title": "Themes and accessibility",
+   "short": "Dark, light, high contrast, text size, reduced motion.",
+   "what": "Choose a theme, scale the text from 80 to 160 percent, reduce motion, and make the drag handles larger.",
+   "why": "The tool should be comfortable for everyone, in any light.",
+   "how": [
+    "Open Settings."
+   ],
+   "works": "Your choices are saved in this browser.",
+   "limits": "If your browser blocks storage the tool still works but forgets your choices."
+  },
+  "focus_mode": {
+   "area": "Settings and access",
+   "title": "Focus mode",
+   "short": "Hide everything except the map.",
+   "what": "Hides both side bars and extra controls for a clean map.",
+   "why": "A large clean map is the best way to place a box.",
+   "how": [
+    "Press F. Press F or Esc to bring everything back."
+   ],
+   "works": "The tool remembers what was open and restores it.",
+   "limits": "Review shortcuts still work, but their buttons are hidden."
+  },
+  "shortcuts": {
+   "area": "Settings and access",
+   "title": "Keyboard shortcuts",
+   "short": "Do everything without the mouse.",
+   "what": "Single keys for the common actions, for example J and K to move, V, X and S to decide, E for quick edit, F for focus.",
+   "why": "Reviewing hundreds of sites is much faster by keyboard.",
+   "how": [
+    "Press ? to see the full list."
+   ],
+   "works": "Shortcuts are ignored while you type in a field.",
+   "limits": "Some screen readers use the same keys. Turn the shortcuts off in Settings if they get in the way."
+  },
+  "studies_overview": {
+   "area": "Studies",
+   "title": "Studies",
+   "short": "Checks and forecasts that go beyond one site at a time.",
+   "what": "A window with four tabs. Split safety checks that train and test sites do not overlap or copy each other. Forecast predicts how many usable samples a site will give. Coordinates compares your positions with public lists. Placement shows what a misplaced box costs.",
+   "why": "A benchmark is only as good as its split and its coordinates. These checks turn those worries into numbers you can read and keep.",
+   "how": [
+    "Open Studies from the Tools menu.",
+    "Pick a tab and press its main button.",
+    "Press the ? beside any heading for details."
+   ],
+   "works": "Each tab calls a small, open calculation on your roster. Nothing uses a trained model, and nothing changes a site unless a button says it will.",
+   "limits": "The studies only know what is in your roster, your table and the pictures you fetch. They cannot tell you whether a site is a good idea."
+  },
+  "overlap_groups": {
+   "area": "Studies",
+   "title": "Overlap groups",
+   "short": "Sites that overlap must stay together in one fold.",
+   "what": "Finds every pair of sites whose boxes, 10 km label windows or background rings overlap, joins the linked sites into groups, and gives each group an id.",
+   "why": "If two overlapping sites land in different splits, the test set shares ground truth with the training set. Groups let you split whole groups, never parts of one.",
+   "how": [
+    "Choose how strict the link should be.",
+    "Press Find groups and read the table.",
+    "Press Write group ids into the roster if you want the ids saved in each site. You can undo it."
+   ],
+   "works": "It compares every pair using flat distances in kilometres. Linked sites are joined into groups with a simple union step, so a chain of overlaps becomes one group.",
+   "limits": "It uses the box sizes you set. If a box is wrong, the groups are wrong, and it cannot see overlap between sites that are not in this roster."
+  },
+  "near_duplicates": {
+   "area": "Studies",
+   "title": "Near-duplicate chips",
+   "short": "Finds pictures that are flipped, turned, shifted or recoloured copies.",
+   "what": "Compares small grey previews of all the pictures and lists pairs that match after a flip, a turn of 90 degrees, a shift of a pixel or two, or a change of brightness or colour.",
+   "why": "Copies of the same picture in train and test make a test score look better than it is. In some competitions this was a real problem.",
+   "how": [
+    "Choose where the pictures come from.",
+    "Tick the box if the tool should download pictures that are not saved yet.",
+    "Press Look for near-duplicates."
+   ],
+   "works": "A fast rank-correlation screen keeps likely pairs. Each pair is then tried in all eight flips and turns with small shifts, brightness is matched, and correlation and structural similarity must both be high.",
+   "limits": "It only sees the pictures it has. Two pictures of the same place on different dates are often flagged too, because the ground looks alike; that helps when one facility was entered twice."
+  },
+  "dup_selftest": {
+   "area": "Studies",
+   "title": "Self-test of the duplicate finder",
+   "short": "Measures how well the finder works on made-up copies.",
+   "what": "Builds a set of generated pictures, makes copies with known changes, runs the finder, and reports how many copies it found and how many false alarms it raised.",
+   "why": "A checker you cannot test is a checker you must trust. This shows what it can and cannot catch.",
+   "how": [
+    "Press Run the self-test.",
+    "Read the rate for each kind of copy.",
+    "A rate below 100 percent means some copies of that kind are missed."
+   ],
+   "works": "Every picture comes from a fixed random seed, so the same test gives the same numbers every time.",
+   "limits": "Generated pictures are simpler than satellite scenes. Treat the numbers as a lower bound on how clean the test is, not as a promise for real data."
+  },
+  "domain_shift": {
+   "area": "Studies",
+   "title": "Shift between two roles",
+   "short": "Shows how different train sites are from test sites.",
+   "what": "Compares each number that describes the sites (for example cloud-free share or land share) between two roles, with a population stability index and a two-sample test.",
+   "why": "A model that does well on training sites can fail on test sites that look different. This shows how big the gap is before you collect anything.",
+   "how": [
+    "Choose the two roles.",
+    "Press Compare the two roles.",
+    "Read the sentence at the top, then the table."
+   ],
+   "works": "The index compares how sites fall into bins. The tool also repeats the comparison for random splits of the same sizes so you can see what chance alone gives.",
+   "limits": "With few sites the index is noisy and biased upwards. It cannot tell you why two roles differ."
+  },
+  "split_certificate": {
+   "area": "Studies",
+   "title": "Split certificate",
+   "short": "One file that says whether a split is safe.",
+   "what": "Collects the checks into a single JSON record: closest sites in different roles, overlaps across roles, the time gap, the spread of a target over distance, near-duplicate pictures and the shift between roles.",
+   "why": "You can hand the file to a reader or a reviewer. It states what was checked, what passed and what was never run.",
+   "how": [
+    "Optionally enter the end of the training period and the start of the test period.",
+    "Optionally choose a target column.",
+    "Press Build the certificate, then download it."
+   ],
+   "works": "Each check gives pass, fail, look at this, or not run. The file also holds a fingerprint of the roster so it cannot be confused with another version.",
+   "limits": "A pass means the checks that were run found nothing. It does not prove a split is perfect, and checks that were not run say nothing."
+  },
+  "outcomes_table": {
+   "area": "Studies",
+   "title": "Table of outcomes",
+   "short": "The numbers the forecast learns from.",
+   "what": "A CSV with one row per site. The first column is the site id. The other columns hold numbers such as how many collection windows there were, how many gave a sample, and screening values.",
+   "why": "The forecast needs to see how sites turned out in the past. Without a table, it cannot be checked or fitted.",
+   "how": [
+    "Choose a CSV file or paste the text.",
+    "Press Load the table.",
+    "Check the summary line for the columns that were found."
+   ],
+   "works": "The tool joins rows to your sites by id. When windows and ok_windows are given, it works out the yield (the share of windows that gave a sample).",
+   "limits": "Rows with an id that is not in the roster are ignored. Text in a number column is treated as missing."
+  },
+  "forecast": {
+   "area": "Studies",
+   "title": "Forecast",
+   "short": "Predicts how many usable samples a site will give.",
+   "what": "Estimates the share of collection windows that will give a usable sample, or the share with a given target, from cheap screening numbers, with a range around each estimate.",
+   "why": "Collection takes time. If a site is likely to give little, you can find out before you spend that time.",
+   "how": [
+    "Load a table of outcomes.",
+    "Choose what to forecast and which numbers to use.",
+    "Press Check the forecast first, then Fit it and use it."
+   ],
+   "works": "A plain linear model (ridge regression) on the chosen numbers, with a small correction for each region that is pulled towards zero when a region has few sites.",
+   "limits": "It learns only from your sites. A forecast for a very different kind of place can be wrong, and the range is only as good as the held-out errors it came from."
+  },
+  "forecast_validation": {
+   "area": "Studies",
+   "title": "Check the forecast",
+   "short": "Tests the forecast on sites it has not seen.",
+   "what": "Holds out whole clusters of nearby sites, predicts them from the rest, and reports the error against simply guessing the average, plus how often the true value fell inside the range.",
+   "why": "A forecast that is only tested on sites close to its training sites looks better than it is. Holding out clusters stops neighbours from helping.",
+   "how": [
+    "Press Check the forecast.",
+    "Read the first sentence, then the table and the chart.",
+    "Look at the table of dropped sites to see what the forecast would have saved."
+   ],
+   "works": "Sites within 150 km are one cluster. Each cluster is predicted from all the others, and settings are chosen without looking at the held-out cluster.",
+   "limits": "It is an honest estimate for places like the ones in your table. With only a few dozen sites the numbers move when you add or remove one."
+  },
+  "forecast_fit": {
+   "area": "Studies",
+   "title": "Fit and use the forecast",
+   "short": "Fits the forecast on every site and applies it to all of them.",
+   "what": "Fits the model on all sites that have an outcome, saves it, and lists a forecast with a range for every site in the roster, lowest first.",
+   "why": "The sites with the lowest forecast are the ones to look at before you spend collection time on them.",
+   "how": [
+    "Press Check the forecast first.",
+    "Press Fit it and use it for every site.",
+    "Download the list if you want to keep it."
+   ],
+   "works": "The final model uses all the data. Its range comes from the held-out errors found in the check.",
+   "limits": "A low forecast is a reason to look, not a reason to drop a site. Check the picture and the reasons first."
+  },
+  "registries": {
+   "area": "Studies",
+   "title": "Registries",
+   "short": "Public lists of facilities with coordinates.",
+   "what": "A registry is a file of facility names and positions from a public source, for example Wikidata or a Global Energy Monitor table. You add one or more and the tool compares your sites against them.",
+   "why": "Positions written from memory can be several kilometres off. A second source shows where to look first.",
+   "how": [
+    "Give the registry a name and choose the file, or paste the text.",
+    "Press Add the registry.",
+    "Optionally use the Wikidata lookup, which needs your confirmation to go online."
+   ],
+   "works": "The tool reads CSV, GeoJSON or a Wikidata result and keeps the name, country, latitude and longitude of each entry.",
+   "limits": "Registries are incomplete and sometimes wrong. Check each source's licence before you use it."
+  },
+  "grounding": {
+   "area": "Studies",
+   "title": "Compare with registries",
+   "short": "Flags sites whose position differs from a registry.",
+   "what": "Matches each site to a registry entry by name, country and distance, then says whether the two positions agree, differ a little, disagree, or whether no match was found.",
+   "why": "A site that disagrees with a registry by several kilometres is the first one to check against the picture.",
+   "how": [
+    "Add at least one registry.",
+    "Press Compare all sites.",
+    "Open a flagged site and check the picture. Move the site yourself if the registry is right."
+   ],
+   "works": "Names are compared after dropping generic words such as plant or refinery. Positions agree within 2 km, differ up to 5 km, and disagree beyond that.",
+   "limits": "A wrong name match can point at the wrong place, and the tool never moves a site on its own."
+  },
+  "grounding_eval": {
+   "area": "Studies",
+   "title": "Error on verified sites",
+   "short": "Measures how good the starting positions and the registries were.",
+   "what": "For sites you have already checked on the map, compares the position before you edited it, and the registry position, with the position you settled on.",
+   "why": "It turns the question of how far off recalled coordinates are into a number, and shows whether a registry helps.",
+   "how": [
+    "Add a registry and compare all sites.",
+    "Press Measure the error on verified sites.",
+    "Read the median error and the share within 1, 2 and 5 km."
+   ],
+   "works": "The verified position is the truth. Errors are great-circle distances in kilometres, summarised for each source and for a combined rule.",
+   "limits": "It only covers sites that are verified and have a recorded starting position, and it measures the source of the starting positions, not coordinates in general."
+  },
+  "placement_study": {
+   "area": "Studies",
+   "title": "Placement study",
+   "short": "Shows what a misplaced box costs.",
+   "what": "Moves the box by several distances in several directions and measures how much the picture changes and how much of the facility stays inside.",
+   "why": "Coordinates are never exact. This shows how large an error you can live with for a given box size.",
+   "how": [
+    "Open a site first.",
+    "Choose the shifts and the kind of facility signal.",
+    "Press Run the study and read the sentence at the top."
+   ],
+   "works": "One wider picture is fetched once. The box is cut out of it at each shifted position, and the cut-outs are compared with the original.",
+   "limits": "Pictures are compared at the resolution of the wider picture, so small shifts are only rough. The facility signal is a simple index, not a recognised facility."
+  },
+  "placement_targets": {
+   "area": "Studies",
+   "title": "Gas targets in the placement study",
+   "short": "Shows how a shifted label window changes the gas value.",
+   "what": "Computes the gas value (window minus the background ring) at each shifted position from satellite gas columns, and compares the change with the day-to-day spread at the original position.",
+   "why": "It shows whether shifting the box matters for the gas values you will predict, or only for the picture.",
+   "how": [
+    "Tick one or more gases.",
+    "Run the study. With Earth Engine this reads real satellite data.",
+    "Read the tolerance in each table heading."
+   ],
+   "works": "A shift is small if the typical change stays within a quarter of the day-to-day spread. The tool also shows the change in standard errors of the average.",
+   "limits": "Gas pixels are several kilometres wide and the daily maps are smoothed, so small shifts may show almost no change. The demo backend gives synthetic values for practice only."
+  },
+  "forecast_compare": {
+   "area": "Studies",
+   "title": "Compare with simpler models",
+   "short": "Checks whether the extra numbers are worth collecting.",
+   "what": "Scores the forecast with each screening number alone and with all of them together, using the same held-out check, and compares them with guessing the average.",
+   "why": "If one cheap number does as well as six, you can collect only that one. If the larger model is no better than guessing, the forecast is not worth using.",
+   "how": [
+    "Press Check the forecast first to make sure the table is loaded.",
+    "Press Compare with simpler models and wait.",
+    "Read the sentence at the top, then the table."
+   ],
+   "works": "Each row repeats the leave-cluster-out check, so it takes about as long as the forecast check once for every number.",
+   "limits": "The numbers are only as stable as your sample. With few sites a small difference between two rows is not worth reading into."
+  }
+ }
+}

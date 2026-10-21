@@ -1,0 +1,63 @@
+{
+ "synthetic": true,
+ "note": "Made from the demo roster, the demo table and the demo registry. Nothing here is evidence about a real place.",
+ "role_a": "train",
+ "role_b": "test",
+ "n_a": 7,
+ "n_b": 3,
+ "features": [
+  {
+   "feature": "land_frac",
+   "n_a": 7,
+   "n_b": 3,
+   "psi": null,
+   "psi_level": "not enough data",
+   "ks": null,
+   "p_value": null
+  },
+  {
+   "feature": "clear_frac",
+   "n_a": 7,
+   "n_b": 3,
+   "psi": null,
+   "psi_level": "not enough data",
+   "ks": null,
+   "p_value": null
+  },
+  {
+   "feature": "fire_days",
+   "n_a": 7,
+   "n_b": 3,
+   "psi": null,
+   "psi_level": "not enough data",
+   "ks": null,
+   "p_value": null
+  },
+  {
+   "feature": "no2_contrast",
+   "n_a": 7,
+   "n_b": 3,
+   "psi": null,
+   "psi_level": "not enough data",
+   "ks": null,
+   "p_value": null
+  },
+  {
+   "feature": "co_contrast",
+   "n_a": 7,
+   "n_b": 3,
+   "psi": null,
+   "psi_level": "not enough data",
+   "ks": null,
+   "p_value": null
+  }
+ ],
+ "median_psi": null,
+ "max_psi": null,
+ "n_large": 0,
+ "most_different": [],
+ "against_random": {
+  "observed_median_psi": null,
+  "note": "Not enough sites with values."
+ }
+}

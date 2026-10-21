@@ -1,0 +1,486 @@
+{
+ "synthetic": true,
+ "note": "Made from the demo roster, the demo table and the demo registry. Nothing here is evidence about a real place.",
+ "n_sites": 11,
+ "counts": {
+  "agree": 6,
+  "differ": 3,
+  "disagree": 2,
+  "not_found": 0
+ },
+ "sites": [
+  {
+   "id": "ras_tanura_refinery",
+   "centre": [
+    26.64,
+    50.16
+   ],
+   "status": "agree",
+   "matches": [
+    {
+     "source": "demo-registry",
+     "matched": true,
+     "entry": {
+      "name": "Ras Tanura refinery",
+      "lat": 26.64189,
+      "lon": 50.16189,
+      "source": "demo-registry",
+      "country": "",
+      "id": "",
+      "kind": "",
+      "aliases": []
+     },
+     "distance_km": 0.28,
+     "name_score": 1.0,
+     "nearest_entry": {
+      "name": "Ras Tanura refinery",
+      "lat": 26.64189,
+      "lon": 50.16189,
+      "source": "demo-registry",
+      "country": "",
+      "id": "",
+      "kind": "",
+      "aliases": []
+     },
+     "nearest_km": 0.28,
+     "status": "agree"
+    }
+   ],
+   "registry_spread_km": null,
+   "suggested_centre": [
+    26.64189,
+    50.16189
+   ]
+  },
+  {
+   "id": "jubail_industrial",
+   "centre": [
+    27.02,
+    49.62
+   ],
+   "status": "agree",
+   "matches": [
+    {
+     "source": "demo-registry",
+     "matched": true,
+     "entry": {
+      "name": "Jubail industrial city",
+      "lat": 27.02629,
+      "lon": 49.62629,
+      "source": "demo-registry",
+      "country": "",
+      "id": "",
+      "kind": "",
+      "aliases": []
+     },
+     "distance_km": 0.94,
+     "name_score": 1.0,
+     "nearest_entry": {
+      "name": "Jubail industrial city",
+      "lat": 27.02629,
+      "lon": 49.62629,
+      "source": "demo-registry",
+      "country": "",
+      "id": "",
+      "kind": "",
+      "aliases": []
+     },
+     "nearest_km": 0.94,
+     "status": "agree"
+    }
+   ],
+   "registry_spread_km": null,
+   "suggested_centre": [
+    27.02629,
+    49.62629
+   ]
+  },
+  {
+   "id": "ruwais_refinery",
+   "centre": [
+    24.11,
+    52.73
+   ],
+   "status": "agree",
+   "matches": [
+    {
+     "source": "demo-registry",
+     "matched": true,
+     "entry": {
+      "name": "Ruwais refinery",
+      "lat": 24.12132,
+      "lon": 52.74132,
+      "source": "demo-registry",
+      "country": "",
+      "id": "",
+      "kind": "",
+      "aliases": []
+     },
+     "distance_km": 1.7,
+     "name_score": 1.0,
+     "nearest_entry": {
+      "name": "Ruwais refinery",
+      "lat": 24.12132,
+      "lon": 52.74132,
+      "source": "demo-registry",
+      "country": "",
+      "id": "",
+      "kind": "",
+      "aliases": []
+     },
+     "nearest_km": 1.7,
+     "status": "agree"
+    }
+   ],
+   "registry_spread_km": null,
+   "suggested_centre": [
+    24.12132,
+    52.74132
+   ]
+  },
+  {
+   "id": "ras_laffan_lng",
+   "centre": [
+    25.92,
+    51.55
+   ],
+   "status": "differ",
+   "matches": [
+    {
+     "source": "demo-registry",
+     "matched": true,
+     "entry": {
+      "name": "Ras Laffan LNG",
+      "lat": 25.94201,
+      "lon": 51.57201,
+      "source": "demo-registry",
+      "country": "",
+      "id": "",
+      "kind": "",
+      "aliases": []
+     },
+     "distance_km": 3.29,
+     "name_score": 1.0,
+     "nearest_entry": {
+      "name": "Ras Laffan LNG",
+      "lat": 25.94201,
+      "lon": 51.57201,
+      "source": "demo-registry",
+      "country": "",
+      "id": "",
+      "kind": "",
+      "aliases": []
+     },
+     "nearest_km": 3.29,
+     "status": "differ"
+    }
+   ],
+   "registry_spread_km": null,
+   "suggested_centre": [
+    25.94201,
+    51.57201
+   ]
+  },
+  {
+   "id": "jamnagar_refinery",
+   "centre": [
+    22.35,
+    69.87
+   ],
+   "status": "disagree",
+   "matches": [
+    {
+     "source": "demo-registry",
+     "matched": true,
+     "entry": {
+      "name": "Jamnagar refinery",
+      "lat": 22.39402,
+      "lon": 69.91402,
+      "source": "demo-registry",
+      "country": "",
+      "id": "",
+      "kind": "",
+      "aliases": []
+     },
+     "distance_km": 6.67,
+     "name_score": 1.0,
+     "nearest_entry": {
+      "name": "Jamnagar refinery",
+      "lat": 22.39402,
+      "lon": 69.91402,
+      "source": "demo-registry",
+      "country": "",
+      "id": "",
+      "kind": "",
+      "aliases": []
+     },
+     "nearest_km": 6.67,
+     "status": "disagree"
+    }
+   ],
+   "registry_spread_km": null,
+   "suggested_centre": [
+    22.39402,
+    69.91402
+   ]
+  },
+  {
+   "id": "europoort_rotterdam",
+   "centre": [
+    51.95,
+    4.1
+   ],
+   "status": "agree",
+   "matches": [
+    {
+     "source": "demo-registry",
+     "matched": true,
+     "entry": {
+      "name": "Europoort refinery cluster",
+      "lat": 51.95377,
+      "lon": 4.10377,
+      "source": "demo-registry",
+      "country": "",
+      "id": "",
+      "kind": "",
+      "aliases": []
+     },
+     "distance_km": 0.49,
+     "name_score": 0.833,
+     "nearest_entry": {
+      "name": "Europoort refinery cluster",
+      "lat": 51.95377,
+      "lon": 4.10377,
+      "source": "demo-registry",
+      "country": "",
+      "id": "",
+      "kind": "",
+      "aliases": []
+     },
+     "nearest_km": 0.49,
+     "status": "agree"
+    }
+   ],
+   "registry_spread_km": null,
+   "suggested_centre": [
+    51.95377,
+    4.10377
+   ]
+  },
+  {
+   "id": "port_arthur_refinery",
+   "centre": [
+    29.87,
+    -93.97
+   ],
+   "status": "disagree",
+   "matches": [
+    {
+     "source": "demo-registry",
+     "matched": true,
+     "entry": {
+      "name": "Port Arthur refinery",
+      "lat": 29.94546,
+      "lon": -93.89454,
+      "source": "demo-registry",
+      "country": "",
+      "id": "",
+      "kind": "",
+      "aliases": []
+     },
+     "distance_km": 11.1,
+     "name_score": 0.833,
+     "nearest_entry": {
+      "name": "Port Arthur refinery",
+      "lat": 29.94546,
+      "lon": -93.89454,
+      "source": "demo-registry",
+      "country": "",
+      "id": "",
+      "kind": "",
+      "aliases": []
+     },
+     "nearest_km": 11.1,
+     "status": "disagree"
+    }
+   ],
+   "registry_spread_km": null,
+   "suggested_centre": [
+    29.94546,
+    -93.89454
+   ]
+  },
+  {
+   "id": "baytown_complex",
+   "centre": [
+    29.74,
+    -95.01
+   ],
+   "status": "differ",
+   "matches": [
+    {
+     "source": "demo-registry",
+     "matched": true,
+     "entry": {
+      "name": "Baytown refining and chemical complex",
+      "lat": 29.75509,
+      "lon": -94.99491,
+      "source": "demo-registry",
+      "country": "",
+      "id": "",
+      "kind": "",
+      "aliases": []
+     },
+     "distance_km": 2.22,
+     "name_score": 1.0,
+     "nearest_entry": {
+      "name": "Baytown refining and chemical complex",
+      "lat": 29.75509,
+      "lon": -94.99491,
+      "source": "demo-registry",
+      "country": "",
+      "id": "",
+      "kind": "",
+      "aliases": []
+     },
+     "nearest_km": 2.22,
+     "status": "differ"
+    }
+   ],
+   "registry_spread_km": null,
+   "suggested_centre": [
+    29.75509,
+    -94.99491
+   ]
+  },
+  {
+   "id": "secunda_coal_to_liquids",
+   "centre": [
+    -26.55,
+    29.17
+   ],
+   "status": "agree",
+   "matches": [
+    {
+     "source": "demo-registry",
+     "matched": true,
+     "entry": {
+      "name": "Secunda coal-to-liquids",
+      "lat": -26.54434,
+      "lon": 29.17566,
+      "source": "demo-registry",
+      "country": "",
+      "id": "",
+      "kind": "",
+      "aliases": []
+     },
+     "distance_km": 0.84,
+     "name_score": 1.0,
+     "nearest_entry": {
+      "name": "Secunda coal-to-liquids",
+      "lat": -26.54434,
+      "lon": 29.17566,
+      "source": "demo-registry",
+      "country": "",
+      "id": "",
+      "kind": "",
+      "aliases": []
+     },
+     "nearest_km": 0.84,
+     "status": "agree"
+    }
+   ],
+   "registry_spread_km": null,
+   "suggested_centre": [
+    -26.54434,
+    29.17566
+   ]
+  },
+  {
+   "id": "ulsan_petrochemical",
+   "centre": [
+    35.5,
+    129.37
+   ],
+   "status": "differ",
+   "matches": [
+    {
+     "source": "demo-registry",
+     "matched": true,
+     "entry": {
+      "name": "Ulsan petrochemical complex",
+      "lat": 35.52767,
+      "lon": 129.39767,
+      "source": "demo-registry",
+      "country": "",
+      "id": "",
+      "kind": "",
+      "aliases": []
+     },
+     "distance_km": 3.97,
+     "name_score": 1.0,
+     "nearest_entry": {
+      "name": "Ulsan petrochemical complex",
+      "lat": 35.52767,
+      "lon": 129.39767,
+      "source": "demo-registry",
+      "country": "",
+      "id": "",
+      "kind": "",
+      "aliases": []
+     },
+     "nearest_km": 3.97,
+     "status": "differ"
+    }
+   ],
+   "registry_spread_km": null,
+   "suggested_centre": [
+    35.52767,
+    129.39767
+   ]
+  },
+  {
+   "id": "burrup_lng",
+   "centre": [
+    -20.6,
+    116.8
+   ],
+   "status": "agree",
+   "matches": [
+    {
+     "source": "demo-registry",
+     "matched": true,
+     "entry": {
+      "name": "Burrup Peninsula LNG",
+      "lat": -20.59183,
+      "lon": 116.80817,
+      "source": "demo-registry",
+      "country": "",
+      "id": "",
+      "kind": "",
+      "aliases": []
+     },
+     "distance_km": 1.24,
+     "name_score": 1.0,
+     "nearest_entry": {
+      "name": "Burrup Peninsula LNG",
+      "lat": -20.59183,
+      "lon": 116.80817,
+      "source": "demo-registry",
+      "country": "",
+      "id": "",
+      "kind": "",
+      "aliases": []
+     },
+     "nearest_km": 1.24,
+     "status": "agree"
+    }
+   ],
+   "registry_spread_km": null,
+   "suggested_centre": [
+    -20.59183,
+    116.80817
+   ]
+  }
+ ]
+}

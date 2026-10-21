@@ -1,0 +1,40 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "TrigPoint split certificate",
+  "description": "One record of whether a train/test split is safe. A check with status not_run says nothing either way.",
+  "type": "object",
+  "required": ["schema", "tool_version", "created", "roster_sha256", "n_sites", "roles", "settings", "verdict", "checks", "not_run"],
+  "properties": {
+    "schema": {"const": "site-curator-certificate/1"},
+    "tool_version": {"type": "string"},
+    "created": {"type": "string"},
+    "roster_sha256": {"type": "string", "pattern": "^[0-9a-f]{64}$"},
+    "n_sites": {"type": "integer", "minimum": 0},
+    "roles": {"type": "object"},
+    "role_sides": {"type": "object"},
+    "settings": {"type": "object", "required": ["label_km", "bg_inner_km", "bg_outer_km", "min_split_km"]},
+    "verdict": {"enum": ["pass", "conditional", "fail"]},
+    "checks": {
+      "type": "array",
+      "minItems": 1,
+      "items": {
+        "type": "object",
+        "required": ["id", "title", "status", "detail"],
+        "properties": {
+          "id": {"type": "string"},
+          "title": {"type": "string"},
+          "status": {"enum": ["pass", "fail", "warn", "not_run"]},
+          "detail": {"type": "string"}
+        }
+      }
+    },
+    "not_run": {"type": "array", "items": {"type": "string"}},
+    "min_distance_between_roles_km": {"type": "object"},
+    "overlap": {"type": "object"},
+    "overlap_groups": {"type": "object", "required": ["level", "n_groups", "mixed_role_groups"]},
+    "spatial_dependence": {"type": ["object", "null"]},
+    "near_duplicates": {"type": ["object", "null"]},
+    "domain_shift": {"type": ["object", "null"]},
+    "note": {"type": "string"}
+  }
+}

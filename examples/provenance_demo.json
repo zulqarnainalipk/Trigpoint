@@ -1,0 +1,259 @@
+{
+ "synthetic": true,
+ "note": "Made from the demo roster, the demo table and the demo registry. Nothing here is evidence about a real place.",
+ "schema": "site-curator-provenance/1",
+ "generated_at": "2026-10-18T20:38:18.791483+00:00",
+ "tool": {
+  "name": "TrigPoint",
+  "version": "examples"
+ },
+ "environment": {
+  "python": "3.12.10",
+  "platform": "Windows-10-10.0.19045-SP0",
+  "numpy": "2.5.4",
+  "rasterio": "1.5.2",
+  "scipy": "1.18.1",
+  "matplotlib": "3.11.2",
+  "ee": "1.7.47",
+  "requests": "2.34.2"
+ },
+ "roster": {
+  "file": "sites_demo.json",
+  "sha256": "f17d9433ad8a59619e3a09e4594de529daf4f2694bbc0c1d29bd1cfc2e7d7b20",
+  "summary": {
+   "sites_in_file": 12,
+   "kept_or_pending": 11,
+   "rejected": 1,
+   "verified": 1,
+   "by_role": {
+    "decoy": 1,
+    "test": 3,
+    "train": 7
+   },
+   "by_region": {
+    "africa": 1,
+    "east_asia": 1,
+    "europe": 1,
+    "middle_east": 4,
+    "north_america": 2,
+    "oceania": 1,
+    "south_asia": 1
+   },
+   "by_facility_type": {
+    "chemical": 1,
+    "lng": 2,
+    "petrochemical": 3,
+    "refinery": 4,
+    "refinery_cluster": 1
+   },
+   "by_coordinate_confidence": {
+    "high": 1,
+    "low": 2,
+    "medium": 8
+   },
+   "box_km": {
+    "n": 11,
+    "min": 4.0,
+    "median": 5.0,
+    "max": 6.0
+   },
+   "centre_moved_km": {
+    "n": 1,
+    "min": 1.505478710822356,
+    "median": 1.505478710822356,
+    "max": 1.505478710822356
+   },
+   "centre_never_moved": 10
+  }
+ },
+ "limits": {
+  "min_box_km": 1.0,
+  "max_box_km": 8.0,
+  "chip_px": 384,
+  "label_box_km": 10.0,
+  "bg_inner_km": 30.0,
+  "bg_outer_km": 75.0,
+  "min_split_distance_km": 150.0
+ },
+ "audit": {
+  "actions": 0,
+  "by_action": {},
+  "first": null,
+  "last": null,
+  "sites_touched": 0
+ },
+ "imagery_used": {
+  "real_images": 0,
+  "synthetic_images": 0,
+  "backends": {},
+  "sources": {},
+  "note": ""
+ },
+ "sites": [
+  {
+   "id": "ras_tanura_refinery",
+   "role": "train",
+   "center": [
+    26.64,
+    50.16
+   ],
+   "box_km": 4.0,
+   "verified": false,
+   "rejected": false,
+   "original_center": null,
+   "centre_moved_km": null
+  },
+  {
+   "id": "jubail_industrial",
+   "role": "test",
+   "center": [
+    27.02,
+    49.62
+   ],
+   "box_km": 6.0,
+   "verified": false,
+   "rejected": false,
+   "original_center": null,
+   "centre_moved_km": null
+  },
+  {
+   "id": "ruwais_refinery",
+   "role": "train",
+   "center": [
+    24.11,
+    52.73
+   ],
+   "box_km": 4.0,
+   "verified": true,
+   "rejected": false,
+   "original_center": [
+    24.12,
+    52.72
+   ],
+   "centre_moved_km": 1.505
+  },
+  {
+   "id": "ras_laffan_lng",
+   "role": "train",
+   "center": [
+    25.92,
+    51.55
+   ],
+   "box_km": 5.0,
+   "verified": false,
+   "rejected": false,
+   "original_center": null,
+   "centre_moved_km": null
+  },
+  {
+   "id": "jamnagar_refinery",
+   "role": "test",
+   "center": [
+    22.35,
+    69.87
+   ],
+   "box_km": 6.0,
+   "verified": false,
+   "rejected": false,
+   "original_center": null,
+   "centre_moved_km": null
+  },
+  {
+   "id": "europoort_rotterdam",
+   "role": "train",
+   "center": [
+    51.95,
+    4.1
+   ],
+   "box_km": 5.0,
+   "verified": false,
+   "rejected": false,
+   "original_center": null,
+   "centre_moved_km": null
+  },
+  {
+   "id": "port_arthur_refinery",
+   "role": "train",
+   "center": [
+    29.87,
+    -93.97
+   ],
+   "box_km": 4.0,
+   "verified": false,
+   "rejected": false,
+   "original_center": null,
+   "centre_moved_km": null
+  },
+  {
+   "id": "baytown_complex",
+   "role": "test",
+   "center": [
+    29.74,
+    -95.01
+   ],
+   "box_km": 5.0,
+   "verified": false,
+   "rejected": false,
+   "original_center": null,
+   "centre_moved_km": null
+  },
+  {
+   "id": "secunda_coal_to_liquids",
+   "role": "train",
+   "center": [
+    -26.55,
+    29.17
+   ],
+   "box_km": 6.0,
+   "verified": false,
+   "rejected": false,
+   "original_center": null,
+   "centre_moved_km": null
+  },
+  {
+   "id": "ulsan_petrochemical",
+   "role": "decoy",
+   "center": [
+    35.5,
+    129.37
+   ],
+   "box_km": 5.0,
+   "verified": false,
+   "rejected": false,
+   "original_center": null,
+   "centre_moved_km": null
+  },
+  {
+   "id": "burrup_lng",
+   "role": "train",
+   "center": [
+    -20.6,
+    116.8
+   ],
+   "box_km": 5.0,
+   "verified": false,
+   "rejected": false,
+   "original_center": null,
+   "centre_moved_km": null
+  },
+  {
+   "id": "moomba_gas_plant",
+   "role": "test",
+   "center": [
+    -28.11,
+    140.2
+   ],
+   "box_km": 3.0,
+   "verified": false,
+   "rejected": true,
+   "original_center": null,
+   "centre_moved_km": null
+  }
+ ],
+ "comments_included": false,
+ "studies": {
+  "split_certificate": {
+   "verdict": "fail"
+  }
+ }
+}

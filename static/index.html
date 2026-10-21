@@ -1,0 +1,966 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>TrigPoint</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="color-scheme" content="dark light">
+<link rel="icon" type="image/svg+xml" href="/logo.svg">
+<link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css"
+      integrity="sha256-p4NxAoJBhIIN+hmNHrzRCf9tD/miZyoHS5obTRR9BMY=" crossorigin="">
+<link rel="stylesheet" href="https://unpkg.com/leaflet.markercluster@1.5.3/dist/MarkerCluster.css">
+<link rel="stylesheet" href="https://unpkg.com/leaflet.markercluster@1.5.3/dist/MarkerCluster.Default.css">
+<link rel="stylesheet" href="/style.css">
+</head>
+<body>
+  <a class="skip-link" href="#main">Skip to the map and editor</a>
+  <a class="skip-link" href="#site-list">Skip to the site list</a>
+  <div id="sr-polite" class="sr-only" aria-live="polite" aria-atomic="true"></div>
+  <div id="sr-assertive" class="sr-only" role="alert" aria-live="assertive" aria-atomic="true"></div>
+  <noscript><p class="banner">TrigPoint needs JavaScript.</p></noscript>
+
+  <header id="topbar">
+    <h1><svg class="brand-logo" viewBox="0 0 64 64" aria-hidden="true" focusable="false"><rect x="4" y="4" width="56" height="56" rx="6" fill="none" stroke="currentColor" stroke-opacity="0.6" stroke-width="3.5" stroke-dasharray="7 6"/><rect x="15" y="15" width="34" height="34" rx="4" fill="none" stroke="currentColor" stroke-width="5"/><rect x="25" y="25" width="14" height="14" rx="2" fill="var(--accent)"/><circle cx="32" cy="32" r="3" fill="var(--accent-fg)"/></svg><span>TrigPoint</span></h1>
+    <span id="file-name" class="mono muted" title=""></span>
+    <div id="ee-status" class="badge muted">checking EE…</div>
+    <div id="backend-badge" class="badge muted" role="status" title="Where imagery comes from">Imagery: …</div>
+    <div id="save-indicator" class="badge ok" role="status" aria-live="polite">
+      <span id="save-indicator-text">✓ All changes saved</span>
+    </div>
+    <span class="spacer"></span>
+    <a id="btn-download" class="btn-link" href="/api/sites/export" download title="Download the whole file as it is on disk, including rejected sites">⬇ Download all</a>
+    <button id="btn-export" title="Download kept, verified or rejected sites, as JSON or CSV">Export…</button>
+    <button type="button" class="help-btn" data-help="export_sites" aria-haspopup="dialog" aria-label="Explain this feature" title="What is this?"><span aria-hidden="true">?</span></button>
+    <button id="btn-focus" title="Focus on the map: hide both bars and extra controls (F)" aria-keyshortcuts="f" aria-pressed="false">◱ Focus map</button><button type="button" class="help-btn" data-help="focus_mode" aria-haspopup="dialog" aria-label="Explain this feature" title="What is this?"><span aria-hidden="true">?</span></button>
+    <button id="btn-undo" title="Undo the last change, including keep and reject (Ctrl+Z)" aria-keyshortcuts="Control+Z">↶ Undo</button><button type="button" class="help-btn" data-help="undo_redo" aria-haspopup="dialog" aria-label="Explain this feature" title="What is this?"><span aria-hidden="true">?</span></button>
+    <button id="btn-redo" title="Redo (Ctrl+Shift+Z)" aria-keyshortcuts="Control+Shift+Z">↷ Redo</button>
+    <button id="btn-tools" title="More tools" aria-haspopup="true" aria-expanded="false" aria-controls="tools-menu">⚙ Tools</button>
+    <button id="btn-settings" title="Theme, text size, defaults">Settings</button>
+    <button id="btn-guide" title="Search every feature and read what it does">Guide</button><button type="button" class="help-btn" data-help="guide" aria-haspopup="dialog" aria-label="Explain this feature" title="What is this?"><span aria-hidden="true">?</span></button>
+    <button id="btn-help" title="Keyboard shortcuts and help (?)" aria-keyshortcuts="?">Help ?</button>
+  </header>
+
+  <div id="tools-menu" class="floating-panel" style="display:none" role="region" aria-label="Tools">
+    <div class="panel-head"><b>Tools</b><button class="close-x" id="tools-close" aria-label="Close tools">✕</button></div>
+    <div class="tools-list">
+      <div class="tool-row"><button id="tool-jump">📍 Jump to coordinates</button><button type="button" class="help-btn" data-help="jump_coords" aria-haspopup="dialog" aria-label="Explain this feature" title="What is this?"><span aria-hidden="true">?</span></button></div>
+      <div class="tool-row"><button id="tool-import">⇪ Import or merge a sites file…</button><button type="button" class="help-btn" data-help="import_merge" aria-haspopup="dialog" aria-label="Explain this feature" title="What is this?"><span aria-hidden="true">?</span></button></div>
+      <div class="tool-row"><button id="tool-studies">&#9878; Studies: split safety, forecast, coordinates, placement</button><button type="button" class="help-btn" data-help="studies_overview" aria-haspopup="dialog" aria-label="Explain this feature" title="What is this?"><span aria-hidden="true">?</span></button></div>
+      <div class="tool-row"><button id="tool-backups">🗄 Backup browser</button><button type="button" class="help-btn" data-help="backups" aria-haspopup="dialog" aria-label="Explain this feature" title="What is this?"><span aria-hidden="true">?</span></button></div>
+      <div class="tool-row"><button id="tool-validate">✔ Check this file (validator)</button><button type="button" class="help-btn" data-help="validator" aria-haspopup="dialog" aria-label="Explain this feature" title="What is this?"><span aria-hidden="true">?</span></button></div>
+      <div class="tool-row"><button id="tool-preflight">✓ Check data availability (preflight)</button><button type="button" class="help-btn" data-help="preflight" aria-haspopup="dialog" aria-label="Explain this feature" title="What is this?"><span aria-hidden="true">?</span></button></div>
+      <div class="tool-row"><a id="tool-report" href="/api/report" target="_blank" rel="noopener">📄 Open roster report (print to PDF)</a><button type="button" class="help-btn" data-help="roster_report" aria-haspopup="dialog" aria-label="Explain this feature" title="What is this?"><span aria-hidden="true">?</span></button></div>
+      <div class="tool-row"><button id="tool-measure">📏 Measure distance on map</button><button type="button" class="help-btn" data-help="measure_tool" aria-haspopup="dialog" aria-label="Explain this feature" title="What is this?"><span aria-hidden="true">?</span></button></div>
+      <button id="tool-basemap">🗺 Toggle basemap</button>
+      <button id="tool-tour">★ Take the quick tour</button>
+    </div>
+    <div id="jump-box" class="tools-sub" style="display:none">
+      <div class="panel-row">
+        <label class="sr-only" for="jump-lat">Latitude</label>
+        <input type="number" id="jump-lat" placeholder="lat" step="0.000001" class="w-6">
+        <label class="sr-only" for="jump-lon">Longitude</label>
+        <input type="number" id="jump-lon" placeholder="lon" step="0.000001" class="w-6">
+        <button id="jump-go">Go</button>
+      </div>
+    </div>
+    <div id="preflight-box" class="tools-sub mono" style="display:none"></div>
+  </div>
+
+  <div id="app">
+    <aside id="sidebar" aria-label="Site list and filters">
+      <div id="sidebar-rail" class="rail">
+        <button id="btn-expand-sidebar" class="rail-btn" aria-label="Show the site list" title="Show the site list ( [ )" aria-expanded="false" aria-controls="sidebar-inner">
+          <span class="chev" aria-hidden="true">›</span></button>
+        <span class="rail-label" aria-hidden="true">Sites <b id="rail-left-count"></b></span>
+      </div>
+
+      <div id="sidebar-inner">
+        <div id="sidebar-head">
+          <div class="pane-head">
+            <h2 id="sidebar-title">Sites</h2><button type="button" class="help-btn" data-help="site_list" aria-haspopup="dialog" aria-label="Explain this feature" title="What is this?"><span aria-hidden="true">?</span></button>
+            <span id="list-count" class="mono muted" role="status"></span>
+            <button id="btn-left-acc" class="icon-btn" title="Expand or collapse every section in this bar" aria-label="Expand or collapse all sections in the site list bar" data-state="open"><span aria-hidden="true">⇕</span></button>
+            <button id="btn-collapse-sidebar" class="icon-btn" title="Collapse the site list ( [ )" aria-label="Collapse the site list" aria-expanded="true" aria-controls="sidebar-inner"><span class="chev" aria-hidden="true">‹</span></button>
+          </div>
+
+          <label class="sr-only" for="f-search">Search sites by name, id, country or notes</label>
+          <input id="f-search" type="search" placeholder="Search name, id, country, notes  ( / )" class="full" autocomplete="off">
+
+          <details class="acc" data-acc="left-overview" open>
+            <summary><span class="acc-title">Overview and actions</span></summary>
+            <div class="acc-body">
+              <div id="stats-bar" class="mono muted"></div>
+              <button id="btn-warnings" class="warn-toggle" aria-expanded="false" aria-controls="warnings-panel">⚠ <span id="warn-count">0</span> geometry warnings</button>
+              <button id="btn-add" class="primary full mt-s">+ Add site</button>
+              <div class="view-switch mt-s" role="group" aria-label="Main view">
+                <button class="view-switch-btn active" data-view="map" aria-pressed="true">Map</button>
+                <button class="view-switch-btn" data-view="gallery" aria-pressed="false">Gallery</button>
+                <button class="view-switch-btn" data-view="stats" aria-pressed="false">Stats</button>
+              </div>
+            </div>
+          </details>
+
+          <details id="filters-box" class="acc" data-acc="left-filters">
+            <summary><span class="acc-title">Filters and sort</span><button type="button" class="help-btn" data-help="filters" aria-haspopup="dialog" aria-label="Explain this feature" title="What is this?"><span aria-hidden="true">?</span></button> <span id="filter-summary" class="acc-sum"></span></summary>
+            <div class="acc-body">
+              <details class="acc sub" data-acc="left-f-status" open>
+                <summary><span class="acc-title">Status and role</span></summary>
+                <div class="acc-body filter-grid">
+                  <label>Status
+                    <select id="f-verified-filter">
+                      <option value="">All</option>
+                      <option value="pend">Pending (not reviewed)</option>
+                      <option value="1">Kept (verified)</option>
+                      <option value="rej">Rejected</option>
+                      <option value="skip">Skipped for later</option>
+                      <option value="0">Not verified (pending or rejected)</option>
+                      <option value="active">Not rejected</option>
+                    </select>
+                  </label>
+                  <label>Role
+                    <select id="f-role-filter"><option value="">All roles</option>
+                      <option value="train">Train</option><option value="test">Test</option><option value="decoy">Decoy</option></select>
+                  </label>
+                  <label>Priority <select id="f-priority-filter"><option value="">All</option></select></label>
+                  <label>Coordinate confidence <select id="f-conf-filter"><option value="">All</option></select></label>
+                </div>
+              </details>
+              <details class="acc sub" data-acc="left-f-place">
+                <summary><span class="acc-title">Place and facility</span></summary>
+                <div class="acc-body filter-grid">
+                  <label>Region <select id="f-region-filter"><option value="">All</option></select></label>
+                  <label>Facility type <select id="f-ftype-filter"><option value="">All</option></select></label>
+                  <label>Setting <select id="f-setting-filter"><option value="">All</option></select></label>
+                </div>
+              </details>
+              <details class="acc sub" data-acc="left-f-quality">
+                <summary><span class="acc-title">Quality and sort</span></summary>
+                <div class="acc-body filter-grid">
+                  <label>Quality
+                    <select id="f-quality-filter">
+                      <option value="">All</option>
+                      <option value="issues">Has a critical or warning flag</option>
+                      <option value="critical">Has a critical flag</option>
+                      <option value="split">Within 150 km of a pilot site</option>
+                      <option value="unmoved">Centre never moved</option>
+                    </select>
+                  </label>
+                  <label>Sort by
+                    <select id="f-sort">
+                      <option value="file">File order</option>
+                      <option value="role">Role, then id</option>
+                      <option value="name">Name</option>
+                      <option value="region">Region, then priority</option>
+                      <option value="priority">Priority A to C</option>
+                      <option value="status">Pending first</option>
+                      <option value="confidence">Lowest confidence first</option>
+                      <option value="pilot">Nearest pilot site</option>
+                    </select>
+                  </label>
+                </div>
+              </details>
+              <button id="btn-clear-filters" class="mt-s">Clear filters</button>
+            </div>
+          </details>
+        </div>
+
+        <div id="bulk-bar" style="display:none" role="group" aria-label="Bulk actions for selected sites">
+          <label class="chk"><input type="checkbox" id="bulk-select-all"> <span id="bulk-count">0 selected</span></label><button type="button" class="help-btn" data-help="bulk_actions" aria-haspopup="dialog" aria-label="Explain this feature" title="What is this?"><span aria-hidden="true">?</span></button>
+          <div class="bulk-actions">
+            <button id="bulk-verify" title="Mark selected as kept and verified">✓ Keep</button>
+            <button id="bulk-reject" title="Reject the selected sites (reversible)">✕ Reject</button>
+            <button id="bulk-pending" title="Return the selected sites to pending">○ Pending</button>
+            <button id="bulk-unverify" title="Mark selected unverified">Unverify</button>
+            <label class="sr-only" for="bulk-role">Set role for selected sites</label>
+            <select id="bulk-role"><option value="">Set role…</option>
+              <option value="train">train</option><option value="test">test</option><option value="decoy">decoy</option></select>
+            <button id="bulk-compare">⇄ Compare</button>
+            <button id="bulk-delete" class="danger" title="Permanently delete the selected sites">Delete</button>
+          </div>
+        </div>
+
+        <ul id="site-list" aria-label="Candidate sites"></ul>
+      </div>
+      <div id="sidebar-resize" class="resizer right" role="separator" aria-orientation="vertical" aria-label="Resize the site list. Use the left and right arrow keys." tabindex="0"></div>
+    </aside>
+
+    <main id="main" tabindex="-1">
+      <div id="review-bar" role="toolbar" aria-label="Review controls">
+        <button id="btn-sidebar-toggle" class="narrow-only" title="Show or hide the site list" aria-label="Show or hide the site list">☰ Sites</button>
+        <div class="rb-group" role="group" aria-label="Move between sites">
+          <button id="rb-prev" title="Previous site in the list (K)" aria-keyshortcuts="k">◀ Prev <kbd>K</kbd></button>
+          <button id="rb-next" title="Next site in the list (J)" aria-keyshortcuts="j">Next ▶ <kbd>J</kbd></button>
+          <button id="rb-next-pending" title="Jump to the next site that is not reviewed yet (N)" aria-keyshortcuts="n">⏭ Next unreviewed <kbd>N</kbd></button>
+        </div>
+        <span id="rb-chip" class="state-chip pending state-chip-live" role="status" aria-live="polite">Select a site</span>
+        <button type="button" class="help-btn" data-help="review_decide" aria-haspopup="dialog" aria-label="Explain this feature" title="What is this?"><span aria-hidden="true">?</span></button>
+        <div class="rb-group" role="group" aria-label="Decide on this site">
+          <button id="rb-keep" data-review="keep" class="keep" title="Keep: save edits, mark verified, go to the next unreviewed site (V)" aria-keyshortcuts="v">✓ Keep <kbd>V</kbd></button>
+          <button id="rb-reject" data-review="reject" class="reject" title="Reject: remove from the final list, reversible (X)" aria-keyshortcuts="x">✕ Reject <kbd>X</kbd></button>
+          <button id="rb-skip" data-review="skip" title="Skip: come back to this site later (S)" aria-keyshortcuts="s">↷ Skip <kbd>S</kbd></button>
+          <button id="rb-pending" data-review="pending" title="Mark as not reviewed again (U)" aria-keyshortcuts="u">○ Unreview <kbd>U</kbd></button>
+        </div>
+        <button id="rb-quick" title="Open or close the quick edit strip (E)" aria-keyshortcuts="e" aria-expanded="false" aria-controls="quick-edit">✎ Quick edit <kbd>E</kbd></button>
+        <button id="btn-panel-toggle" class="narrow-only" title="Show or hide the details bar" aria-label="Show or hide the site details bar">Details ☰</button>
+        <div id="progress" class="rb-progress" role="group" aria-label="Review progress">
+          <div id="progress-text"></div>
+          <div id="progress-bar" role="progressbar" aria-label="Review progress" aria-valuemin="0" aria-valuemax="0" aria-valuenow="0">
+            <span class="seg seg-kept"></span><span class="seg seg-rejected"></span>
+          </div>
+        </div>
+      </div>
+      <div id="load-banner" class="banner" role="alert" hidden></div>
+
+      <div id="view-map">
+        <div id="map"></div>
+        <button id="focus-exit" type="button" hidden>Exit focus mode <kbd>F</kbd></button>
+
+        <div id="map-toolbar">
+          <form id="goto-form" role="search" aria-label="Go to coordinates"><button type="button" class="help-btn" data-help="jump_coords" aria-haspopup="dialog" aria-label="Explain this feature" title="What is this?"><span aria-hidden="true">?</span></button>
+            <label class="sr-only" for="goto-input">Paste latitude, longitude</label>
+            <input id="goto-input" type="text" placeholder="Paste lat, lon  ( G )" autocomplete="off" spellcheck="false">
+            <button id="goto-go" type="submit">Go</button>
+            <button id="goto-move" type="button" hidden title="Move the selected site's centre to the jumped-to point">Move box here</button>
+          </form>
+          <details id="layers-box" class="acc" data-acc="map-layers">
+            <summary><span class="acc-title">Map layers</span></summary>
+            <div class="layers-list">
+              <span class="with-help"><label class="chk"><input type="checkbox" id="ov-label"> <span id="ov-label-text">Label window</span> <kbd>L</kbd></label><button type="button" class="help-btn" data-help="label_window" aria-haspopup="dialog" aria-label="Explain this feature" title="What is this?"><span aria-hidden="true">?</span></button></span>
+              <span class="with-help"><label class="chk"><input type="checkbox" id="ov-ring"> <span id="ov-ring-text">Background ring</span> <kbd>B</kbd></label><button type="button" class="help-btn" data-help="background_ring" aria-haspopup="dialog" aria-label="Explain this feature" title="What is this?"><span aria-hidden="true">?</span></button></span>
+              <span class="with-help"><label class="chk"><input type="checkbox" id="ov-split"> <span id="ov-split-text">Split radius</span> <kbd>R</kbd></label><button type="button" class="help-btn" data-help="split_radius" aria-haspopup="dialog" aria-label="Explain this feature" title="What is this?"><span aria-hidden="true">?</span></button></span>
+              <span class="with-help"><label class="chk"><input type="checkbox" id="ov-pilot"> Pilot sites, read only <kbd>P</kbd></label><button type="button" class="help-btn" data-help="pilot_roster" aria-haspopup="dialog" aria-label="Explain this feature" title="What is this?"><span aria-hidden="true">?</span></button></span>
+              <label class="chk"><input type="checkbox" id="ov-others"> Other candidates <kbd>O</kbd></label>
+              <label class="chk"><input type="checkbox" id="ov-filtered"> Only sites in the current filter</label>
+              <button id="btn-fit-context" title="Zoom out to show the whole background ring">Zoom to ring</button>
+              <div class="legend" aria-label="Map symbols">
+                <span><i class="mk mk-verified"></i> kept</span>
+                <span><i class="mk mk-pending"></i> pending</span>
+                <span><i class="mk mk-rejected"></i> rejected</span>
+                <span><i class="mk mk-pilot"></i> pilot</span>
+              </div>
+            </div>
+          </details>
+        </div>
+
+        <div id="warnings-panel" class="floating-panel" style="display:none" role="region" aria-label="Geometry warnings">
+          <div class="panel-head">
+            <b>Geometry warnings</b>
+            <button class="close-x" id="warn-close" aria-label="Close geometry warnings">✕</button>
+          </div>
+          <div id="warnings-list"></div>
+        </div>
+
+        <div id="backups-panel" class="floating-panel" style="display:none" role="region" aria-label="Backups">
+          <div class="panel-head">
+            <b>Backups</b><button type="button" class="help-btn" data-help="backups" aria-haspopup="dialog" aria-label="Explain this feature" title="What is this?"><span aria-hidden="true">?</span></button><button type="button" class="help-btn" data-help="audit_log" aria-haspopup="dialog" aria-label="Explain this feature" title="What is this?"><span aria-hidden="true">?</span></button>
+            <button class="close-x" id="backups-close" aria-label="Close backups">✕</button>
+          </div>
+          <div id="backups-list"></div>
+        </div>
+
+        <div id="compare-panel" class="floating-panel compare" style="display:none" role="region" aria-label="Compare sites">
+          <div class="panel-head"><b>Compare sites</b><button class="close-x" id="compare-close" aria-label="Close comparison">✕</button></div>
+          <div id="compare-body"></div>
+        </div>
+
+        <!-- ================= QUICK EDIT STRIP ================= -->
+        <section id="quick-edit" role="dialog" aria-label="Quick edit" hidden>
+          <div class="qe-head">
+            <b id="qe-title">Quick edit</b><button type="button" class="help-btn" data-help="quick_edit" aria-haspopup="dialog" aria-label="Explain this feature" title="What is this?"><span aria-hidden="true">?</span></button>
+            <span class="state-chip pending state-chip-live" aria-hidden="true"></span>
+            <button type="button" class="close-x" id="qe-close" aria-label="Close quick edit">✕</button>
+          </div>
+          <div class="qe-grid">
+            <label>Name <input type="text" id="q-name" autocomplete="off"></label>
+            <label>Role <select id="q-role"><option value="train">train</option><option value="test">test</option><option value="decoy">decoy</option></select></label>
+            <label>Lat <input type="number" id="q-lat" step="0.000001"></label>
+            <label>Lon <input type="number" id="q-lon" step="0.000001"></label>
+            <label>Box (km) <input type="number" id="q-box" step="0.25" min="1" max="8"></label>
+            <label class="qe-wide">Comment <input type="text" id="q-comment" autocomplete="off" placeholder="Private remark"></label>
+          </div>
+          <div id="q-presets" class="presets" role="group" aria-label="Box size presets"></div>
+          <div class="qe-actions">
+            <label class="chk"><input type="checkbox" id="q-verified"> verified</label>
+            <button type="button" data-review="keep" class="keep">✓ Keep</button>
+            <button type="button" data-review="reject" class="reject">✕ Reject</button>
+            <button type="button" id="q-save" class="primary">Save <kbd>Enter</kbd></button>
+            <span id="q-status" class="mono muted" role="status"></span>
+          </div>
+        </section>
+      </div>
+
+      <div id="view-gallery" style="display:none">
+        <div class="gallery-toolbar">
+          <span class="mono muted" id="gallery-summary"></span>
+          <button id="gallery-fetch-missing">Fetch all missing previews</button>
+          <span id="gallery-progress" class="mono muted"></span>
+        </div>
+        <div id="gallery-grid"></div>
+      </div>
+
+      <div id="view-stats" style="display:none">
+        <div id="stats-grid"></div>
+      </div>
+    </main>
+
+    <aside id="panel" aria-label="Site details">
+      <div id="panel-resize-handle" class="resizer left" role="separator" aria-orientation="vertical" aria-label="Resize the details bar. Use the left and right arrow keys." tabindex="0"></div>
+      <div id="panel-rail" class="rail">
+        <button id="btn-expand-panel" class="rail-btn" aria-label="Show the site details" title="Show the site details ( ] )" aria-expanded="false" aria-controls="panel-inner">
+          <span class="chev" aria-hidden="true">‹</span></button>
+        <button id="rail-quick" class="rail-btn" aria-label="Quick edit" title="Quick edit ( E )"><span aria-hidden="true">✎</span></button>
+        <span class="rail-label" aria-hidden="true"><span id="rail-right-name">Details</span></span>
+      </div>
+
+      <div id="panel-inner">
+        <div class="pane-head">
+          <h2 id="panel-title">Details</h2>
+          <button id="btn-quick-open" title="Quick edit strip (E)" aria-label="Open quick edit">✎ Quick</button>
+          <button id="btn-right-acc" class="icon-btn" title="Expand or collapse every section in this bar" aria-label="Expand or collapse all sections in the details bar" data-state="open"><span aria-hidden="true">⇕</span></button>
+          <button id="btn-collapse-panel" class="icon-btn" title="Collapse the details bar ( ] )" aria-label="Collapse the details bar" aria-expanded="true" aria-controls="panel-inner"><span class="chev" aria-hidden="true">›</span></button>
+        </div>
+
+        <div id="panel-scroll">
+          <div id="panel-empty" class="empty-state">
+            <div class="empty-art" aria-hidden="true">◎</div>
+            <h3>No site open</h3>
+            <p id="empty-text">Pick a site in the list or on the map, or press <kbd>N</kbd> for the next unreviewed one. Its details open here.</p>
+            <p class="muted">Press <kbd>E</kbd> for quick edit, <kbd>[</kbd> and <kbd>]</kbd> to fold the bars, <kbd>F</kbd> to focus on the map.</p>
+          </div>
+
+          <!-- ================= ADD-SITE MODE ================= -->
+          <div id="panel-add" style="display:none">
+            <div class="panel-row">
+              <h3>New site</h3><button type="button" class="help-btn" data-help="add_site" aria-haspopup="dialog" aria-label="Explain this feature" title="What is this?"><span aria-hidden="true">?</span></button>
+              <div class="add-mode-switch">
+                <button class="add-mode-btn active" data-mode="single">Single</button>
+                <button class="add-mode-btn" data-mode="bulk">Bulk import</button>
+              </div>
+            </div>
+
+            <div id="add-single">
+              <div class="panel-row">
+                <label class="sr-only" for="a-geocode">Search a place name</label>
+                <input id="a-geocode" type="text" placeholder="Search a place name (e.g. 'Jubail, Saudi Arabia')" class="full">
+                <button id="a-geocode-btn">Search</button>
+              </div>
+              <div id="a-geocode-results" class="mono muted"></div>
+
+              <div class="panel-row fields">
+                <label>name
+                  <input type="text" id="a-name" placeholder="Facility name">
+                </label>
+                <label>role
+                  <select id="a-role"><option value="train">train</option><option value="test">test</option><option value="decoy">decoy</option></select>
+                </label>
+                <label>lat <input type="number" id="a-lat" step="0.000001"></label>
+                <label>lon <input type="number" id="a-lon" step="0.000001"></label>
+                <label>box (km)
+                  <input type="range" id="a-box-range" min="1" max="8" step="0.25" aria-label="Box size slider">
+                  <input type="number" id="a-box" step="0.25" min="1" max="8" aria-label="Box size in kilometres">
+                </label>
+              </div>
+              <div class="panel-row"><div class="presets" data-target="a" role="group" aria-label="Box size presets"></div></div>
+              <div class="panel-row actions">
+                <button id="btn-add-create" class="primary">Create site</button>
+                <button id="btn-add-cancel">Cancel</button>
+                <span id="add-status" class="mono muted" role="status"></span>
+              </div>
+            </div>
+
+            <div id="add-bulk" style="display:none">
+              <div class="hint-small">Paste CSV (<code class="mono">name,role,lat,lon,box_km</code>, header row
+                optional, box_km optional) or a JSON array of the same fields. Nothing is created until you click
+                "Create sites". Review the parsed preview first. To merge a whole sites file, use Tools, then
+                "Import or merge a sites file".</div>
+              <label class="sr-only" for="bulk-paste">Paste CSV or JSON</label>
+              <textarea id="bulk-paste" rows="6" class="full mono"
+                        placeholder="Jubail Gas Plant,train,27.05,49.56,6&#10;Ras Laffan LNG,test,25.905,51.545,6"></textarea>
+              <div class="panel-row actions">
+                <button id="btn-bulk-parse">Parse</button>
+                <span id="bulk-parse-status" class="mono muted" role="status"></span>
+              </div>
+              <div id="bulk-preview"></div>
+              <div class="panel-row actions">
+                <button id="btn-bulk-create" class="primary" disabled>Create sites</button>
+                <button id="btn-add-cancel-bulk">Cancel</button>
+                <span id="bulk-create-status" class="mono muted" role="status"></span>
+              </div>
+            </div>
+          </div>
+
+          <!-- ================= EDIT MODE ================= -->
+          <div id="panel-body" style="display:none">
+            <details class="acc card" data-acc="r-identity" open>
+              <summary><span class="acc-title">Site and review</span> <span class="state-chip pending state-chip-live acc-sum" aria-hidden="true"></span></summary>
+              <div class="acc-body">
+                <div class="site-title">
+                  <h3 id="site-name"></h3>
+                  <span id="site-id" class="mono muted"></span>
+                </div>
+                <div class="panel-row fields">
+                  <label class="grow">name <input type="text" id="f-name" autocomplete="off"></label>
+                  <label>role <select id="f-role"><option value="train">train</option><option value="test">test</option><option value="decoy">decoy</option></select></label>
+                </div>
+                <div class="panel-row gap-s">
+                  <button type="button" data-review="keep" class="keep">✓ Keep</button>
+                  <button type="button" data-review="reject" class="reject">✕ Reject</button>
+                  <button type="button" data-review="skip">↷ Skip</button>
+                  <button type="button" data-review="pending">○ Unreview</button>
+                  <label class="chk">
+                    <input type="checkbox" id="f-verified">
+                    verified
+                  </label>
+                </div>
+                <div class="panel-row gap-s">
+                  <button id="btn-duplicate" title="Duplicate this site">⎘ Duplicate</button>
+                  <button id="btn-copy-json" title="Copy this site's JSON to clipboard">📋 Copy JSON</button>
+                  <button id="btn-delete" class="danger" title="Permanently delete this site. To drop it reversibly, use Reject instead.">Delete</button>
+                </div>
+              </div>
+            </details>
+
+            <details class="acc card" data-acc="r-position" open>
+              <summary><span class="acc-title">Position and box</span><button type="button" class="help-btn" data-help="box_size" aria-haspopup="dialog" aria-label="Explain this feature" title="What is this?"><span aria-hidden="true">?</span></button> <span id="pos-sum" class="acc-sum mono"></span></summary>
+              <div class="acc-body">
+                <div class="panel-row fields">
+                  <label>lat
+                    <input type="number" id="f-lat" step="0.000001">
+                  </label>
+                  <label>lon
+                    <input type="number" id="f-lon" step="0.000001">
+                  </label>
+                  <label>box (km)
+                    <input type="range" id="f-box-range" min="1" max="8" step="0.25" aria-label="Box size slider">
+                    <input type="number" id="f-box" step="0.25" min="1" max="8" aria-label="Box size in kilometres">
+                  </label>
+                </div>
+                <div class="panel-row"><label class="chk">
+                    <input type="checkbox" id="f-exact-grid">
+                    show exact pixel grid <kbd>H</kbd>
+                  </label><button type="button" class="help-btn" data-help="exact_grid" aria-haspopup="dialog" aria-label="Explain this feature" title="What is this?"><span aria-hidden="true">?</span></button>
+                  <span id="gsd-hint" class="mono muted"></span></div>
+                <div class="panel-row"><div class="presets" data-target="f" role="group" aria-label="Box size presets"></div></div>
+                <div class="hint-small"><kbd>-</kbd> smaller, <kbd>+</kbd> larger preset size.</div>
+                <div class="panel-row gap-s">
+                  <button id="btn-fit-view" title="Zoom the map to exactly frame the current box (Z)" aria-keyshortcuts="z">🔍 Fit view to box <kbd>Z</kbd></button>
+                  <button id="btn-coverage" title="Rough historical scene/granule counts for this box (approximate, not the real per-window pass rate)">📊 Estimate coverage</button><button type="button" class="help-btn" data-help="coverage_estimate" aria-haspopup="dialog" aria-label="Explain this feature" title="What is this?"><span aria-hidden="true">?</span></button>
+                </div>
+                <div id="coverage-result" class="mono muted"></div>
+                <div class="hint-small">Drag the pin to move the box and a corner square to resize it. Arrow keys nudge the box (Shift for a bigger step) when no field is focused.</div>
+              </div>
+            </details>
+
+            <details class="acc card" data-acc="r-notes" open>
+              <summary><span class="acc-title">Notes and comment</span></summary>
+              <div class="acc-body">
+                <label class="full">notes
+                  <textarea id="f-notes" rows="4"></textarea>
+                </label>
+                <label class="full mt-s">private comment (stays in the file; left out of exports unless you include comments)
+                  <textarea id="f-comment" rows="2" placeholder="Your own remarks about this site"></textarea>
+                </label>
+              </div>
+            </details>
+
+            <div id="info-card" aria-label="Site information"></div>
+
+            <details class="acc card" data-acc="r-imagery">
+              <summary><span class="acc-title">Imagery</span><button type="button" class="help-btn" data-help="imagery_panel" aria-haspopup="dialog" aria-label="Explain this feature" title="What is this?"><span aria-hidden="true">?</span></button> <span class="acc-sum muted" id="img-sum"></span></summary>
+              <div class="acc-body" id="imagery-body">
+                <div id="img-synth-note" class="callout warning" hidden><b>Synthetic demo imagery.</b><button type="button" class="help-btn" data-help="demo_mode" aria-haspopup="dialog" aria-label="Explain this feature" title="What is this?"><span aria-hidden="true">?</span></button> These pictures are drawn by the tool, not taken by a satellite. Do not use them to decide anything about a real place. For real imagery, choose Planetary Computer (no account) or Earth Engine below.</div>
+
+                <div class="field-group">
+                  <label for="img-backend">Imagery backend</label><button type="button" class="help-btn" data-help="backend" aria-haspopup="dialog" aria-label="Explain this feature" title="What is this?"><span aria-hidden="true">?</span></button>
+                  <div class="panel-row">
+                    <select id="img-backend"></select>
+                    <button type="button" id="img-check" title="Test the connection to Planetary Computer">Check</button>
+                  </div>
+                  <p id="img-backend-status" class="hint-small" role="status"></p>
+                </div>
+
+                <fieldset class="field-group">
+                  <legend>Source</legend>
+                  <span class="with-help"><label class="chk"><input type="radio" name="img-source" value="single"> Single scene</label><button type="button" class="help-btn" data-help="source_single" aria-haspopup="dialog" aria-label="Explain this feature" title="What is this?"><span aria-hidden="true">?</span></button></span>
+                  <span class="with-help"><label class="chk"><input type="radio" name="img-source" value="median"> Cloudless median</label><button type="button" class="help-btn" data-help="source_median" aria-haspopup="dialog" aria-label="Explain this feature" title="What is this?"><span aria-hidden="true">?</span></button></span>
+                  <span class="with-help"><label class="chk"><input type="radio" name="img-source" value="clearsky"> Clear-sky layer</label><button type="button" class="help-btn" data-help="source_clearsky" aria-haspopup="dialog" aria-label="Explain this feature" title="What is this?"><span aria-hidden="true">?</span></button></span>
+                </fieldset>
+                <div class="panel-row fields">
+                  <label id="img-days-wrap">Look-back days<button type="button" class="help-btn" data-help="period_days" aria-haspopup="dialog" aria-label="Explain this feature" title="What is this?"><span aria-hidden="true">?</span></button>
+                    <input type="number" id="img-days" min="5" max="1100" step="5" aria-label="Look-back days"></label>
+                  <label id="img-q-wrap" hidden>Percentile
+                    <input type="number" id="img-q" min="1" max="50" step="1"></label>
+                  <span class="presets" role="group" aria-label="Look-back presets">
+                    <button type="button" data-days="30">30</button><button type="button" data-days="60">60</button>
+                    <button type="button" data-days="120">120</button><button type="button" data-days="365">365</button>
+                  </span>
+                </div>
+
+                <div class="panel-row actions">
+                  <button id="btn-preview" class="primary" title="Download a fresh image of the box exactly as shown on screen">Fetch image</button>
+                  <button id="img-cancel" type="button" hidden>Cancel</button>
+                  <span id="preview-status" class="mono muted" role="status"></span><span id="img-timer" class="mono muted" aria-hidden="true"></span>
+                </div>
+                <progress id="img-progress" class="img-progress" hidden aria-label="Getting imagery"></progress>
+
+                <fieldset class="field-group">
+                  <legend>View</legend>
+                  <div class="panel-row view-tabs" id="view-tabs" role="group" aria-label="Colour views"></div>
+                  <div class="panel-row">
+                    <label for="img-index">Index view</label><button type="button" class="help-btn" id="img-index-help" data-help="view_index" aria-haspopup="dialog" aria-label="Explain this feature" title="What is this?"><span aria-hidden="true">?</span></button>
+                    <select id="img-index"><option value="">(none: colour view)</option></select>
+                  </div>
+                  <p class="hint-small">Colour views<button type="button" class="help-btn" data-help="view_composite" aria-haspopup="dialog" aria-label="Explain this feature" title="What is this?"><span aria-hidden="true">?</span></button>: three bands as red, green and blue. Index views: one number per pixel on a blue scale.</p>
+                </fieldset>
+                <div class="panel-row fields">
+                  <label>Stretch<button type="button" class="help-btn" data-help="stretch" aria-haspopup="dialog" aria-label="Explain this feature" title="What is this?"><span aria-hidden="true">?</span></button> <select id="img-stretch" aria-label="Stretch"></select></label>
+                  <label>Fill empty pixels<button type="button" class="help-btn" data-help="gapfill" aria-haspopup="dialog" aria-label="Explain this feature" title="What is this?"><span aria-hidden="true">?</span></button> <select id="img-fill" aria-label="Fill empty pixels"></select></label>
+                </div>
+
+                <p id="img-stale" class="callout warning" role="status" hidden>The box has moved since this picture was fetched. Press Fetch image to see the new position.</p>
+                <p id="img-empty" class="hint-small">No picture yet. Press Fetch image. With the Demo backend this works without any account; choose Planetary Computer or Earth Engine for real imagery.</p>
+                <figure id="preview-box" class="img-figure">
+                  <div class="img-wrap">
+                    <img id="preview-img" hidden alt="Satellite image of the selected site">
+                    <span id="img-badge" class="syn-badge" hidden>SYNTHETIC</span>
+                  </div>
+                  <figcaption id="preview-caption" class="mono muted"></figcaption>
+                </figure>
+
+                <details class="acc sub" data-acc="r-img-stats">
+                  <summary><span class="acc-title">Statistics</span><button type="button" class="help-btn" data-help="statistics" aria-haspopup="dialog" aria-label="Explain this feature" title="What is this?"><span aria-hidden="true">?</span></button></summary>
+                  <div class="acc-body">
+                    <label class="chk"><input type="checkbox" id="img-clear"> Use clear pixels only (no cloud)</label>
+                    <div class="panel-row"><button type="button" id="img-stats-btn">Calculate statistics</button></div>
+                    <div id="img-stats-out" aria-live="polite"></div>
+                  </div>
+                </details>
+                <details class="acc sub" data-acc="r-img-gap">
+                  <summary><span class="acc-title">Test the gap fill</span><button type="button" class="help-btn" data-help="gapfill_test" aria-haspopup="dialog" aria-label="Explain this feature" title="What is this?"><span aria-hidden="true">?</span></button></summary>
+                  <div class="acc-body">
+                    <p class="hint-small">Hides about 10 percent of the clear pixels, fills them with each method and measures the error.</p>
+                    <div class="panel-row"><button type="button" id="img-gap-btn">Run the test</button></div>
+                    <div id="img-gap-out" aria-live="polite"></div>
+                  </div>
+                </details>
+                <details class="acc sub" data-acc="r-img-cand">
+                  <summary><span class="acc-title">Candidate areas</span><button type="button" class="help-btn" data-help="candidates" aria-haspopup="dialog" aria-label="Explain this feature" title="What is this?"><span aria-hidden="true">?</span></button></summary>
+                  <div class="acc-body">
+                    <div class="panel-row fields">
+                      <label>Look for <select id="img-kind"></select></label>
+                      <label>Strictness <select id="img-strict"></select></label>
+                      <label>Smallest region (pixels) <input type="number" id="img-minpx" min="1" step="5"></label>
+                    </div>
+                    <div class="panel-row">
+                      <button type="button" id="img-cand-btn">Find candidate areas</button>
+                      <button type="button" id="img-cand-clear" hidden>Remove outlines</button>
+                    </div>
+                    <div id="img-cand-out" aria-live="polite"></div>
+                  </div>
+                </details>
+              </div>
+            </details>
+
+            <div id="panel-foot">
+              <button id="btn-save" class="primary">Save <kbd>Ctrl S</kbd></button>
+              <button id="btn-revert">Revert</button>
+              <span id="save-status" class="mono muted" role="status"></span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </aside>
+  </div>
+
+
+  <div id="toasts" role="status" aria-live="polite" aria-relevant="additions"></div>
+
+  <dialog id="confirm-overlay" aria-labelledby="confirm-msg">
+    <form method="dialog" id="confirm-box">
+      <div id="confirm-msg"></div>
+      <div class="panel-row actions">
+        <button id="confirm-yes" type="button" class="danger">Yes</button>
+        <button id="confirm-no" type="button" autofocus>Cancel</button>
+      </div>
+    </form>
+  </dialog>
+
+  <dialog id="feature-help" class="wide help-dialog" aria-labelledby="fh-title">
+    <div class="dlg-head"><div><p id="fh-area" class="help-area muted"></p><h2 id="fh-title">Help</h2></div>
+      <button class="close-x" data-close aria-label="Close this explanation">✕</button></div>
+    <div class="dlg-body" id="fh-body"></div>
+  </dialog>
+
+  <dialog id="guide-dialog" class="wide" aria-labelledby="guide-title">
+    <div class="dlg-head"><h2 id="guide-title">Feature guide</h2><button type="button" class="help-btn" data-help="feature_guide" aria-haspopup="dialog" aria-label="Explain this feature" title="What is this?"><span aria-hidden="true">?</span></button>
+      <button class="close-x" data-close aria-label="Close the feature guide">✕</button></div>
+    <div class="dlg-body">
+      <label for="guide-q">Search the features</label>
+      <input id="guide-q" type="search" class="full" placeholder="For example cloud, grid, export, haze" autocomplete="off">
+      <p id="guide-count" class="hint-small" role="status"></p>
+      <div id="guide-list"></div>
+    </div>
+  </dialog>
+
+  <dialog id="validate-dialog" class="wide" aria-labelledby="val-title">
+    <div class="dlg-head"><h2 id="val-title">File check</h2>
+      <button class="close-x" data-close aria-label="Close the file check">✕</button></div>
+    <div class="dlg-body">
+      <p class="hint-small">The tool checks the roster against its rules before every save. This shows the same check on the file as it is now.</p>
+      <div id="val-out" aria-live="polite"></div>
+      <div class="panel-row actions"><button id="val-rerun">Check again</button><button data-close class="primary">Close</button></div>
+    </div>
+  </dialog>
+
+  <dialog id="datasheet-dialog" class="wide" aria-labelledby="ds-title">
+    <div class="dlg-head"><h2 id="ds-title">Datasheet</h2>
+      <button class="close-x" data-close aria-label="Close the datasheet">✕</button></div>
+    <div class="dlg-body">
+      <p class="hint-small">The tool fills in what it can know from the file and the review log. Answer the questions below for the rest. Your answers are kept in this browser.</p>
+      <p id="ds-gaps" class="callout info" role="status"></p>
+      <div id="ds-form"></div>
+      <details class="help-expert"><summary>Preview of the datasheet</summary><pre id="ds-preview" class="ds-preview"></pre></details>
+      <div class="panel-row actions"><button id="ds-download" class="primary">Download datasheet (Markdown)</button><button data-close>Close</button></div>
+    </div>
+  </dialog>
+
+  <dialog id="studies-dialog" class="wide studies" aria-labelledby="st-title">
+    <div class="dlg-head"><h2 id="st-title">Studies</h2><button type="button" class="help-btn" data-help="studies_overview" aria-haspopup="dialog" aria-label="Explain this feature" title="What is this?"><span aria-hidden="true">?</span></button>
+      <button class="close-x" data-close aria-label="Close studies">✕</button></div>
+    <div class="dlg-body">
+      <p class="hint-small">Tools that check a split, forecast a site's yield, compare coordinates with registries and show what a misplaced box costs. None of them changes a site unless you press the button that says so.</p>
+      <div role="tablist" aria-label="Studies" id="st-tabs" class="st-tabs">
+        <button type="button" role="tab" id="st-t-split" aria-controls="st-p-split" aria-selected="true">Split safety</button>
+        <button type="button" role="tab" id="st-t-forecast" aria-controls="st-p-forecast" aria-selected="false" tabindex="-1">Forecast</button>
+        <button type="button" role="tab" id="st-t-coords" aria-controls="st-p-coords" aria-selected="false" tabindex="-1">Coordinates</button>
+        <button type="button" role="tab" id="st-t-place" aria-controls="st-p-place" aria-selected="false" tabindex="-1">Placement</button>
+      </div>
+
+      <section id="st-p-split" role="tabpanel" aria-labelledby="st-t-split" class="st-panel">
+        <h3>Overlap groups</h3>
+        <div class="st-row">
+          <label for="st-level">Link two sites when</label>
+          <select id="st-level">
+            <option value="box">their chip boxes overlap</option>
+            <option value="label">their 10 km label windows overlap</option>
+            <option value="background" selected>one reaches into the other's background ring</option>
+            <option value="ring">their background rings overlap (the distance rule)</option>
+          </select>
+          <button type="button" class="help-btn" data-help="overlap_groups" aria-haspopup="dialog" aria-label="Explain this feature" title="What is this?"><span aria-hidden="true">?</span></button>
+        </div>
+        <div class="panel-row actions"><button id="st-groups-run" type="button">Find groups</button><button id="st-groups-apply" type="button" disabled>Write group ids into the roster</button></div>
+        <div id="st-groups-out" class="st-out" aria-live="polite"></div>
+
+        <h3>Near-duplicate chips</h3>
+        <div class="st-row">
+          <label for="st-dup-backend">Pictures from</label><select id="st-dup-backend"></select>
+          <label for="st-dup-source">Source</label>
+          <select id="st-dup-source"><option value="single">Single scene</option><option value="median">Cloudless median</option><option value="clearsky">Clear-sky layer</option></select>
+          <button type="button" class="help-btn" data-help="near_duplicates" aria-haspopup="dialog" aria-label="Explain this feature" title="What is this?"><span aria-hidden="true">?</span></button>
+        </div>
+        <label class="chk"><input type="checkbox" id="st-dup-fetch"> Download pictures that are not saved yet (at most 60 per run)</label>
+        <div class="panel-row actions"><button id="st-dup-run" type="button">Look for near-duplicates</button><button id="st-dup-bench" type="button">Run the self-test</button><button type="button" class="help-btn" data-help="dup_selftest" aria-haspopup="dialog" aria-label="Explain this feature" title="What is this?"><span aria-hidden="true">?</span></button></div>
+        <div id="st-dup-out" class="st-out" aria-live="polite"></div>
+
+        <h3>Shift between two roles</h3>
+        <div class="st-row">
+          <label for="st-shift-a">Compare</label><select id="st-shift-a"></select>
+          <label for="st-shift-b">with</label><select id="st-shift-b"></select>
+          <button type="button" class="help-btn" data-help="domain_shift" aria-haspopup="dialog" aria-label="Explain this feature" title="What is this?"><span aria-hidden="true">?</span></button>
+        </div>
+        <div class="panel-row actions"><button id="st-shift-run" type="button">Compare the two roles</button></div>
+        <div id="st-shift-out" class="st-out" aria-live="polite"></div>
+
+        <h3>Split certificate</h3>
+        <div class="st-row">
+          <label for="st-cert-end">Training period ends</label><input type="date" id="st-cert-end">
+          <label for="st-cert-start">Test period starts</label><input type="date" id="st-cert-start">
+        </div>
+        <div class="st-row">
+          <label for="st-cert-target">Target column for spatial dependence</label><select id="st-cert-target"><option value="">None</option></select>
+          <button type="button" class="help-btn" data-help="split_certificate" aria-haspopup="dialog" aria-label="Explain this feature" title="What is this?"><span aria-hidden="true">?</span></button>
+        </div>
+        <div class="panel-row actions"><button id="st-cert-run" type="button" class="primary">Build the certificate</button><button id="st-cert-dl" type="button" disabled>Download certificate (JSON)</button></div>
+        <div id="st-cert-out" class="st-out" aria-live="polite"></div>
+      </section>
+
+      <section id="st-p-forecast" role="tabpanel" aria-labelledby="st-t-forecast" class="st-panel" hidden>
+        <h3>Table of outcomes</h3>
+        <p class="hint-small">One row per site: the site id, then numbers such as <code>windows</code>, <code>ok_windows</code>, <code>clear_frac</code>, <code>land_frac</code>. Screening numbers in the site notes are used too.</p>
+        <div class="st-row">
+          <label for="st-out-file">CSV file</label><input type="file" id="st-out-file" accept=".csv,text/csv,text/plain">
+          <button type="button" class="help-btn" data-help="outcomes_table" aria-haspopup="dialog" aria-label="Explain this feature" title="What is this?"><span aria-hidden="true">?</span></button>
+        </div>
+        <label for="st-out-text">or paste the table here</label>
+        <textarea id="st-out-text" rows="3" class="full" spellcheck="false"></textarea>
+        <div class="panel-row actions"><button id="st-out-load" type="button">Load the table</button><button id="st-out-demo" type="button">Try the demo table (synthetic)</button><button id="st-out-clear" type="button">Remove the table</button></div>
+        <p id="st-out-summary" class="hint-small" aria-live="polite"></p>
+
+        <h3>Forecast</h3>
+        <div class="st-row">
+          <label for="st-fc-target">What to forecast</label><select id="st-fc-target"></select>
+          <button type="button" class="help-btn" data-help="forecast" aria-haspopup="dialog" aria-label="Explain this feature" title="What is this?"><span aria-hidden="true">?</span></button>
+        </div>
+        <fieldset id="st-fc-features" class="st-fieldset"><legend>Numbers to use</legend><span class="hint-small">Load a table first.</span></fieldset>
+        <label class="chk"><input type="checkbox" id="st-fc-region" checked> Correct for region</label>
+        <div class="panel-row actions"><button id="st-fc-check" type="button" class="primary">Check the forecast</button><button type="button" class="help-btn" data-help="forecast_validation" aria-haspopup="dialog" aria-label="Explain this feature" title="What is this?"><span aria-hidden="true">?</span></button>
+          <button id="st-fc-compare" type="button">Compare with simpler models</button><button type="button" class="help-btn" data-help="forecast_compare" aria-haspopup="dialog" aria-label="Explain this feature" title="What is this?"><span aria-hidden="true">?</span></button>
+          <button id="st-fc-fit" type="button">Fit it and use it for every site</button><button type="button" class="help-btn" data-help="forecast_fit" aria-haspopup="dialog" aria-label="Explain this feature" title="What is this?"><span aria-hidden="true">?</span></button></div>
+        <div id="st-fc-out" class="st-out" aria-live="polite"></div>
+        <div id="st-fc-chart"></div>
+        <div id="st-fc-pred" class="st-out"></div>
+      </section>
+
+      <section id="st-p-coords" role="tabpanel" aria-labelledby="st-t-coords" class="st-panel" hidden>
+        <h3>Registries</h3>
+        <p class="hint-small">Add a list of facilities with coordinates, for example a Wikidata result or a Global Energy Monitor table. Check each source's licence before you use it.</p>
+        <div class="st-row">
+          <label for="st-reg-name">Name</label><input type="text" id="st-reg-name" maxlength="60" placeholder="for example gem-refineries">
+          <label for="st-reg-format">Format</label>
+          <select id="st-reg-format"><option value="">Detect it</option><option value="csv">CSV</option><option value="geojson">GeoJSON</option><option value="wikidata">Wikidata result (JSON)</option></select>
+          <button type="button" class="help-btn" data-help="registries" aria-haspopup="dialog" aria-label="Explain this feature" title="What is this?"><span aria-hidden="true">?</span></button>
+        </div>
+        <div class="st-row"><label for="st-reg-file">File</label><input type="file" id="st-reg-file" accept=".csv,.json,.geojson,text/csv,application/json"></div>
+        <div class="st-row"><label for="st-reg-licence">Licence or terms of use (write down what the source says)</label><input type="text" id="st-reg-licence" maxlength="300" placeholder="for example CC0 1.0 or CC BY 4.0"></div>
+        <label for="st-reg-text">or paste it here</label>
+        <textarea id="st-reg-text" rows="3" class="full" spellcheck="false"></textarea>
+        <div class="panel-row actions"><button id="st-reg-add" type="button">Add the registry</button><button id="st-reg-demo" type="button">Try the demo registry (synthetic)</button></div>
+        <ul id="st-reg-list" class="st-list" aria-label="Loaded registries"></ul>
+        <details class="help-expert"><summary>Look up Wikidata online</summary>
+          <p class="hint-small">This sends one query to wikidata.org. Enter the Wikidata class ids of the facility types you want (for example the id of the class "oil refinery"; check it on wikidata.org).</p>
+          <div class="st-row"><label for="st-wd-classes">Class ids, separated by commas</label><input type="text" id="st-wd-classes" placeholder="Q…, Q…"><label for="st-wd-country">Country code</label><input type="text" id="st-wd-country" maxlength="2" size="3" placeholder="SA"></div>
+          <label class="chk"><input type="checkbox" id="st-wd-confirm"> Yes, send the query to wikidata.org</label>
+          <div class="panel-row actions"><button id="st-wd-run" type="button">Fetch from Wikidata</button></div>
+        </details>
+
+        <h3>Compare with the registries</h3>
+        <label class="chk"><input type="checkbox" id="st-gr-orig" checked> Compare the position a site had before I moved it</label>
+        <div class="panel-row actions"><button id="st-gr-run" type="button" class="primary">Compare all sites</button><button type="button" class="help-btn" data-help="grounding" aria-haspopup="dialog" aria-label="Explain this feature" title="What is this?"><span aria-hidden="true">?</span></button>
+          <button id="st-gr-eval" type="button">Measure the error on verified sites</button><button type="button" class="help-btn" data-help="grounding_eval" aria-haspopup="dialog" aria-label="Explain this feature" title="What is this?"><span aria-hidden="true">?</span></button></div>
+        <div id="st-gr-out" class="st-out" aria-live="polite"></div>
+        <div id="st-gr-eval-out" class="st-out" aria-live="polite"></div>
+      </section>
+
+      <section id="st-p-place" role="tabpanel" aria-labelledby="st-t-place" class="st-panel" hidden>
+        <h3>Placement study</h3>
+        <p id="st-pl-site" class="hint-small">Open a site first.</p>
+        <fieldset class="st-fieldset"><legend>Shift the box by</legend>
+          <label class="chk"><input type="checkbox" name="st-pl-d" value="1" checked> 1 km</label>
+          <label class="chk"><input type="checkbox" name="st-pl-d" value="2" checked> 2 km</label>
+          <label class="chk"><input type="checkbox" name="st-pl-d" value="5" checked> 5 km</label>
+          <label class="chk"><input type="checkbox" name="st-pl-d" value="10" checked> 10 km</label>
+        </fieldset>
+        <div class="st-row">
+          <label for="st-pl-dirs">Directions</label><select id="st-pl-dirs"><option value="4">4 (north, east, south, west)</option><option value="8" selected>8</option></select>
+          <label for="st-pl-kind">Facility signal</label><select id="st-pl-kind"><option value="built_up">Bare or built-up ground</option><option value="hot">Hot ground or flare</option><option value="bare">Dry bare surface</option><option value="bright">Bright surfaces</option></select>
+          <label for="st-pl-backend">Pictures from</label><select id="st-pl-backend"></select>
+          <button type="button" class="help-btn" data-help="placement_study" aria-haspopup="dialog" aria-label="Explain this feature" title="What is this?"><span aria-hidden="true">?</span></button>
+        </div>
+        <fieldset class="st-fieldset"><legend>Gas targets (Earth Engine, or a synthetic example with Demo)</legend>
+          <label class="chk"><input type="checkbox" name="st-pl-t" value="no2"> Nitrogen dioxide</label>
+          <label class="chk"><input type="checkbox" name="st-pl-t" value="co"> Carbon monoxide</label>
+          <label class="chk"><input type="checkbox" name="st-pl-t" value="ch4"> Methane</label>
+          <label class="chk"><input type="checkbox" name="st-pl-t" value="aai"> Aerosol index</label>
+          <button type="button" class="help-btn" data-help="placement_targets" aria-haspopup="dialog" aria-label="Explain this feature" title="What is this?"><span aria-hidden="true">?</span></button>
+        </fieldset>
+        <div class="panel-row actions"><button id="st-pl-run" type="button" class="primary">Run the study for the open site</button></div>
+        <div id="st-pl-out" class="st-out" aria-live="polite"></div>
+        <div id="st-pl-chart"></div>
+      </section>
+    </div>
+  </dialog>
+
+  <dialog id="help-dialog" class="wide" aria-labelledby="help-title">
+    <div class="dlg-head"><h2 id="help-title">Help and keyboard shortcuts</h2>
+      <button class="close-x" data-close aria-label="Close help">✕</button></div>
+    <div class="dlg-body">
+      <h3>Review workflow</h3>
+      <ol class="help-steps">
+        <li>Press <kbd>N</kbd> to open the next unreviewed site. The map flies to it and frames the box.</li>
+        <li>Check the satellite image. Drag the pin to centre the box on the facility and drag a corner square, or press <kbd>-</kbd> and <kbd>+</kbd>, to set its size. Press <kbd>E</kbd> for the quick edit strip if you only need the essentials.</li>
+        <li>Open the sections of the details bar on the right: screening flags, neighbours within 150 km and quality flags. Fold either bar with <kbd>[</kbd> and <kbd>]</kbd>, or press <kbd>F</kbd> for a clean map.</li>
+        <li>Press <kbd>V</kbd> to keep (saves your edits, ticks verified, opens the next site), <kbd>X</kbd> to reject, or <kbd>S</kbd> to skip for later.</li>
+        <li>Open Export, choose "Kept sites", and download the cleaned file.</li>
+      </ol>
+      <p>Reject is reversible: a rejected site stays in the file with a rejected flag, is left out of "kept" exports, and comes back with <kbd>U</kbd> or Undo. Delete removes the site for good after a confirmation.</p>
+      <h3>Shortcuts</h3><button type="button" class="help-btn" data-help="shortcuts" aria-haspopup="dialog" aria-label="Explain this feature" title="What is this?"><span aria-hidden="true">?</span></button>
+      <p class="muted">Shortcuts work when no text field is focused. Ctrl and Cmd shortcuts work everywhere.</p>
+      <table class="keys" id="keys-table">
+        <tbody>
+          <tr><th scope="row"><kbd>J</kbd> / <kbd>K</kbd></th><td>Next / previous site in the list</td></tr>
+          <tr><th scope="row"><kbd>N</kbd></th><td>Next unreviewed site (shift+N: previous)</td></tr>
+          <tr><th scope="row"><kbd>V</kbd></th><td>Keep: save, verify, go to next unreviewed</td></tr>
+          <tr><th scope="row"><kbd>X</kbd></th><td>Reject and go to next unreviewed</td></tr>
+          <tr><th scope="row"><kbd>S</kbd></th><td>Skip for later</td></tr>
+          <tr><th scope="row"><kbd>U</kbd></th><td>Mark as not reviewed again</td></tr>
+          <tr><th scope="row"><kbd>Ctrl</kbd>+<kbd>S</kbd></th><td>Save the current site (or create, when adding)</td></tr>
+          <tr><th scope="row"><kbd>Ctrl</kbd>+<kbd>Z</kbd> / <kbd>Ctrl</kbd>+<kbd>Shift</kbd>+<kbd>Z</kbd></th><td>Undo / redo, including keep and reject</td></tr>
+          <tr><th scope="row">Arrow keys</th><td>Nudge the box (Shift: bigger step)</td></tr>
+          <tr><th scope="row"><kbd>[</kbd> / <kbd>]</kbd></th><td>Fold or open the site list (left) / the details bar (right)</td></tr>
+          <tr><th scope="row"><kbd>F</kbd></th><td>Focus mode: hide both bars and extra controls; press again to restore</td></tr>
+          <tr><th scope="row"><kbd>E</kbd></th><td>Quick edit strip: essentials only (Enter saves, Esc closes)</td></tr>
+          <tr><th scope="row"><kbd>-</kbd> / <kbd>+</kbd></th><td>Smaller / larger box (next preset size)</td></tr>
+          <tr><th scope="row"><kbd>T</kbd></th><td>Apply the typical box size for this facility type</td></tr>
+          <tr><th scope="row"><kbd>Z</kbd></th><td>Zoom the map to fit the box</td></tr>
+          <tr><th scope="row"><kbd>G</kbd></th><td>Focus the "paste lat, lon" box (pasting coordinates anywhere also works)</td></tr>
+          <tr><th scope="row"><kbd>/</kbd></th><td>Focus the search box</td></tr>
+          <tr><th scope="row"><kbd>L</kbd> <kbd>B</kbd> <kbd>R</kbd> <kbd>P</kbd> <kbd>O</kbd> <kbd>H</kbd></th><td>Toggle layers: label window, background ring, split radius, pilot sites, other candidates, exact pixel grid (H)</td></tr>
+          <tr><th scope="row"><kbd>M</kbd></th><td>Switch basemap</td></tr>
+          <tr><th scope="row">In the site list</th><td>Up and down arrows, Home and End move through the list, Enter opens a site, <kbd>Shift</kbd>+<kbd>Space</kbd> ticks or unticks it for bulk actions</td></tr>
+          <tr><th scope="row"><kbd>Esc</kbd></th><td>Close a panel, cancel add, or deselect</td></tr>
+          <tr><th scope="row"><kbd>?</kbd></th><td>Open this help</td></tr>
+        </tbody>
+      </table>
+      <h3>Reading the map</h3>
+      <ul>
+        <li>The blue box is the chip box you are fixing (1 to 8 km). The dashed box around it is the fixed label window that the satellite targets use. The two dashed rings are the 30 and 75 km background annulus.</li>
+        <li>The dotted circle is the split radius. Any candidate or pilot site inside it shares a train or test split with the selected site.</li>
+        <li>Kept sites are circles, pending sites are diamonds, rejected sites are crosses and pilot sites are triangles. Colour is never the only cue.</li>
+      </ul>
+      <div class="panel-row actions"><button id="help-tour">Take the quick tour</button><button id="help-guide">Open the feature guide</button></div>
+    </div>
+  </dialog>
+
+  <dialog id="tour-dialog" aria-labelledby="tour-title">
+    <div class="dlg-head"><h2 id="tour-title">Quick tour</h2>
+      <button class="close-x" data-close aria-label="Close tour">✕</button></div>
+    <div class="dlg-body">
+      <div id="tour-step" aria-live="polite"></div>
+      <div class="panel-row actions">
+        <button id="tour-back">Back</button>
+        <button id="tour-next" class="primary">Next</button>
+        <button id="tour-skip">Skip tour</button>
+        <span id="tour-count" class="mono muted"></span>
+      </div>
+    </div>
+  </dialog>
+
+  <dialog id="settings-dialog" aria-labelledby="settings-title">
+    <div class="dlg-head"><h2 id="settings-title">Settings</h2>
+      <button class="close-x" data-close aria-label="Close settings">✕</button></div>
+    <div class="dlg-body settings-grid">
+      <fieldset>
+        <legend>Theme</legend><button type="button" class="help-btn" data-help="themes_access" aria-haspopup="dialog" aria-label="Explain this feature" title="What is this?"><span aria-hidden="true">?</span></button>
+        <label class="chk"><input type="radio" name="pref-theme" value="auto"> Follow the system</label>
+        <label class="chk"><input type="radio" name="pref-theme" value="dark"> Dark</label>
+        <label class="chk"><input type="radio" name="pref-theme" value="light"> Light</label>
+        <label class="chk"><input type="radio" name="pref-theme" value="hc"> High contrast</label>
+      </fieldset>
+      <fieldset>
+        <legend>Text size</legend>
+        <div class="panel-row">
+          <button id="pref-font-down" aria-label="Smaller text">A-</button>
+          <label class="sr-only" for="pref-font">Text size in percent</label>
+          <input type="range" id="pref-font" min="80" max="160" step="10">
+          <button id="pref-font-up" aria-label="Larger text">A+</button>
+          <output id="pref-font-out" for="pref-font" class="mono"></output>
+        </div>
+      </fieldset>
+      <fieldset>
+        <legend>Map</legend>
+        <label>Default basemap
+          <select id="pref-basemap"><option value="esri">Esri World Imagery (satellite)</option><option value="osm">OpenStreetMap</option></select>
+        </label>
+        <label>Default box size for new sites (km)
+          <input type="number" id="pref-defbox" min="1" max="8" step="0.25">
+        </label>
+        <label>Drag handle size
+          <select id="pref-handle"><option value="14">Normal</option><option value="20">Large</option><option value="28">Extra large</option></select>
+        </label>
+        <label>When a site opens
+          <select id="pref-zoom"><option value="fit">Fit the map to the box</option><option value="14">Zoom to level 14</option><option value="keep">Keep the current zoom</option></select>
+        </label>
+        <label class="chk"><input type="checkbox" id="pref-snap"> Snap box size to 0.25 km while dragging a corner</label>
+      </fieldset>
+      <fieldset>
+        <legend>Layout (an alternative to dragging the bar edges)</legend>
+        <label>Site list width: <output id="pref-wl-out" class="mono"></output>
+          <input type="range" id="pref-wl" min="230" max="560" step="10"></label>
+        <label>Details bar width: <output id="pref-wr-out" class="mono"></output>
+          <input type="range" id="pref-wr" min="300" max="760" step="10"></label>
+      </fieldset>
+      <fieldset>
+        <legend>Help and keys</legend>
+        <label class="chk"><input type="checkbox" id="pref-shortcuts"> Single-key shortcuts (J, K, V, X and so on)</label>
+        <label class="chk"><input type="checkbox" id="pref-helpbtn"> Show the ? help buttons</label>
+        <p class="hint-small">Turn the shortcuts off if you use a screen reader or voice control and the keys get in the way.</p>
+      </fieldset>
+      <fieldset>
+        <legend>Review</legend>
+        <label class="chk"><input type="checkbox" id="pref-advance"> After Keep or Reject, open the next unreviewed site</label>
+        <label class="chk"><input type="checkbox" id="pref-autosave"> Save unsaved edits when moving to another site</label>
+        <label class="chk"><input type="checkbox" id="pref-compact"> Compact site list</label>
+        <label>Reduce motion
+          <select id="pref-motion"><option value="auto">Follow the system</option><option value="reduce">Always reduce</option><option value="allow">Allow animation</option></select>
+        </label>
+      </fieldset>
+    </div>
+    <div class="dlg-foot panel-row actions">
+      <button id="pref-reset" class="danger">Reset preferences</button>
+      <button data-close class="primary">Done</button>
+    </div>
+  </dialog>
+
+  <dialog id="export-dialog" aria-labelledby="export-title">
+    <div class="dlg-head"><h2 id="export-title">Export sites</h2>
+      <button class="close-x" data-close aria-label="Close export">✕</button></div>
+    <div class="dlg-body">
+      <fieldset>
+        <legend>Which sites</legend>
+        <label class="chk"><input type="radio" name="exp-scope" value="kept" checked> <span id="exp-kept-label">Kept sites</span></label>
+        <label class="chk"><input type="radio" name="exp-scope" value="verified"> <span id="exp-verified-label">Verified sites only</span></label>
+        <label class="chk"><input type="radio" name="exp-scope" value="all"> <span id="exp-all-label">Everything in the file</span></label>
+        <label class="chk"><input type="radio" name="exp-scope" value="rejected"> <span id="exp-rejected-label">Rejected sites only</span></label>
+      </fieldset>
+      <fieldset>
+        <legend>Format</legend>
+        <label class="chk"><input type="radio" name="exp-format" value="json" checked> JSON (loads in the pipeline)</label>
+        <label class="chk"><input type="radio" name="exp-format" value="csv"> CSV (opens in a spreadsheet)</label>
+      </fieldset>
+      <label class="chk"><input type="checkbox" id="exp-comments"> Include my private comments</label>
+      <p class="hint-small" id="exp-note">"Kept" means every site that is not rejected, verified or not. Kept and verified exports leave out the rejected flag.</p>
+      <div class="panel-row actions">
+        <a id="exp-download" class="btn-link primary" href="#" download>⬇ Download</a>
+        <button data-close>Close</button>
+      </div>
+      <h3>Records about this roster</h3>
+      <div class="panel-row actions">
+        <a id="exp-prov" class="btn-link" href="/api/provenance?download=1" download="provenance.json">⬇ Provenance record (JSON)</a><button type="button" class="help-btn" data-help="provenance" aria-haspopup="dialog" aria-label="Explain this feature" title="What is this?"><span aria-hidden="true">?</span></button>
+        <button id="exp-datasheet" type="button">Datasheet…</button><button type="button" class="help-btn" data-help="datasheet" aria-haspopup="dialog" aria-label="Explain this feature" title="What is this?"><span aria-hidden="true">?</span></button>
+      </div>
+    </div>
+  </dialog>
+
+  <dialog id="import-dialog" class="wide" aria-labelledby="import-title">
+    <div class="dlg-head"><h2 id="import-title">Import or merge a sites file</h2><button type="button" class="help-btn" data-help="import_merge" aria-haspopup="dialog" aria-label="Explain this feature" title="What is this?"><span aria-hidden="true">?</span></button>
+      <button class="close-x" data-close aria-label="Close import">✕</button></div>
+    <div class="dlg-body">
+      <p>Choose another sites JSON file (the same format as this one). Nothing changes until you press Apply. The preview shows new sites, id clashes and sites that sit within 2 km of an existing site.</p>
+      <div class="panel-row">
+        <label>File <input type="file" id="imp-file" accept=".json,application/json"></label>
+        <label>When an id already exists
+          <select id="imp-policy">
+            <option value="skip">Skip the incoming site</option>
+            <option value="rename">Import it under a new id</option>
+            <option value="overwrite">Replace the existing site (keeps my comment)</option>
+          </select>
+        </label>
+      </div>
+      <div id="imp-report" aria-live="polite"></div>
+      <div class="panel-row actions">
+        <button id="imp-apply" class="primary" disabled>Apply merge</button>
+        <button data-close>Close</button>
+      </div>
+    </div>
+  </dialog>
+
+<script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"
+        integrity="sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV1lvTlZBo=" crossorigin=""></script>
+<script src="https://unpkg.com/leaflet.markercluster@1.5.3/dist/leaflet.markercluster.js"></script>
+<script src="/help.js"></script>
+<script src="/review.js"></script>
+<script src="/imagery.js"></script>
+<script src="/studies.js"></script>
+<script src="/app.js"></script>
+</body>
+</html>

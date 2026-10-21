@@ -1,0 +1,13 @@
+id,windows,ok_windows,land_frac,clear_frac,fire_days,no2_contrast,co_contrast
+ras_tanura_refinery,70,25,0.83,0.345,27,16.14,-0.132
+jubail_industrial,70,53,0.536,0.872,8,15.89,1.185
+ruwais_refinery,70,17,0.594,0.261,54,22.91,0.876
+ras_laffan_lng,70,28,0.474,0.485,21,9.6,1.146
+jamnagar_refinery,70,28,0.363,0.584,41,24.43,0.121
+europoort_rotterdam,70,29,0.992,0.445,32,3.33,0.324
+port_arthur_refinery,70,27,0.389,0.374,9,1.15,0.74
+baytown_complex,70,46,0.542,0.836,18,1.56,0.942
+secunda_coal_to_liquids,70,56,0.713,0.872,12,34.51,-0.162
+ulsan_petrochemical,70,42,0.565,0.792,14,15.76,0.26
+burrup_lng,70,28,0.525,0.489,15,39.37,0.704
+moomba_gas_plant,70,35,0.425,0.621,4,24.84,0.293

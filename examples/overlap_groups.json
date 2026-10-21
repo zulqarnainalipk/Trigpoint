@@ -1,0 +1,198 @@
+{
+ "synthetic": true,
+ "note": "Made from the demo roster, the demo table and the demo registry. Nothing here is evidence about a real place.",
+ "level": "background",
+ "meaning": "one site's label window lies in the other's background ring, or the label windows overlap",
+ "n_sites": 11,
+ "n_pairs": 1,
+ "n_groups": 10,
+ "n_multi_site_groups": 1,
+ "n_mixed_role_groups": 1,
+ "group_of": {
+  "ras_tanura_refinery": "g001",
+  "jubail_industrial": "g001",
+  "ruwais_refinery": "g002",
+  "ras_laffan_lng": "g003",
+  "jamnagar_refinery": "g004",
+  "europoort_rotterdam": "g005",
+  "port_arthur_refinery": "g006",
+  "baytown_complex": "g007",
+  "secunda_coal_to_liquids": "g008",
+  "ulsan_petrochemical": "g009",
+  "burrup_lng": "g010"
+ },
+ "groups": [
+  {
+   "id": "g001",
+   "members": [
+    "ras_tanura_refinery",
+    "jubail_industrial"
+   ],
+   "size": 2,
+   "roles": [
+    "test",
+    "train"
+   ],
+   "mixed_roles": true
+  },
+  {
+   "id": "g002",
+   "members": [
+    "ruwais_refinery"
+   ],
+   "size": 1,
+   "roles": [
+    "train"
+   ],
+   "mixed_roles": false
+  },
+  {
+   "id": "g003",
+   "members": [
+    "ras_laffan_lng"
+   ],
+   "size": 1,
+   "roles": [
+    "train"
+   ],
+   "mixed_roles": false
+  },
+  {
+   "id": "g004",
+   "members": [
+    "jamnagar_refinery"
+   ],
+   "size": 1,
+   "roles": [
+    "test"
+   ],
+   "mixed_roles": false
+  },
+  {
+   "id": "g005",
+   "members": [
+    "europoort_rotterdam"
+   ],
+   "size": 1,
+   "roles": [
+    "train"
+   ],
+   "mixed_roles": false
+  },
+  {
+   "id": "g006",
+   "members": [
+    "port_arthur_refinery"
+   ],
+   "size": 1,
+   "roles": [
+    "train"
+   ],
+   "mixed_roles": false
+  },
+  {
+   "id": "g007",
+   "members": [
+    "baytown_complex"
+   ],
+   "size": 1,
+   "roles": [
+    "test"
+   ],
+   "mixed_roles": false
+  },
+  {
+   "id": "g008",
+   "members": [
+    "secunda_coal_to_liquids"
+   ],
+   "size": 1,
+   "roles": [
+    "train"
+   ],
+   "mixed_roles": false
+  },
+  {
+   "id": "g009",
+   "members": [
+    "ulsan_petrochemical"
+   ],
+   "size": 1,
+   "roles": [
+    "decoy"
+   ],
+   "mixed_roles": false
+  },
+  {
+   "id": "g010",
+   "members": [
+    "burrup_lng"
+   ],
+   "size": 1,
+   "roles": [
+    "train"
+   ],
+   "mixed_roles": false
+  }
+ ],
+ "summary": {
+  "levels": {
+   "box": {
+    "meaning": "the chip boxes overlap",
+    "n_pairs": 0,
+    "n_groups": 11,
+    "n_multi_site_groups": 0,
+    "n_mixed_role_groups": 0
+   },
+   "label": {
+    "meaning": "the 10 km label windows overlap",
+    "n_pairs": 0,
+    "n_groups": 11,
+    "n_multi_site_groups": 0,
+    "n_mixed_role_groups": 0
+   },
+   "background": {
+    "meaning": "one site's label window lies in the other's background ring, or the label windows overlap",
+    "n_pairs": 1,
+    "n_groups": 10,
+    "n_multi_site_groups": 1,
+    "n_mixed_role_groups": 1
+   },
+   "ring": {
+    "meaning": "the background rings overlap (the same as the distance rule)",
+    "n_pairs": 2,
+    "n_groups": 9,
+    "n_multi_site_groups": 2,
+    "n_mixed_role_groups": 2
+   }
+  }
+ },
+ "pairs": [
+  {
+   "a": "ras_tanura_refinery",
+   "b": "jubail_industrial",
+   "distance_km": 68.24,
+   "relations": [
+    "background",
+    "ring"
+   ],
+   "roles": [
+    "test",
+    "train"
+   ]
+  },
+  {
+   "a": "port_arthur_refinery",
+   "b": "baytown_complex",
+   "distance_km": 101.38,
+   "relations": [
+    "ring"
+   ],
+   "roles": [
+    "test",
+    "train"
+   ]
+  }
+ ],
+ "n_pairs_total": 2
+}

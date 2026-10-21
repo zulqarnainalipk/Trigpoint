@@ -1,0 +1,301 @@
+{
+ "synthetic": true,
+ "note": "A pass means the checks that were run found nothing. Checks marked not_run say nothing either way.",
+ "schema": "site-curator-certificate/1",
+ "tool_version": "examples",
+ "created": "2026-10-18T20:38:18+00:00",
+ "roster_sha256": "420ebe4701073137729a87c3cd165146d82297808525441d35933aad30c3c786",
+ "n_sites": 11,
+ "roles": {
+  "decoy": 1,
+  "test": 3,
+  "train": 7
+ },
+ "settings": {
+  "label_km": 10.0,
+  "bg_inner_km": 30.0,
+  "bg_outer_km": 75.0,
+  "min_split_km": 150.0
+ },
+ "verdict": "fail",
+ "checks": [
+  {
+   "id": "min_distance",
+   "title": "Closest sites in different roles",
+   "status": "fail",
+   "value": 68.2,
+   "detail": "The closest pair across roles is 68.2 km apart; the rule needs at least 150 km."
+  },
+  {
+   "id": "overlap_box",
+   "title": "Chip boxes overlapping across roles",
+   "status": "pass",
+   "value": 0,
+   "detail": "None."
+  },
+  {
+   "id": "overlap_label",
+   "title": "Label windows overlapping across roles",
+   "status": "pass",
+   "value": 0,
+   "detail": "None."
+  },
+  {
+   "id": "overlap_background",
+   "title": "Background rings reaching across roles",
+   "status": "fail",
+   "value": 1,
+   "detail": "1 pair(s) of sites in different roles; they should share a fold."
+  },
+  {
+   "id": "overlap_ring",
+   "title": "Background rings overlapping across roles",
+   "status": "fail",
+   "value": 2,
+   "detail": "2 pair(s) of sites in different roles; they should share a fold."
+  },
+  {
+   "id": "time_gap",
+   "title": "Time between the training and test periods",
+   "status": "pass",
+   "value": 1,
+   "detail": "The test period starts 1 day(s) after the training period ends."
+  },
+  {
+   "id": "spatial_dependence",
+   "title": "Spatial dependence of the target",
+   "status": "pass",
+   "value": 233.8,
+   "detail": "Median nearest neighbour 233.8 km; 2 pair(s) under 150 km. Indicative only."
+  },
+  {
+   "id": "near_duplicates",
+   "title": "Near-duplicate chips",
+   "status": "pass",
+   "value": 0,
+   "detail": "0 near-duplicate pair(s) among 11 chips; 0 cross roles."
+  },
+  {
+   "id": "domain_shift",
+   "title": "Shift between the two roles",
+   "status": "not_run",
+   "value": null,
+   "detail": "Not run."
+  }
+ ],
+ "not_run": [
+  "domain_shift"
+ ],
+ "min_distance_between_roles_km": {
+  "decoy|test": {
+   "km": 5884.1,
+   "a": "ulsan_petrochemical",
+   "b": "jamnagar_refinery"
+  },
+  "decoy|train": {
+   "km": 6377.2,
+   "a": "ulsan_petrochemical",
+   "b": "burrup_lng"
+  },
+  "test|train": {
+   "km": 68.2,
+   "a": "jubail_industrial",
+   "b": "ras_tanura_refinery"
+  }
+ },
+ "overlap": {
+  "box": {
+   "meaning": "the chip boxes overlap",
+   "n_pairs": 0,
+   "n_groups": 11,
+   "n_multi_site_groups": 0,
+   "n_mixed_role_groups": 0
+  },
+  "label": {
+   "meaning": "the 10 km label windows overlap",
+   "n_pairs": 0,
+   "n_groups": 11,
+   "n_multi_site_groups": 0,
+   "n_mixed_role_groups": 0
+  },
+  "background": {
+   "meaning": "one site's label window lies in the other's background ring, or the label windows overlap",
+   "n_pairs": 1,
+   "n_groups": 10,
+   "n_multi_site_groups": 1,
+   "n_mixed_role_groups": 1
+  },
+  "ring": {
+   "meaning": "the background rings overlap (the same as the distance rule)",
+   "n_pairs": 2,
+   "n_groups": 9,
+   "n_multi_site_groups": 2,
+   "n_mixed_role_groups": 2
+  }
+ },
+ "overlap_groups": {
+  "level": "ring",
+  "n_groups": 9,
+  "mixed_role_groups": [
+   {
+    "id": "g001",
+    "members": [
+     "ras_tanura_refinery",
+     "jubail_industrial"
+    ],
+    "size": 2,
+    "roles": [
+     "test",
+     "train"
+    ],
+    "mixed_roles": true
+   },
+   {
+    "id": "g006",
+    "members": [
+     "port_arthur_refinery",
+     "baytown_complex"
+    ],
+    "size": 2,
+    "roles": [
+     "test",
+     "train"
+    ],
+    "mixed_roles": true
+   }
+  ]
+ },
+ "spatial_dependence": {
+  "n_sites": 11,
+  "bins": [
+   {
+    "from_km": 0,
+    "to_km": 50,
+    "pairs": 0,
+    "semivariance": null,
+    "reliable": false
+   },
+   {
+    "from_km": 50,
+    "to_km": 150,
+    "pairs": 2,
+    "semivariance": 0.058418,
+    "reliable": false
+   },
+   {
+    "from_km": 150,
+    "to_km": 300,
+    "pairs": 3,
+    "semivariance": 0.02568,
+    "reliable": false
+   },
+   {
+    "from_km": 300,
+    "to_km": 600,
+    "pairs": 2,
+    "semivariance": 0.069388,
+    "reliable": false
+   },
+   {
+    "from_km": 600,
+    "to_km": 1200,
+    "pairs": 0,
+    "semivariance": null,
+    "reliable": false
+   },
+   {
+    "from_km": 1200,
+    "to_km": 2500,
+    "pairs": 4,
+    "semivariance": 0.01926,
+    "reliable": false
+   },
+   {
+    "from_km": 2500,
+    "to_km": 6000,
+    "pairs": 5,
+    "semivariance": 0.019041,
+    "reliable": false
+   }
+  ],
+  "variance": 0.032709,
+  "median_nearest_neighbour_km": 233.8,
+  "share_with_neighbour_within_150_km": 0.364,
+  "pairs_under_150_km": 2,
+  "note": "Indicative only: bins with fewer than 10 pairs are marked not reliable."
+ },
+ "near_duplicates": {
+  "n_images": 11,
+  "n_pairs": 55,
+  "pairs_examined": 38,
+  "rule": {
+   "ncc_min": 0.85,
+   "ssim_min": 0.75
+  },
+  "found": [],
+  "backend": "demo",
+  "source": "single",
+  "missing": [],
+  "fetched_now": 11,
+  "errors": {},
+  "synthetic": true,
+  "note": "Chips are compared as small grey previews. Sites without a cached picture were not compared."
+ },
+ "domain_shift": {
+  "role_a": "train",
+  "role_b": "test",
+  "n_a": 7,
+  "n_b": 3,
+  "features": [
+   {
+    "feature": "land_frac",
+    "n_a": 7,
+    "n_b": 3,
+    "psi": null,
+    "psi_level": "not enough data",
+    "ks": null,
+    "p_value": null
+   },
+   {
+    "feature": "clear_frac",
+    "n_a": 7,
+    "n_b": 3,
+    "psi": null,
+    "psi_level": "not enough data",
+    "ks": null,
+    "p_value": null
+   },
+   {
+    "feature": "fire_days",
+    "n_a": 7,
+    "n_b": 3,
+    "psi": null,
+    "psi_level": "not enough data",
+    "ks": null,
+    "p_value": null
+   },
+   {
+    "feature": "no2_contrast",
+    "n_a": 7,
+    "n_b": 3,
+    "psi": null,
+    "psi_level": "not enough data",
+    "ks": null,
+    "p_value": null
+   },
+   {
+    "feature": "co_contrast",
+    "n_a": 7,
+    "n_b": 3,
+    "psi": null,
+    "psi_level": "not enough data",
+    "ks": null,
+    "p_value": null
+   }
+  ],
+  "median_psi": null,
+  "max_psi": null,
+  "n_large": 0,
+  "most_different": []
+ }
+}

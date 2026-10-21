@@ -1,0 +1,106 @@
+{
+ "synthetic": true,
+ "note": "Compared at the resolution of the context chip. A shift that leaves the picture is skipped.",
+ "box_km": 4.0,
+ "context_km": 14.0,
+ "kind": "built_up",
+ "natural_change": {
+  "n_px": 3025,
+  "nrmse": 0.0,
+  "ncc": 1.0,
+  "index_change": {
+   "ndvi": 0.0,
+   "bsi": 0.0,
+   "hsfi": 0.0
+  }
+ },
+ "by_distance": [
+  {
+   "distance_km": 1.0,
+   "n_directions": 4,
+   "n_inside": 4,
+   "median_nrmse": 1.5799,
+   "median_ncc": 0.3834,
+   "median_box_overlap": 0.75,
+   "median_retained": 0.7779,
+   "share_missing_facility": 0.0
+  },
+  {
+   "distance_km": 2.0,
+   "n_directions": 4,
+   "n_inside": 4,
+   "median_nrmse": 2.7191,
+   "median_ncc": 0.2061,
+   "median_box_overlap": 0.5,
+   "median_retained": 0.5,
+   "share_missing_facility": 0.5
+  },
+  {
+   "distance_km": 5.0,
+   "n_directions": 4,
+   "n_inside": 4,
+   "median_nrmse": 4.5597,
+   "median_ncc": 0.0638,
+   "median_box_overlap": 0.0,
+   "median_retained": 0.0,
+   "share_missing_facility": 1.0
+  }
+ ],
+ "meta": {
+  "backend": "demo",
+  "source": "single",
+  "synthetic": true,
+  "fetched_at": "2026-10-18T20:38:18.024740+00:00",
+  "date": "2026-10-08",
+  "n_scenes": 1,
+  "cloud_frac": 0.0,
+  "gsd_m": 72.91666666666667,
+  "box_km": 14.0,
+  "site_id": "ras_tanura_refinery",
+  "lat": 26.64,
+  "lon": 50.16,
+  "key": "ras_tanura_refinery-901e65_26.64000_50.16000_14.00_demo_single_120_q0"
+ },
+ "site_id": "ras_tanura_refinery",
+ "tolerance_km": {
+  "keeps_facility": 2.0,
+  "picture_correlation_0_8": 0.0
+ },
+ "targets": {
+  "no2": {
+   "mean": 25.0,
+   "sd": 3.0,
+   "n_days": 120,
+   "se": 0.273861,
+   "rows": [
+    {
+     "distance_km": 1.0,
+     "n_shifts": 4,
+     "median_abs_change": 1.36973,
+     "change_over_spread": 0.4566,
+     "change_over_se": 5.002,
+     "share_above_2se": 1.0
+    },
+    {
+     "distance_km": 2.0,
+     "n_shifts": 4,
+     "median_abs_change": 5.47896,
+     "change_over_spread": 1.8263,
+     "change_over_se": 20.006,
+     "share_above_2se": 1.0
+    },
+    {
+     "distance_km": 5.0,
+     "n_shifts": 4,
+     "median_abs_change": 19.89974,
+     "change_over_spread": 6.6332,
+     "change_over_se": 72.664,
+     "share_above_2se": 1.0
+    }
+   ],
+   "tolerance_km": 0.0,
+   "tol_ratio": 0.25
+  }
+ },
+ "targets_synthetic": true
+}
